@@ -1,3 +1,3 @@
 # Tegel demo pages
 
-Demo pages built using the tegel design system.
+Demo pages built in React and Angular using the Tegel Design System.
