@@ -1,1 +1,57 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
+
+
+ *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+ }
+.side-menu {
+    width: 288px;
+    height: calc(100vh - 65px);
+    background-color: var(--sdds-grey-50);
+}
+
+
+main {
+    padding-left: var(--sdds-spacing-element-32);
+    padding-top: var(--sdds-spacing-element-16);
+    flex: 1;
+}
+
+.sub-headline {
+    color: var(--sdds-grey-600);
+}
+
+.mock-image {
+    background-color: var(--sdds-grey-50);
+    height: 648px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sdds-spacing-element-32);
+    width: 100%;
+}
+
+.cards-headline {
+    padding-top: 104px;
+}
+
+.sdds-divider {
+    margin-top: var(--sdds-spacing-element-16);
+    margin-bottom: var(--sdds-spacing-element-32);
+}
+
+.cards {
+    flex-wrap: unset;
+    overflow-y: auto;
+    gap: var(--sdds-spacing-element-32);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
