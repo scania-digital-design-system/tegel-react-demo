@@ -1,1 +1,23 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
+
+html, 
+body,
+.App, 
+#root{
+    height: 100%;
+  }
+
+.App.sdds-mode-light {
+    background-color: var(--sdds-white);
+}
+
+.App.sdds-mode-dark {
+    background-color: var(--sdds-black);
+}
+
+.mode-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
