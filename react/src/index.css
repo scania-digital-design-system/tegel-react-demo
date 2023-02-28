@@ -21,3 +21,12 @@ body,
     align-items: center;
     height: 60px;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 350px;
+    justify-content: center;
+    margin: auto;
+}
