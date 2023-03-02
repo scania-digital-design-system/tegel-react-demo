@@ -1,10 +1,11 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
 
-html, 
+html,
 body,
-.App, 
+.App,
 #root{
     height: 100%;
+    overflow-y: auto;
   }
 
 .App.sdds-mode-light {
@@ -30,4 +31,5 @@ main {
     max-width: 600px;
     justify-content: center;
     margin: auto;
+    padding-bottom: 64px;
 }
