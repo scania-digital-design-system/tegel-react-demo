@@ -8,6 +8,7 @@ interface ModeSwitcherProps {
 const ModeSwitcher = ({mode, setMode}: ModeSwitcherProps) => {
   return (
     <div className="mode-switcher">
+        {/* THIS SHOULD USE SDDSONCHANGE WHEN IT HAS BEEN RELEASED */}
         <sdds-toggle onClick={() => setMode(mode === "light" ? "dark" : "light")}>Dark/Light mode</sdds-toggle>
     </div>
   );
