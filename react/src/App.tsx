@@ -71,6 +71,14 @@ function App() {
           </sdds-block>
         </div>
         <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
+        <sdds-breadcrumb>
+          <sdds-breadcrumb-item href="#">Step one</sdds-breadcrumb-item>
+          <sdds-breadcrumb-item href="www.google.se">Step two</sdds-breadcrumb-item>
+          <sdds-breadcrumb-item current={true}>Current page</sdds-breadcrumb-item>
+        </sdds-breadcrumb>
+      </div>
+        <div>
           <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
           <sdds-checkbox>Checkbox</sdds-checkbox>
         </div>
