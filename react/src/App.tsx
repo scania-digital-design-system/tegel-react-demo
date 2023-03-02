@@ -37,6 +37,8 @@ function App() {
             link-target="_self"
           ></sdds-banner>
         </div>
+        <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Block</div>
         <sdds-block>
           <div className="sdds-headline-01">Headline</div>
           <p className="sdds-body-01">
@@ -66,6 +68,7 @@ function App() {
             </p>
           </sdds-block>
         </sdds-block>
+        </div>
       </main>
     </div>
   );
