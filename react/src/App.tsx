@@ -11,7 +11,7 @@ function App() {
       <main>
         {/* COMPONENTS GO HERE */}
         <div>
-          <div className="sdds-headline-02">Accordion</div>
+          <div className="sdds-headline-02 sdds-u-pb1">Accordion</div>
           <sdds-accordion>
             <sdds-accordion-item header="First item">
               This is the panel, which contains associated information with the
