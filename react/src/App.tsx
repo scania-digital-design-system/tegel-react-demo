@@ -27,7 +27,7 @@ function App() {
           </sdds-accordion>
         </div>
         <div>
-          <div className="sdds-headline-02">Banner</div>
+          <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
           <sdds-banner
             icon="truck"
             header="This is a header text area"
