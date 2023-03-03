@@ -17,10 +17,10 @@ body,
 }
 
 .mode-switcher {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
     height: 60px;
+    top: 96px;
+    right: 32px;
 }
 
 main {
@@ -31,5 +31,5 @@ main {
     max-width: 600px;
     justify-content: center;
     margin: auto;
-    padding-bottom: 64px;
+    padding: 64px 0;
 }
