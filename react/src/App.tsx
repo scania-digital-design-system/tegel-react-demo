@@ -100,8 +100,40 @@ function App() {
             <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
             <sdds-checkbox>Checkbox</sdds-checkbox>
           </div>
-        </main>
-      </div>
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
+          <sdds-breadcrumb>
+            <sdds-breadcrumb-item href="#">Step one</sdds-breadcrumb-item>
+            <sdds-breadcrumb-item href="www.google.se">
+              Step two
+            </sdds-breadcrumb-item>
+            <sdds-breadcrumb-item current={true}>
+              Current page
+            </sdds-breadcrumb-item>
+          </sdds-breadcrumb>
+        </div>
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
+          <sdds-checkbox>Checkbox</sdds-checkbox>
+        </div>
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Chip</div>
+          <button className="sdds-chip">
+            <span className="sdds-chip-text">Chip text</span>
+          </button>
+          <button className="sdds-chip sdds-chip-active">
+            <span className="sdds-chip-text">Chip text</span>
+          </button>
+          <button className="sdds-chip sdds-chip-icon-left">
+            <sdds-icon
+              className="sdds-chip-icon"
+              name="notification"
+            ></sdds-icon>
+            <span className="sdds-chip-text">Chip text</span>
+          </button>
+        </div>
+      </main>
+    </div>
   );
 }
 
