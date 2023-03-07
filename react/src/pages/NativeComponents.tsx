@@ -12,7 +12,7 @@ export default function NativeComponents() {
                 type="radio"
                 name="rb-example"
                 id="rb-option-1"
-                checked
+                defaultChecked={true}
             />
             <label className="sdds-form-label" htmlFor="rb-option-1">
               Label text 1
