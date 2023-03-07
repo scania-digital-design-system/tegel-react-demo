@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <>
-      <nav className="sdds-nav">
+      <nav className="sdds-nav sdds-u-sticky sdds-u-top0">
         <div className="sdds-nav__left">
           <div className="sdds-nav__app-name">React Demo</div>
         </div>
