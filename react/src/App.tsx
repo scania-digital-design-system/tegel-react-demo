@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import DataTable from "./components/DataTable";
 import Header from "./components/Header";
 import ModeSwitcher from "./components/ModeSwitcher";
+
 
 function App() {
   const [mode, setMode] = useState<"light" | "dark">("light");
@@ -10,6 +12,7 @@ function App() {
       <Header />
       <ModeSwitcher mode={mode} setMode={setMode} />
       <main>
+        <Outlet />
         {/* COMPONENTS GO HERE */}
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Accordion</div>
@@ -325,6 +328,7 @@ function App() {
           ></sdds-slider>
         </div>
       </main>
+      <footer></footer>
     </div>
   );
 }
