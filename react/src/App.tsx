@@ -236,6 +236,17 @@ function App() {
           </sdds-dropdown>
         </div>
         <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Link</div>
+          <div className="sdds-headline-04 sdds-u-pb1">Native</div>
+          <a href="/" className="sdds-link">
+            This is a link.
+          </a>
+          <div className="sdds-headline-04 sdds-u-pb1">Web component</div>
+          <sdds-link href="#" target="_self">
+            This is a link.
+          </sdds-link>
+        </div>
+        <div>
           <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
           <div className="sdds-headline-04 sdds-u-pb1">Native</div>
           <div className="sdds-radio-button-group">
