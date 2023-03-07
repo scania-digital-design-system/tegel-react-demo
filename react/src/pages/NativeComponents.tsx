@@ -55,6 +55,22 @@ export default function NativeComponents() {
         <div className="sdds-headline-02 sdds-u-pb1">Data table</div>
         <DataTableNative />
       </div>
+
+      <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
+      <div className="sdds-dropdown">
+        <select name="nativeDropdown" id="mySelect">
+          <option value="truck">Truck</option>
+          <option value="bus">Bus</option>
+          <option value="car">Car</option>
+        </select>
+      </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Link</div>
+        <a href="/" className="sdds-link">
+          This is a link.
+        </a>
+      </div>
     </>
   );
 }

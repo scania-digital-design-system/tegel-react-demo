@@ -160,6 +160,70 @@ export default function WebComponents() {
               helper="Helper text"
           ></sdds-datetime>
         </div>
+
+        <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
+        <sdds-dropdown
+            id="sdds-dropdown-reg"
+            size="lg"
+            placeholder="Placeholder"
+            disabled={false}
+            open-direction="auto"
+            label-position="no-default"
+            state="default"
+            type="default"
+            default-option="option-1"
+        >
+          <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+            Option 1
+          </sdds-dropdown-option>
+          <sdds-dropdown-option value="option-2" tabIndex={0}>
+            Option 2
+          </sdds-dropdown-option>
+          <sdds-dropdown-option value="option-3" tabIndex={0}>
+            Option 3
+          </sdds-dropdown-option>
+        </sdds-dropdown>
+        <sdds-dropdown
+            id="sdds-dropdown-reg"
+            size="lg"
+            placeholder="Placeholder"
+            disabled={false}
+            open-direction="auto"
+            label-position="no-default"
+            state="default"
+            type="multiselect"
+            default-option="option-1"
+        >
+          <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+            Option 1
+          </sdds-dropdown-option>
+          <sdds-dropdown-option value="option-2" tabIndex={0}>
+            Option 2
+          </sdds-dropdown-option>
+          <sdds-dropdown-option value="option-3" tabIndex={0}>
+            Option 3
+          </sdds-dropdown-option>
+        </sdds-dropdown>
+
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Link</div>
+          <sdds-link href="#" target="_self">
+            This is a link.
+          </sdds-link>
+        </div>
+
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Message</div>
+          <sdds-message
+              type="information"
+              header="Message header"
+              mode-variant="inherit from parent"
+          >
+            Longer message text can be placed here. Longer message text can be
+            placed here.
+          </sdds-message>
+        </div>
+
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
             <sdds-radio-button
