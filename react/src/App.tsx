@@ -134,6 +134,22 @@ function App() {
           </div>
         </div>
         <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Card</div>
+          <sdds-card
+              header="Card title"
+              header-placement="below"
+              subheader="Subheader text"
+              header-img="https://scdn.reflex.prod.aws.scania.com/avatar/VqsHAtBNOQvjoslmKEv1599CCQOYYv-250.png?Expires=1679812312&Key-Pair-Id=K2MBMFK028C481&Signature=VUIW8gjppf9r8HjL2zl77AHyYPsFCUv7o7nQLkTgY1IZ~Ja3MkUvslGFnxx-XBneQo9y4IVZDDNBYsMxT0D0pBxnNrt5q3k65q5mZh8MTS15PznVxS7KKP~F7vGngaVsHeJbNHZ~iEytTaezBmX6Yzzng~47PXvZyw5lMohGUNY7yY4d0T5sfbwjPMfZrqUQWWxBxYl9icWOJ2eGPpPol6JSRKlMJMwf4wgNsYKEIoJaIh-sYinGl9reaW6Mv215qrbqdUf8aOiX48-bSBbJsGrUnIJlPGrq7-1vPg9c9qeteIxWqF7fUaj9~z342TIRvbNiozZ3CHDve2QGWpzyow__"
+              body-img="https://scdn.reflex.prod.aws.scania.com/thumbnails/2.6a4c8c88169b49c419d1a8/18.12bc286418679e166a96d74.webp?Expires=1678251771&Key-Pair-Id=K2MBMFK028C481&Signature=Zq51cDQl-92BG136TnDH57Lf46CXNdlI2WAIfLmg~NsYqITvoTMtCJpb5wJLPEMmDY~ufJMbJmaKoMo93yZVZSXihFehAk40slf8v40czQ1uMydC-85vYlItEy~5cSeu8wsLWRXyUCTv7BDlHQ2OWxFXjv0QMR2ggoHb1cBsElWshMILTm69VwrMtKutfGQz9~cLG0ApjeyOPmTBMbI4SU0FexiNCDUmjWAuLGvj2I02ExxetbUQU8pcddMgnsnfubRCzNpK2b~pQBNGIA4yYjqywPElVGQG0B7Xk8J9XY70gQRYXVZph6sT-umLb95TGPymRZoczmFgtzxg4xYHqg__"
+              clickable
+          >
+            <div slot="card-body">Here is a short description in body text</div>
+            <div slot="card-bottom">
+              <sdds-icon style={{fontSize: '20px'}} name="arrow_right"></sdds-icon>
+            </div>
+          </sdds-card>
+        </div>
+        <div>
           <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
           <sdds-checkbox>Checkbox</sdds-checkbox>
         </div>
