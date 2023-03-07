@@ -1,7 +1,5 @@
 const DataTable = () => {
   return (
-    <div>
-      <div className="sdds-headline-04 sdds-u-pb1">Web Component</div>
       <sdds-table
         vertical-dividers="false"
         compact-design="false"
@@ -161,35 +159,7 @@ const DataTable = () => {
           </sdds-table-body-row>
         </sdds-table-body>
       </sdds-table>
-      <div className="sdds-headline-04 sdds-u-pb1">Native</div>
-      <table className="sdds-table">
-        <caption>Native table</caption>
-        <thead>
-          <tr>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Text</td>
-            <td>Text</td>
-            <td>Text</td>
-          </tr>
-          <tr>
-            <td>Text</td>
-            <td>Text</td>
-            <td>Text</td>
-          </tr>
-          <tr>
-            <td>Text</td>
-            <td>Text</td>
-            <td>Text</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
   );
 };
 

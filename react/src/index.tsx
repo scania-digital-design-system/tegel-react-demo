@@ -1,9 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './register-webcomponents';
+
+import App from './App';
+import NativeComponents from "./pages/NativeComponents";
+import WebComponents from "./pages/WebComponents";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    children: [
+      {
+        path: "native-components",
+        element: <NativeComponents />,
+      },
+      {
+        path: "",
+        element: <WebComponents />,
+      },
+      {
+        path: "web-components",
+        element: <WebComponents />,
+      },
+    ],
+  },
+]);
 
 
 const root = ReactDOM.createRoot(
@@ -11,7 +40,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
