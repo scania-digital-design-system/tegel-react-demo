@@ -170,8 +170,12 @@ function App() {
             </sdds-radio-button>
           </div>
         </div>
-        </main>
-      </div>
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Slider</div>
+          <sdds-slider id="sdds-slider" min="0" max="100" value="50" tooltip label="Test label" ticks="4" controls show-tick-numbers></sdds-slider>
+        </div>
+      </main>
+    </div>
   );
 }
 
