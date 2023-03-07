@@ -23,6 +23,10 @@ const router = createBrowserRouter([
         element: <NativeComponents />,
       },
       {
+        path: "",
+        element: <WebComponents />,
+      },
+      {
         path: "web-components",
         element: <WebComponents />,
       },
