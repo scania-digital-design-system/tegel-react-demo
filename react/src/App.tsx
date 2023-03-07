@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DataTable from "./components/DataTable";
 import Header from "./components/Header";
 import ModeSwitcher from "./components/ModeSwitcher";
 
@@ -28,7 +29,7 @@ function App() {
         </div>
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Badge</div>
-            <sdds-badges value="1" size="lg"></sdds-badges>
+          <sdds-badges value="1" size="lg"></sdds-badges>
         </div>
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
@@ -63,13 +64,13 @@ function App() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
                 sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
-                consectetur interdum. Vestibulum condimentum, augue vitae lobortis
-                rhoncus, mi est ultricies mi, sed tincidunt magna nibh in lectus.
-                Pellentesque vel vulputate orci, vel lacinia orci. Sed suscipit
-                leo at diam ullamcorper, vitae volutpat neque dapibus. Maecenas
-                sit amet rhoncus arcu. Sed sed molestie elit. Nullam in interdum
-                est, vitae aliquam ipsum. Nunc rutrum nibh ut arcu egestas
-                egestas.
+                consectetur interdum. Vestibulum condimentum, augue vitae
+                lobortis rhoncus, mi est ultricies mi, sed tincidunt magna nibh
+                in lectus. Pellentesque vel vulputate orci, vel lacinia orci.
+                Sed suscipit leo at diam ullamcorper, vitae volutpat neque
+                dapibus. Maecenas sit amet rhoncus arcu. Sed sed molestie elit.
+                Nullam in interdum est, vitae aliquam ipsum. Nunc rutrum nibh ut
+                arcu egestas egestas.
               </p>
               <sdds-block>
                 <div className="sdds-headline-01">Headline</div>
@@ -78,12 +79,12 @@ function App() {
                   condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
                   sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
                   consectetur interdum. Vestibulum condimentum, augue vitae
-                  lobortis rhoncus, mi est ultricies mi, sed tincidunt magna nibh
-                  in lectus. Pellentesque vel vulputate orci, vel lacinia orci.
-                  Sed suscipit leo at diam ullamcorper, vitae volutpat neque
-                  dapibus. Maecenas sit amet rhoncus arcu. Sed sed molestie elit.
-                  Nullam in interdum est, vitae aliquam ipsum. Nunc rutrum nibh ut
-                  arcu egestas egestas.
+                  lobortis rhoncus, mi est ultricies mi, sed tincidunt magna
+                  nibh in lectus. Pellentesque vel vulputate orci, vel lacinia
+                  orci. Sed suscipit leo at diam ullamcorper, vitae volutpat
+                  neque dapibus. Maecenas sit amet rhoncus arcu. Sed sed
+                  molestie elit. Nullam in interdum est, vitae aliquam ipsum.
+                  Nunc rutrum nibh ut arcu egestas egestas.
                 </p>
               </sdds-block>
             </sdds-block>
@@ -93,25 +94,42 @@ function App() {
           <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
           <sdds-breadcrumb>
             <sdds-breadcrumb-item href="#">Step one</sdds-breadcrumb-item>
-            <sdds-breadcrumb-item href="www.google.se">Step two</sdds-breadcrumb-item>
-            <sdds-breadcrumb-item current={true}>Current page</sdds-breadcrumb-item>
+            <sdds-breadcrumb-item href="www.google.se">
+              Step two
+            </sdds-breadcrumb-item>
+            <sdds-breadcrumb-item current={true}>
+              Current page
+            </sdds-breadcrumb-item>
           </sdds-breadcrumb>
         </div>
-        <div className='sdds-u-w-100'>
+        <div className="sdds-u-w-100">
           <div className="sdds-headline-02 sdds-u-pb1">Buttons</div>
           <sdds-button
-              type="primary"
-              size="lg"
-              fullbleed
-              text="Primary fullbleed button"
+            type="primary"
+            size="lg"
+            fullbleed
+            text="Primary fullbleed button"
           ></sdds-button>
-          <div className="sdds-u-mt2 sdds-u-flex" style={{justifyContent: "space-around"}}>
+          <div
+            className="sdds-u-mt2 sdds-u-flex"
+            style={{ justifyContent: "space-around" }}
+          >
             <sdds-button type="danger" size="sm" text="Delete file">
-              <sdds-icon slot="icon" className="sdds-btn-icon" size="16px" name="document_wrong"></sdds-icon>
+              <sdds-icon
+                slot="icon"
+                className="sdds-btn-icon"
+                size="16px"
+                name="document_wrong"
+              ></sdds-icon>
             </sdds-button>
             <span></span>
             <sdds-button type="ghost" size="md" text="">
-              <sdds-icon slot="icon" className="sdds-btn-icon" size="20px" name="trash"></sdds-icon>
+              <sdds-icon
+                slot="icon"
+                className="sdds-btn-icon"
+                size="20px"
+                name="trash"
+              ></sdds-icon>
             </sdds-button>
           </div>
         </div>
@@ -136,18 +154,37 @@ function App() {
           </button>
         </div>
         <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Data table</div>
+          <DataTable />
+          </div>
+        <div>
           <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
           <div className="sdds-headline-04 sdds-u-pb1">Native</div>
           <div className="sdds-radio-button-group">
             <div className="sdds-radio-item">
-              <input className="sdds-form-input" type="radio" name="rb-example" id="rb-option-1" checked />
-              <label className="sdds-form-label" htmlFor="rb-option-1">Label text 1</label>
+              <input
+                className="sdds-form-input"
+                type="radio"
+                name="rb-example"
+                id="rb-option-1"
+                checked
+              />
+              <label className="sdds-form-label" htmlFor="rb-option-1">
+                Label text 1
+              </label>
             </div>
           </div>
           <div className="sdds-radio-button-group">
             <div className="sdds-radio-item">
-              <input className="sdds-form-input" type="radio" name="rb-example" id="rb-option-2" />
-              <label className="sdds-form-label" htmlFor="rb-option-2">Label text 2</label>
+              <input
+                className="sdds-form-input"
+                type="radio"
+                name="rb-example"
+                id="rb-option-2"
+              />
+              <label className="sdds-form-label" htmlFor="rb-option-2">
+                Label text 2
+              </label>
             </div>
           </div>
           <div>
@@ -172,7 +209,17 @@ function App() {
         </div>
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Slider</div>
-          <sdds-slider id="sdds-slider" min="0" max="100" value="50" tooltip label="Test label" ticks="4" controls show-tick-numbers></sdds-slider>
+          <sdds-slider
+            id="sdds-slider"
+            min="0"
+            max="100"
+            value="50"
+            tooltip
+            label="Test label"
+            ticks="4"
+            controls
+            show-tick-numbers
+          ></sdds-slider>
         </div>
       </main>
     </div>
