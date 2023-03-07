@@ -162,6 +162,7 @@ export default function WebComponents() {
         </div>
 
         <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
+        <div className="sdds-headline-04 sdds-u-pb1">Default one</div>
         <sdds-dropdown
             id="sdds-dropdown-reg"
             size="lg"
@@ -183,6 +184,7 @@ export default function WebComponents() {
             Option 3
           </sdds-dropdown-option>
         </sdds-dropdown>
+        <div className="sdds-headline-04 sdds-u-pb1">Multiselect one</div>
         <sdds-dropdown
             id="sdds-dropdown-reg"
             size="lg"
