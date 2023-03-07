@@ -182,6 +182,58 @@ function App() {
             label="Label text"
             helper="Helper text"
           ></sdds-datetime>
+          <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
+          <div className="sdds-headline-04 sdds-u-pb1">Native</div>
+          <div className="sdds-dropdown">
+            <select name="nativeDropdown" id="mySelect">
+              <option value="truck">Truck</option>
+              <option value="bus">Bus</option>
+              <option value="car">Car</option>
+            </select>
+          </div>
+          <div className="sdds-headline-04 sdds-u-pb1">Web component</div>
+          <sdds-dropdown
+            id="sdds-dropdown-reg"
+            size="lg"
+            placeholder="Placeholder"
+            disabled={false}
+            open-direction="auto"
+            label-position="no-default"
+            state="default"
+            type="default"
+            default-option="option-1"
+          >
+            <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+              Option 1
+            </sdds-dropdown-option>
+            <sdds-dropdown-option value="option-2" tabIndex={0}>
+              Option 2
+            </sdds-dropdown-option>
+            <sdds-dropdown-option value="option-3" tabIndex={0}>
+              Option 3
+            </sdds-dropdown-option>
+          </sdds-dropdown>
+          <sdds-dropdown
+            id="sdds-dropdown-reg"
+            size="lg"
+            placeholder="Placeholder"
+            disabled={false}
+            open-direction="auto"
+            label-position="no-default"
+            state="default"
+            type="multiselect"
+            default-option="option-1"
+          >
+            <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+              Option 1
+            </sdds-dropdown-option>
+            <sdds-dropdown-option value="option-2" tabIndex={0}>
+              Option 2
+            </sdds-dropdown-option>
+            <sdds-dropdown-option value="option-3" tabIndex={0}>
+              Option 3
+            </sdds-dropdown-option>
+          </sdds-dropdown>
         </div>
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
