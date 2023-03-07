@@ -156,7 +156,17 @@ function App() {
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Data table</div>
           <DataTable />
-          </div>
+        </div>
+        <div>
+          <div className="sdds-headline-02 sdds-u-pb1">Datetime</div>
+          <sdds-datetime
+            id="datetime"
+            type="datetime-local"
+            state="none"
+            label="Label text"
+            helper="Helper text"
+          ></sdds-datetime>
+        </div>
         <div>
           <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
           <div className="sdds-headline-04 sdds-u-pb1">Native</div>
