@@ -5,7 +5,7 @@ There are currently three different application within this repo. One React (cre
 
 
 
-React demo: https://tegel-demo-page-react.netlify.app/
+React (create-react-app) demo: https://tegel-demo-page-react.netlify.app/
 
 @scaia/tegel: latest \
 Node: 16
