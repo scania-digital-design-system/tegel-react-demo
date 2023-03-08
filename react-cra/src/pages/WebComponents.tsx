@@ -248,7 +248,6 @@ export default function WebComponents() {
           </span>
           <button
             slot="sdds-modal-actions"
-            data-dismiss-modal
             className="sdds-btn sdds-btn-danger sdds-btn-md"
             onClick={() => {
               setModalOpen(false)
@@ -258,7 +257,6 @@ export default function WebComponents() {
           </button>
           <button
             slot="sdds-modal-actions"
-            data-dismiss-modal
             className="sdds-btn sdds-btn-secondary sdds-btn-md"
             onClick={() => {
               setModalOpen(false)
