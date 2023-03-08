@@ -8,11 +8,11 @@ export default function NativeComponents() {
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
             <input
-                className="sdds-form-input"
-                type="radio"
-                name="rb-example"
-                id="rb-option-1"
-                defaultChecked={true}
+              className="sdds-form-input"
+              type="radio"
+              name="rb-example"
+              id="rb-option-1"
+              defaultChecked={true}
             />
             <label className="sdds-form-label" htmlFor="rb-option-1">
               Label text 1
@@ -22,10 +22,10 @@ export default function NativeComponents() {
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
             <input
-                className="sdds-form-input"
-                type="radio"
-                name="rb-example"
-                id="rb-option-2"
+              className="sdds-form-input"
+              type="radio"
+              name="rb-example"
+              id="rb-option-2"
             />
             <label className="sdds-form-label" htmlFor="rb-option-2">
               Label text 2
@@ -43,10 +43,7 @@ export default function NativeComponents() {
           <span className="sdds-chip-text">Chip text</span>
         </button>
         <button className="sdds-chip sdds-chip-icon-left">
-          <sdds-icon
-              className="sdds-chip-icon"
-              name="notification"
-          ></sdds-icon>
+          <sdds-icon className="sdds-chip-icon" name="notification"></sdds-icon>
           <span className="sdds-chip-text">Chip text</span>
         </button>
       </div>
@@ -70,6 +67,21 @@ export default function NativeComponents() {
         <a href="/" className="sdds-link">
           This is a link.
         </a>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
+        <div className="sdds-toggle">
+          <div className="sdds-toggle-headline">Headline</div>
+          <input
+            type="checkbox"
+            className="sdds-toggle-input"
+            id="customSwitch1"
+          />
+          <span className="sdds-toggle-switch"></span>
+          <label className="sdds-toggle-label" htmlFor="customSwitch1">
+            Toggle this switch element
+          </label>
+        </div>
       </div>
     </>
   );
