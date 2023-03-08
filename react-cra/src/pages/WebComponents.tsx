@@ -227,7 +227,108 @@ export default function WebComponents() {
           placed here.
         </sdds-message>
       </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
+        <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
 
+        <div className="popover-container">
+          <sdds-button
+            aria-label="menu"
+            only-icon
+            id="trigger"
+            type="ghost"
+            size="sm"
+          >
+            <sdds-icon
+              slot="icon"
+              className="sdds-btn-icon"
+              size="16px"
+              name="kebab"
+            ></sdds-icon>
+          </sdds-button>
+        </div>
+        <sdds-popover-canvas
+          placement="auto"
+          selector="#trigger"
+          className="sdds-u-p2"
+        >
+          <h2>A popover canvas!</h2>
+          <p>Where you can put anything you want!</p>
+          <p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://digitaldesign.scania.com"
+            >
+              Even links!
+            </a>
+          </p>
+        </sdds-popover-canvas>
+
+        <div className="sdds-headline-03 sdds-u-pb1">Menu</div>
+
+        <div className="popover-container">
+          <sdds-button
+            aria-label="menu"
+            only-icon
+            id="my-popover-button"
+            type="ghost"
+            size="sm"
+          >
+            <sdds-icon
+              slot="icon"
+              className="sdds-btn-icon"
+              size="16px"
+              name="kebab"
+            ></sdds-icon>
+          </sdds-button>
+        </div>
+        <sdds-popover-menu
+          selector="#my-popover-button"
+          placement="auto"
+          id="my-popover-menu"
+        >
+          <ul className="sdds-popover-menu-wrapper">
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://digitaldesign.scania.com"
+              >
+                <i>
+                  <sdds-icon name="save" size="16px"></sdds-icon>
+                </i>
+                Menu item 1
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://digitaldesign.scania.com"
+              >
+                <i>
+                  <sdds-icon name="save" size="16px"></sdds-icon>
+                </i>
+                Menu item 2
+              </a>
+            </li>
+            <li className="divider"></li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://digitaldesign.scania.com"
+              >
+                <i>
+                  <sdds-icon name="save" size="16px"></sdds-icon>
+                </i>
+                Menu item 4
+              </a>
+            </li>
+          </ul>
+        </sdds-popover-menu>
+      </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
         <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
@@ -368,6 +469,27 @@ export default function WebComponents() {
         <sdds-toggle headline="Headline" size="lg">
           Label
         </sdds-toggle>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Tooltip</div>
+        <div className="tooltip-container">
+          <sdds-tooltip
+            placement="bottom"
+            selector="#button-1"
+            text="Text inside tooltip"
+            mouse-over-tooltip="true"
+          >
+            <p className="sdds-detail-05 sdds-u-m0 tooltip-paragraph">
+              Paragraph tag inside of Tooltip with
+              <b>bold</b>
+              and
+              <i>italic</i>
+              tags too.
+            </p>
+          </sdds-tooltip>
+
+          <sdds-button size="sm" id="button-1" text="Hover me"></sdds-button>
+        </div>
       </div>
     </>
   );
