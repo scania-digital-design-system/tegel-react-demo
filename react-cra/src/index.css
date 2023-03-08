@@ -45,3 +45,9 @@ main {
     flex-wrap: nowrap;
     align-items: center;
 }
+
+.tooltip-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

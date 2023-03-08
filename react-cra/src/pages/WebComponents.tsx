@@ -369,6 +369,27 @@ export default function WebComponents() {
           Label
         </sdds-toggle>
       </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Tooltip</div>
+        <div className="tooltip-container">
+          <sdds-tooltip
+            placement="bottom"
+            selector="#button-1"
+            text="Text inside tooltip"
+            mouse-over-tooltip="true"
+          >
+            <p className="sdds-detail-05 sdds-u-m0">
+              Paragraph tag inside of Tooltip with
+              <b>bold</b>
+              and
+              <i>italic</i>
+              tags too.
+            </p>
+          </sdds-tooltip>
+
+          <sdds-button size="sm" id="button-1" text="Hover me"></sdds-button>
+        </div>
+      </div>
     </>
   );
 }
