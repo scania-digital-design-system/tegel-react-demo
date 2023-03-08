@@ -378,7 +378,7 @@ export default function WebComponents() {
             text="Text inside tooltip"
             mouse-over-tooltip="true"
           >
-            <p className="sdds-detail-05 sdds-u-m0">
+            <p className="sdds-detail-05 sdds-u-m0 tooltip-paragraph">
               Paragraph tag inside of Tooltip with
               <b>bold</b>
               and
