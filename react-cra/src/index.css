@@ -66,3 +66,7 @@ main {
      justify-content: center;
      align-items: center;
 }
+
+.tooltip-paragraph b, i{
+    padding: 0 2px;
+}
