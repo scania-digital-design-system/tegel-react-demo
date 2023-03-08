@@ -55,3 +55,8 @@ main {
 .tooltip-paragraph b, i{
     padding: 0 2px;
 }
+.popover-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
