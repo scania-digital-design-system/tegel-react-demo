@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="sdds-nav sdds-u-sticky sdds-u-top0">
+      <nav className="sdds-nav sdds-u-top0 sdds-u-absolute">
         <div className="sdds-nav__left">
           <div className="sdds-nav__app-name">React Demo</div>
         </div>
