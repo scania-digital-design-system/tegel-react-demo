@@ -1,6 +1,9 @@
+import { useState } from "react";
 import DataTableNative from "../components/DataTableNative";
 
 export default function NativeComponents() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <div>
@@ -67,6 +70,58 @@ export default function NativeComponents() {
         <a href="/" className="sdds-link">
           This is a link.
         </a>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
+        <sdds-button
+          onClick={() => {
+            setModalOpen(true);
+          }}
+          text="Open modal"
+        ></sdds-button>
+        <div
+          id="my-modal"
+          className={`sdds-modal-backdrop demo-styles ${
+            modalOpen ? "show" : "hide"
+          }`}
+        >
+          <div className="sdds-modal sdds-modal-lg sdds-modal__actions-static">
+            <div className="sdds-modal-header">
+              <h5 className="sdds-modal-headline">
+                The buttons for the modal only works in the canvas tab
+              </h5>
+              <button
+                className="sdds-modal-close"
+                aria-label="close"
+                onClick={() => setModalOpen(false)}
+              >
+                <sdds-icon name="cross" size="20px"></sdds-icon>
+              </button>
+            </div>
+            <div className="sdds-modal-body">
+              <p className="sdds-u-mb0 sdds-u-mt0">
+                The steps fell lightly and oddly, with a certain swing, for all
+                they went so slowly; it was different indeed from the heavy
+                creaking tread of Henry Jekyll. Utterson sighed. “Is there never
+                anything else?” he asked.
+              </p>
+            </div>
+            <div className="sdds-modal-actions">
+              <button
+                className="sdds-btn sdds-btn-primary sdds-btn-md"
+                onClick={() => setModalOpen(false)}
+              >
+                Save
+              </button>
+              <button
+                className="sdds-btn sdds-btn-secondary sdds-btn-md"
+                onClick={() => setModalOpen(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
