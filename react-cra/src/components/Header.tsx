@@ -1,6 +1,6 @@
 //https://medium.com/how-to-react/add-an-active-classname-to-the-link-using-react-router-b7c350473916
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
 
@@ -22,14 +22,14 @@ const Header = () => {
         <div className="sdds-nav__center">
           <ul className="sdds-nav__inline-menu">
             <li className={splitLocation[1] === "" || splitLocation[1] === "web-components" ? "sdds-nav__item sdds-nav__item--active" : "sdds-nav__item" }>
-              <a className="sdds-nav__item-core" href="/web-components">
+              <Link className="sdds-nav__item-core" to="/web-components">
                 <span className="sdds-nav__item-core-text">Web</span>
-              </a>
+              </Link>
             </li>
             <li className={(splitLocation[1] === "native-components") ? "sdds-nav__item sdds-nav__item--active" : "sdds-nav__item" }>
-              <a className="sdds-nav__item-core" href="/native-components">
+            <Link className="sdds-nav__item-core" to="/native-components">
                 <span className="sdds-nav__item-core-text">Native</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
