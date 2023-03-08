@@ -284,7 +284,11 @@ export default function WebComponents() {
             ></sdds-icon>
           </sdds-button>
         </div>
-        <sdds-popover-menu selector="#my-popover-button" placement="auto" id="my-popover-menu">
+        <sdds-popover-menu
+          selector="#my-popover-button"
+          placement="auto"
+          id="my-popover-menu"
+        >
           <ul className="sdds-popover-menu-wrapper">
             <li>
               <a
@@ -358,6 +362,12 @@ export default function WebComponents() {
           controls
           show-tick-numbers
         ></sdds-slider>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
+        <sdds-toggle headline="Headline" size="lg">
+          Label
+        </sdds-toggle>
       </div>
     </>
   );
