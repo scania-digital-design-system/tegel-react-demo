@@ -8,6 +8,11 @@ body,
     overflow-y: auto;
   }
 
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
 .App.sdds-mode-light {
     background-color: var(--sdds-white);
 }
@@ -25,11 +30,12 @@ body,
 
 main {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 32px;
     width: 100%;
     max-width: 600px;
     justify-content: center;
-    margin: auto;
-    padding: 64px 0;
+    margin: 0 auto;
+    padding: 128px 0;
 }
