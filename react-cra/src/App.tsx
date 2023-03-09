@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import ModeSwitcher from "./components/ModeSwitcher";
 import Footer from "./components/Footer";
-import SideMenu from "./pages/SideMenu";
+import SideMenu from "./components/SideMenu";
 
 function App() {
   const [mode, setMode] = useState<"light" | "dark">("light");
