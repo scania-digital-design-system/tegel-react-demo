@@ -31,10 +31,6 @@ const router = createBrowserRouter([
         path: "web-components",
         element: <WebComponents />,
       },
-      {
-        path: "side-menu",
-        element: <SideMenu />,
-      },
     ],
   },
 ]);

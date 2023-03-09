@@ -4,8 +4,7 @@ const SideMenu = () => {
 
   const [collapse, setCollapse] = useState(false)
   return (
-    <div className="side-menu-container">
-      <div className="sdds-push demo-wrapper">
+      <div className="sdds-push side-menu-container">
       <div className={`sdds-sidebar side-menu ${collapse && 'collapsed'}`}>
         <div className="sdds-sidebar-mheader">
           <button className="sdds-sidebar-mheader__close">
@@ -132,7 +131,6 @@ const SideMenu = () => {
           </li>
         </ul>
       </div>
-    </div>
     </div>
   );
 };
