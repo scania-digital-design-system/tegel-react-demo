@@ -31,6 +31,11 @@ const Header = () => {
                 <span className="sdds-nav__item-core-text">Native</span>
               </Link>
             </li>
+            <li className={(splitLocation[1] === "side-menu") ? "sdds-nav__item sdds-nav__item--active" : "sdds-nav__item" }>
+            <Link className="sdds-nav__item-core" to="/side-menu">
+                <span className="sdds-nav__item-core-text">Side menu</span>
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="sdds-nav__right">

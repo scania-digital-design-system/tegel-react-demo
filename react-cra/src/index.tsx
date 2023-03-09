@@ -11,6 +11,7 @@ import './register-webcomponents';
 import App from './App';
 import NativeComponents from "./pages/NativeComponents";
 import WebComponents from "./pages/WebComponents";
+import SideMenu from './pages/SideMenu';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "web-components",
         element: <WebComponents />,
+      },
+      {
+        path: "side-menu",
+        element: <SideMenu />,
       },
     ],
   },

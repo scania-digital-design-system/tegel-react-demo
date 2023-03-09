@@ -40,6 +40,12 @@ main {
     padding: 128px 0;
 }
 
+main.side-menu-page{
+    margin: unset;
+    padding: unset;
+    padding-top: 64px;
+}
+
 .popover-container {
     display: flex;
     flex-wrap: nowrap;
@@ -69,4 +75,9 @@ main {
 
 .tooltip-paragraph b, i{
     padding: 0 2px;
+}
+
+
+.side-menu-container {
+    height: 100%;
 }
