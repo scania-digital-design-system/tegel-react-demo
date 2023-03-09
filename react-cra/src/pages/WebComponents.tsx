@@ -1,8 +1,7 @@
 import { useState } from "react";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
-
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       <div>
@@ -232,11 +231,19 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
-        <sdds-button onClick={() => {
-          setModalOpen(true)
-        }} 
-        text="Open modal"></sdds-button>
-        <sdds-modal open={modalOpen} prevent id="my-modal" size="lg" actions="static">
+        <sdds-button
+          onClick={() => {
+            setModalOpen(true);
+          }}
+          text="Open modal"
+        ></sdds-button>
+        <sdds-modal
+          open={modalOpen}
+          prevent
+          id="my-modal"
+          size="lg"
+          actions="static"
+        >
           <h5 className="sdds-modal-headline" slot="sdds-modal-headline">
             The buttons for the modal only works in the canvas tab
           </h5>
@@ -250,7 +257,7 @@ export default function WebComponents() {
             slot="sdds-modal-actions"
             className="sdds-btn sdds-btn-danger sdds-btn-md"
             onClick={() => {
-              setModalOpen(false)
+              setModalOpen(false);
             }}
           >
             Delete
@@ -259,114 +266,12 @@ export default function WebComponents() {
             slot="sdds-modal-actions"
             className="sdds-btn sdds-btn-secondary sdds-btn-md"
             onClick={() => {
-              setModalOpen(false)
+              setModalOpen(false);
             }}
           >
             Cancel
           </button>
         </sdds-modal>
-      </div>
-      <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
-        <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
-
-        <div className="popover-container">
-          <sdds-button
-            aria-label="menu"
-            only-icon
-            id="trigger"
-            type="ghost"
-            size="sm"
-          >
-            <sdds-icon
-              slot="icon"
-              className="sdds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></sdds-icon>
-          </sdds-button>
-        </div>
-        <sdds-popover-canvas
-          placement="auto"
-          selector="#trigger"
-          className="sdds-u-p2"
-        >
-          <h2>A popover canvas!</h2>
-          <p>Where you can put anything you want!</p>
-          <p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
-              Even links!
-            </a>
-          </p>
-        </sdds-popover-canvas>
-
-        <div className="sdds-headline-03 sdds-u-pb1">Menu</div>
-
-        <div className="popover-container">
-          <sdds-button
-            aria-label="menu"
-            only-icon
-            id="my-popover-button"
-            type="ghost"
-            size="sm"
-          >
-            <sdds-icon
-              slot="icon"
-              className="sdds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></sdds-icon>
-          </sdds-button>
-        </div>
-        <sdds-popover-menu
-          selector="#my-popover-button"
-          placement="auto"
-          id="my-popover-menu"
-        >
-          <ul className="sdds-popover-menu-wrapper">
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
-                </i>
-                Menu item 1
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
-                </i>
-                Menu item 2
-              </a>
-            </li>
-            <li className="divider"></li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
-                </i>
-                Menu item 4
-              </a>
-            </li>
-          </ul>
-        </sdds-popover-menu>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
@@ -504,10 +409,19 @@ export default function WebComponents() {
         ></sdds-slider>
       </div>
       <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Spinner</div>
+        <div className="sdds-headline-03 sdds-u-pb1">Standard</div>
+
+        <sdds-spinner variant="standard"></sdds-spinner>
+        <div className="sdds-headline-03 sdds-u-pb1">Inverted</div>
+
+        <sdds-spinner variant="inverted"></sdds-spinner>
+      </div>
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
-         <sdds-toast type="success" header="Header">
+        <sdds-toast type="success" header="Header">
           <div slot="toast-subheader">Longer message</div>
-        </sdds-toast>   
+        </sdds-toast>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
