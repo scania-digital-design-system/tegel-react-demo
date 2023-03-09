@@ -28,18 +28,21 @@ body,
     right: 32px;
 }
 
+.container {
+    display: flex;
+
+}
+
 main {
     display: flex;
     flex: 1;
     flex-direction: column;
     gap: 32px;
-    width: 100%;
     max-width: 600px;
     justify-content: center;
     margin: 0 auto;
     padding: 128px 0;
 }
-
 .popover-container {
     display: flex;
     flex-wrap: nowrap;
