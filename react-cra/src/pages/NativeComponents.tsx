@@ -124,6 +124,31 @@ export default function NativeComponents() {
         </div>
       </div>
       <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
+        <div className="sdds-toast sdds-toast-success">
+          <div className="sdds-toast-icon">
+            <sdds-icon name="tick" size="20px"></sdds-icon>
+          </div>
+
+          <div className="sdds-toast-content">
+            <div className="sdds-toast-header">
+              <span className="sdds-toast-headline">Header</span>
+              <button
+                type="button"
+                aria-label="close"
+                className="sdds-toast-close"
+              >
+                <sdds-icon name="cross" size="20px"></sdds-icon>
+              </button>
+            </div>
+
+            <div className="sdds-toast-body">
+              <span className="sdds-toast-subheadline">Longer message</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
         <div className="sdds-toggle">
           <div className="sdds-toggle-headline">Headline</div>

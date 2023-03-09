@@ -266,9 +266,6 @@ export default function WebComponents() {
           </button>
         </sdds-modal>
       </div>
-
-
-
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
         <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
@@ -505,6 +502,12 @@ export default function WebComponents() {
           controls
           show-tick-numbers
         ></sdds-slider>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
+         <sdds-toast type="success" header="Header">
+          <div slot="toast-subheader">Longer message</div>
+        </sdds-toast>   
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
