@@ -473,6 +473,19 @@ export default function WebComponents() {
           </a>
         </sdds-navigation-tabs>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Textarea</div>
+        <sdds-textarea
+            rows={4}
+            state="error"
+            label="Hello label"
+            helper="Good guess, but wrong answer buddy"
+            label-position="outside"
+            placeholder="Placeholder test"
+        ></sdds-textarea>
+      </div>
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Text fields</div>
         <div className="sdds-headline-04 sdds-u-pb1">Standard medium size</div>
