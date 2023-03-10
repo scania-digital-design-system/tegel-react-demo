@@ -172,6 +172,25 @@ export default function NativeComponents() {
           This is a link.
         </a>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Message</div>
+        <div
+            className="sdds-message sdds-message-type-error sdds-message-icon-active sdds-message-extended-active"
+        >
+          <div>
+            <sdds-icon
+                className="sdds-message-icon sdds-message-icon-error"
+                name="error"
+                size="20"
+            ></sdds-icon>
+          </div>
+          <h4 className="sdds-message-single">Single line message goes here.</h4>
+          <p className="sdds-message-extended">
+            Longer message text can be placed here. Longer message text can be placed here.
+          </p>
+        </div>
+      </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
         <sdds-button
