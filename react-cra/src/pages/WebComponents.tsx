@@ -421,6 +421,11 @@ export default function WebComponents() {
         <sdds-spinner variant="inverted"></sdds-spinner>
       </div>
       <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Text fields</div>
+        <div className="sdds-headline-04 sdds-u-pb1">Standard medium size</div>
+        <sdds-textfield size="md" placeholder="Placeholder"></sdds-textfield>
+      </div>
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
         <sdds-toast type="success" header="Header">
           <div slot="toast-subheader">Longer message</div>
