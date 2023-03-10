@@ -97,7 +97,14 @@ export default function NativeComponents() {
             <sdds-icon style={{fontSize: '20px'}} name="arrow_right"></sdds-icon>
           </div>
         </div>
+      </div>
 
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
+        <div className="sdds-checkbox-item">
+          <input className="sdds-form-input" type="checkbox" id="native-checkbox"/>
+          <label className="sdds-form-label" htmlFor="native-checkbox">Label</label>
+        </div>
       </div>
 
       <div>
