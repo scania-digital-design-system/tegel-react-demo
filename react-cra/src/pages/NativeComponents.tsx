@@ -13,7 +13,7 @@ export default function NativeComponents() {
           <div className="sdds-banner-body">
             <h6 className="sdds-banner-header">Warning</h6>
             <div className="sdds-banner-subheader">Insufficient amount of memory</div>
-            <a className="sdds-link sdds-banner-link" href="https://www.scania.com" target="_blank">Click her to read more</a>
+            <a className="sdds-link sdds-banner-link" href="https://www.scania.com" target="_self" rel="noreferrer">Click her to read more</a>
           </div>
           <button type="button" aria-label="close" className="sdds-banner-close">
             <sdds-icon name="cross" size="20px"></sdds-icon>
@@ -51,9 +51,9 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Breadcrumb</div>
         <div className="sdds-breadcrumb">
-          <div className="sdds-breadcrumb-item"><a href="#">Page 1</a></div>
-          <div className="sdds-breadcrumb-item"><a href="#">Page 2</a></div>
-          <div className="sdds-breadcrumb-item sdds-breadcrumb-item-current"><a aria-current="page">Page 3</a></div>
+          <div className="sdds-breadcrumb-item"><a href="https://www.scania.com" >Page 1</a></div>
+          <div className="sdds-breadcrumb-item"><a href="https://www.scania.com" >Page 2</a></div>
+          <div className="sdds-breadcrumb-item sdds-breadcrumb-item-current"><a href="https://www.scania.com" aria-current="page">Page 3</a></div>
         </div>
       </div>
 
@@ -81,11 +81,14 @@ export default function NativeComponents() {
           <img
               className="sdds-card-img"
               src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=5494&q=80"
-              alt="Add description to image"
+              alt="Truck on the road"
           />
           <div className="sdds-card-header-avatar">
             <div className="sdds-card-avatar">
-              <img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"/>
+              <img
+                  src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                  alt="Person avatar"
+              />
             </div>
             <div className="sdds-card-headlines">
               <h6 className="sdds-card-headline">Header text</h6>
@@ -286,6 +289,7 @@ export default function NativeComponents() {
           </label>
         </div>
       </div>
+
     </>
   );
 }
