@@ -7,6 +7,21 @@ export default function NativeComponents() {
   return (
     <>
       <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
+        <div className="sdds-banner sdds-banner-error">
+          <span className="sdds-banner-prefix"><sdds-icon name="warning" size="20px"></sdds-icon></span>
+          <div className="sdds-banner-body">
+            <h6 className="sdds-banner-header">Warning</h6>
+            <div className="sdds-banner-subheader">Insufficient amount of memory</div>
+            <a className="sdds-link sdds-banner-link" href="https://www.scania.com" target="_blank">Click her to read more</a>
+          </div>
+          <button type="button" aria-label="close" className="sdds-banner-close">
+            <sdds-icon name="cross" size="20px"></sdds-icon>
+          </button>
+        </div>
+      </div>
+
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
