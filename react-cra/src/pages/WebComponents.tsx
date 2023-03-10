@@ -421,6 +421,19 @@ export default function WebComponents() {
 
         <sdds-spinner variant="inverted"></sdds-spinner>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
+        <sdds-stepper size="lg" label-position="below" direction="horizontal">
+          <sdds-stepper-item state="success" label-text="Step label">1</sdds-stepper-item>
+          <sdds-stepper-item state="error" label-text="Step label">2</sdds-stepper-item>
+          <sdds-stepper-item label-text="Step inactive with text">3</sdds-stepper-item>
+          <sdds-stepper-item label-text="Step label">4</sdds-stepper-item>
+        </sdds-stepper>
+
+      </div>
+
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
