@@ -57,6 +57,25 @@ export default function NativeComponents() {
         </div>
       </div>
 
+      <div className="sdds-u-w-100">
+        <div className="sdds-headline-02 sdds-u-pb1">Buttons</div>
+        <button className="sdds-btn sdds-btn-primary sdds-btn-lg sdds-btn-fullbleed">
+          <span className="sdds-btn-text">Primary fullbleed button</span>
+        </button>
+        <div
+            className="sdds-u-mt2 sdds-u-flex"
+            style={{ justifyContent: "space-around" }}
+        >
+          <button className="sdds-btn sdds-btn-danger sdds-btn-md">
+            <span className="sdds-btn-text">Delete file</span>
+            <i className="sdds-btn-icon sdds-icon trash"></i>
+          </button>
+          <button className="sdds-btn sdds-btn-ghost sdds-btn-sm sdds-btn-icon sdds-btn-only-icon">
+            <i className="sdds-btn-icon sdds-icon save"></i>
+          </button>
+        </div>
+      </div>
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
         <div className="sdds-radio-button-group">
