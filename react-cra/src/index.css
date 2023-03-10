@@ -31,7 +31,8 @@ body,
 
 .container {
     display: flex;
-
+    padding-top: 64px;
+    position: relative;
 }
 
 main {
