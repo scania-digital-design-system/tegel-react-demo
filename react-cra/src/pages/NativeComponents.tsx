@@ -47,6 +47,16 @@ export default function NativeComponents() {
           </div>
         </div>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Breadcrumb</div>
+        <div className="sdds-breadcrumb">
+          <div className="sdds-breadcrumb-item"><a href="#">Page 1</a></div>
+          <div className="sdds-breadcrumb-item"><a href="#">Page 2</a></div>
+          <div className="sdds-breadcrumb-item sdds-breadcrumb-item-current"><a aria-current="page">Page 3</a></div>
+        </div>
+      </div>
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
         <div className="sdds-radio-button-group">
