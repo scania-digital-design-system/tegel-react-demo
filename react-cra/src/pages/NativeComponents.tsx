@@ -77,6 +77,30 @@ export default function NativeComponents() {
       </div>
 
       <div>
+        <div className="sdds-card">
+          <img
+              className="sdds-card-img"
+              src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=5494&q=80"
+              alt="Add description to image"
+          />
+          <div className="sdds-card-header-avatar">
+            <div className="sdds-card-avatar">
+              <img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"/>
+            </div>
+            <div className="sdds-card-headlines">
+              <h6 className="sdds-card-headline">Header text</h6>
+              <h6 className="sdds-card-sub-headline">Subheader text</h6>
+            </div>
+          </div>
+          <div className="sdds-card-body">Hello in a body text</div>
+          <div className="sdds-card-footer">
+            <sdds-icon style={{fontSize: '20px'}} name="arrow_right"></sdds-icon>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
