@@ -250,6 +250,41 @@ export default function NativeComponents() {
       </div>
 
       <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
+        <div className="sdds-stepper">
+          <div className="sdds-stepper__step sdds-stepper__step--value">
+            <div className="sdds-stepper__step-icon">
+              <span className="sdds-stepper__step-icon-value">1</span>
+            </div>
+            <label className="sdds-stepper__step_label">Step value</label>
+          </div>
+
+          <div className="sdds-stepper__step sdds-stepper__step--warning">
+            <div className="sdds-stepper__step-icon">
+              <i className="sdds-icon warning"></i>
+            </div>
+            <label className="sdds-stepper__step_label">Step warning</label>
+          </div>
+
+          <div className="sdds-stepper__step sdds-stepper__step--inactive">
+            <div className="sdds-stepper__step-icon">
+              <span className="sdds-stepper__step-icon-value">3</span>
+            </div>
+            <label className="sdds-stepper__step_label">Step inactive with text</label>
+          </div>
+
+          <div className="sdds-stepper__step sdds-stepper__step--success">
+            <div className="sdds-stepper__step-icon">
+              <i className="sdds-icon tick"></i>
+            </div>
+            <label className="sdds-stepper__step_label">Step success</label>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
         <div className="sdds-toast sdds-toast-success">
           <div className="sdds-toast-icon">
