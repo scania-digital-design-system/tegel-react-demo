@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
@@ -277,18 +278,18 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
         <sdds-radio-button
-            name="rb-example"
-            value="option1"
-            radio-id="option-1"
-            checked
+          name="rb-example"
+          value="option1"
+          radio-id="option-1"
+          checked
         >
           Label text 1
         </sdds-radio-button>
 
         <sdds-radio-button
-            name="rb-example"
-            value="option2"
-            radio-id="option-2"
+          name="rb-example"
+          value="option2"
+          radio-id="option-2"
         >
           Label text 2
         </sdds-radio-button>
@@ -419,6 +420,58 @@ export default function WebComponents() {
         <div className="sdds-headline-03 sdds-u-pb1">Inverted</div>
 
         <sdds-spinner variant="inverted"></sdds-spinner>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
+        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
+        <sdds-inline-tabs>
+          <sdds-inline-tab label="Tab with tall content">
+            <div data-name="Tab with tall content">Tab panel 1</div>
+          </sdds-inline-tab>
+          <sdds-inline-tab label="Default tab" default>
+            Tab panel 2
+          </sdds-inline-tab>
+          <sdds-inline-tab label="Disabled tab" disabled>
+            Tab panel 3
+          </sdds-inline-tab>
+        </sdds-inline-tabs>
+        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">
+          Inline-fullbleed
+        </div>
+        <sdds-inline-tabs-fullbleed id="inline-tabs-fullbleed-example">
+          <a href="#">Tab name</a>
+          <a href="#" className="sdds-inline-tabs-fullbleed--tab__active">
+            Active tab
+          </a>
+          <a href="#">Tab name</a>
+          <a href="#">Tab name</a>
+          <a
+            href="#"
+            className="sdds-inline-tabs-fullbleed--tab__disabled"
+            aria-disabled="true"
+            tabIndex={-1}
+          >
+            Disabled tab
+          </a>
+        </sdds-inline-tabs-fullbleed>
+
+        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Navigation</div>
+        <sdds-navigation-tabs>
+          <a href="#" className="sdds-navigation-tabs-tab-active">
+            Active tab
+          </a>
+          <a href="#">Tab name</a>
+          <a href="#">Tab name</a>
+          <a href="#">Tab name</a>
+          <a
+            role="link"
+            aria-disabled="true"
+            tabIndex={-1}
+            className="sdds-navigation-tabs-tab-disabled"
+          >
+            Disabled tab
+          </a>
+        </sdds-navigation-tabs>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Text fields</div>
