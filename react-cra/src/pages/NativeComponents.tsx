@@ -107,36 +107,7 @@ export default function NativeComponents() {
         </div>
       </div>
 
-      <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
-        <div className="sdds-radio-button-group">
-          <div className="sdds-radio-item">
-            <input
-              className="sdds-form-input"
-              type="radio"
-              name="rb-example"
-              id="rb-option-1"
-              defaultChecked={true}
-            />
-            <label className="sdds-form-label" htmlFor="rb-option-1">
-              Label text 1
-            </label>
-          </div>
-        </div>
-        <div className="sdds-radio-button-group">
-          <div className="sdds-radio-item">
-            <input
-              className="sdds-form-input"
-              type="radio"
-              name="rb-example"
-              id="rb-option-2"
-            />
-            <label className="sdds-form-label" htmlFor="rb-option-2">
-              Label text 2
-            </label>
-          </div>
-        </div>
-      </div>
+
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Chip</div>
@@ -243,6 +214,38 @@ export default function NativeComponents() {
           </div>
         </div>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
+        <div className="sdds-radio-button-group">
+          <div className="sdds-radio-item">
+            <input
+                className="sdds-form-input"
+                type="radio"
+                name="rb-example"
+                id="rb-option-1"
+                defaultChecked={true}
+            />
+            <label className="sdds-form-label" htmlFor="rb-option-1">
+              Label text 1
+            </label>
+          </div>
+        </div>
+        <div className="sdds-radio-button-group">
+          <div className="sdds-radio-item">
+            <input
+                className="sdds-form-input"
+                type="radio"
+                name="rb-example"
+                id="rb-option-2"
+            />
+            <label className="sdds-form-label" htmlFor="rb-option-2">
+              Label text 2
+            </label>
+          </div>
+        </div>
+      </div>
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
         <div className="sdds-toast sdds-toast-success">

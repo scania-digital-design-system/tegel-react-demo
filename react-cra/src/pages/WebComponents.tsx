@@ -273,6 +273,27 @@ export default function WebComponents() {
           </button>
         </sdds-modal>
       </div>
+
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
+        <sdds-radio-button
+            name="rb-example"
+            value="option1"
+            radio-id="option-1"
+            checked
+        >
+          Label text 1
+        </sdds-radio-button>
+
+        <sdds-radio-button
+            name="rb-example"
+            value="option2"
+            radio-id="option-2"
+        >
+          Label text 2
+        </sdds-radio-button>
+      </div>
+
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
         <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
@@ -375,25 +396,7 @@ export default function WebComponents() {
           </ul>
         </sdds-popover-menu>
       </div>
-      <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
-        <sdds-radio-button
-          name="rb-example"
-          value="option1"
-          radio-id="option-1"
-          checked
-        >
-          Label text 1
-        </sdds-radio-button>
 
-        <sdds-radio-button
-          name="rb-example"
-          value="option2"
-          radio-id="option-2"
-        >
-          Label text 2
-        </sdds-radio-button>
-      </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Slider</div>
         <sdds-slider
