@@ -210,6 +210,31 @@ export default function WebComponents() {
           Option 3
         </sdds-dropdown-option>
       </sdds-dropdown>
+      <div className="sdds-headline-04 sdds-u-pb1">Filter</div>
+
+      <sdds-dropdown-filter
+        id="sdds-dropdown-filter"
+        size="lg"
+        placeholder="Placeholder"
+        open-direction="auto"
+        label-position="no-label"
+        state="false"
+        data='[
+              {
+                "value": "option-1",
+                "label":"Jakarta"
+              },
+              {
+                "value":"option-2"
+                ,"label":"Stockholm"
+              },
+              {
+                "value":"option-3",
+                "label":"Barcelona"
+              }
+            ]'
+        default-option="option-1"
+      ></sdds-dropdown-filter>
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Link</div>
@@ -425,14 +450,18 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
         <sdds-stepper size="lg" label-position="below" direction="horizontal">
-          <sdds-stepper-item state="success" label-text="Step label">1</sdds-stepper-item>
-          <sdds-stepper-item state="error" label-text="Step label">2</sdds-stepper-item>
-          <sdds-stepper-item label-text="Step inactive with text">3</sdds-stepper-item>
+          <sdds-stepper-item state="success" label-text="Step label">
+            1
+          </sdds-stepper-item>
+          <sdds-stepper-item state="error" label-text="Step label">
+            2
+          </sdds-stepper-item>
+          <sdds-stepper-item label-text="Step inactive with text">
+            3
+          </sdds-stepper-item>
           <sdds-stepper-item label-text="Step label">4</sdds-stepper-item>
         </sdds-stepper>
-
       </div>
-
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
@@ -490,12 +519,12 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Textarea</div>
         <sdds-textarea
-            rows={4}
-            state="error"
-            label="Hello label"
-            helper="Good guess, but wrong answer buddy"
-            label-position="outside"
-            placeholder="Placeholder test"
+          rows={4}
+          state="error"
+          label="Hello label"
+          helper="Good guess, but wrong answer buddy"
+          label-position="outside"
+          placeholder="Placeholder test"
         ></sdds-textarea>
       </div>
 
