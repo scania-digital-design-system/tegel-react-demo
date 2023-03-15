@@ -9,35 +9,66 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
         <div className="sdds-banner sdds-banner-error">
-          <span className="sdds-banner-prefix"><sdds-icon name="error" size="20px"></sdds-icon></span>
+          <span className="sdds-banner-prefix">
+            <sdds-icon name="error" size="20px"></sdds-icon>
+          </span>
           <div className="sdds-banner-body">
             <h6 className="sdds-banner-header">Warning</h6>
-            <div className="sdds-banner-subheader">Insufficient amount of memory</div>
-            <a className="sdds-link sdds-banner-link" href="https://www.scania.com" target="_self" rel="noreferrer">Click her to read more</a>
+            <div className="sdds-banner-subheader">
+              Insufficient amount of memory
+            </div>
+            <a
+              className="sdds-link sdds-banner-link"
+              href="https://www.scania.com"
+              target="_self"
+              rel="noreferrer"
+            >
+              Click her to read more
+            </a>
           </div>
-          <button type="button" aria-label="close" className="sdds-banner-close">
+          <button
+            type="button"
+            aria-label="close"
+            className="sdds-banner-close"
+          >
             <sdds-icon name="cross" size="20px"></sdds-icon>
           </button>
         </div>
         <div className="sdds-banner sdds-banner-default">
-          <span className="sdds-banner-prefix"><sdds-icon name="truck" size="20px"></sdds-icon></span>
+          <span className="sdds-banner-prefix">
+            <sdds-icon name="truck" size="20px"></sdds-icon>
+          </span>
           <div className="sdds-banner-body">
             <h6 className="sdds-banner-header">This is a header text area</h6>
             <div className="sdds-banner-subheader">SubHeader text area</div>
-            <a href="/" className="sdds-link sdds-banner-link">Learn more</a>
+            <a href="/" className="sdds-link sdds-banner-link">
+              Learn more
+            </a>
           </div>
-          <button type="button" aria-label="close" className="sdds-banner-close">
+          <button
+            type="button"
+            aria-label="close"
+            className="sdds-banner-close"
+          >
             <sdds-icon name="cross" size="20px"></sdds-icon>
           </button>
         </div>
         <div className="sdds-banner sdds-banner-info">
-          <span className="sdds-banner-prefix"><sdds-icon name="truck" size="20px"></sdds-icon></span>
+          <span className="sdds-banner-prefix">
+            <sdds-icon name="truck" size="20px"></sdds-icon>
+          </span>
           <div className="sdds-banner-body">
             <h6 className="sdds-banner-header">This is a header text area</h6>
             <div className="sdds-banner-subheader">SubHeader text area</div>
-            <a href="/" className="sdds-link sdds-banner-link">Learn more</a>
+            <a href="/" className="sdds-link sdds-banner-link">
+              Learn more
+            </a>
           </div>
-          <button type="button" aria-label="close" className="sdds-banner-close">
+          <button
+            type="button"
+            aria-label="close"
+            className="sdds-banner-close"
+          >
             <sdds-icon name="cross" size="20px"></sdds-icon>
           </button>
         </div>
@@ -47,24 +78,29 @@ export default function NativeComponents() {
         <div className="sdds-block">
           <h2 className="sdds-headline-02">Block</h2>
           <p className="sdds-body-01">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
-            ultrices. Nunc venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
-            consectetur interdum. Vestibulum condimentum, augue vitae lobortis rhoncus, mi est ultricies mi,
-            sed tincidunt magna nibh in lectus. Pellentesque vel vulputate orci, vel lacinia orci. Sed
-            suscipit leo at diam ullamcorper, vitae volutpat neque dapibus. Maecenas sit amet rhoncus arcu.
-            Sed sed molestie elit. Nullam in interdum est, vitae aliquam ipsum. Nunc rutrum nibh ut arcu
-            egestas egestas.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
+            sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
+            consectetur interdum. Vestibulum condimentum, augue vitae lobortis
+            rhoncus, mi est ultricies mi, sed tincidunt magna nibh in lectus.
+            Pellentesque vel vulputate orci, vel lacinia orci. Sed suscipit leo
+            at diam ullamcorper, vitae volutpat neque dapibus. Maecenas sit amet
+            rhoncus arcu. Sed sed molestie elit. Nullam in interdum est, vitae
+            aliquam ipsum. Nunc rutrum nibh ut arcu egestas egestas.
           </p>
           <div className="sdds-block">
             <h3 className="sdds-headline-04">Nested block</h3>
             <p className="sdds-detail-03">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
-              ultrices. Nunc venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
-              consectetur interdum. Vestibulum condimentum, augue vitae lobortis rhoncus, mi est ultricies
-              mi, sed tincidunt magna nibh in lectus. Pellentesque vel vulputate orci, vel lacinia orci. Sed
-              suscipit leo at diam ullamcorper, vitae volutpat neque dapibus. Maecenas sit amet rhoncus
-              arcu. Sed sed molestie elit. Nullam in interdum est, vitae aliquam ipsum. Nunc rutrum nibh ut
-              arcu egestas egestas.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
+              sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
+              consectetur interdum. Vestibulum condimentum, augue vitae lobortis
+              rhoncus, mi est ultricies mi, sed tincidunt magna nibh in lectus.
+              Pellentesque vel vulputate orci, vel lacinia orci. Sed suscipit
+              leo at diam ullamcorper, vitae volutpat neque dapibus. Maecenas
+              sit amet rhoncus arcu. Sed sed molestie elit. Nullam in interdum
+              est, vitae aliquam ipsum. Nunc rutrum nibh ut arcu egestas
+              egestas.
             </p>
           </div>
         </div>
@@ -73,9 +109,17 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Breadcrumb</div>
         <div className="sdds-breadcrumb">
-          <div className="sdds-breadcrumb-item"><a href="https://www.scania.com" >Page 1</a></div>
-          <div className="sdds-breadcrumb-item"><a href="https://www.scania.com" >Page 2</a></div>
-          <div className="sdds-breadcrumb-item sdds-breadcrumb-item-current"><a href="https://www.scania.com" aria-current="page">Page 3</a></div>
+          <div className="sdds-breadcrumb-item">
+            <a href="https://www.scania.com">Page 1</a>
+          </div>
+          <div className="sdds-breadcrumb-item">
+            <a href="https://www.scania.com">Page 2</a>
+          </div>
+          <div className="sdds-breadcrumb-item sdds-breadcrumb-item-current">
+            <a href="https://www.scania.com" aria-current="page">
+              Page 3
+            </a>
+          </div>
         </div>
       </div>
 
@@ -119,7 +163,10 @@ export default function NativeComponents() {
           </div>
           <div className="sdds-card-body">Hello in a body text</div>
           <div className="sdds-card-footer">
-            <sdds-icon style={{ fontSize: '20px' }} name="arrow_right"></sdds-icon>
+            <sdds-icon
+              style={{ fontSize: "20px" }}
+              name="arrow_right"
+            ></sdds-icon>
           </div>
         </div>
       </div>
@@ -127,12 +174,16 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
         <div className="sdds-checkbox-item">
-          <input className="sdds-form-input" type="checkbox" id="native-checkbox" />
-          <label className="sdds-form-label" htmlFor="native-checkbox">Label</label>
+          <input
+            className="sdds-form-input"
+            type="checkbox"
+            id="native-checkbox"
+          />
+          <label className="sdds-form-label" htmlFor="native-checkbox">
+            Label
+          </label>
         </div>
       </div>
-
-
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Chip</div>
@@ -142,9 +193,17 @@ export default function NativeComponents() {
         <button className="sdds-chip sdds-chip-active">
           <span className="sdds-chip-text">Chip text</span>
         </button>
+        <button className="sdds-chip sdds-chip-icon-right">
+          <div className="sdds-chip-icon">
+            <sdds-icon name="notification" size="16px"></sdds-icon>
+          </div>
+          <span className="sdds-chip-text">Icon right</span>
+        </button>
         <button className="sdds-chip sdds-chip-icon-left">
-          <sdds-icon className="sdds-chip-icon" name="notification"></sdds-icon>
-          <span className="sdds-chip-text">Chip text</span>
+          <div className="sdds-chip-icon">
+            <sdds-icon name="notification" size="16px"></sdds-icon>
+          </div>
+          <span className="sdds-chip-text">Icon left</span>
         </button>
       </div>
 
@@ -171,9 +230,7 @@ export default function NativeComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Message</div>
-        <div
-          className="sdds-message sdds-message-type-error sdds-message-icon-active sdds-message-extended-active"
-        >
+        <div className="sdds-message sdds-message-type-error sdds-message-icon-active sdds-message-extended-active">
           <div>
             <sdds-icon
               className="sdds-message-icon sdds-message-icon-error"
@@ -181,9 +238,12 @@ export default function NativeComponents() {
               size="20"
             ></sdds-icon>
           </div>
-          <h4 className="sdds-message-single">Single line message goes here.</h4>
+          <h4 className="sdds-message-single">
+            Single line message goes here.
+          </h4>
           <p className="sdds-message-extended">
-            Longer message text can be placed here. Longer message text can be placed here.
+            Longer message text can be placed here. Longer message text can be
+            placed here.
           </p>
         </div>
       </div>
@@ -291,7 +351,9 @@ export default function NativeComponents() {
             <div className="sdds-stepper__step-icon">
               <span className="sdds-stepper__step-icon-value">3</span>
             </div>
-            <label className="sdds-stepper__step_label">Step inactive with text</label>
+            <label className="sdds-stepper__step_label">
+              Step inactive with text
+            </label>
           </div>
 
           <div className="sdds-stepper__step sdds-stepper__step--success">
@@ -301,8 +363,6 @@ export default function NativeComponents() {
             <label className="sdds-stepper__step_label">Step success</label>
           </div>
         </div>
-
-
       </div>
 
       <div>
@@ -345,7 +405,6 @@ export default function NativeComponents() {
           </label>
         </div>
       </div>
-
     </>
   );
 }
