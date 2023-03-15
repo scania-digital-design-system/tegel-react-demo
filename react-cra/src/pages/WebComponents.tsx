@@ -27,14 +27,34 @@ export default function WebComponents() {
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
-        <sdds-banner
-          icon="truck"
-          header="This is a header text area"
-          subheader="SubHeader text area"
-          link-text="Learn more"
-          href="tegel.scania.com"
-          link-target="_self"
-        ></sdds-banner>
+        <div className="sdds-mode-dark">
+          <sdds-banner
+            icon="error"
+            header="This is a header text area"
+            subheader="SubHeader text area"
+            link-text="Learn more"
+            href="tegel.scania.com"
+            link-target="_self"
+            type="error"
+          ></sdds-banner>
+          <sdds-banner
+            icon="info"
+            header="This is a header text area"
+            subheader="SubHeader text area"
+            link-text="Learn more"
+            href="tegel.scania.com"
+            link-target="_self"
+            type="information"
+          ></sdds-banner>
+          <sdds-banner
+            icon="truck"
+            header="This is a header text area"
+            subheader="SubHeader text area"
+            link-text="Learn more"
+            href="tegel.scania.com"
+            link-target="_self"
+          ></sdds-banner>
+        </div>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Block</div>
