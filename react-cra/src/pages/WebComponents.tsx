@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
-  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       <div>
@@ -294,18 +292,14 @@ export default function WebComponents() {
           <button
             slot="sdds-modal-actions"
             className="sdds-btn sdds-btn-danger sdds-btn-md"
-            onClick={() => {
-              setModalOpen(false);
-            }}
+            data-dismiss-modal
           >
             Delete
           </button>
           <button
             slot="sdds-modal-actions"
             className="sdds-btn sdds-btn-secondary sdds-btn-md"
-            onClick={() => {
-              setModalOpen(false);
-            }}
+            data-dismiss-modal
           >
             Cancel
           </button>
