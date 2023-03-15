@@ -120,31 +120,123 @@ export default function WebComponents() {
         <sdds-button
           type="primary"
           size="lg"
-          fullbleed
-          text="Primary fullbleed button"
-        ></sdds-button>
-        <div
-          className="sdds-u-mt2 sdds-u-flex"
-          style={{ justifyContent: "space-around" }}
+          text="Primary lg disabled"
+          disabled
         >
-          <sdds-button type="danger" size="sm" text="Delete file">
-            <sdds-icon
-              slot="icon"
-              className="sdds-btn-icon"
-              size="16px"
-              name="document_wrong"
-            ></sdds-icon>
-          </sdds-button>
-          <span></span>
-          <sdds-button type="ghost" size="md" text="">
-            <sdds-icon
-              slot="icon"
-              className="sdds-btn-icon"
-              size="20px"
-              name="trash"
-            ></sdds-icon>
-          </sdds-button>
-        </div>
+          <sdds-icon
+            slot="icon"
+            className="sdds-btn-icon"
+            size="16px"
+            name="fuel_gauge"
+          ></sdds-icon>
+        </sdds-button>
+        <sdds-block>
+          <div
+            className="sdds-mode-variant-secondary"
+            style={{ display: "flex", flexDirection: "column", gap: 12 }}
+          >
+            <sdds-button
+              type="primary"
+              size="lg"
+              text="Primary lg disabled"
+              disabled
+            >
+              <sdds-icon
+                slot="icon"
+                className="sdds-btn-icon"
+                size="16px"
+                name="fuel_gauge"
+              ></sdds-icon>
+            </sdds-button>
+            <div className="sdds-mode-dark sdds-mode-variant-secondary">
+              <sdds-block>
+                <div
+                  className="sdds-mode-variant-primary"
+                  style={{ display: "flex", flexDirection: "column", gap: 12 }}
+                >
+                  <sdds-button
+                    type="primary"
+                    size="lg"
+                    text="Primary lg disabled"
+                    disabled
+                  >
+                    <sdds-icon
+                      slot="icon"
+                      className="sdds-btn-icon"
+                      size="16px"
+                      name="fuel_gauge"
+                    ></sdds-icon>
+                  </sdds-button>
+                  <sdds-block>
+                    <div
+                      className="sdds-mode-variant-secondary"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 12,
+                      }}
+                    >
+                      <sdds-button
+                        type="primary"
+                        size="lg"
+                        text="Primary lg disabled"
+                        disabled
+                      >
+                        <sdds-icon
+                          slot="icon"
+                          className="sdds-btn-icon"
+                          size="16px"
+                          name="fuel_gauge"
+                        ></sdds-icon>
+                      </sdds-button>
+                      <sdds-button
+                        type="primary"
+                        size="lg"
+                        fullbleed
+                        text="Primary fullbleed button"
+                      ></sdds-button>
+                      <sdds-button
+                        type="ghost"
+                        size="sm"
+                        fullbleed
+                        text="Ghost fullbleed button"
+                      >
+                        <sdds-icon
+                          slot="icon"
+                          className="sdds-btn-icon"
+                          size="16px"
+                          name="wifi"
+                        ></sdds-icon>
+                      </sdds-button>
+                      <div
+                        className="sdds-u-flex"
+                        style={{ gap: "var(--sdds-spacing-element-8)" }}
+                      >
+                        <sdds-button type="danger" size="sm" text="Delete file">
+                          <sdds-icon
+                            slot="icon"
+                            className="sdds-btn-icon"
+                            size="16px"
+                            name="document_wrong"
+                          ></sdds-icon>
+                        </sdds-button>
+                        <span></span>
+                        <sdds-button type="secondary" size="md" text="">
+                          <sdds-icon
+                            slot="icon"
+                            className="sdds-btn-icon"
+                            size="20px"
+                            name="trash"
+                          ></sdds-icon>
+                        </sdds-button>
+                      </div>
+                    </div>
+                  </sdds-block>
+                </div>
+              </sdds-block>
+            </div>
+          </div>
+        </sdds-block>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Card</div>
