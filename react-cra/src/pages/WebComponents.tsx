@@ -106,13 +106,13 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
         <sdds-breadcrumb>
-          <sdds-breadcrumb-item href="#">Step one</sdds-breadcrumb-item>
-          <sdds-breadcrumb-item href="www.google.se">
+          <sdds-breadcrumb-link href="#">Step one</sdds-breadcrumb-link>
+          <sdds-breadcrumb-link href="www.google.se">
             Step two
-          </sdds-breadcrumb-item>
-          <sdds-breadcrumb-item current={true}>
+          </sdds-breadcrumb-link>
+          <sdds-breadcrumb-link current={true}>
             Current page
-          </sdds-breadcrumb-item>
+          </sdds-breadcrumb-link>
         </sdds-breadcrumb>
       </div>
       <div className="sdds-u-w-100">
@@ -194,7 +194,6 @@ export default function WebComponents() {
         disabled={false}
         open-direction="auto"
         label-position="no-default"
-        state="default"
         type="default"
         default-option="option-1"
       >
@@ -216,7 +215,6 @@ export default function WebComponents() {
         disabled={false}
         open-direction="auto"
         label-position="no-default"
-        state="default"
         type="multiselect"
         default-option="option-1"
       >
@@ -238,7 +236,6 @@ export default function WebComponents() {
         placeholder="Placeholder"
         open-direction="auto"
         label-position="no-label"
-        state="false"
         data='[
               {
                 "value": "option-1",
@@ -277,14 +274,9 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
-        <sdds-button
-          onClick={() => {
-            setModalOpen(true);
-          }}
-          text="Open modal"
-        ></sdds-button>
+        <sdds-button id="my-modal-button" text="Open modal"></sdds-button>
         <sdds-modal
-          open={modalOpen}
+          selector="#my-modal-button"
           prevent
           id="my-modal"
           size="lg"
@@ -485,54 +477,43 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
+        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Folder</div>
+
+        <sdds-folder-tabs>
+          <sdds-folder-tabs-button>First tab</sdds-folder-tabs-button>
+          <sdds-folder-tabs-button>
+            Second tab is much longer
+          </sdds-folder-tabs-button>
+          <sdds-folder-tabs-button selected>Third tab</sdds-folder-tabs-button>
+          <sdds-folder-tabs-button disabled>Fourth tab</sdds-folder-tabs-button>
+        </sdds-folder-tabs>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
         <sdds-inline-tabs>
-          <sdds-inline-tab label="Tab with tall content">
-            <div data-name="Tab with tall content">Tab panel 1</div>
-          </sdds-inline-tab>
-          <sdds-inline-tab label="Default tab" default>
-            Tab panel 2
-          </sdds-inline-tab>
-          <sdds-inline-tab label="Disabled tab" disabled>
-            Tab panel 3
-          </sdds-inline-tab>
+          <sdds-inline-tabs-link href="#">First tab</sdds-inline-tabs-link>
+          <sdds-inline-tabs-link href="#">
+            Second tab is longer
+          </sdds-inline-tabs-link>
+          <sdds-inline-tabs-link selected href="#">
+            Third tab
+          </sdds-inline-tabs-link>
+          <sdds-inline-tabs-link disabled href="#">
+            Fourth tab
+          </sdds-inline-tabs-link>
         </sdds-inline-tabs>
-        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">
-          Inline-fullbleed
-        </div>
-        <sdds-inline-tabs-fullbleed id="inline-tabs-fullbleed-example">
-          <a href="#">Tab name</a>
-          <a href="#" className="sdds-inline-tabs-fullbleed--tab__active">
-            Active tab
-          </a>
-          <a href="#">Tab name</a>
-          <a href="#">Tab name</a>
-          <a
-            href="#"
-            className="sdds-inline-tabs-fullbleed--tab__disabled"
-            aria-disabled="true"
-            tabIndex={-1}
-          >
-            Disabled tab
-          </a>
-        </sdds-inline-tabs-fullbleed>
-
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Navigation</div>
         <sdds-navigation-tabs>
-          <a href="#" className="sdds-navigation-tabs-tab-active">
-            Active tab
-          </a>
-          <a href="#">Tab name</a>
-          <a href="#">Tab name</a>
-          <a href="#">Tab name</a>
-          <a
-            role="link"
-            aria-disabled="true"
-            tabIndex={-1}
-            className="sdds-navigation-tabs-tab-disabled"
-          >
-            Disabled tab
-          </a>
+          <sdds-navigation-tabs-link selected href="#">
+            First tab
+          </sdds-navigation-tabs-link>
+          <sdds-navigation-tabs-link href="#">
+            Second tab
+          </sdds-navigation-tabs-link>
+          <sdds-navigation-tabs-link href="#">
+            Third tab
+          </sdds-navigation-tabs-link>
+          <sdds-navigation-tabs-link href="#" disabled>
+            Fourth tab
+          </sdds-navigation-tabs-link>
         </sdds-navigation-tabs>
       </div>
 
