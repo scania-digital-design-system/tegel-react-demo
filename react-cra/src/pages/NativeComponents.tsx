@@ -9,11 +9,33 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
         <div className="sdds-banner sdds-banner-error">
-          <span className="sdds-banner-prefix"><sdds-icon name="warning" size="20px"></sdds-icon></span>
+          <span className="sdds-banner-prefix"><sdds-icon name="error" size="20px"></sdds-icon></span>
           <div className="sdds-banner-body">
             <h6 className="sdds-banner-header">Warning</h6>
             <div className="sdds-banner-subheader">Insufficient amount of memory</div>
             <a className="sdds-link sdds-banner-link" href="https://www.scania.com" target="_self" rel="noreferrer">Click her to read more</a>
+          </div>
+          <button type="button" aria-label="close" className="sdds-banner-close">
+            <sdds-icon name="cross" size="20px"></sdds-icon>
+          </button>
+        </div>
+        <div className="sdds-banner sdds-banner-default">
+          <span className="sdds-banner-prefix"><sdds-icon name="truck" size="20px"></sdds-icon></span>
+          <div className="sdds-banner-body">
+            <h6 className="sdds-banner-header">This is a header text area</h6>
+            <div className="sdds-banner-subheader">SubHeader text area</div>
+            <a href="/" className="sdds-link sdds-banner-link">Learn more</a>
+          </div>
+          <button type="button" aria-label="close" className="sdds-banner-close">
+            <sdds-icon name="cross" size="20px"></sdds-icon>
+          </button>
+        </div>
+        <div className="sdds-banner sdds-banner-info">
+          <span className="sdds-banner-prefix"><sdds-icon name="truck" size="20px"></sdds-icon></span>
+          <div className="sdds-banner-body">
+            <h6 className="sdds-banner-header">This is a header text area</h6>
+            <div className="sdds-banner-subheader">SubHeader text area</div>
+            <a href="/" className="sdds-link sdds-banner-link">Learn more</a>
           </div>
           <button type="button" aria-label="close" className="sdds-banner-close">
             <sdds-icon name="cross" size="20px"></sdds-icon>
@@ -63,8 +85,8 @@ export default function NativeComponents() {
           <span className="sdds-btn-text">Primary fullbleed button</span>
         </button>
         <div
-            className="sdds-u-mt2 sdds-u-flex"
-            style={{ justifyContent: "space-around" }}
+          className="sdds-u-mt2 sdds-u-flex"
+          style={{ justifyContent: "space-around" }}
         >
           <button className="sdds-btn sdds-btn-danger sdds-btn-md">
             <span className="sdds-btn-text">Delete file</span>
@@ -79,15 +101,15 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-card">
           <img
-              className="sdds-card-img"
-              src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=5494&q=80"
-              alt="Truck on the road"
+            className="sdds-card-img"
+            src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=5494&q=80"
+            alt="Truck on the road"
           />
           <div className="sdds-card-header-avatar">
             <div className="sdds-card-avatar">
               <img
-                  src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
-                  alt="Person avatar"
+                src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                alt="Person avatar"
               />
             </div>
             <div className="sdds-card-headlines">
@@ -97,7 +119,7 @@ export default function NativeComponents() {
           </div>
           <div className="sdds-card-body">Hello in a body text</div>
           <div className="sdds-card-footer">
-            <sdds-icon style={{fontSize: '20px'}} name="arrow_right"></sdds-icon>
+            <sdds-icon style={{ fontSize: '20px' }} name="arrow_right"></sdds-icon>
           </div>
         </div>
       </div>
@@ -105,7 +127,7 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
         <div className="sdds-checkbox-item">
-          <input className="sdds-form-input" type="checkbox" id="native-checkbox"/>
+          <input className="sdds-form-input" type="checkbox" id="native-checkbox" />
           <label className="sdds-form-label" htmlFor="native-checkbox">Label</label>
         </div>
       </div>
@@ -150,13 +172,13 @@ export default function NativeComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Message</div>
         <div
-            className="sdds-message sdds-message-type-error sdds-message-icon-active sdds-message-extended-active"
+          className="sdds-message sdds-message-type-error sdds-message-icon-active sdds-message-extended-active"
         >
           <div>
             <sdds-icon
-                className="sdds-message-icon sdds-message-icon-error"
-                name="error"
-                size="20"
+              className="sdds-message-icon sdds-message-icon-error"
+              name="error"
+              size="20"
             ></sdds-icon>
           </div>
           <h4 className="sdds-message-single">Single line message goes here.</h4>
@@ -175,9 +197,8 @@ export default function NativeComponents() {
         ></sdds-button>
         <div
           id="my-modal"
-          className={`sdds-modal-backdrop demo-styles ${
-            modalOpen ? "show" : "hide"
-          }`}
+          className={`sdds-modal-backdrop demo-styles ${modalOpen ? "show" : "hide"
+            }`}
         >
           <div className="sdds-modal sdds-modal-lg sdds-modal__actions-static">
             <div className="sdds-modal-header">
@@ -223,11 +244,11 @@ export default function NativeComponents() {
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
             <input
-                className="sdds-form-input"
-                type="radio"
-                name="rb-example"
-                id="rb-option-1"
-                defaultChecked={true}
+              className="sdds-form-input"
+              type="radio"
+              name="rb-example"
+              id="rb-option-1"
+              defaultChecked={true}
             />
             <label className="sdds-form-label" htmlFor="rb-option-1">
               Label text 1
@@ -237,10 +258,10 @@ export default function NativeComponents() {
         <div className="sdds-radio-button-group">
           <div className="sdds-radio-item">
             <input
-                className="sdds-form-input"
-                type="radio"
-                name="rb-example"
-                id="rb-option-2"
+              className="sdds-form-input"
+              type="radio"
+              name="rb-example"
+              id="rb-option-2"
             />
             <label className="sdds-form-label" htmlFor="rb-option-2">
               Label text 2
