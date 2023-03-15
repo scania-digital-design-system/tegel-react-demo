@@ -183,6 +183,11 @@ export default function WebComponents() {
         ></sdds-datetime>
       </div>
 
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Divider</div>
+        <sdds-divider></sdds-divider>
+      </div>
+
       <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
       <div className="sdds-headline-04 sdds-u-pb1">Default</div>
       <sdds-dropdown
