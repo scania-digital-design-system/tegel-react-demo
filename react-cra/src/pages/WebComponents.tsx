@@ -537,7 +537,7 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
         <sdds-toggle headline="Headline" size="lg">
-          Label
+          <div slot="label">Label</div>
         </sdds-toggle>
       </div>
       <div>
