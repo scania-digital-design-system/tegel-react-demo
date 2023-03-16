@@ -6,9 +6,9 @@ import Footer from "./components/Footer";
 import SideMenu from "./components/SideMenu";
 
 function App() {
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<"Light" | "Dark">("Light");
   return (
-    <div className={`App sdds-mode-${mode}`}>
+    <div className={`App sdds-mode-${mode.toLowerCase()}`}>
       <Header />
       <ModeSwitcher mode={mode} setMode={setMode} />
       <div className="container">

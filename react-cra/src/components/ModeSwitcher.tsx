@@ -1,16 +1,17 @@
 import { Dispatch, SetStateAction } from "react";
 
 interface ModeSwitcherProps {
-    mode: "light" | "dark";
-    setMode: Dispatch<SetStateAction<"light" | "dark">>;
-  }
-
-const ModeSwitcher = ({mode, setMode}: ModeSwitcherProps) => {
+  mode: "Light" | "Dark";
+  setMode: Dispatch<SetStateAction<"Light" | "Dark">>;
+}
+const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
   return (
     <div className="mode-switcher">
-        <sdds-toggle ref={toggle => toggle?.addEventListener('sddsToggle', () => {
-          setMode(mode === "light" ? "dark" : "light")
-        })}>Dark/Light mode</sdds-toggle>
+      <sdds-toggle ref={toggle => toggle?.addEventListener('sddsToggle', () => {
+        setMode(mode === "Light" ? "Dark" : "Light")
+      })}>
+        <div slot="label">{mode} mode</div>
+      </sdds-toggle>
     </div>
   );
 };
