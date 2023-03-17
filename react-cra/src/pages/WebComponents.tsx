@@ -478,40 +478,50 @@ export default function WebComponents() {
         <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Folder</div>
 
+
         <sdds-folder-tabs>
-          <sdds-folder-tabs-button>First tab</sdds-folder-tabs-button>
           <sdds-folder-tabs-button>
-            Second tab is much longer
+            <div slot="label">First tab</div>
           </sdds-folder-tabs-button>
-          <sdds-folder-tabs-button selected>Third tab</sdds-folder-tabs-button>
-          <sdds-folder-tabs-button disabled>Fourth tab</sdds-folder-tabs-button>
+          <sdds-folder-tabs-button>
+            <div slot="label">Second tab is much longer</div>
+          </sdds-folder-tabs-button>
+          <sdds-folder-tabs-button selected>
+            <div slot="label">Third tab</div>
+          </sdds-folder-tabs-button>
+          <sdds-folder-tabs-button disabled>
+            <div slot="label">Fourth tab</div>
+          </sdds-folder-tabs-button>
         </sdds-folder-tabs>
+
+
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
+
         <sdds-inline-tabs>
-          <sdds-inline-tabs-link href="#">First tab</sdds-inline-tabs-link>
           <sdds-inline-tabs-link href="#">
-            Second tab is longer
+            <div slot="label">First tab</div>
+          </sdds-inline-tabs-link>
+          <sdds-inline-tabs-link href="#">
+            <div slot="label">Second tab is longer</div>
           </sdds-inline-tabs-link>
           <sdds-inline-tabs-link selected href="#">
-            Third tab
+            <div slot="label">Third tab</div>
           </sdds-inline-tabs-link>
           <sdds-inline-tabs-link disabled href="#">
-            Fourth tab
+            <div slot="label">Fourth tab</div>
           </sdds-inline-tabs-link>
         </sdds-inline-tabs>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Navigation</div>
         <sdds-navigation-tabs>
           <sdds-navigation-tabs-link selected href="#">
-            First tab
+            <div slot="label">First tab</div>
           </sdds-navigation-tabs-link>
           <sdds-navigation-tabs-link href="#">
-            Second tab
+            <div slot="label">Second is much longer</div>
           </sdds-navigation-tabs-link>
-          <sdds-navigation-tabs-link href="#">
-            Third tab
-          </sdds-navigation-tabs-link>
+          <sdds-navigation-tabs-link href="#"><div slot="label">Third tab</div></sdds-navigation-tabs-link>
           <sdds-navigation-tabs-link href="#" disabled>
-            Fourth tab
+            <div slot="label">Fourth tab</div>
           </sdds-navigation-tabs-link>
         </sdds-navigation-tabs>
       </div>
