@@ -25,34 +25,26 @@ export default function WebComponents() {
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
-        <div className="sdds-mode-dark">
-          <sdds-banner
-            icon="error"
-            header="This is a header text area"
-            subheader="SubHeader text area"
-            link-text="Learn more"
-            href="tegel.scania.com"
-            link-target="_self"
-            type="error"
-          ></sdds-banner>
-          <sdds-banner
-            icon="info"
-            header="This is a header text area"
-            subheader="SubHeader text area"
-            link-text="Learn more"
-            href="tegel.scania.com"
-            link-target="_self"
-            type="information"
-          ></sdds-banner>
-          <sdds-banner
-            icon="truck"
-            header="This is a header text area"
-            subheader="SubHeader text area"
-            link-text="Learn more"
-            href="tegel.scania.com"
-            link-target="_self"
-          ></sdds-banner>
-        </div>
+        <sdds-banner
+          icon="error"
+          header="This is a header text area"
+          type="error"
+        >
+          <div slot="banner-subheader">Subheader slot</div>
+          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+        </sdds-banner>
+        <sdds-banner
+          icon="info"
+          header="This is a header text area"
+          type="information"
+        >
+          <div slot="banner-subheader">Subheader slot</div>
+          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+        </sdds-banner>
+        <sdds-banner icon="truck" header="This is a header text area">
+          <div slot="banner-subheader">Subheader slot</div>
+          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+        </sdds-banner>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Block</div>
@@ -478,7 +470,6 @@ export default function WebComponents() {
         <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Folder</div>
 
-
         <sdds-folder-tabs>
           <sdds-folder-tabs-button>
             <div slot="label">First tab</div>
@@ -493,7 +484,6 @@ export default function WebComponents() {
             <div slot="label">Fourth tab</div>
           </sdds-folder-tabs-button>
         </sdds-folder-tabs>
-
 
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
 
@@ -519,7 +509,9 @@ export default function WebComponents() {
           <sdds-navigation-tabs-link href="#">
             <div slot="label">Second is much longer</div>
           </sdds-navigation-tabs-link>
-          <sdds-navigation-tabs-link href="#"><div slot="label">Third tab</div></sdds-navigation-tabs-link>
+          <sdds-navigation-tabs-link href="#">
+            <div slot="label">Third tab</div>
+          </sdds-navigation-tabs-link>
           <sdds-navigation-tabs-link href="#" disabled>
             <div slot="label">Fourth tab</div>
           </sdds-navigation-tabs-link>
