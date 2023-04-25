@@ -45,24 +45,33 @@ export default function Footer() {
   ) : (
     <sdds-footer>
       <div slot="main-left">
-        <sdds-footer-link-group>
-          <sdds-footer-link link-href="#">Link text</sdds-footer-link>
-          <sdds-footer-link link-href="#">Link text</sdds-footer-link>
-          <sdds-footer-link link-href="#">Link text</sdds-footer-link>
-        </sdds-footer-link-group>
+        <sdds-footer-group>
+          <sdds-footer-item>
+            <a href="#">Link text</a>
+          </sdds-footer-item>
+          <sdds-footer-item>
+            <a href="#">Link text</a>
+          </sdds-footer-item>
+          <sdds-footer-item>
+            <a href="#">Link text</a>
+          </sdds-footer-item>
+          <sdds-footer-item>
+            <a href="#">Link text</a>
+          </sdds-footer-item>
+        </sdds-footer-group>
       </div>
       <div slot="main-right">
-        <sdds-footer-link-group>
-          <sdds-footer-link link-href="#">
-            <sdds-icon name="truck"></sdds-icon>
-          </sdds-footer-link>
-          <sdds-footer-link link-href="#">
-            <sdds-icon name="truck"></sdds-icon>
-          </sdds-footer-link>
-          <sdds-footer-link link-href="#">
-            <sdds-icon name="truck"></sdds-icon>
-          </sdds-footer-link>
-        </sdds-footer-link-group>
+        <sdds-footer-group>
+          <sdds-footer-item>
+            <a href="#"><sdds-icon name="truck"></sdds-icon></a>
+          </sdds-footer-item>
+          <sdds-footer-item>
+            <a href="#"><sdds-icon name="truck"></sdds-icon></a>
+          </sdds-footer-item>
+          <sdds-footer-item>
+            <a href="#"><sdds-icon name="truck"></sdds-icon></a>
+          </sdds-footer-item>
+        </sdds-footer-group>
       </div>
     </sdds-footer>
   );

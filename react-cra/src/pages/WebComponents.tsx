@@ -31,7 +31,7 @@ export default function WebComponents() {
           type="error"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
         </sdds-banner>
         <sdds-banner
           icon="info"
@@ -39,11 +39,11 @@ export default function WebComponents() {
           type="information"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
         </sdds-banner>
         <sdds-banner icon="truck" header="This is a header text area">
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link" href="/">Link example</sdds-link>
+          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
         </sdds-banner>
       </div>
       <div>
@@ -96,13 +96,13 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
         <sdds-breadcrumb>
-          <sdds-breadcrumb-link href="#">Step one</sdds-breadcrumb-link>
-          <sdds-breadcrumb-link href="www.google.se">
-            Step two
-          </sdds-breadcrumb-link>
-          <sdds-breadcrumb-link current={true}>
+          <sdds-breadcrumb-item ><a href="/">Step one</a></sdds-breadcrumb-item>
+          <sdds-breadcrumb-item>
+            <a href="/">Step two</a>
+          </sdds-breadcrumb-item>
+          <sdds-breadcrumb-item current={true}>
             Current page
-          </sdds-breadcrumb-link>
+          </sdds-breadcrumb-item>
         </sdds-breadcrumb>
       </div>
       <div className="sdds-u-w-100">
@@ -250,8 +250,8 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Link</div>
-        <sdds-link href="#" target="_self">
-          This is a link.
+        <sdds-link>
+          <a href="#">This is a link</a>
         </sdds-link>
       </div>
 
@@ -452,7 +452,7 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
-        <sdds-stepper size="lg" label-position="below" direction="horizontal">
+        <sdds-stepper size="lg" label-position="below" orientation="horizontal">
           <sdds-stepper-item state="success" label-text="Step label">
             1
           </sdds-stepper-item>
@@ -471,50 +471,51 @@ export default function WebComponents() {
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Folder</div>
 
         <sdds-folder-tabs>
-          <sdds-folder-tabs-button>
-            <div slot="label">First tab</div>
-          </sdds-folder-tabs-button>
-          <sdds-folder-tabs-button>
-            <div slot="label">Second tab is much longer</div>
-          </sdds-folder-tabs-button>
-          <sdds-folder-tabs-button selected>
-            <div slot="label">Third tab</div>
-          </sdds-folder-tabs-button>
-          <sdds-folder-tabs-button disabled>
-            <div slot="label">Fourth tab</div>
-          </sdds-folder-tabs-button>
+          <sdds-folder-tab>
+            <button>First tab</button>
+          </sdds-folder-tab>
+          <sdds-folder-tab>
+            <button>Second tab is much longer</button>
+          </sdds-folder-tab>
+          <sdds-folder-tab>
+            <button>Third tab</button>
+          </sdds-folder-tab>
+          <sdds-folder-tab disabled>
+            <button>Fourth tab</button>
+          </sdds-folder-tab>
         </sdds-folder-tabs>
 
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
 
         <sdds-inline-tabs>
-          <sdds-inline-tabs-link href="#">
-            <div slot="label">First tab</div>
-          </sdds-inline-tabs-link>
-          <sdds-inline-tabs-link href="#">
-            <div slot="label">Second tab is longer</div>
-          </sdds-inline-tabs-link>
-          <sdds-inline-tabs-link selected href="#">
-            <div slot="label">Third tab</div>
-          </sdds-inline-tabs-link>
-          <sdds-inline-tabs-link disabled href="#">
-            <div slot="label">Fourth tab</div>
-          </sdds-inline-tabs-link>
+          <sdds-inline-tab>
+            <button>First tab</button>
+          </sdds-inline-tab>
+          <sdds-inline-tab>
+            <button>Second tab is much longer</button>
+          </sdds-inline-tab>
+          <sdds-inline-tab>
+            <button>Third tab</button>
+          </sdds-inline-tab>
+          <sdds-inline-tab disabled>
+            <button>Fourth tab</button>
+          </sdds-inline-tab>
         </sdds-inline-tabs>
         <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Navigation</div>
+
         <sdds-navigation-tabs>
-          <sdds-navigation-tabs-link selected href="#">
-            <div slot="label">First tab</div>
-          </sdds-navigation-tabs-link>
-          <sdds-navigation-tabs-link href="#">
-            <div slot="label">Second is much longer</div>
-          </sdds-navigation-tabs-link>
-          <sdds-navigation-tabs-link href="#">
-            <div slot="label">Third tab</div>
-          </sdds-navigation-tabs-link>
-          <sdds-navigation-tabs-link href="#" disabled>
-            <div slot="label">Fourth tab</div>
-          </sdds-navigation-tabs-link>
+          <sdds-navigation-tab>
+            <a href="#">First tab</a>
+          </sdds-navigation-tab>
+          <sdds-navigation-tab>
+            <a href="#">Second tab is much longer</a>
+          </sdds-navigation-tab>
+          <sdds-navigation-tab>
+            <a href="#">Third tab</a>
+          </sdds-navigation-tab>
+          <sdds-navigation-tab disabled>
+            <a href="#">Fourth tab</a>
+          </sdds-navigation-tab>
         </sdds-navigation-tabs>
       </div>
 
