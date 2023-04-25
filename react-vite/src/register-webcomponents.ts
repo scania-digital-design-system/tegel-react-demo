@@ -1,4 +1,4 @@
-import { defineCustomElements, JSX as LocalJSX } from '@scania/tegel/dist/loader';
+import { defineCustomElements, JSX as LocalJSX } from '@scania/tegel/loader';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 type StencilProps<T> = {

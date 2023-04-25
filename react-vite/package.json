@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@scania/tegel": "^0.0.4",
+    "@scania/tegel": "^0.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
