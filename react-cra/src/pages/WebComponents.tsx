@@ -251,7 +251,7 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Link</div>
         <sdds-link>
-          <a href="#">This is a link</a>
+          <a href="/">This is a link</a>
         </sdds-link>
       </div>
 
@@ -505,16 +505,16 @@ export default function WebComponents() {
 
         <sdds-navigation-tabs>
           <sdds-navigation-tab>
-            <a href="#">First tab</a>
+            <a href="/">First tab</a>
           </sdds-navigation-tab>
           <sdds-navigation-tab>
-            <a href="#">Second tab is much longer</a>
+            <a href="/">Second tab is much longer</a>
           </sdds-navigation-tab>
           <sdds-navigation-tab>
-            <a href="#">Third tab</a>
+            <a href="/">Third tab</a>
           </sdds-navigation-tab>
           <sdds-navigation-tab disabled>
-            <a href="#">Fourth tab</a>
+            <a href="/">Fourth tab</a>
           </sdds-navigation-tab>
         </sdds-navigation-tabs>
       </div>
