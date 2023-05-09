@@ -9,19 +9,14 @@ import reportWebVitals from './reportWebVitals';
 import './register-webcomponents';
 
 import App from './App';
-import NativeComponents from "./pages/NativeComponents";
 import WebComponents from "./pages/WebComponents";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
-      {
-        path: "native-components",
-        element: <NativeComponents />,
-      },
       {
         path: "",
         element: <WebComponents />,
