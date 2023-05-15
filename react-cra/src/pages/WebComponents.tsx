@@ -21,7 +21,7 @@ export default function WebComponents() {
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Badge</div>
-        <sdds-badges value="1" size="lg"></sdds-badges>
+        <sdds-badge value="1" size="lg"></sdds-badge>
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
