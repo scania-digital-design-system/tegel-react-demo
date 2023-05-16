@@ -2,7 +2,7 @@ export default function Modal() {
   return (
       <>
         <sdds-button id="my-modal-button" text="Open Modal"></sdds-button>
-        <sdds-modal selector="#my-modal-button" show id="my-modal" size="lg" actions="static" prevent>
+        <sdds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static" prevent>
           <h5 className="sdds-modal-headline" slot="sdds-modal-headline">
             Test modal component
           </h5>
