@@ -31,7 +31,9 @@ export default function WebComponents() {
           type="error"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
+          <sdds-link slot="banner-link">
+            <a href="/">Link example</a>
+          </sdds-link>
         </sdds-banner>
         <sdds-banner
           icon="info"
@@ -39,11 +41,15 @@ export default function WebComponents() {
           type="information"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
+          <sdds-link slot="banner-link">
+            <a href="/">Link example</a>
+          </sdds-link>
         </sdds-banner>
         <sdds-banner icon="truck" header="This is a header text area">
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link"><a href="/">Link example</a></sdds-link>
+          <sdds-link slot="banner-link">
+            <a href="/">Link example</a>
+          </sdds-link>
         </sdds-banner>
       </div>
       <div>
@@ -96,12 +102,14 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
         <sdds-breadcrumb>
-          <sdds-breadcrumb-item ><a href="/">Step one</a></sdds-breadcrumb-item>
           <sdds-breadcrumb-item>
-            <a href="/">Step two</a>
+            <a href="#">Page 1</a>
           </sdds-breadcrumb-item>
-          <sdds-breadcrumb-item current={true}>
-            Current page
+          <sdds-breadcrumb-item>
+            <a href="#">Page 2</a>
+          </sdds-breadcrumb-item>
+          <sdds-breadcrumb-item current>
+            <a href="#">Page 3</a>
           </sdds-breadcrumb-item>
         </sdds-breadcrumb>
       </div>
@@ -157,7 +165,15 @@ export default function WebComponents() {
       </div>
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
-        <sdds-checkbox>Checkbox</sdds-checkbox>
+        <sdds-checkbox value="checkbox-value">
+          <div slot="label">Label</div>
+        </sdds-checkbox>
+      </div>
+      <div>
+        <div className="sdds-headline-02 sdds-u-pb1">Chip</div>
+        <sdds-chip type="button" size="lg">
+          <span slot="label">Label</span>
+        </sdds-chip>
       </div>
 
       <div>
@@ -269,37 +285,24 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
-        <sdds-button id="my-modal-button" text="Open modal"></sdds-button>
-        <sdds-modal
-          selector="#my-modal-button"
-          prevent
-          id="my-modal"
-          size="lg"
-          actions="static"
-        >
+        <sdds-button id="my-modal-button" text="Open Modal"></sdds-button>
+        <sdds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static">
           <h5 className="sdds-modal-headline" slot="sdds-modal-headline">
-            The buttons for the modal only works in the canvas tab
+            The buttons for the Modal only works in the canvas tab
           </h5>
           <span slot="sdds-modal-body">
-            The steps fell lightly and oddly, with a certain swing, for all they
-            went so slowly; it was different indeed from the heavy creaking
-            tread of Henry Jekyll. Utterson sighed. “Is there never anything
-            else?” he asked.
+            The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+            different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there never
+            anything else?” he asked.
           </span>
-          <button
+          <sdds-button
             slot="sdds-modal-actions"
-            className="sdds-btn sdds-btn-danger sdds-btn-md"
             data-dismiss-modal
-          >
-            Delete
-          </button>
-          <button
-            slot="sdds-modal-actions"
-            className="sdds-btn sdds-btn-secondary sdds-btn-md"
-            data-dismiss-modal
-          >
-            Cancel
-          </button>
+            size="md"
+            text="Delete"
+            type="danger"
+          ></sdds-button>
+          <sdds-button slot="sdds-modal-actions" data-dismiss-modal size="md" text="Cancel"></sdds-button>
         </sdds-modal>
       </div>
 
@@ -308,18 +311,17 @@ export default function WebComponents() {
         <sdds-radio-button
           name="rb-example"
           value="option1"
-          radio-id="option-1"
-          checked
+          radio-id="option-2"
         >
-          Label text 1
+          <div slot="label">Label text 1</div>
         </sdds-radio-button>
 
         <sdds-radio-button
           name="rb-example"
-          value="option2"
+          value="option1"
           radio-id="option-2"
         >
-          Label text 2
+          <div slot="label">Label text 2</div>
         </sdds-radio-button>
       </div>
 
@@ -453,16 +455,18 @@ export default function WebComponents() {
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
         <sdds-stepper size="lg" label-position="below" orientation="horizontal">
-          <sdds-stepper-item state="success" label-text="Step label">
-            1
+          <sdds-stepper-item state="success" index="1">
+            <div slot="label">Success step</div>
           </sdds-stepper-item>
-          <sdds-stepper-item state="error" label-text="Step label">
-            2
+          <sdds-stepper-item state="error" index="2">
+            <div slot="label">Error step</div>
           </sdds-stepper-item>
-          <sdds-stepper-item label-text="Step inactive with text">
-            3
+          <sdds-stepper-item state="current" index="3">
+            <div slot="label">Current step</div>
           </sdds-stepper-item>
-          <sdds-stepper-item label-text="Step label">4</sdds-stepper-item>
+          <sdds-stepper-item index="4">
+            <div slot="label">Upcoming step</div>
+          </sdds-stepper-item>
         </sdds-stepper>
       </div>
 
