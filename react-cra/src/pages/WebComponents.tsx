@@ -285,37 +285,24 @@ export default function WebComponents() {
 
       <div>
         <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
-        <sdds-button id="my-modal-button" text="Open modal"></sdds-button>
-        <sdds-modal
-          selector="#my-modal-button"
-          prevent
-          id="my-modal"
-          size="lg"
-          actions="static"
-        >
+        <sdds-button id="my-modal-button" text="Open Modal"></sdds-button>
+        <sdds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static">
           <h5 className="sdds-modal-headline" slot="sdds-modal-headline">
-            The buttons for the modal only works in the canvas tab
+            The buttons for the Modal only works in the canvas tab
           </h5>
           <span slot="sdds-modal-body">
-            The steps fell lightly and oddly, with a certain swing, for all they
-            went so slowly; it was different indeed from the heavy creaking
-            tread of Henry Jekyll. Utterson sighed. “Is there never anything
-            else?” he asked.
+            The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+            different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there never
+            anything else?” he asked.
           </span>
-          <button
+          <sdds-button
             slot="sdds-modal-actions"
-            className="sdds-btn sdds-btn-danger sdds-btn-md"
             data-dismiss-modal
-          >
-            Delete
-          </button>
-          <button
-            slot="sdds-modal-actions"
-            className="sdds-btn sdds-btn-secondary sdds-btn-md"
-            data-dismiss-modal
-          >
-            Cancel
-          </button>
+            size="md"
+            text="Delete"
+            type="danger"
+          ></sdds-button>
+          <sdds-button slot="sdds-modal-actions" data-dismiss-modal size="md" text="Cancel"></sdds-button>
         </sdds-modal>
       </div>
 
