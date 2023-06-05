@@ -7,76 +7,76 @@ function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
   let sideMenu: any;
   return (
-    <div className={`App sdds-mode-${mode.toLowerCase()}`}>
+    <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <ModeSwitcher mode={mode} setMode={setMode} />
-      <sdds-header className="demo-header">
-        <sdds-header-hamburger
+      <tds-header className="demo-header">
+        <tds-header-hamburger
             aria-expanded="false"
             aria-label="Open application drawer"
             aria-haspopup="true"
             onClick={() => {
               sideMenu.open = true;
             }}
-        ></sdds-header-hamburger>
+        ></tds-header-hamburger>
 
-        <sdds-header-title>My Application</sdds-header-title>
-        <sdds-header-brand-symbol
+        <tds-header-title>My Application</tds-header-title>
+        <tds-header-brand-symbol
             slot="end"
             link-href="https://scania.com"
             aria-label="Scania - red gryphon on blue shield"
-        ></sdds-header-brand-symbol>
-      </sdds-header>
+        ></tds-header-brand-symbol>
+      </tds-header>
 
       <div className="container">
-        <sdds-side-menu ref={(element) => sideMenu = element} aria-label="Side menu" id="demo-side-menu" persistent>
-          <sdds-side-menu-overlay
+        <tds-side-menu ref={(element) => sideMenu = element} aria-label="Side menu" id="demo-side-menu" persistent>
+          <tds-side-menu-overlay
               slot="overlay"
-          ></sdds-side-menu-overlay>
+          ></tds-side-menu-overlay>
 
-          <sdds-side-menu-close-button
+          <tds-side-menu-close-button
               slot="close-button"
               aria-label="Close drawer menu"
               onClick={() => {
                 sideMenu.open = false;
               }}
-          ></sdds-side-menu-close-button>
+          ></tds-side-menu-close-button>
 
-          <sdds-side-menu-item>
+          <tds-side-menu-item>
             <button>
-              <sdds-icon name="timer" size="24"></sdds-icon>
+              <tds-icon name="timer" size="24"></tds-icon>
               About us
             </button>
-          </sdds-side-menu-item>
+          </tds-side-menu-item>
 
-          <sdds-side-menu-item>
+          <tds-side-menu-item>
             <button>
-              <sdds-icon name="truck" size="24"></sdds-icon>
+              <tds-icon name="truck" size="24"></tds-icon>
               Trucks
             </button>
-          </sdds-side-menu-item>
+          </tds-side-menu-item>
 
-          <sdds-side-menu-dropdown default-open selected>
-            <sdds-icon slot="button-icon" name="profile" size="24"></sdds-icon>
+          <tds-side-menu-dropdown default-open selected>
+            <tds-icon slot="button-icon" name="profile" size="24"></tds-icon>
             <span slot="button-label">Wheel types</span>
-            <sdds-side-menu-dropdown-list>
-              <sdds-side-menu-dropdown-list-item>
+            <tds-side-menu-dropdown-list>
+              <tds-side-menu-dropdown-list-item>
                 <a href="https://www.scania.com">Hub-centric wheel</a>
-              </sdds-side-menu-dropdown-list-item>
-              <sdds-side-menu-dropdown-list-item selected>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item selected>
                 <a href="https://www.scania.com" aria-current="page">
                   Rim wheel
                 </a>
-              </sdds-side-menu-dropdown-list-item>
-            </sdds-side-menu-dropdown-list>
-          </sdds-side-menu-dropdown>
+              </tds-side-menu-dropdown-list-item>
+            </tds-side-menu-dropdown-list>
+          </tds-side-menu-dropdown>
 
-          <sdds-side-menu-item>
+          <tds-side-menu-item>
             <button>
-              <sdds-icon name="star" size="24"></sdds-icon>
+              <tds-icon name="star" size="24"></tds-icon>
               Values
             </button>
-          </sdds-side-menu-item>
-        </sdds-side-menu>
+          </tds-side-menu-item>
+        </tds-side-menu>
         <main>
           <Outlet />
         </main>

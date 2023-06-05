@@ -1,5 +1,5 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
-@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
+@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/tds-icons.css');
 
 html,
 body,
@@ -14,12 +14,12 @@ body,
     flex-direction: column;
 }
 
-.App.sdds-mode-light {
-    background-color: var(--sdds-white);
+.App.tds-mode-light {
+    background-color: var(--tds-white);
 }
 
-.App.sdds-mode-dark {
-    background-color: var(--sdds-black);
+.App.tds-mode-dark {
+    background-color: var(--tds-black);
 }
 
 .mode-switcher {

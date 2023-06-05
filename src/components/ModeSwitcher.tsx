@@ -7,11 +7,11 @@ interface ModeSwitcherProps {
 const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
   return (
     <div className="mode-switcher">
-      <sdds-toggle ref={toggle => toggle?.addEventListener('sddsToggle', () => {
+      <tds-toggle ref={toggle => toggle?.addEventListener('tdsToggle', () => {
         setMode(mode === "Light" ? "Dark" : "Light")
       })}>
         <div slot="label">{mode} mode</div>
-      </sdds-toggle>
+      </tds-toggle>
     </div>
   );
 };
