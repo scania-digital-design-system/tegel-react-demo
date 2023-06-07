@@ -102,15 +102,15 @@ export default function WebComponents() {
       <div>
         <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
         <tds-breadcrumb>
-          <tds-breadcrumb-item>
+          <tds-breadcrumb>
             <a href="#">Page 1</a>
-          </tds-breadcrumb-item>
-          <tds-breadcrumb-item>
+          </tds-breadcrumb>
+          <tds-breadcrumb>
             <a href="#">Page 2</a>
-          </tds-breadcrumb-item>
-          <tds-breadcrumb-item current>
+          </tds-breadcrumb>
+          <tds-breadcrumb current>
             <a href="#">Page 3</a>
-          </tds-breadcrumb-item>
+          </tds-breadcrumb>
         </tds-breadcrumb>
       </div>
       <div className="tds-u-w-100">
@@ -455,18 +455,18 @@ export default function WebComponents() {
       <div>
         <div className="tds-headline-02 tds-u-pb1">Stepper</div>
         <tds-stepper size="lg" label-position="below" orientation="horizontal">
-          <tds-stepper-item state="success" index="1">
+          <tds-step state="success" index="1">
             <div slot="label">Success step</div>
-          </tds-stepper-item>
-          <tds-stepper-item state="error" index="2">
+          </tds-step>
+          <tds-step state="error" index="2">
             <div slot="label">Error step</div>
-          </tds-stepper-item>
-          <tds-stepper-item state="current" index="3">
+          </tds-step>
+          <tds-step state="current" index="3">
             <div slot="label">Current step</div>
-          </tds-stepper-item>
-          <tds-stepper-item index="4">
+          </tds-step>
+          <tds-step index="4">
             <div slot="label">Upcoming step</div>
-          </tds-stepper-item>
+          </tds-step>
         </tds-stepper>
       </div>
 
@@ -538,7 +538,7 @@ export default function WebComponents() {
       <div>
         <div className="tds-headline-02 tds-u-pb1">Text fields</div>
         <div className="tds-headline-04 tds-u-pb1">Standard medium size</div>
-        <tds-textfield size="md" placeholder="Placeholder"></tds-textfield>
+        <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Toast</div>
