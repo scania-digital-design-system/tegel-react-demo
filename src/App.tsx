@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import ModeSwitcher from "./components/ModeSwitcher";
 import Footer from "./components/Footer";
+import { Link } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
+  const { pathname } = useLocation();  
   let sideMenu: any;
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
@@ -20,6 +23,14 @@ function App() {
         ></tds-header-hamburger>
 
         <tds-header-title>My Application</tds-header-title>
+
+        <tds-header-item selected={pathname.includes('web-components')}>
+          <Link to="web-components">Components</Link>
+        </tds-header-item>
+
+        <tds-header-item selected={pathname.includes('form')}>
+          <Link to="form">Form</Link>
+        </tds-header-item>
         <tds-header-brand-symbol
             slot="end"
             link-href="https://scania.com"
