@@ -4,59 +4,59 @@ export default function WebComponents() {
   return (
     <>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Accordion</div>
-        <sdds-accordion>
-          <sdds-accordion-item header="First item">
+        <div className="tds-headline-02 tds-u-pb1">Accordion</div>
+        <tds-accordion>
+          <tds-accordion-item header="First item">
             This is the panel, which contains associated information with the
             header. Usually it contains text, set in the same size as the
             header. Lorem ipsum doler sit amet.
-          </sdds-accordion-item>
-          <sdds-accordion-item header="Second item">
+          </tds-accordion-item>
+          <tds-accordion-item header="Second item">
             This is the panel, which contains associated information with the
             header. Usually it contains text, set in the same size as the
             header. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Duis laoreet vestibulum fermentum.
-          </sdds-accordion-item>
-        </sdds-accordion>
+          </tds-accordion-item>
+        </tds-accordion>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Badge</div>
-        <sdds-badge value="1" size="lg"></sdds-badge>
+        <div className="tds-headline-02 tds-u-pb1">Badge</div>
+        <tds-badge value="1" size="lg"></tds-badge>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Banner</div>
-        <sdds-banner
+        <div className="tds-headline-02 tds-u-pb1">Banner</div>
+        <tds-banner
           icon="error"
           header="This is a header text area"
           type="error"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link">
+          <tds-link slot="banner-link">
             <a href="/">Link example</a>
-          </sdds-link>
-        </sdds-banner>
-        <sdds-banner
+          </tds-link>
+        </tds-banner>
+        <tds-banner
           icon="info"
           header="This is a header text area"
           type="information"
         >
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link">
+          <tds-link slot="banner-link">
             <a href="/">Link example</a>
-          </sdds-link>
-        </sdds-banner>
-        <sdds-banner icon="truck" header="This is a header text area">
+          </tds-link>
+        </tds-banner>
+        <tds-banner icon="truck" header="This is a header text area">
           <div slot="banner-subheader">Subheader slot</div>
-          <sdds-link slot="banner-link">
+          <tds-link slot="banner-link">
             <a href="/">Link example</a>
-          </sdds-link>
-        </sdds-banner>
+          </tds-link>
+        </tds-banner>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Block</div>
-        <sdds-block>
-          <div className="sdds-headline-01">Headline</div>
-          <p className="sdds-body-01">
+        <div className="tds-headline-02 tds-u-pb1">Block</div>
+        <tds-block>
+          <div className="tds-headline-01">Headline</div>
+          <p className="tds-body-01">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
             condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
             sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
@@ -67,9 +67,9 @@ export default function WebComponents() {
             rhoncus arcu. Sed sed molestie elit. Nullam in interdum est, vitae
             aliquam ipsum. Nunc rutrum nibh ut arcu egestas egestas.
           </p>
-          <sdds-block>
-            <div className="sdds-headline-01">Headline</div>
-            <p className="sdds-body-01">
+          <tds-block>
+            <div className="tds-headline-01">Headline</div>
+            <p className="tds-body-01">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
               condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
               sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
@@ -81,9 +81,9 @@ export default function WebComponents() {
               est, vitae aliquam ipsum. Nunc rutrum nibh ut arcu egestas
               egestas.
             </p>
-            <sdds-block>
-              <div className="sdds-headline-01">Headline</div>
-              <p className="sdds-body-01">
+            <tds-block>
+              <div className="tds-headline-01">Headline</div>
+              <p className="tds-body-01">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 condimentum nisi ut eleifend ultrices. Nunc venenatis maximus
                 sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula
@@ -95,58 +95,58 @@ export default function WebComponents() {
                 Nullam in interdum est, vitae aliquam ipsum. Nunc rutrum nibh ut
                 arcu egestas egestas.
               </p>
-            </sdds-block>
-          </sdds-block>
-        </sdds-block>
+            </tds-block>
+          </tds-block>
+        </tds-block>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Breadcrumbs</div>
-        <sdds-breadcrumb>
-          <sdds-breadcrumb-item>
+        <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
+        <tds-breadcrumb>
+          <tds-breadcrumb>
             <a href="#">Page 1</a>
-          </sdds-breadcrumb-item>
-          <sdds-breadcrumb-item>
+          </tds-breadcrumb>
+          <tds-breadcrumb>
             <a href="#">Page 2</a>
-          </sdds-breadcrumb-item>
-          <sdds-breadcrumb-item current>
+          </tds-breadcrumb>
+          <tds-breadcrumb current>
             <a href="#">Page 3</a>
-          </sdds-breadcrumb-item>
-        </sdds-breadcrumb>
+          </tds-breadcrumb>
+        </tds-breadcrumb>
       </div>
-      <div className="sdds-u-w-100">
-        <div className="sdds-headline-02 sdds-u-pb1">Buttons</div>
-        <sdds-button
+      <div className="tds-u-w-100">
+        <div className="tds-headline-02 tds-u-pb1">Buttons</div>
+        <tds-button
           type="primary"
           size="lg"
           fullbleed
           text="Primary fullbleed button"
-        ></sdds-button>
+        ></tds-button>
         <div
-          className="sdds-u-mt2 sdds-u-flex"
+          className="tds-u-mt2 tds-u-flex"
           style={{ justifyContent: "space-around" }}
         >
-          <sdds-button type="danger" size="sm" text="Delete file">
-            <sdds-icon
+          <tds-button type="danger" size="sm" text="Delete file">
+            <tds-icon
               slot="icon"
-              className="sdds-btn-icon"
+              className="tds-btn-icon"
               size="16px"
               name="document_wrong"
-            ></sdds-icon>
-          </sdds-button>
+            ></tds-icon>
+          </tds-button>
           <span></span>
-          <sdds-button type="ghost" size="md" text="">
-            <sdds-icon
+          <tds-button type="ghost" size="md" text="">
+            <tds-icon
               slot="icon"
-              className="sdds-btn-icon"
+              className="tds-btn-icon"
               size="20px"
               name="trash"
-            ></sdds-icon>
-          </sdds-button>
+            ></tds-icon>
+          </tds-button>
         </div>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Card</div>
-        <sdds-card
+        <div className="tds-headline-02 tds-u-pb1">Card</div>
+        <tds-card
           header="Card title"
           header-placement="below"
           subheader="Subheader text"
@@ -156,50 +156,50 @@ export default function WebComponents() {
         >
           <div slot="card-body">Here is a short description in body text</div>
           <div slot="card-bottom">
-            <sdds-icon
+            <tds-icon
               style={{ fontSize: "20px" }}
               name="arrow_right"
-            ></sdds-icon>
+            ></tds-icon>
           </div>
-        </sdds-card>
+        </tds-card>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Checkbox</div>
-        <sdds-checkbox value="checkbox-value">
+        <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
+        <tds-checkbox value="checkbox-value">
           <div slot="label">Label</div>
-        </sdds-checkbox>
+        </tds-checkbox>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Chip</div>
-        <sdds-chip type="button" size="lg">
+        <div className="tds-headline-02 tds-u-pb1">Chip</div>
+        <tds-chip type="button" size="lg">
           <span slot="label">Label</span>
-        </sdds-chip>
+        </tds-chip>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Data table</div>
+        <div className="tds-headline-02 tds-u-pb1">Data table</div>
         <DataTable />
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Datetime</div>
-        <sdds-datetime
+        <div className="tds-headline-02 tds-u-pb1">Datetime</div>
+        <tds-datetime
           id="datetime"
           type="datetime-local"
           state="none"
           label="Label text"
           helper="Helper text"
-        ></sdds-datetime>
+        ></tds-datetime>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Divider</div>
-        <sdds-divider></sdds-divider>
+        <div className="tds-headline-02 tds-u-pb1">Divider</div>
+        <tds-divider></tds-divider>
       </div>
 
-      <div className="sdds-headline-02 sdds-u-pb1">Dropdown</div>
-      <div className="sdds-headline-04 sdds-u-pb1">Default</div>
-      <sdds-dropdown
-        id="sdds-dropdown-reg"
+      <div className="tds-headline-02 tds-u-pb1">Dropdown</div>
+      <div className="tds-headline-04 tds-u-pb1">Default</div>
+      <tds-dropdown
+        id="tds-dropdown-reg"
         size="lg"
         placeholder="Placeholder"
         disabled={false}
@@ -208,19 +208,19 @@ export default function WebComponents() {
         type="default"
         default-option="option-1"
       >
-        <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+        <tds-dropdown-option value="option-1" tabIndex={0} disabled>
           Option 1
-        </sdds-dropdown-option>
-        <sdds-dropdown-option value="option-2" tabIndex={0}>
+        </tds-dropdown-option>
+        <tds-dropdown-option value="option-2" tabIndex={0}>
           Option 2
-        </sdds-dropdown-option>
-        <sdds-dropdown-option value="option-3" tabIndex={0}>
+        </tds-dropdown-option>
+        <tds-dropdown-option value="option-3" tabIndex={0}>
           Option 3
-        </sdds-dropdown-option>
-      </sdds-dropdown>
-      <div className="sdds-headline-04 sdds-u-pb1">Multiselect</div>
-      <sdds-dropdown
-        id="sdds-dropdown-reg"
+        </tds-dropdown-option>
+      </tds-dropdown>
+      <div className="tds-headline-04 tds-u-pb1">Multiselect</div>
+      <tds-dropdown
+        id="tds-dropdown-reg"
         size="lg"
         placeholder="Placeholder"
         disabled={false}
@@ -229,20 +229,20 @@ export default function WebComponents() {
         type="multiselect"
         default-option="option-1"
       >
-        <sdds-dropdown-option value="option-1" tabIndex={0} disabled>
+        <tds-dropdown-option value="option-1" tabIndex={0} disabled>
           Option 1
-        </sdds-dropdown-option>
-        <sdds-dropdown-option value="option-2" tabIndex={0}>
+        </tds-dropdown-option>
+        <tds-dropdown-option value="option-2" tabIndex={0}>
           Option 2
-        </sdds-dropdown-option>
-        <sdds-dropdown-option value="option-3" tabIndex={0}>
+        </tds-dropdown-option>
+        <tds-dropdown-option value="option-3" tabIndex={0}>
           Option 3
-        </sdds-dropdown-option>
-      </sdds-dropdown>
-      <div className="sdds-headline-04 sdds-u-pb1">Filter</div>
+        </tds-dropdown-option>
+      </tds-dropdown>
+      <div className="tds-headline-04 tds-u-pb1">Filter</div>
 
-      <sdds-dropdown-filter
-        id="sdds-dropdown-filter"
+      <tds-dropdown-filter
+        id="tds-dropdown-filter"
         size="lg"
         placeholder="Placeholder"
         open-direction="auto"
@@ -262,93 +262,93 @@ export default function WebComponents() {
               }
             ]'
         default-option="option-1"
-      ></sdds-dropdown-filter>
+      ></tds-dropdown-filter>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Link</div>
-        <sdds-link>
+        <div className="tds-headline-02 tds-u-pb1">Link</div>
+        <tds-link>
           <a href="/">This is a link</a>
-        </sdds-link>
+        </tds-link>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Message</div>
-        <sdds-message
+        <div className="tds-headline-02 tds-u-pb1">Message</div>
+        <tds-message
           type="information"
           header="Message header"
           mode-variant="inherit from parent"
         >
           Longer message text can be placed here. Longer message text can be
           placed here.
-        </sdds-message>
+        </tds-message>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Modal</div>
-        <sdds-button id="my-modal-button" text="Open Modal"></sdds-button>
-        <sdds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static">
-          <h5 className="sdds-modal-headline" slot="sdds-modal-headline">
+        <div className="tds-headline-02 tds-u-pb1">Modal</div>
+        <tds-button id="my-modal-button" text="Open Modal"></tds-button>
+        <tds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static">
+          <h5 className="tds-modal-headline" slot="tds-modal-headline">
             The buttons for the Modal only works in the canvas tab
           </h5>
-          <span slot="sdds-modal-body">
+          <span slot="tds-modal-body">
             The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
             different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there never
             anything else?” he asked.
           </span>
-          <sdds-button
-            slot="sdds-modal-actions"
+          <tds-button
+            slot="tds-modal-actions"
             data-dismiss-modal
             size="md"
             text="Delete"
             type="danger"
-          ></sdds-button>
-          <sdds-button slot="sdds-modal-actions" data-dismiss-modal size="md" text="Cancel"></sdds-button>
-        </sdds-modal>
+          ></tds-button>
+          <tds-button slot="tds-modal-actions" data-dismiss-modal size="md" text="Cancel"></tds-button>
+        </tds-modal>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Radio Button</div>
-        <sdds-radio-button
+        <div className="tds-headline-02 tds-u-pb1">Radio Button</div>
+        <tds-radio-button
           name="rb-example"
           value="option1"
           radio-id="option-2"
         >
           <div slot="label">Label text 1</div>
-        </sdds-radio-button>
+        </tds-radio-button>
 
-        <sdds-radio-button
+        <tds-radio-button
           name="rb-example"
           value="option1"
           radio-id="option-2"
         >
           <div slot="label">Label text 2</div>
-        </sdds-radio-button>
+        </tds-radio-button>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Popover</div>
-        <div className="sdds-headline-03 sdds-u-pb1">Canvas</div>
+        <div className="tds-headline-02 tds-u-pb1">Popover</div>
+        <div className="tds-headline-03 tds-u-pb1">Canvas</div>
 
         <div className="popover-container">
-          <sdds-button
+          <tds-button
             aria-label="menu"
             only-icon
             id="trigger"
             type="ghost"
             size="sm"
           >
-            <sdds-icon
+            <tds-icon
               slot="icon"
-              className="sdds-btn-icon"
+              className="tds-btn-icon"
               size="16px"
               name="kebab"
-            ></sdds-icon>
-          </sdds-button>
+            ></tds-icon>
+          </tds-button>
         </div>
-        <sdds-popover-canvas
+        <tds-popover-canvas
           placement="auto"
           selector="#trigger"
-          className="sdds-u-p2"
+          className="tds-u-p2"
         >
           <h2>A popover canvas!</h2>
           <p>Where you can put anything you want!</p>
@@ -361,32 +361,32 @@ export default function WebComponents() {
               Even links!
             </a>
           </p>
-        </sdds-popover-canvas>
+        </tds-popover-canvas>
 
-        <div className="sdds-headline-03 sdds-u-pb1">Menu</div>
+        <div className="tds-headline-03 tds-u-pb1">Menu</div>
 
         <div className="popover-container">
-          <sdds-button
+          <tds-button
             aria-label="menu"
             only-icon
             id="my-popover-button"
             type="ghost"
             size="sm"
           >
-            <sdds-icon
+            <tds-icon
               slot="icon"
-              className="sdds-btn-icon"
+              className="tds-btn-icon"
               size="16px"
               name="kebab"
-            ></sdds-icon>
-          </sdds-button>
+            ></tds-icon>
+          </tds-button>
         </div>
-        <sdds-popover-menu
+        <tds-popover-menu
           selector="#my-popover-button"
           placement="auto"
           id="my-popover-menu"
         >
-          <ul className="sdds-popover-menu-wrapper">
+          <ul className="tds-popover-menu-wrapper">
             <li>
               <a
                 target="_blank"
@@ -394,7 +394,7 @@ export default function WebComponents() {
                 href="https://digitaldesign.scania.com"
               >
                 <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
+                  <tds-icon name="save" size="16px"></tds-icon>
                 </i>
                 Menu item 1
               </a>
@@ -406,7 +406,7 @@ export default function WebComponents() {
                 href="https://digitaldesign.scania.com"
               >
                 <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
+                  <tds-icon name="save" size="16px"></tds-icon>
                 </i>
                 Menu item 2
               </a>
@@ -419,19 +419,19 @@ export default function WebComponents() {
                 href="https://digitaldesign.scania.com"
               >
                 <i>
-                  <sdds-icon name="save" size="16px"></sdds-icon>
+                  <tds-icon name="save" size="16px"></tds-icon>
                 </i>
                 Menu item 4
               </a>
             </li>
           </ul>
-        </sdds-popover-menu>
+        </tds-popover-menu>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Slider</div>
-        <sdds-slider
-          id="sdds-slider"
+        <div className="tds-headline-02 tds-u-pb1">Slider</div>
+        <tds-slider
+          id="tds-slider"
           min="0"
           max="100"
           value="50"
@@ -440,137 +440,137 @@ export default function WebComponents() {
           ticks="4"
           controls
           show-tick-numbers
-        ></sdds-slider>
+        ></tds-slider>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Spinner</div>
-        <div className="sdds-headline-03 sdds-u-pb1">Standard</div>
+        <div className="tds-headline-02 tds-u-pb1">Spinner</div>
+        <div className="tds-headline-03 tds-u-pb1">Standard</div>
 
-        <sdds-spinner variant="standard"></sdds-spinner>
-        <div className="sdds-headline-03 sdds-u-pb1">Inverted</div>
+        <tds-spinner variant="standard"></tds-spinner>
+        <div className="tds-headline-03 tds-u-pb1">Inverted</div>
 
-        <sdds-spinner variant="inverted"></sdds-spinner>
+        <tds-spinner variant="inverted"></tds-spinner>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Stepper</div>
-        <sdds-stepper size="lg" label-position="below" orientation="horizontal">
-          <sdds-stepper-item state="success" index="1">
+        <div className="tds-headline-02 tds-u-pb1">Stepper</div>
+        <tds-stepper size="lg" label-position="below" orientation="horizontal">
+          <tds-step state="success" index="1">
             <div slot="label">Success step</div>
-          </sdds-stepper-item>
-          <sdds-stepper-item state="error" index="2">
+          </tds-step>
+          <tds-step state="error" index="2">
             <div slot="label">Error step</div>
-          </sdds-stepper-item>
-          <sdds-stepper-item state="current" index="3">
+          </tds-step>
+          <tds-step state="current" index="3">
             <div slot="label">Current step</div>
-          </sdds-stepper-item>
-          <sdds-stepper-item index="4">
+          </tds-step>
+          <tds-step index="4">
             <div slot="label">Upcoming step</div>
-          </sdds-stepper-item>
-        </sdds-stepper>
+          </tds-step>
+        </tds-stepper>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Tabs</div>
-        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Folder</div>
+        <div className="tds-headline-02 tds-u-pb1">Tabs</div>
+        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</div>
 
-        <sdds-folder-tabs>
-          <sdds-folder-tab>
+        <tds-folder-tabs>
+          <tds-folder-tab>
             <button>First tab</button>
-          </sdds-folder-tab>
-          <sdds-folder-tab>
+          </tds-folder-tab>
+          <tds-folder-tab>
             <button>Second tab is much longer</button>
-          </sdds-folder-tab>
-          <sdds-folder-tab>
+          </tds-folder-tab>
+          <tds-folder-tab>
             <button>Third tab</button>
-          </sdds-folder-tab>
-          <sdds-folder-tab disabled>
+          </tds-folder-tab>
+          <tds-folder-tab disabled>
             <button>Fourth tab</button>
-          </sdds-folder-tab>
-        </sdds-folder-tabs>
+          </tds-folder-tab>
+        </tds-folder-tabs>
 
-        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Inline</div>
+        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</div>
 
-        <sdds-inline-tabs>
-          <sdds-inline-tab>
+        <tds-inline-tabs>
+          <tds-inline-tab>
             <button>First tab</button>
-          </sdds-inline-tab>
-          <sdds-inline-tab>
+          </tds-inline-tab>
+          <tds-inline-tab>
             <button>Second tab is much longer</button>
-          </sdds-inline-tab>
-          <sdds-inline-tab>
+          </tds-inline-tab>
+          <tds-inline-tab>
             <button>Third tab</button>
-          </sdds-inline-tab>
-          <sdds-inline-tab disabled>
+          </tds-inline-tab>
+          <tds-inline-tab disabled>
             <button>Fourth tab</button>
-          </sdds-inline-tab>
-        </sdds-inline-tabs>
-        <div className="sdds-headline-03 sdds-u-pb3 sdds-u-pt3">Navigation</div>
+          </tds-inline-tab>
+        </tds-inline-tabs>
+        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
 
-        <sdds-navigation-tabs>
-          <sdds-navigation-tab>
+        <tds-navigation-tabs>
+          <tds-navigation-tab>
             <a href="/">First tab</a>
-          </sdds-navigation-tab>
-          <sdds-navigation-tab>
+          </tds-navigation-tab>
+          <tds-navigation-tab>
             <a href="/">Second tab is much longer</a>
-          </sdds-navigation-tab>
-          <sdds-navigation-tab>
+          </tds-navigation-tab>
+          <tds-navigation-tab>
             <a href="/">Third tab</a>
-          </sdds-navigation-tab>
-          <sdds-navigation-tab disabled>
+          </tds-navigation-tab>
+          <tds-navigation-tab disabled>
             <a href="/">Fourth tab</a>
-          </sdds-navigation-tab>
-        </sdds-navigation-tabs>
+          </tds-navigation-tab>
+        </tds-navigation-tabs>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Textarea</div>
-        <sdds-textarea
+        <div className="tds-headline-02 tds-u-pb1">Textarea</div>
+        <tds-textarea
           rows={4}
           state="error"
           label="Hello label"
           helper="Good guess, but wrong answer buddy"
           label-position="outside"
           placeholder="Placeholder test"
-        ></sdds-textarea>
+        ></tds-textarea>
       </div>
 
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Text fields</div>
-        <div className="sdds-headline-04 sdds-u-pb1">Standard medium size</div>
-        <sdds-textfield size="md" placeholder="Placeholder"></sdds-textfield>
+        <div className="tds-headline-02 tds-u-pb1">Text fields</div>
+        <div className="tds-headline-04 tds-u-pb1">Standard medium size</div>
+        <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Toast</div>
-        <sdds-toast type="success" header="Header">
+        <div className="tds-headline-02 tds-u-pb1">Toast</div>
+        <tds-toast type="success" header="Header">
           <div slot="toast-subheader">Longer message</div>
-        </sdds-toast>
+        </tds-toast>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Toggle</div>
-        <sdds-toggle headline="Headline" size="lg">
+        <div className="tds-headline-02 tds-u-pb1">Toggle</div>
+        <tds-toggle headline="Headline" size="lg">
           <div slot="label">Label</div>
-        </sdds-toggle>
+        </tds-toggle>
       </div>
       <div>
-        <div className="sdds-headline-02 sdds-u-pb1">Tooltip</div>
+        <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
         <div className="tooltip-container">
-          <sdds-tooltip
+          <tds-tooltip
             placement="bottom"
             selector="#button-1"
             text="Text inside tooltip"
             mouse-over-tooltip="true"
           >
-            <p className="sdds-detail-05 sdds-u-m0 tooltip-paragraph">
+            <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
               Paragraph tag inside of Tooltip with
               <b>bold</b>
               and
               <i>italic</i>
               tags too.
             </p>
-          </sdds-tooltip>
+          </tds-tooltip>
 
-          <sdds-button size="sm" id="button-1" text="Hover me"></sdds-button>
+          <tds-button size="sm" id="button-1" text="Hover me"></tds-button>
         </div>
       </div>
     </>

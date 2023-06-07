@@ -1,41 +1,41 @@
 export default function Footer() {
   return (
-    <sdds-footer>
+    <tds-footer>
       <div slot="main-left">
-        <sdds-footer-group>
-          <sdds-footer-item>
+        <tds-footer-group>
+          <tds-footer-item>
             <a href="/">Link text</a>
-          </sdds-footer-item>
-          <sdds-footer-item>
+          </tds-footer-item>
+          <tds-footer-item>
             <a href="/">Link text</a>
-          </sdds-footer-item>
-          <sdds-footer-item>
+          </tds-footer-item>
+          <tds-footer-item>
             <a href="/">Link text</a>
-          </sdds-footer-item>
-          <sdds-footer-item>
+          </tds-footer-item>
+          <tds-footer-item>
             <a href="/">Link text</a>
-          </sdds-footer-item>
-        </sdds-footer-group>
+          </tds-footer-item>
+        </tds-footer-group>
       </div>
       <div slot="main-right">
-        <sdds-footer-group>
-          <sdds-footer-item>
+        <tds-footer-group>
+          <tds-footer-item>
             <a href="/">
-              <sdds-icon name="truck"></sdds-icon>
+              <tds-icon name="truck"></tds-icon>
             </a>
-          </sdds-footer-item>
-          <sdds-footer-item>
+          </tds-footer-item>
+          <tds-footer-item>
             <a href="/">
-              <sdds-icon name="truck"></sdds-icon>
+              <tds-icon name="truck"></tds-icon>
             </a>
-          </sdds-footer-item>
-          <sdds-footer-item>
+          </tds-footer-item>
+          <tds-footer-item>
             <a href="/">
-              <sdds-icon name="truck"></sdds-icon>
+              <tds-icon name="truck"></tds-icon>
             </a>
-          </sdds-footer-item>
-        </sdds-footer-group>
+          </tds-footer-item>
+        </tds-footer-group>
       </div>
-    </sdds-footer>
+    </tds-footer>
   );
 }
