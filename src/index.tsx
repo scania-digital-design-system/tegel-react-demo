@@ -10,7 +10,7 @@ import './register-webcomponents';
 
 import App from './App';
 import WebComponents from "./pages/WebComponents";
-import FormPage from './pages/Form';
+import FormPage from './pages/FormPage';
 
 
 const router = createBrowserRouter([
