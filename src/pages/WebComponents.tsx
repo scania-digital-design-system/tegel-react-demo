@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Banner from "../components/Banner";
+import Card from "../components/Card";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
   
@@ -121,23 +122,7 @@ export default function WebComponents() {
         </div>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Card</div>
-        <tds-card
-          header="Card title"
-          header-placement="below"
-          subheader="Subheader text"
-          header-img="https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80  "
-          body-img="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=5494&q=80"
-          clickable
-        >
-          <div slot="card-body">Here is a short description in body text</div>
-          <div slot="card-bottom">
-            <tds-icon
-              style={{ fontSize: "20px" }}
-              name="arrow_right"
-            ></tds-icon>
-          </div>
-        </tds-card>
+       <Card/>
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
