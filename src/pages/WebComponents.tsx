@@ -2,6 +2,9 @@
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import DataTable from "../components/DataTable";
+import Toast from "../components/Toast";
+
+
 export default function WebComponents() {
   
   return (
@@ -505,10 +508,7 @@ export default function WebComponents() {
         <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Toast</div>
-        <tds-toast type="success" header="Header">
-          <div slot="toast-subheader">Longer message</div>
-        </tds-toast>
+        <Toast/>
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Toggle</div>
