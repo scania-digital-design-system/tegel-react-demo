@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Banner from "../components/Banner";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
