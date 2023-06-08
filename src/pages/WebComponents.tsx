@@ -1,6 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import Banner from "../components/Banner";
 import DataTable from "../components/DataTable";
 export default function WebComponents() {
+  
   return (
     <>
       <div>
@@ -24,33 +25,7 @@ export default function WebComponents() {
         <tds-badge value="1" size="lg"></tds-badge>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Banner</div>
-        <tds-banner
-          icon="error"
-          header="This is a header text area"
-          type="error"
-        >
-          <div slot="banner-subheader">Subheader slot</div>
-          <tds-link slot="banner-link">
-            <a href="/">Link example</a>
-          </tds-link>
-        </tds-banner>
-        <tds-banner
-          icon="info"
-          header="This is a header text area"
-          type="information"
-        >
-          <div slot="banner-subheader">Subheader slot</div>
-          <tds-link slot="banner-link">
-            <a href="/">Link example</a>
-          </tds-link>
-        </tds-banner>
-        <tds-banner icon="truck" header="This is a header text area">
-          <div slot="banner-subheader">Subheader slot</div>
-          <tds-link slot="banner-link">
-            <a href="/">Link example</a>
-          </tds-link>
-        </tds-banner>
+        <Banner/>
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Block</div>
@@ -286,14 +261,20 @@ export default function WebComponents() {
       <div>
         <div className="tds-headline-02 tds-u-pb1">Modal</div>
         <tds-button id="my-modal-button" text="Open Modal"></tds-button>
-        <tds-modal selector="#my-modal-button" id="my-modal" size="lg" actions="static">
+        <tds-modal
+          selector="#my-modal-button"
+          id="my-modal"
+          size="lg"
+          actions="static"
+        >
           <h5 className="tds-modal-headline" slot="tds-modal-headline">
             The buttons for the Modal only works in the canvas tab
           </h5>
           <span slot="tds-modal-body">
-            The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
-            different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there never
-            anything else?” he asked.
+            The steps fell lightly and oddly, with a certain swing, for all they
+            went so slowly; it was different indeed from the heavy creaking
+            tread of Henry Jekyll. Utterson sighed. “Is there never anything
+            else?” he asked.
           </span>
           <tds-button
             slot="tds-modal-actions"
@@ -302,25 +283,22 @@ export default function WebComponents() {
             text="Delete"
             type="danger"
           ></tds-button>
-          <tds-button slot="tds-modal-actions" data-dismiss-modal size="md" text="Cancel"></tds-button>
+          <tds-button
+            slot="tds-modal-actions"
+            data-dismiss-modal
+            size="md"
+            text="Cancel"
+          ></tds-button>
         </tds-modal>
       </div>
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Radio Button</div>
-        <tds-radio-button
-          name="rb-example"
-          value="option1"
-          radio-id="option-2"
-        >
+        <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
           <div slot="label">Label text 1</div>
         </tds-radio-button>
 
-        <tds-radio-button
-          name="rb-example"
-          value="option1"
-          radio-id="option-2"
-        >
+        <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
           <div slot="label">Label text 2</div>
         </tds-radio-button>
       </div>
