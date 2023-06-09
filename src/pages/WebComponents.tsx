@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Banner from "../components/Banner";
 import Card from "../components/Card";
+import Button from "../components/Button";
 import DataTable from "../components/DataTable";
 import Toast from "../components/Toast";
 
@@ -95,35 +96,7 @@ export default function WebComponents() {
         </tds-breadcrumb>
       </div>
       <div className="tds-u-w-100">
-        <div className="tds-headline-02 tds-u-pb1">Buttons</div>
-        <tds-button
-          type="primary"
-          size="lg"
-          fullbleed
-          text="Primary fullbleed button"
-        ></tds-button>
-        <div
-          className="tds-u-mt2 tds-u-flex"
-          style={{ justifyContent: "space-around" }}
-        >
-          <tds-button type="danger" size="sm" text="Delete file">
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="16px"
-              name="document_wrong"
-            ></tds-icon>
-          </tds-button>
-          <span></span>
-          <tds-button type="ghost" size="md" text="">
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="20px"
-              name="trash"
-            ></tds-icon>
-          </tds-button>
-        </div>
+        <Button/>
       </div>
       <div>
        <Card/>
