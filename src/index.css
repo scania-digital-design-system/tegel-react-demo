@@ -1,25 +1,25 @@
-@import url('@scania/tegel/dist/tegel/tegel.css');
-@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
+@import url("@scania/tegel/dist/tegel/tegel.css");
+@import url("https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css");
 
 html,
 body,
 .App,
-#root{
-    height: 100%;
-    overflow-y: auto;
-  }
+#root {
+  height: 100%;
+  overflow-y: auto;
+}
 
 .App {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.tds-mode-light {
-    background-color: var(--tds-white);
+  background-color: var(--tds-white);
 }
 
 .App.tds-mode-dark {
-    background-color: var(--tds-black);
+  background-color: var(--tds-black);
 }
 
 .mode-switcher {
@@ -31,8 +31,8 @@ body,
 }
 
 .container {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 
 .container > tds-side-menu {
@@ -40,42 +40,51 @@ body,
 }
 
 main {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 32px;
-    max-width: 600px;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 128px 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 128px 0;
 }
 .popover-container {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .tooltip-container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tooltip-paragraph b, i{
-    padding: 0 2px;
+.tooltip-paragraph b,
+i {
+  padding: 0 2px;
 }
 .popover-container {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .tooltip-container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tooltip-paragraph b, i{
-    padding: 0 2px;
+.tooltip-paragraph b,
+i {
+  padding: 0 2px;
+}
+
+@media screen and (max-width: 650px) {
+  .tabs {
+    width: 300px;
+    margin: auto;
+  }
 }
