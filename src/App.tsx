@@ -8,6 +8,8 @@ function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
   const { pathname } = useLocation();
   let sideMenu: any;
+  console.log(pathname);
+
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <ModeSwitcher mode={mode} setMode={setMode} />
@@ -30,15 +32,20 @@ function App() {
             sideMenu.open = true;
           }}
         ></tds-header-hamburger>
-
         <tds-header-title>My Application</tds-header-title>
-
-        <tds-header-item selected={pathname.includes("web-components")}>
+        <tds-header-item
+          selected={pathname === "/web-components" || pathname === "/"}
+        >
           <Link to="web-components">Components</Link>
         </tds-header-item>
-
-        <tds-header-item selected={pathname.includes("form")}>
+        <tds-header-item selected={pathname === "/form"}>
           <Link to="form">Form</Link>
+        </tds-header-item>
+        <tds-header-item selected={pathname === "/tabs"}>
+          <Link to="tabs">Tabs Buttons</Link>
+        </tds-header-item>
+        <tds-header-item selected={pathname.includes("/tabs-links")}>
+          <Link to="tabs-links">Tabs Links</Link>
         </tds-header-item>
         <tds-header-brand-symbol
           slot="end"
