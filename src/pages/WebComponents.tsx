@@ -258,6 +258,19 @@ export default function WebComponents() {
           <tds-button id="lg-modal-button" text="Large Modal"></tds-button>
           <Modal size="lg" selector="#lg-modal-button" />
         </div>
+
+        <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
+        <tds-icon
+          onMouseEnter={() => {
+            (
+              document.querySelector(
+                `[selector="hover-modal-button"]`
+              ) as HTMLTdsModalElement
+            ).showModal();
+          }}
+          name="truck"
+          size="20px"></tds-icon>
+        <Modal size="sm" selector="hover-modal-button" />
       </div>
 
       <div>
