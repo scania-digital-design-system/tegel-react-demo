@@ -1,5 +1,8 @@
 import BasicTable from "../components/BasicTable";
 import BatchActionTable from "../components/BatchActionTable";
+import ExpandTable from "../components/ExpandTable";
+import SearchTable from "../components/SearchTable";
+import SortableTable from "../components/SortableTable";
 
 const TablePage = () => {
   return (
@@ -10,6 +13,19 @@ const TablePage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Batch Actions</div>
       <p>This Table uses batch actions in order to get data out of the table.  </p>
       <BatchActionTable/>
+      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Sortable Table</div>
+      <p>This Table is sortable.</p>
+      <SortableTable/>
+      <p>This Table prevents the default behaviour of the sorting by listening for a <code>tdsSortChange</code> event.</p>
+      <SortableTable cancelEvent/>
+      <p>This Table prevents the default behaviour of the searching by listening for a <code>tdsSearchChange</code> event.</p>
+      <SearchTable cancelEvent/>
+      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Search Table</div>
+      <p>This Table is searchable.</p>
+      <SearchTable/>
+      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Expandable Rows</div>
+      <p>This Table uses expandable rows.</p>
+      <ExpandTable/>
     </div>
   );
 };
