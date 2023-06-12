@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Banner = () => {
-  let banner: HTMLTdsBannerElement;
+  const banner = useRef<HTMLTdsBannerElement>(null)
   const [bannerVisibility, setBannerVisibility] = useState(true);
 
   const handleBanner = () => {
     setBannerVisibility(!bannerVisibility);
-    bannerVisibility ? banner.hideBanner() : banner.showBanner();
+    if(banner.current){
+      bannerVisibility ? banner.current.hideBanner() : banner.current.showBanner();
+    }
   };
   return (
     <div>
@@ -36,7 +38,7 @@ const Banner = () => {
         </tds-link>
       </tds-banner>
       <tds-banner
-        ref={(element) => (banner = element as HTMLTdsBannerElement)}
+        ref={banner}
         id="my-banner"
         icon="save"
         persistent
