@@ -1,6 +1,7 @@
 import BasicTable from "../components/BasicTable";
 import BatchActionTable from "../components/BatchActionTable";
 import ExpandTable from "../components/ExpandTable";
+import PaginationTable from "../components/PaginationTable";
 import SearchTable from "../components/SearchTable";
 import SortableTable from "../components/SortableTable";
 
@@ -26,6 +27,11 @@ const TablePage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Expandable Rows</div>
       <p>This Table uses expandable rows.</p>
       <ExpandTable/>
+      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination</div>
+      <p>This Table uses pagination.</p>
+      <PaginationTable/>
+      <p>This Table prevents the default pagination and implements it's own logic.</p>
+      <PaginationTable customPagination/>
     </div>
   );
 };
