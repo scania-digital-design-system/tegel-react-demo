@@ -4,11 +4,11 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import DataTable from "../components/DataTable";
 import Toast from "../components/Toast";
-
-
 import Modal from "../components/Modal";
-export default function WebComponents() {
-  
+import Toggle from "../components/Toggle";
+
+
+export default function WebComponents() {  
   return (
     <>
       <div>
@@ -476,10 +476,7 @@ export default function WebComponents() {
         <Toast/>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Toggle</div>
-        <tds-toggle headline="Headline" size="lg">
-          <div slot="label">Label</div>
-        </tds-toggle>
+        <Toggle/>
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
