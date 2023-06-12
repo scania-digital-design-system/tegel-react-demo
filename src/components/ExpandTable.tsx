@@ -28,62 +28,46 @@ const ExpandTable = () => {
       </tds-table-header>
       <tds-table-body>
         <tds-table-body-row-expandable>
+          <tds-body-cell cell-value="L-series" cell-key="truck"></tds-body-cell>
           <tds-body-cell
-            cell-value="Test value 1"
-            cell-key="truck"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 2"
+            cell-value="Ferrell Wallace"
             cell-key="driver"
           ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 3"
-            cell-key="country"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 4"
-            cell-key="mileage"
-          ></tds-body-cell>
-          <div slot="expand-row">Hello world 1</div>
+          <tds-body-cell cell-value="Brazil" cell-key="country"></tds-body-cell>
+          <tds-body-cell cell-value="8769" cell-key="mileage"></tds-body-cell>
+          <div slot="expand-row">The L-series is great!</div>
         </tds-table-body-row-expandable>
         <tds-table-body-row-expandable>
+          <tds-body-cell cell-value="P-series" cell-key="truck"></tds-body-cell>
           <tds-body-cell
-            cell-value="Test value 5"
-            cell-key="truck"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 6"
+            cell-value="Sonya Bruce"
             cell-key="driver"
           ></tds-body-cell>
           <tds-body-cell
-            cell-value="Test value 7"
+            cell-value="Portugal"
             cell-key="country"
           ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 8"
-            cell-key="mileage"
-          ></tds-body-cell>
-          <div slot="expand-row">Hello to you too</div>
-        </tds-table-body-row-expandable>
-        <tds-table-body-row-expandable>
-          <tds-body-cell
-            cell-value="Test value 9"
-            cell-key="truck"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 10"
-            cell-key="driver"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 11"
-            cell-key="country"
-          ></tds-body-cell>
-          <tds-body-cell
-            cell-value="Test value 12"
-            cell-key="mileage"
-          ></tds-body-cell>
+          <tds-body-cell cell-value="789" cell-key="mileage"></tds-body-cell>
           <div slot="expand-row">
-            <tds-button type="primary" text="Call to action"></tds-button>
+            The P-series is a great choice of truck. You can read more about it{" "}
+            <tds-link style={{ display: "inline" }}>
+              <a href="/">here.</a>
+            </tds-link>
+          </div>
+        </tds-table-body-row-expandable>
+        <tds-table-body-row-expandable>
+          <tds-body-cell cell-value="M-series" cell-key="truck"></tds-body-cell>
+          <tds-body-cell
+            cell-value="Guerra Bowman"
+            cell-key="driver"
+          ></tds-body-cell>
+          <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
+          <tds-body-cell cell-value="11551" cell-key="mileage"></tds-body-cell>
+          <div className="tds-u-flex" slot="expand-row">
+            <p>The M-series is in stock!</p>
+            <tds-button onClick={() => {
+              alert('Your order has been placed!')
+            }} size="md" type="primary" text="Order"></tds-button>
           </div>
         </tds-table-body-row-expandable>
       </tds-table-body>
