@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./Toast.scss";
 
 const Toast = () => {
-  let toast: HTMLTdsToastElement;
-  let absoluteToast: HTMLTdsToastElement;
+  const toast = useRef<HTMLTdsToastElement>(null)
+  const absoluteToast = useRef<HTMLTdsToastElement>(null)
   const [toastVisibility, setToastVisibility] = useState(true);
 
   const handleToast = () => {
     setToastVisibility(!toastVisibility);
-    toastVisibility ? toast?.hideToast() : toast?.showToast();
+    if(toast.current){
+      toastVisibility ? toast?.current.hideToast() : toast?.current.showToast();
+    }
   };
   return (
     <div>
@@ -35,9 +37,7 @@ const Toast = () => {
           </a>
         </tds-toast>
         <tds-toast
-          ref={(element) => {
-            toast = element as HTMLTdsToastElement;
-          }}
+          ref={toast}
           type="warning"
           header="Warning Toast!"
         >
@@ -63,16 +63,16 @@ const Toast = () => {
       <p>Or maybe you want to show a toast on click?</p>
       <tds-button
         onClick={() => {
-          absoluteToast.hidden = false;
+          if(absoluteToast.current){
+            absoluteToast.current.hidden = false;
+          }
         }}
         size="md"
         text="Show Toast"
       ></tds-button>
       <div className="toast-absolute">
         <tds-toast
-          ref={(element) => {
-            absoluteToast = element as HTMLTdsToastElement;
-          }}
+          ref={absoluteToast}
           type="success"
           header="Hey-hey!"
           // TODO - watcher on hidden prop.
