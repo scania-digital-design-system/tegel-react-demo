@@ -1,9 +1,9 @@
-import BasicTable from "../components/BasicTable";
-import BatchActionTable from "../components/BatchActionTable";
-import ExpandTable from "../components/ExpandTable";
-import PaginationTable from "../components/PaginationTable";
-import SearchTable from "../components/SearchTable";
-import SortableTable from "../components/SortableTable";
+import BasicTable from "../components/Table/BasicTable";
+import BatchActionTable from "../components/Table/BatchActionTable";
+import ExpandTable from "../components/Table/ExpandTable";
+import PaginationTable from "../components/Table/PaginationTable";
+import SearchTable from "../components/Table/SearchTable";
+import SortableTable from "../components/Table/SortableTable";
 
 const TablePage = () => {
   return (
