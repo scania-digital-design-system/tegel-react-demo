@@ -4,52 +4,64 @@ import ModeSwitcher from "./components/ModeSwitcher";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 
-
 function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
-  const { pathname } = useLocation();  
+  const { pathname } = useLocation();
   let sideMenu: any;
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <ModeSwitcher mode={mode} setMode={setMode} />
+      <tds-banner type="information" icon="info" header="React demo" persistent>
+        <div slot="banner-subheader">
+          This is a demo page in React using{" "}
+          <tds-link style={{ display: 'inline-block' }}>
+            <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+              @scania/tegel
+            </a>
+          </tds-link>
+        </div>
+      </tds-banner>
       <tds-header className="demo-header">
         <tds-header-hamburger
-            aria-expanded="false"
-            aria-label="Open application drawer"
-            aria-haspopup="true"
-            onClick={() => {
-              sideMenu.open = true;
-            }}
+          aria-expanded="false"
+          aria-label="Open application drawer"
+          aria-haspopup="true"
+          onClick={() => {
+            sideMenu.open = true;
+          }}
         ></tds-header-hamburger>
 
         <tds-header-title>My Application</tds-header-title>
 
-        <tds-header-item selected={pathname.includes('web-components')}>
+        <tds-header-item selected={pathname.includes("web-components")}>
           <Link to="web-components">Components</Link>
         </tds-header-item>
 
-        <tds-header-item selected={pathname.includes('form')}>
+        <tds-header-item selected={pathname.includes("form")}>
           <Link to="form">Form</Link>
         </tds-header-item>
         <tds-header-brand-symbol
-            slot="end"
-            link-href="https://scania.com"
-            aria-label="Scania - red gryphon on blue shield"
+          slot="end"
+          link-href="https://scania.com"
+          aria-label="Scania - red gryphon on blue shield"
         ></tds-header-brand-symbol>
       </tds-header>
 
       <div className="container">
-        <tds-side-menu ref={(element) => sideMenu = element} aria-label="Side menu" id="demo-side-menu" persistent>
-          <tds-side-menu-overlay
-              slot="overlay"
-          ></tds-side-menu-overlay>
+        <tds-side-menu
+          ref={(element) => (sideMenu = element)}
+          aria-label="Side menu"
+          id="demo-side-menu"
+          persistent
+        >
+          <tds-side-menu-overlay slot="overlay"></tds-side-menu-overlay>
 
           <tds-side-menu-close-button
-              slot="close-button"
-              aria-label="Close drawer menu"
-              onClick={() => {
-                sideMenu.open = false;
-              }}
+            slot="close-button"
+            aria-label="Close drawer menu"
+            onClick={() => {
+              sideMenu.open = false;
+            }}
           ></tds-side-menu-close-button>
 
           <tds-side-menu-item>
