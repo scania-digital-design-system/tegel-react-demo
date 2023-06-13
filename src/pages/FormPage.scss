@@ -1,20 +1,22 @@
-section {
-    margin-top: 8px;
-}
-
-.tds-u-flex {
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-tds-toast {
-    position: fixed;
-    right: var(--tds-spacing-element-32);
-    bottom: var(--tds-spacing-element-32);
+.form {
+    section {
+        margin-top: 8px;
+    }
+    
+    .tds-u-flex {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    tds-toast {
+        position: fixed;
+        right: var(--tds-spacing-element-32);
+        bottom: var(--tds-spacing-element-32);
+    }
 }

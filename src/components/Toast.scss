@@ -1,0 +1,11 @@
+.toast-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.toast-absolute {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+}

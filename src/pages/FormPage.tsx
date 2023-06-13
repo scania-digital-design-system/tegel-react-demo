@@ -25,7 +25,7 @@ const FormPage = () => {
 
   return (
     <>
-    <article>
+    <article className="form">
       <form
         ref={form}
         onSubmit={(event: FormEvent) => {
