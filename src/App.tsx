@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable jsx-a11y/anchor-has-content */
+import { useRef, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import ModeSwitcher from "./components/ModeSwitcher";
 import Footer from "./components/Footer";
@@ -7,35 +8,43 @@ import { Link } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
   const { pathname } = useLocation();
-  let sideMenu: any;
-  console.log(pathname);
+  const sideMenu = useRef<HTMLTdsSideMenuElement>(null);
 
+  const toggleMobileNav = () => {
+    if (sideMenu.current) {
+      sideMenu.current.open = !sideMenu.current.open;
+    }
+  };
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <ModeSwitcher mode={mode} setMode={setMode} />
-      <tds-banner type="information" icon="info" header="React demo" persistent>
-        <div slot="banner-subheader">
-          This is a demo page in React using{" "}
-          <tds-link style={{ display: "inline-block" }}>
-            <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-              @scania/tegel
-            </a>
-          </tds-link>
-        </div>
-      </tds-banner>
-      <tds-header className="demo-header">
+      <div className="announcement-banner">
+        <tds-banner
+          type="information"
+          icon="info"
+          header="React demo"
+          persistent
+        >
+          <div slot="banner-subheader">
+            This is a demo page in React using{" "}
+            <tds-link style={{ display: "inline-block" }}>
+              <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+                @scania/tegel
+              </a>
+            </tds-link>
+          </div>
+        </tds-banner>
+      </div>
+      <tds-header>
         <tds-header-hamburger
-          aria-expanded="false"
+          onClick={toggleMobileNav}
           aria-label="Open application drawer"
           aria-haspopup="true"
-          onClick={() => {
-            sideMenu.open = true;
-          }}
+          aria-expanded="false"
         ></tds-header-hamburger>
-        <tds-header-title>My Application</tds-header-title>
-        <tds-header-item
-          selected={pathname === "/web-components" || pathname === "/"}
-        >
+
+        <tds-header-title>React Demo</tds-header-title>
+        <tds-header-item selected={pathname.includes("web-components")}>
           <Link to="web-components">Components</Link>
         </tds-header-item>
         <tds-header-item selected={pathname === "/form"}>
@@ -58,62 +67,51 @@ function App() {
           link-href="https://scania.com"
           aria-label="Scania - red gryphon on blue shield"
         ></tds-header-brand-symbol>
+        <tds-header-brand-symbol slot="end">
+          <a aria-label="Scania - red gryphon on blue shield" href="/"></a>
+        </tds-header-brand-symbol>
       </tds-header>
-
-      <div className="container">
+      <div className="side-menu-and-main">
         <tds-side-menu
-          ref={(element) => (sideMenu = element)}
-          aria-label="Side menu"
+          ref={sideMenu}
           id="demo-side-menu"
+          aria-label="Side menu"
           persistent
         >
-          <tds-side-menu-overlay slot="overlay"></tds-side-menu-overlay>
-
+          <tds-side-menu-overlay
+            onClick={toggleMobileNav}
+            slot="overlay"
+          ></tds-side-menu-overlay>
           <tds-side-menu-close-button
+            onClick={toggleMobileNav}
             slot="close-button"
-            aria-label="Close drawer menu"
-            onClick={() => {
-              sideMenu.open = false;
-            }}
           ></tds-side-menu-close-button>
-
           <tds-side-menu-item>
-            <button>
-              <tds-icon name="timer" size="24"></tds-icon>
+            <Link to={"/about"} onClick={toggleMobileNav}>
+              <tds-icon name="info" size="24"></tds-icon>
               About us
-            </button>
+            </Link>
           </tds-side-menu-item>
-
-          <tds-side-menu-item>
-            <button>
-              <tds-icon name="truck" size="24"></tds-icon>
-              Trucks
-            </button>
-          </tds-side-menu-item>
-
-          <tds-side-menu-dropdown default-open selected>
-            <tds-icon slot="button-icon" name="profile" size="24"></tds-icon>
-            <span slot="button-label">Wheel types</span>
-            <tds-side-menu-dropdown-list>
-              <tds-side-menu-dropdown-list-item>
-                <a href="https://www.scania.com">Hub-centric wheel</a>
-              </tds-side-menu-dropdown-list-item>
-              <tds-side-menu-dropdown-list-item selected>
-                <a href="https://www.scania.com" aria-current="page">
-                  Rim wheel
-                </a>
-              </tds-side-menu-dropdown-list-item>
-            </tds-side-menu-dropdown-list>
-          </tds-side-menu-dropdown>
-
-          <tds-side-menu-item>
-            <button>
-              <tds-icon name="star" size="24"></tds-icon>
-              Values
-            </button>
-          </tds-side-menu-item>
+          <div className="mobile-nav-item">
+            <tds-side-menu-item>
+              <Link to={"/web-components"} onClick={toggleMobileNav}>
+                <tds-icon name="tool" size="24"></tds-icon>
+                Components
+              </Link>
+            </tds-side-menu-item>
+          </div>
+          <div className="mobile-nav-item">
+            <tds-side-menu-item>
+              <Link to={"/form"} onClick={toggleMobileNav}>
+                <tds-icon name="edit" size="24"></tds-icon>
+                Form
+              </Link>
+            </tds-side-menu-item>
+          </div>
+          <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
         </tds-side-menu>
-        <main>
+
+        <main className="tds-u-h-100 tds-u-p3">
           <Outlet />
         </main>
       </div>

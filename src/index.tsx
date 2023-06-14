@@ -12,6 +12,7 @@ import TabsPage from "./pages/TabsPage";
 import TabsLinkPage from "./pages/TabsLinkPage";
 import TextPage from "./pages/TextPage/TextPage";
 import TablePage from './pages/TablePage';
+import About from './pages/About';
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "form",
         element: <FormPage />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
       {
         path: "tabs",
