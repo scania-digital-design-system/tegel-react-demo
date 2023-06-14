@@ -7,12 +7,12 @@ import "./register-webcomponents";
 
 import App from "./App";
 import WebComponents from "./pages/WebComponents";
-import FormPage from "./pages/FormPage";
-import TabsPage from "./pages/TabsPage";
-import TabsLinkPage from "./pages/TabsLinkPage";
 import TextPage from "./pages/TextPage/TextPage";
 import TablePage from './pages/TablePage';
+import FormPage from './pages/FormPage';
 import About from './pages/About';
+import TabsLinkPage from './pages/TabsLinkPage';
+import TabsButtonPage from './pages/TabsButtonPage';
 
 
 const router = createBrowserRouter([
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "tabs",
-        element: <TabsPage />,
+        path: "tabs-buttons",
+        element: <TabsButtonPage/>,
       },
       {
         path: "tabs-links",

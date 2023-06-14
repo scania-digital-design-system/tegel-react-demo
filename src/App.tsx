@@ -9,12 +9,20 @@ function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
   const { pathname } = useLocation();
   const sideMenu = useRef<HTMLTdsSideMenuElement>(null);
+  const headerDropdown = useRef<HTMLTdsHeaderDropdownElement>(null);
 
   const toggleMobileNav = () => {
     if (sideMenu.current) {
       sideMenu.current.open = !sideMenu.current.open;
     }
   };
+
+  const closeHeaderDropdown = () => {
+    if(headerDropdown.current){
+      // TODO - Need to be able to close the dropdown.
+    }
+  }
+
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <ModeSwitcher mode={mode} setMode={setMode} />
@@ -62,6 +70,18 @@ function App() {
         <tds-header-item selected={pathname === '/table'}>
           <Link to="table">Table</Link>
         </tds-header-item>
+        <tds-header-dropdown ref={headerDropdown} selected={pathname.includes('tabs')}>
+          <span slot="button-label">Tabs</span>
+          <tds-header-dropdown-list>
+            <tds-header-dropdown-list-item onClick={closeHeaderDropdown}>
+              <Link to="/tabs-buttons">Buttons</Link>
+            </tds-header-dropdown-list-item>
+            <tds-header-dropdown-list-item onClick={closeHeaderDropdown}>
+              <Link to="tabs-links">Links</Link>
+            </tds-header-dropdown-list-item>
+          </tds-header-dropdown-list>
+        </tds-header-dropdown>
+        
         <tds-header-brand-symbol
           slot="end"
           link-href="https://scania.com"
@@ -107,6 +127,27 @@ function App() {
                 Form
               </Link>
             </tds-side-menu-item>
+          </div>
+          <div className="mobile-nav-item">
+            <tds-side-menu-dropdown
+              default-open={pathname.includes("/tabs")}
+              selected={pathname.includes("/tabs")}
+            >
+              <tds-icon slot="button-icon" name="folder" size="24"></tds-icon>
+              <span slot="button-label">Tabs</span>
+              <tds-side-menu-dropdown-list>
+                <tds-side-menu-dropdown-list-item
+                  selected={pathname.includes("/tabs-button")}
+                >
+                  <Link to="/tabs-buttons">Button</Link>
+                </tds-side-menu-dropdown-list-item>
+                <tds-side-menu-dropdown-list-item
+                  selected={pathname.includes("tabs-links")}
+                >
+                  <Link to="/tabs-links">Link</Link>
+                </tds-side-menu-dropdown-list-item>
+              </tds-side-menu-dropdown-list>
+            </tds-side-menu-dropdown>
           </div>
           <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
         </tds-side-menu>
