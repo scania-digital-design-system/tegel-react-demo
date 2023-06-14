@@ -9,9 +9,11 @@ const TabsLinks = () => {
 
   const { pathname } = useLocation();
   const getSelectedIndex = () => {
-    return ["first-tab", "second-tab", "third-tab"].findIndex((pathSegment) =>
+    const index = ["first-tab", "second-tab", "third-tab"].findIndex((pathSegment) =>
       pathname.includes(pathSegment)
     );
+    // if no index is found return 0
+    return index === -1 ? 0 : index
   };
 
   return (
