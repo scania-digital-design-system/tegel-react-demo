@@ -34,7 +34,7 @@ const TabsButtons = () => {
             <button>Fourth tab</button>
           </tds-folder-tab>
         </tds-folder-tabs>
-        <TabsPanels index={folderTabIndex} />
+        <TabsPanels selectedTabIndex={folderTabIndex} />
       </div>
       <div className="tds-u-mb3 tabs">
         <tds-inline-tabs
@@ -59,7 +59,7 @@ const TabsButtons = () => {
             <button>Fourth tab</button>
           </tds-inline-tab>
         </tds-inline-tabs>
-        <TabsPanels index={inlineTabIndex} />
+        <TabsPanels selectedTabIndex={inlineTabIndex} />
       </div>
       <div className="tds-u-mb3 tabs">
         <tds-navigation-tabs
@@ -84,7 +84,7 @@ const TabsButtons = () => {
             <button>Fourth tab</button>
           </tds-navigation-tab>
         </tds-navigation-tabs>
-        <TabsPanels index={navigationTabIndex} />
+        <TabsPanels selectedTabIndex={navigationTabIndex} />
       </div>
     </div>
   );

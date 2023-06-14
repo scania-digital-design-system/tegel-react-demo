@@ -9,13 +9,9 @@ const TabsLinks = () => {
 
   const { pathname } = useLocation();
   const getSelectedIndex = () => {
-    if (pathname.includes("first-tab")) {
-      return 0;
-    } else if (pathname.includes("second-tab")) {
-      return 1;
-    } else if (pathname.includes("third-tab")) {
-      return 2;
-    }
+    return ["first-tab", "second-tab", "third-tab"].findIndex((pathSegment) =>
+      pathname.includes(pathSegment)
+    );
   };
 
   return (
@@ -31,68 +27,73 @@ const TabsLinks = () => {
         and you'll land on a page for the second tab.
       </p>
       <div className="tds-u-pb3 tabs">
-      <tds-folder-tabs
-        ref={(element) =>
-          element?.addEventListener("tdsChange", (event: any) => {
-            setFolderTabIndex(event.detail.selectedTabIndex);
-            console.log(event);
-          })
-        }
-        mode-variant="secondary" default-selected-index={getSelectedIndex()}>
-        <tds-folder-tab>
-          <Link to={"first-tab"}>First tab</Link>
-        </tds-folder-tab>
-        <tds-folder-tab>
-          <Link to={"second-tab"}>Second tab</Link>
-        </tds-folder-tab>
-        <tds-folder-tab>
-          <Link to={"third-tab"}>Third tab</Link>
-        </tds-folder-tab>
-      </tds-folder-tabs>
-      <TabsPanels index={folderTabIndex} />
+        <tds-folder-tabs
+          ref={(element) =>
+            element?.addEventListener("tdsChange", (event: any) => {
+              setFolderTabIndex(event.detail.selectedTabIndex);
+              console.log(event);
+            })
+          }
+          mode-variant="secondary"
+          default-selected-index={getSelectedIndex()}
+        >
+          <tds-folder-tab>
+            <Link to={"first-tab"}>First tab</Link>
+          </tds-folder-tab>
+          <tds-folder-tab>
+            <Link to={"second-tab"}>Second tab</Link>
+          </tds-folder-tab>
+          <tds-folder-tab>
+            <Link to={"third-tab"}>Third tab</Link>
+          </tds-folder-tab>
+        </tds-folder-tabs>
+        <TabsPanels selectedTabIndex={folderTabIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-      <tds-inline-tabs
-        ref={(element) =>
-          element?.addEventListener("tdsChange", (event: any) => {
-            setInlineTabIndex(event.detail.selectedTabIndex);
-            console.log(event);
-          })
-        }
-        mode-variant="secondary" default-selected-index={getSelectedIndex()}>
-        <tds-inline-tab>
-          <Link to={"first-tab"}>First tab</Link>
-        </tds-inline-tab>
-        <tds-inline-tab>
-          <Link to={"second-tab"}>Second tab</Link>
-        </tds-inline-tab>
-        <tds-inline-tab>
-          <Link to={"third-tab"}>Third tab</Link>
-        </tds-inline-tab>
-      </tds-inline-tabs>
-      <TabsPanels index={inlineTabIndex} />
+        <tds-inline-tabs
+          ref={(element) =>
+            element?.addEventListener("tdsChange", (event: any) => {
+              setInlineTabIndex(event.detail.selectedTabIndex);
+              console.log(event);
+            })
+          }
+          mode-variant="secondary"
+          default-selected-index={getSelectedIndex()}
+        >
+          <tds-inline-tab>
+            <Link to={"first-tab"}>First tab</Link>
+          </tds-inline-tab>
+          <tds-inline-tab>
+            <Link to={"second-tab"}>Second tab</Link>
+          </tds-inline-tab>
+          <tds-inline-tab>
+            <Link to={"third-tab"}>Third tab</Link>
+          </tds-inline-tab>
+        </tds-inline-tabs>
+        <TabsPanels selectedTabIndex={inlineTabIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-      <tds-navigation-tabs
-        ref={(element) =>
-          element?.addEventListener("tdsChange", (event: any) => {
-            setNavigationTabIndex(event.detail.selectedTabIndex);
-            console.log(event);
-          })
-        }
-        mode-variant="secondary" default-selected-index={getSelectedIndex()}>
-        <tds-navigation-tab>
-          <Link to={"first-tab"}>First tab</Link>
-        </tds-navigation-tab>
-        <tds-navigation-tab>
-          <Link to={"second-tab"}>Second tab</Link>
-        </tds-navigation-tab>
-        <tds-navigation-tab>
-          <Link to={"third-tab"}>Third tab</Link>
-        </tds-navigation-tab>
-      </tds-navigation-tabs>
-        <TabsPanels index={navigationTabIndex} />
-
+        <tds-navigation-tabs
+          ref={(element) =>
+            element?.addEventListener("tdsChange", (event: any) => {
+              setNavigationTabIndex(event.detail.selectedTabIndex);
+              console.log(event);
+            })
+          }
+          mode-variant="secondary"
+          default-selected-index={getSelectedIndex()}
+        >
+          <tds-navigation-tab>
+            <Link to={"first-tab"}>First tab</Link>
+          </tds-navigation-tab>
+          <tds-navigation-tab>
+            <Link to={"second-tab"}>Second tab</Link>
+          </tds-navigation-tab>
+          <tds-navigation-tab>
+            <Link to={"third-tab"}>Third tab</Link>
+          </tds-navigation-tab>
+        </tds-navigation-tabs>
+        <TabsPanels selectedTabIndex={navigationTabIndex} />
       </div>
     </div>
   );
