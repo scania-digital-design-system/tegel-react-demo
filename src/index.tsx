@@ -10,9 +10,9 @@ import WebComponents from "./pages/WebComponents";
 import TextPage from "./pages/TextPage/TextPage";
 import TablePage from './pages/TablePage';
 import FormPage from './pages/FormPage';
-import About from './pages/About';
 import TabsLinkPage from './pages/TabsLinkPage';
 import TabsButtonPage from './pages/TabsButtonPage';
+import About from './pages/About';
 
 
 const router = createBrowserRouter([
