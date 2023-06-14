@@ -5,6 +5,7 @@ import DataTable from "../components/DataTable";
 import Toast from "../components/Toast";
 
 
+import Modal from "../components/Modal";
 export default function WebComponents() {
   
   return (
@@ -249,36 +250,27 @@ export default function WebComponents() {
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Modal</div>
-        <tds-button id="my-modal-button" text="Open Modal"></tds-button>
-        <tds-modal
-          selector="#my-modal-button"
-          id="my-modal"
-          size="lg"
-          actions="static"
-        >
-          <h5 className="tds-modal-headline" slot="tds-modal-headline">
-            The buttons for the Modal only works in the canvas tab
-          </h5>
-          <span slot="tds-modal-body">
-            The steps fell lightly and oddly, with a certain swing, for all they
-            went so slowly; it was different indeed from the heavy creaking
-            tread of Henry Jekyll. Utterson sighed. “Is there never anything
-            else?” he asked.
-          </span>
-          <tds-button
-            slot="tds-modal-actions"
-            data-dismiss-modal
-            size="md"
-            text="Delete"
-            type="danger"
-          ></tds-button>
-          <tds-button
-            slot="tds-modal-actions"
-            data-dismiss-modal
-            size="md"
-            text="Cancel"
-          ></tds-button>
-        </tds-modal>
+        <div className="tds-u-flex">
+          <tds-button id="sm-modal-button" text="Small Modal"></tds-button>
+          <Modal prevent size="sm" selector="#sm-modal-button" />
+          <tds-button id="md-modal-button" text="Medium Modal"></tds-button>
+          <Modal size="md" selector="#md-modal-button" />
+          <tds-button id="lg-modal-button" text="Large Modal"></tds-button>
+          <Modal size="lg" selector="#lg-modal-button" />
+        </div>
+
+        <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
+        <tds-icon
+          onMouseEnter={() => {
+            (
+              document.querySelector(
+                `[selector="hover-modal-button"]`
+              ) as HTMLTdsModalElement
+            ).showModal();
+          }}
+          name="truck"
+          size="20px"></tds-icon>
+        <Modal size="sm" selector="hover-modal-button" />
       </div>
 
       <div>
