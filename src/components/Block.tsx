@@ -4,7 +4,7 @@ interface TdsRadioButtonCustomEvent<T> extends Event {
   target: EventTarget & T;
 }
 
-const Block: React.FC = () => {
+const Block = () => {
   const [modeVariant, setModeVariant] = useState('primary');
 
 	const capitalizeFirst = (str: string) => {
