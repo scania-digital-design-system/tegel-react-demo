@@ -7,6 +7,8 @@ import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
+import AccordionExample from "../components/Accordion";
+
 
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -28,6 +30,9 @@ export default function WebComponents() {
             Duis laoreet vestibulum fermentum.
           </tds-accordion-item>
         </tds-accordion>
+      </div>
+      <div>
+        <AccordionExample />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Badge</div>
@@ -205,11 +210,11 @@ export default function WebComponents() {
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Radio Button</div>
-        <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
+        <tds-radio-button name="rb-example" value="option1" radio-id="option-1">
           <div slot="label">Label text 1</div>
         </tds-radio-button>
 
-        <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
+        <tds-radio-button name="rb-example" value="option2" radio-id="option-2">
           <div slot="label">Label text 2</div>
         </tds-radio-button>
       </div>
