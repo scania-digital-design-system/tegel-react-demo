@@ -11,6 +11,8 @@ const FormPage = () => {
   const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
 
+  const [addressValidation, setAddressValidation] = useState(true);
+
   const handleClick = () => {
     form.current?.requestSubmit();
   };
@@ -47,21 +49,27 @@ const FormPage = () => {
     event.preventDefault();
     if (form.current) {
       const formData = new FormData(form.current);
-      formData.forEach((value, key) => {
-        console.log("Key:", key, "Value:", value);
-      });
+
+      if (formData.get("homeAddress") === "") {
+        setAddressValidation(false);
+      } else {
+        setAddressValidation(true);
+        formData.forEach((value, key) => {
+          console.log("Key:", key, "Value:", value);
+        });
+
+        setSendingStatus(true);
+
+        setTimeout(() => {
+          setSendingStatus(false);
+          setSubmitted(true);
+        }, 3000);
+
+        setTimeout(() => {
+          document.querySelector("tds-toast")?.hideToast();
+        }, 10000);
+      }
     }
-
-    setSendingStatus(true);
-
-    setTimeout(() => {
-      setSendingStatus(false);
-      setSubmitted(true);
-    }, 3000);
-
-    setTimeout(() => {
-      document.querySelector("tds-toast")?.hideToast();
-    }, 10000);
   };
 
   return (
@@ -78,17 +86,57 @@ const FormPage = () => {
             <section>
               <h4>Text Input</h4>
               <tds-text-field
+                mode-variant="secondary"
                 name="text-field"
                 label="Full name"
                 label-position="outside"
                 placeholder="John Doe"
               ></tds-text-field>
+            </section>
+
+            <section>
               <tds-datetime
+                mode-variant="secondary"
                 label="Date of birth"
                 name="dateOfBirth"
                 type="date"
                 default-value="2000-01-01"
               ></tds-datetime>
+            </section>
+
+            <section className="side-by-side-input">
+              <tds-text-field
+                mode-variant="secondary"
+                type="text"
+                size="lg"
+                state="success"
+                label="Phone number"
+                name="phoneNumber"
+                label-position="outside"
+                no-min-width
+                placeholder="08 456 32"
+              >
+                <span slot="prefix">
+                  <tds-icon name="phone" size="16px"></tds-icon>
+                </span>
+              </tds-text-field>
+
+              <tds-text-field
+                mode-variant="secondary"
+                type="text"
+                size="lg"
+                state={addressValidation ? "default" : "error"}
+                label="Address"
+                name="homeAddress"
+                label-position="outside"
+                no-min-width
+                placeholder="Majorvägen 32"
+                helper={addressValidation ? "" : "Address is mandatory field!"}
+              >
+                <span slot="prefix">
+                  <tds-icon name="pin" size="16px"></tds-icon>
+                </span>
+              </tds-text-field>
             </section>
 
             <section>
@@ -100,6 +148,7 @@ const FormPage = () => {
                     setCountrySelected(value);
                   });
                 }}
+                mode-variant="secondary"
                 name="country"
                 label="Which country you want to select?"
                 label-position="outside"
@@ -122,6 +171,7 @@ const FormPage = () => {
             <section>
               <tds-dropdown-v2
                 ref={norwayDropdownTown}
+                mode-variant="secondary"
                 name="norweiganTown"
                 label="Which towns have you visited in Norway?"
                 label-position="outside"
@@ -137,6 +187,7 @@ const FormPage = () => {
             <section>
               <tds-dropdown-v2
                 ref={swedenDropdownTown}
+                mode-variant="secondary"
                 name="swedishTown"
                 label="Select your favourite Swedish town"
                 label-position="outside"
@@ -183,6 +234,7 @@ const FormPage = () => {
 
             <section>
               <tds-textarea
+                mode-variant="secondary"
                 name="textarea"
                 label="What do you do at Scania?"
                 label-position="outside"
@@ -263,7 +315,7 @@ const FormPage = () => {
               </div>
             </section>
           </tds-block>
-          <section id="anonymous-toggle" className="tds-u-mt1 tds-u-flex-end">
+          <section className="tds-u-flex-end">
             <tds-toggle required name="toggle" size="sm">
               <div slot="label">Answer anonymously</div>
             </tds-toggle>
