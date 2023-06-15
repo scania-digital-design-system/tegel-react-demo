@@ -1,22 +1,45 @@
 .form {
+    position: relative;
+
     section {
         margin-top: 8px;
     }
-    
-    .tds-u-flex {
-        justify-content: space-between;
-        align-items: center;
-    }
-    
+
     .chips {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
     }
-    
-    tds-toast {
-        position: fixed;
-        right: var(--tds-spacing-element-32);
-        bottom: var(--tds-spacing-element-32);
+
+    tds-block {
+        transition: filter 250ms ease;
+    }
+
+    .spinner-container {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: bottom 250ms ease,  opacity 250ms ease;
+    }
+
+    &.form-sending {
+        tds-block {
+            filter: blur(4px);
+        }
+        .spinner-container {
+            opacity: 1;
+            bottom: 100px;
+        }
     }
 }
+
+tds-toast {
+    position: fixed;
+    right: var(--tds-spacing-element-32);
+    bottom: var(--tds-spacing-element-32);
+}
+
+
+
