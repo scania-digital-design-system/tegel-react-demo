@@ -29,14 +29,14 @@ const SideMenu = ({
         onClick={() => toggleMobileNav()}
         slot="close-button"
       ></tds-side-menu-close-button>
-      <tds-side-menu-item>
-        <Link to={"/about"} onClick={() => toggleMobileNav()}>
+      <tds-side-menu-item selected={pathname === "/about"}>
+        <Link  to={"/about"} onClick={() => toggleMobileNav()}>
           <tds-icon name="info" size="24"></tds-icon>
           About us
         </Link>
       </tds-side-menu-item>
       <div className="mobile-nav-item">
-        <tds-side-menu-item>
+        <tds-side-menu-item selected={pathname === "/web-components"}>
           <Link to={"/web-components"} onClick={() => toggleMobileNav()}>
             <tds-icon name="tool" size="24"></tds-icon>
             Components
@@ -44,7 +44,7 @@ const SideMenu = ({
         </tds-side-menu-item>
       </div>
       <div className="mobile-nav-item">
-        <tds-side-menu-item>
+        <tds-side-menu-item selected={pathname === "/form"}>
           <Link to={"/form"} onClick={() => toggleMobileNav()}>
             <tds-icon name="edit" size="24"></tds-icon>
             Form

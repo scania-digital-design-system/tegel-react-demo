@@ -7,6 +7,7 @@ interface HeaderProps {
   pathname: string;
   toggleMobileNav: Function;
 }
+
 const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
   const userContext = useContext(UserContext);
   const headerDropdown = useRef<HTMLTdsHeaderDropdownElement>(null);
@@ -15,6 +16,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
       // TODO - Need to be able to close the dropdown.
     }
   };
+
   return (
     <tds-header>
       <tds-header-hamburger
@@ -39,10 +41,16 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
       >
         <span slot="button-label">Tabs</span>
         <tds-header-dropdown-list>
-          <tds-header-dropdown-list-item onClick={closeHeaderDropdown}>
+          <tds-header-dropdown-list-item
+            selected={pathname === "/tabs-buttons"}
+            onClick={closeHeaderDropdown}
+          >
             <Link to="/tabs-buttons">Buttons</Link>
           </tds-header-dropdown-list-item>
-          <tds-header-dropdown-list-item onClick={closeHeaderDropdown}>
+          <tds-header-dropdown-list-item
+            selected={pathname === "/tabs-links"}
+            onClick={closeHeaderDropdown}
+          >
             <Link to="tabs-links">Links</Link>
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>
