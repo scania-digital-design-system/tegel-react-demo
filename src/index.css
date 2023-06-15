@@ -25,16 +25,11 @@ body,
 .announcement-banner {
   position: sticky;
   top: 0;
-  z-index: 9999;
 }
 
 tds-header {
     position: sticky;
     top: 68px;
-}
-
-tds-side-menu {
-  top: 68px;
 }
 
 .side-menu-and-main {
