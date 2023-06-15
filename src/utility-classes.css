@@ -11,3 +11,8 @@
     display: flex;
     justify-content: flex-start;
 }
+
+.tds-u-flex-center {
+    justify-content: space-between;
+    align-items: center;
+}
