@@ -1,5 +1,6 @@
-@import url("@scania/tegel/dist/tegel/tegel.css");
-@import url("https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css");
+@import url('@scania/tegel/dist/tegel/tegel.css');
+@import "utility-classes.css";
+@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
 
 html,
 body,
@@ -49,6 +50,7 @@ main {
   margin: 0 auto;
   padding: 128px 0;
 }
+
 .popover-container {
   display: flex;
   flex-wrap: nowrap;
@@ -65,6 +67,7 @@ main {
 i {
   padding: 0 2px;
 }
+
 .popover-container {
   display: flex;
   flex-wrap: nowrap;
@@ -75,11 +78,6 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.tooltip-paragraph b,
-i {
-  padding: 0 2px;
 }
 
 @media screen and (max-width: 650px) {

@@ -1,0 +1,13 @@
+/*
+    Add here all rules you repeat more then once in a code so we cna move them later on in tegel's utility classes
+*/
+
+.tds-u-flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tds-u-flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
