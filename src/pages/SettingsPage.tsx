@@ -63,7 +63,7 @@ const SettingsPage = () => {
           state={userNameState}
           helper={userNameHelper}
         ></tds-text-field>
-        <div className="tds-u-pb2">
+        <div className="tds-u-pt2 tds-u-pb2">
           <tds-text-field
             name="placeOfWork"
             placeholder={userContext?.user.placeOfWork}
