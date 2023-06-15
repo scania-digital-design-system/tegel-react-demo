@@ -1,12 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 interface SideMenuProps {
-    pathname: string;
-    toggleMobileNav: Function;
-    sideMenuRef: React.RefObject<HTMLTdsSideMenuElement>
-  }
+  pathname: string;
+  toggleMobileNav: Function;
+  sideMenuRef: React.RefObject<HTMLTdsSideMenuElement>;
+}
 
-const SideMenu = ({pathname, toggleMobileNav, sideMenuRef}:SideMenuProps) => {
+const SideMenu = ({
+  pathname,
+  toggleMobileNav,
+  sideMenuRef,
+}: SideMenuProps) => {
+  const userContext = useContext(UserContext);
   return (
     <tds-side-menu
       ref={sideMenuRef}
@@ -44,6 +51,7 @@ const SideMenu = ({pathname, toggleMobileNav, sideMenuRef}:SideMenuProps) => {
           </Link>
         </tds-side-menu-item>
       </div>
+
       <div className="mobile-nav-item">
         <tds-side-menu-dropdown
           default-open={pathname.includes("/tabs")}
@@ -62,6 +70,26 @@ const SideMenu = ({pathname, toggleMobileNav, sideMenuRef}:SideMenuProps) => {
             >
               <Link to="/tabs-links">Link</Link>
             </tds-side-menu-dropdown-list-item>
+          </tds-side-menu-dropdown-list>
+        </tds-side-menu-dropdown>
+      </div>
+      <div slot="end" >
+        <tds-side-menu-dropdown  selected={pathname.includes('settings')}>
+          <tds-side-menu-user
+            slot="button-label"
+            heading={userContext?.user.userName}
+            subheading={userContext?.user.placeOfWork}
+            img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+            img-alt=""
+          ></tds-side-menu-user>
+          <tds-side-menu-dropdown-list>
+            <tds-side-menu-dropdown-list-item selected={pathname.includes('settings')}>
+              <Link to="settings">
+                <tds-icon name="settings"></tds-icon>
+                <div className="tds-u-pl1">Settings</div>
+              </Link>
+            </tds-side-menu-dropdown-list-item>
+            
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
       </div>

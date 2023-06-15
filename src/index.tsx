@@ -1,9 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import "./register-webcomponents";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import './register-webcomponents';
 
 import App from "./App";
 import WebComponents from "./pages/WebComponents";
@@ -13,6 +16,7 @@ import FormPage from './pages/FormPage';
 import TabsLinkPage from './pages/TabsLinkPage';
 import TabsButtonPage from './pages/TabsButtonPage';
 import About from './pages/About';
+import SettingsPage from './pages/SettingsPage';
 
 
 const router = createBrowserRouter([
@@ -66,6 +70,10 @@ const router = createBrowserRouter([
         path: "text-page",
         element: <TextPage />,
       },
+      {
+        path: 'settings',
+        element: <SettingsPage/>
+      }
     ],
   },
 ]);

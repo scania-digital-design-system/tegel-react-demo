@@ -1,26 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 interface HeaderProps {
   pathname: string;
   toggleMobileNav: Function;
 }
-const Header = ({
-  pathname,
-  toggleMobileNav,
-}: HeaderProps) => {
-    const headerDropdown = useRef<HTMLTdsHeaderDropdownElement>(null);
-    const closeHeaderDropdown = () => {
-        if(headerDropdown.current){
-          // TODO - Need to be able to close the dropdown.
-        }
-      }
+const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
+  const userContext = useContext(UserContext);
+  const headerDropdown = useRef<HTMLTdsHeaderDropdownElement>(null);
+  const closeHeaderDropdown = () => {
+    if (headerDropdown.current) {
+      // TODO - Need to be able to close the dropdown.
+    }
+  };
   return (
     <tds-header>
       <tds-header-hamburger
         onClick={() => {
-            toggleMobileNav()
+          toggleMobileNav();
         }}
         aria-label="Open application drawer"
         aria-haspopup="true"
@@ -45,6 +44,26 @@ const Header = ({
           </tds-header-dropdown-list-item>
           <tds-header-dropdown-list-item onClick={closeHeaderDropdown}>
             <Link to="tabs-links">Links</Link>
+          </tds-header-dropdown-list-item>
+        </tds-header-dropdown-list>
+      </tds-header-dropdown>
+
+      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
+        <img
+          slot="button-icon"
+          src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+          alt="User menu."
+        />
+        <tds-header-dropdown-list type="lg">
+          <tds-header-dropdown-list-user
+            heading={userContext?.user.userName}
+            subheading={userContext?.user.placeOfWork}
+          ></tds-header-dropdown-list-user>
+          <tds-header-dropdown-list-item>
+            <Link to="settings">
+              <tds-icon name="settings"></tds-icon>
+              <div className="tds-u-pl1">Settings</div>
+            </Link>
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>
       </tds-header-dropdown>
