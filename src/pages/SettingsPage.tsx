@@ -17,15 +17,16 @@ const SettingsPage = () => {
   const [placeOfWorkHelper, setPlaceOfWorkHelper] = useState<
     string | undefined
   >(undefined);
+
   const handleClick = () => {
     form.current?.requestSubmit();
   };
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+
     if (form.current) {
       const formData = new FormData(form.current);
-
       if (formData.get("userName")?.toString() === "") {
         setUserNameState("error");
         setUserNameHelper(`Can't be empty`);
@@ -44,6 +45,7 @@ const SettingsPage = () => {
           placeOfWork: formData.get("placeOfWork")?.toString() || "",
         };
         userContext?.updateUser(updatedUser);
+        form.current.reset()
       }
     }
   };
