@@ -19,11 +19,11 @@ const TablePage = () => {
       <SortableTable/>
       <p>This Table prevents the default behaviour of the sorting by listening for a <code>tdsSortChange</code> event.</p>
       <SortableTable cancelEvent/>
-      <p>This Table prevents the default behaviour of the searching by listening for a <code>tdsSearchChange</code> event.</p>
-      <SearchTable cancelEvent/>
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Search Table</div>
       <p>This Table is searchable.</p>
       <SearchTable/>
+      <p>This Table prevents the default behaviour of the searching by listening for a <code>tdsSearchChange</code> event.</p>
+      <SearchTable cancelEvent/>
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Expandable Rows</div>
       <p>This Table uses expandable rows.</p>
       <ExpandTable/>
