@@ -1,123 +1,79 @@
-import { useState } from "react";
+/* eslint-disable jsx-a11y/anchor-has-content */
+import { useRef, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import ModeSwitcher from "./components/ModeSwitcher";
 import Footer from "./components/Footer";
-import { Link } from "react-router-dom";
+import Header from "./components/Navigation/Header";
+import SideMenu from "./components/Navigation/SideMenu";
+import { createContext } from 'react';
+
+export interface User {
+  userName: string;
+  placeOfWork: string;
+}
+
+interface UserContextValue {
+  user: User;
+  updateUser: (newUser: User) => void;
+}
+
+export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
   const { pathname } = useLocation();
-  let sideMenu: any;
-  console.log(pathname);
+  const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
+  const [user, setUser] = useState<User>({
+    userName: 'Marcus Åström',
+    placeOfWork: 'IXCD',
+  });
+
+  const updateUser = (newUser: User) => {
+    setUser(newUser);
+  };
+
+  const userContextValue: UserContextValue = {
+    user,
+    updateUser,
+  };
+
+
+  const toggleMobileNav = () => {
+    if (sideMenuRef.current) {
+      sideMenuRef.current.open = !sideMenuRef.current.open;
+    }
+  };
 
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
-      <ModeSwitcher mode={mode} setMode={setMode} />
-      <tds-banner type="information" icon="info" header="React demo" persistent>
-        <div slot="banner-subheader">
-          This is a demo page in React using{" "}
-          <tds-link style={{ display: "inline-block" }}>
-            <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-              @scania/tegel
-            </a>
-          </tds-link>
-        </div>
-      </tds-banner>
-      <tds-header className="demo-header">
-        <tds-header-hamburger
-          aria-expanded="false"
-          aria-label="Open application drawer"
-          aria-haspopup="true"
-          onClick={() => {
-            sideMenu.open = true;
-          }}
-        ></tds-header-hamburger>
-        <tds-header-title>My Application</tds-header-title>
-        <tds-header-item
-          selected={pathname === "/web-components" || pathname === "/"}
-        >
-          <Link to="web-components">Components</Link>
-        </tds-header-item>
-        <tds-header-item selected={pathname === "/form"}>
-          <Link to="form">Form</Link>
-        </tds-header-item>
-        <tds-header-item selected={pathname === "/text-page"}>
-          <Link to="text-page">Text</Link>
-        </tds-header-item>
-        <tds-header-item selected={pathname === "/tabs"}>
-          <Link to="tabs">Tabs Buttons</Link>
-        </tds-header-item>
-        <tds-header-item selected={pathname.includes("/tabs-links")}>
-          <Link to="tabs-links">Tabs Links</Link>
-        </tds-header-item>
-        <tds-header-item selected={pathname === '/table'}>
-          <Link to="table">Table</Link>
-        </tds-header-item>
-        <tds-header-brand-symbol
-          slot="end"
-          link-href="https://scania.com"
-          aria-label="Scania - red gryphon on blue shield"
-        ></tds-header-brand-symbol>
-      </tds-header>
-
-      <div className="container">
-        <tds-side-menu
-          ref={(element) => (sideMenu = element)}
-          aria-label="Side menu"
-          id="demo-side-menu"
-          persistent
-        >
-          <tds-side-menu-overlay slot="overlay"></tds-side-menu-overlay>
-
-          <tds-side-menu-close-button
-            slot="close-button"
-            aria-label="Close drawer menu"
-            onClick={() => {
-              sideMenu.open = false;
-            }}
-          ></tds-side-menu-close-button>
-
-          <tds-side-menu-item>
-            <button>
-              <tds-icon name="timer" size="24"></tds-icon>
-              About us
-            </button>
-          </tds-side-menu-item>
-
-          <tds-side-menu-item>
-            <button>
-              <tds-icon name="truck" size="24"></tds-icon>
-              Trucks
-            </button>
-          </tds-side-menu-item>
-
-          <tds-side-menu-dropdown default-open selected>
-            <tds-icon slot="button-icon" name="profile" size="24"></tds-icon>
-            <span slot="button-label">Wheel types</span>
-            <tds-side-menu-dropdown-list>
-              <tds-side-menu-dropdown-list-item>
-                <a href="https://www.scania.com">Hub-centric wheel</a>
-              </tds-side-menu-dropdown-list-item>
-              <tds-side-menu-dropdown-list-item selected>
-                <a href="https://www.scania.com" aria-current="page">
-                  Rim wheel
+      <UserContext.Provider value={userContextValue}>
+        <ModeSwitcher mode={mode} setMode={setMode} />
+        <div className="announcement-banner">
+          <tds-banner
+            type="information"
+            icon="info"
+            header="React demo"
+            persistent
+          >
+            <div slot="banner-subheader">
+              This is a demo page in React using{" "}
+              <tds-link style={{ display: "inline-block" }}>
+                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+                  @scania/tegel
                 </a>
-              </tds-side-menu-dropdown-list-item>
-            </tds-side-menu-dropdown-list>
-          </tds-side-menu-dropdown>
-
-          <tds-side-menu-item>
-            <button>
-              <tds-icon name="star" size="24"></tds-icon>
-              Values
-            </button>
-          </tds-side-menu-item>
-        </tds-side-menu>
-        <main>
-          <Outlet />
-        </main>
-      </div>
-      <Footer />
+              </tds-link>
+            </div>
+          </tds-banner>
+        </div>
+        <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
+        <div className="side-menu-and-main">
+          <SideMenu sideMenuRef={sideMenuRef} pathname={pathname} toggleMobileNav={toggleMobileNav} />
+          <main className="tds-u-h-100 tds-u-p3">
+            <Outlet />
+          </main>
+        </div>
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 }

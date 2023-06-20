@@ -1,6 +1,6 @@
 import TabsButtons from "../components/TabsButtons";
 
-const TabsPage = () => {
+const TabsButtonPage = () => {
   return (
     <div>
       <TabsButtons/>
@@ -8,4 +8,4 @@ const TabsPage = () => {
   );
 };
 
-export default TabsPage;
+export default TabsButtonPage;
