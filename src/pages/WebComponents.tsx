@@ -7,6 +7,7 @@ import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
+import PopOverCanvas from "../components/PopOverCanvas";
 
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -215,104 +216,7 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Popover</div>
-        <div className="tds-headline-03 tds-u-pb1">Canvas</div>
-
-        <div className="popover-container">
-          <tds-button
-            aria-label="menu"
-            only-icon
-            id="trigger"
-            type="secondary"
-            size="sm"
-          >
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></tds-icon>
-          </tds-button>
-        </div>
-        <tds-popover-canvas placement="auto" selector="#trigger">
-          <div className="tds-u-p2">
-            <h2>A popover canvas!</h2>
-            <p>Where you can put anything you want!</p>
-            <p>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://tegel.scania.com"
-              >
-                Tegel Design System
-              </a>
-            </p>
-          </div>
-        </tds-popover-canvas>
-
-        <div className="tds-headline-03 tds-u-pb1 tds-u-pt3">Menu</div>
-
-        <div className="popover-container">
-          <tds-button
-            aria-label="menu"
-            only-icon
-            id="my-popover-button"
-            type="secondary"
-            size="sm"
-          >
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></tds-icon>
-          </tds-button>
-        </div>
-        <tds-popover-menu
-          selector="#my-popover-button"
-          placement="auto"
-          id="my-popover-menu"
-        >
-          <ul className="tds-popover-menu-wrapper">
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://tegel.scania.com"
-              >
-                <i>
-                  <tds-icon name="home" size="16px"></tds-icon>
-                </i>
-                Tegel's official site
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://tegel-storybook.netlify.app/"
-              >
-                <i>
-                  <tds-icon name="tool" size="16px"></tds-icon>
-                </i>
-                Tegel's Storybook
-              </a>
-            </li>
-            <li className="divider"></li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/scania-digital-design-system/tegel"
-              >
-                <i>
-                  <tds-icon name="settings" size="16px"></tds-icon>
-                </i>
-                Tegel GitHub
-              </a>
-            </li>
-          </ul>
-        </tds-popover-menu>
+       <PopOverCanvas />
       </div>
 
       <div>
