@@ -3,12 +3,13 @@ import "./WebComponents.scss";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import DataTable from "../components/DataTable";
 import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
 
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
   return (
     <>
@@ -69,11 +70,6 @@ export default function WebComponents() {
         <tds-chip type="button" size="lg">
           <span slot="label">Label</span>
         </tds-chip>
-      </div>
-
-      <div>
-        <div className="tds-headline-02 tds-u-pb1">Data table</div>
-        <DataTable />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Datetime</div>

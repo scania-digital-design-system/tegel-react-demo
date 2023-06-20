@@ -11,6 +11,8 @@ import FormPage from "./pages/FormPage";
 import TabsPage from "./pages/TabsPage";
 import TabsLinkPage from "./pages/TabsLinkPage";
 import TextPage from "./pages/TextPage/TextPage";
+import TablePage from './pages/TablePage';
+
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "web-components",
         element: <WebComponents />,
+      },
+      {
+        path: "table",
+        element: <TablePage />,
       },
       {
         path: "form",

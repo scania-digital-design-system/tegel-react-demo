@@ -50,7 +50,9 @@ function App() {
         <tds-header-item selected={pathname.includes("/tabs-links")}>
           <Link to="tabs-links">Tabs Links</Link>
         </tds-header-item>
-
+        <tds-header-item selected={pathname === '/table'}>
+          <Link to="table">Table</Link>
+        </tds-header-item>
         <tds-header-brand-symbol
           slot="end"
           link-href="https://scania.com"
