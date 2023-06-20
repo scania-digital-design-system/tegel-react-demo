@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import "./WebComponents.scss";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Button from "../components/Button";
@@ -32,7 +33,7 @@ export default function WebComponents() {
         <tds-badge value="1" size="lg"></tds-badge>
       </div>
       <div>
-        <Banner/>
+        <Banner />
       </div>
       <div>
         <Block />
@@ -52,10 +53,10 @@ export default function WebComponents() {
         </tds-breadcrumb>
       </div>
       <div className="tds-u-w-100">
-        <Button/>
+        <Button />
       </div>
       <div>
-       <Card/>
+        <Card />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
@@ -188,7 +189,10 @@ export default function WebComponents() {
           <Modal size="lg" selector="#lg-modal-button" />
         </div>
 
-        <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
+        <p>
+          Modals can also be opened programatically, see it in action by
+          hovering the Icon below.
+        </p>
         <tds-icon
           onMouseEnter={() => {
             (
@@ -198,7 +202,8 @@ export default function WebComponents() {
             ).showModal();
           }}
           name="truck"
-          size="20px"></tds-icon>
+          size="20px"
+        ></tds-icon>
         <Modal size="sm" selector="hover-modal-button" />
       </div>
 
@@ -222,7 +227,7 @@ export default function WebComponents() {
             aria-label="menu"
             only-icon
             id="trigger"
-            type="ghost"
+            type="secondary"
             size="sm"
           >
             <tds-icon
@@ -233,32 +238,30 @@ export default function WebComponents() {
             ></tds-icon>
           </tds-button>
         </div>
-        <tds-popover-canvas
-          placement="auto"
-          selector="#trigger"
-          className="tds-u-p2"
-        >
-          <h2>A popover canvas!</h2>
-          <p>Where you can put anything you want!</p>
-          <p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
-              Even links!
-            </a>
-          </p>
+        <tds-popover-canvas placement="auto" selector="#trigger">
+          <div className="tds-u-p2">
+            <h2>A popover canvas!</h2>
+            <p>Where you can put anything you want!</p>
+            <p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://tegel.scania.com"
+              >
+                Tegel Design System
+              </a>
+            </p>
+          </div>
         </tds-popover-canvas>
 
-        <div className="tds-headline-03 tds-u-pb1">Menu</div>
+        <div className="tds-headline-03 tds-u-pb1 tds-u-pt3">Menu</div>
 
         <div className="popover-container">
           <tds-button
             aria-label="menu"
             only-icon
             id="my-popover-button"
-            type="ghost"
+            type="secondary"
             size="sm"
           >
             <tds-icon
@@ -279,24 +282,24 @@ export default function WebComponents() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
+                href="https://tegel.scania.com"
               >
                 <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
+                  <tds-icon name="home" size="16px"></tds-icon>
                 </i>
-                Menu item 1
+                Tegel's official site
               </a>
             </li>
             <li>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
+                href="https://tegel-storybook.netlify.app/"
               >
                 <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
+                  <tds-icon name="tool" size="16px"></tds-icon>
                 </i>
-                Menu item 2
+                Tegel's Storybook
               </a>
             </li>
             <li className="divider"></li>
@@ -304,12 +307,12 @@ export default function WebComponents() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
+                href="https://github.com/scania-digital-design-system/tegel"
               >
                 <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
+                  <tds-icon name="settings" size="16px"></tds-icon>
                 </i>
-                Menu item 4
+                Tegel GitHub
               </a>
             </li>
           </ul>
@@ -429,10 +432,10 @@ export default function WebComponents() {
         <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
       </div>
       <div>
-        <Toast/>
+        <Toast />
       </div>
       <div>
-        <Toggle/>
+        <Toggle />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
