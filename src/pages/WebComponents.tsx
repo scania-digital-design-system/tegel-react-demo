@@ -7,6 +7,7 @@ import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
+import RadioButton from "../components/RadioButton";
 
 export default function WebComponents() {
   return (
@@ -32,7 +33,7 @@ export default function WebComponents() {
         <tds-badge value="1" size="lg"></tds-badge>
       </div>
       <div>
-        <Banner/>
+        <Banner />
       </div>
       <div>
         <Block />
@@ -52,10 +53,10 @@ export default function WebComponents() {
         </tds-breadcrumb>
       </div>
       <div className="tds-u-w-100">
-        <Button/>
+        <Button />
       </div>
       <div>
-       <Card/>
+        <Card />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
@@ -188,7 +189,10 @@ export default function WebComponents() {
           <Modal size="lg" selector="#lg-modal-button" />
         </div>
 
-        <p>Modals can also be opened programatically, see it in action by hovering the Icon below.</p>
+        <p>
+          Modals can also be opened programatically, see it in action by
+          hovering the Icon below.
+        </p>
         <tds-icon
           onMouseEnter={() => {
             (
@@ -198,11 +202,13 @@ export default function WebComponents() {
             ).showModal();
           }}
           name="truck"
-          size="20px"></tds-icon>
+          size="20px"
+        ></tds-icon>
         <Modal size="sm" selector="hover-modal-button" />
       </div>
 
       <div>
+        <RadioButton />
         <div className="tds-headline-02 tds-u-pb1">Radio Button</div>
         <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
           <div slot="label">Label text 1</div>
@@ -429,10 +435,10 @@ export default function WebComponents() {
         <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
       </div>
       <div>
-        <Toast/>
+        <Toast />
       </div>
       <div>
-        <Toggle/>
+        <Toggle />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
