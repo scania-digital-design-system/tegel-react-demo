@@ -1,4 +1,4 @@
-import "./text-page.scss";
+import "./TextPage.scss";
 
 export default function TextPage() {
   const tegelStorybook: string =
