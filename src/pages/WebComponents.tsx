@@ -16,22 +16,6 @@ export default function WebComponents() {
   return (
     <>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Accordion</div>
-        <tds-accordion>
-          <tds-accordion-item header="First item">
-            This is the panel, which contains associated information with the
-            header. Usually it contains text, set in the same size as the
-            header. Lorem ipsum doler sit amet.
-          </tds-accordion-item>
-          <tds-accordion-item header="Second item">
-            This is the panel, which contains associated information with the
-            header. Usually it contains text, set in the same size as the
-            header. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Duis laoreet vestibulum fermentum.
-          </tds-accordion-item>
-        </tds-accordion>
-      </div>
-      <div>
         <AccordionExample />
       </div>
       <div>
