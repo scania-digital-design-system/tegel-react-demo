@@ -16,7 +16,7 @@ function App() {
       <tds-banner type="information" icon="info" header="React demo" persistent>
         <div slot="banner-subheader">
           This is a demo page in React using{" "}
-          <tds-link style={{ display: 'inline-block' }}>
+          <tds-link style={{ display: "inline-block" }}>
             <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
               @scania/tegel
             </a>
@@ -41,12 +41,16 @@ function App() {
         <tds-header-item selected={pathname === "/form"}>
           <Link to="form">Form</Link>
         </tds-header-item>
+        <tds-header-item selected={pathname === "/text-page"}>
+          <Link to="text-page">Text</Link>
+        </tds-header-item>
         <tds-header-item selected={pathname === "/tabs"}>
           <Link to="tabs">Tabs Buttons</Link>
         </tds-header-item>
         <tds-header-item selected={pathname.includes("/tabs-links")}>
           <Link to="tabs-links">Tabs Links</Link>
         </tds-header-item>
+
         <tds-header-brand-symbol
           slot="end"
           link-href="https://scania.com"
