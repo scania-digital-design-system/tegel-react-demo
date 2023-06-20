@@ -55,6 +55,9 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>
       </tds-header-dropdown>
+      <tds-header-item selected={pathname === "/text"}>
+        <Link to="web-components">Text</Link>
+      </tds-header-item>
 
       <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
         <img

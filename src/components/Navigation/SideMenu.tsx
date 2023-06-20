@@ -73,6 +73,15 @@ const SideMenu = ({
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
       </div>
+
+      <div className="mobile-nav-item">
+        <tds-side-menu-item selected={pathname === "/text"}>
+          <Link to={"/text"} onClick={() => toggleMobileNav()}>
+            <tds-icon name="document" size="24"></tds-icon>
+            Text
+          </Link>
+        </tds-side-menu-item>
+      </div>
       <div slot="end" >
         <tds-side-menu-dropdown  selected={pathname.includes('settings')}>
           <tds-side-menu-user

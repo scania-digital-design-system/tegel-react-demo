@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "text-page",
+        path: "text",
         element: <TextPage />,
       },
       {
