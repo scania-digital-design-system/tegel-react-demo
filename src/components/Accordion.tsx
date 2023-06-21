@@ -136,7 +136,6 @@ const Accordion = () => {
           expand-icon-position={iconPosition}
           disabled={!checkboxState}
           padding-reset={paddingReset}
-          onTdsToggle={() => handleAccordionItemClick('item2')}
         >
           This is the panel, which contains associated information with the header. Usually, it contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet vestibulum fermentum.
         </tds-accordion-item>
@@ -146,7 +145,6 @@ const Accordion = () => {
           expand-icon-position={iconPosition}
           disabled={!checkboxState}
           padding-reset={paddingReset}
-          onTdsToggle={() => handleAccordionItemClick('item3')}
         >
           This is the panel, which contains associated information with the header. Usually, it contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet vestibulum fermentum.
         </tds-accordion-item>
@@ -155,31 +153,13 @@ const Accordion = () => {
       <h2>Accordion with Secondary Mode</h2>
 
       <tds-accordion mode-variant="secondary">
-        <tds-accordion-item
-          header="Item 1"
-          expanded={expandedItem === 'item1'}
-          disabled={!checkboxState}
-          expand-icon-position={iconPosition}
-          onTdsToggle={() => handleAccordionItemClick('item1')}
-        >
+        <tds-accordion-item header="Item 1" disabled={!checkboxState} expand-icon-position={iconPosition}>
           Content for Item 1
         </tds-accordion-item>
-        <tds-accordion-item
-          header="Item 2"
-          expanded={expandedItem === 'item2'}
-          disabled={!checkboxState}
-          expand-icon-position={iconPosition}
-          onTdsToggle={() => handleAccordionItemClick('item2')}
-        >
+        <tds-accordion-item header="Item 2" disabled={!checkboxState} expand-icon-position={iconPosition}>
           Content for Item 2
         </tds-accordion-item>
-        <tds-accordion-item
-          header="Item 3"
-          expanded={expandedItem === 'item3'}
-          expand-icon-position={iconPosition}
-          disabled={!checkboxState}
-          onTdsToggle={() => handleAccordionItemClick('item3')}
-        >
+        <tds-accordion-item header="Item 3" disabled={!checkboxState} expand-icon-position={iconPosition}>
           Content for Item 3
         </tds-accordion-item>
       </tds-accordion>
