@@ -87,7 +87,7 @@ const FormPage = () => {
 
             <section>
               <h5>Which offices do you work from?</h5>
-              <tds-checkbox value="sodertalje321" name="office">
+              <tds-checkbox value="sodertalje321" name="office" checked>
                 <div slot="label">Södertälje 321</div>
               </tds-checkbox>
               <tds-checkbox value="sergel" name="office">
@@ -95,6 +95,9 @@ const FormPage = () => {
               </tds-checkbox>
               <tds-checkbox value="homeoffice" name="office">
                 <div slot="label">Home office</div>
+              </tds-checkbox>
+              <tds-checkbox value="b260" name="office" disabled>
+                <div slot="label">Building 260</div>
               </tds-checkbox>
               <h5>How long have you been at Scania?</h5>
               <tds-radio-button checked value="radio-1" name="yearsAtScania">

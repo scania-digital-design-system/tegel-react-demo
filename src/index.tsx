@@ -1,18 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import './register-webcomponents';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import "./register-webcomponents";
 
-import App from './App';
+import App from "./App";
 import WebComponents from "./pages/WebComponents";
-import FormPage from './pages/FormPage';
-import TabsPage from './pages/TabsPage';
-import TabsLinkPage from './pages/TabsLinkPage';
+import FormPage from "./pages/FormPage";
+import TabsPage from "./pages/TabsPage";
+import TabsLinkPage from "./pages/TabsLinkPage";
+import TextPage from "./pages/TextPage/TextPage";
+import TablePage from './pages/TablePage';
 
 
 const router = createBrowserRouter([
@@ -29,16 +28,20 @@ const router = createBrowserRouter([
         element: <WebComponents />,
       },
       {
+        path: "table",
+        element: <TablePage />,
+      },
+      {
         path: "form",
         element: <FormPage />,
       },
       {
         path: "tabs",
-        element: <TabsPage/>,
+        element: <TabsPage />,
       },
       {
         path: "tabs-links",
-        element: <TabsLinkPage/>,
+        element: <TabsLinkPage />,
         children: [
           {
             path: "first-tab",
@@ -52,15 +55,18 @@ const router = createBrowserRouter([
             path: "third-tab",
             element: <TabsLinkPage />,
           },
-        ]
+        ],
+      },
+      {
+        path: "text-page",
+        element: <TextPage />,
       },
     ],
   },
 ]);
 
-
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
