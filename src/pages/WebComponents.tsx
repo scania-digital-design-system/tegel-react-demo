@@ -7,7 +7,9 @@ import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
-import PopOverCanvas from "../components/PopOverCanvas";
+import { PopoverMenu } from "../components/PopOverCanvas";
+import PopoverCanvas from "../components/PopOverCanvas";
+
 
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -216,7 +218,8 @@ export default function WebComponents() {
       </div>
 
       <div>
-       <PopOverCanvas />
+      <PopoverMenu /> 
+      <PopoverCanvas />
       </div>
 
       <div>

@@ -1,27 +1,25 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
-const PopOverCanvas = () => {
-  const referenceElRef = useRef(null);
-  const [showPopover, setShowPopover] = useState(false);
+const PopoverMenu = () => {
+  const [isPopoverMenuVisible, setIsPopoverMenuVisible] = useState(false);
+  const popoverMenuRef = useRef<HTMLTdsPopoverMenuElement>(null);
 
-  const handlePopoverToggle = () => {
-    setShowPopover(!showPopover);
+  const toggleMenu = () => {
+    setIsPopoverMenuVisible((prevValue) => !prevValue);
   };
 
   return (
-    <div>
+    <>
       <div className="tds-headline-02 tds-u-pb1">Popover</div>
-      <div className="tds-headline-03 tds-u-pb1">Canvas</div>
-
+      <div className="tds-headline-03 tds-u-pb1 tds-u-pt3">Menu</div>
       <div className="popover-container">
         <tds-button
           aria-label="menu"
           only-icon
-          id="trigger"
+          id="triggerElement"
           type="ghost"
           size="sm"
-          ref={referenceElRef}
-          onClick={handlePopoverToggle}
+          onClick={toggleMenu} // Add onClick event to trigger toggleMenu
         >
           <tds-icon
             slot="icon"
@@ -31,49 +29,11 @@ const PopOverCanvas = () => {
           ></tds-icon>
         </tds-button>
       </div>
-
-      <tds-popover-canvas
-        placement="auto"
-        selector="#trigger"
-        className={`tds-u-p2 ${showPopover ? 'tds-popover-canvas-show' : ''}`}
-        referenceEl={referenceElRef.current || undefined}
-      >
-        <h2>A popover canvas!</h2>
-        <p>Where you can put anything you want!</p>
-        <p>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://digitaldesign.scania.com"
-          >
-            Even links!
-          </a>
-        </p>
-      </tds-popover-canvas>
-
-      <div className="tds-headline-03 tds-u-pb1">Menu</div>
-
-      <div className="popover-container">
-        <tds-button
-          aria-label="menu"
-          only-icon
-          id="my-popover-button"
-          type="ghost"
-          size="sm"
-        >
-          <tds-icon
-            slot="icon"
-            className="tds-btn-icon"
-            size="16px"
-            name="kebab"
-          ></tds-icon>
-        </tds-button>
-      </div>
-
       <tds-popover-menu
-        selector="#my-popover-button"
         placement="auto"
-        id="my-popover-menu"
+        selector="#triggerElement"
+        show={isPopoverMenuVisible}
+        ref={popoverMenuRef}
       >
         <ul className="tds-popover-menu-wrapper">
           <li>
@@ -115,8 +75,49 @@ const PopOverCanvas = () => {
           </li>
         </ul>
       </tds-popover-menu>
+    </>
+  );
+};
+
+const PopoverCanvas = () => {
+  const [showPopover, setShowPopover] = useState(false);
+
+  return (
+    <div>
+      <div className="tds-headline-03 tds-u-pb1">Canvas</div>
+      <div className="popover-container">
+        <tds-button
+          aria-label="menu"
+          only-icon
+          type="ghost"
+          size="sm"
+          onClick={() => setShowPopover(!showPopover)}
+        >
+          <tds-icon
+            slot="icon"
+            className="tds-btn-icon"
+            size="16px"
+            name="kebab"
+          ></tds-icon>
+        </tds-button>
+      </div>
+      <tds-popover-canvas placement="auto" show={showPopover}>
+        <div className="tds-u-p2">
+          <h2>A popover canvas!</h2>
+          <p>Where you can put anything you want!</p>
+          <p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://digitaldesign.scania.com"
+            >
+              Even links!
+            </a>
+          </p>
+          </div>
+      </tds-popover-canvas>
     </div>
   );
 };
 
-export default PopOverCanvas;
+export { PopoverMenu, PopoverCanvas as default };
