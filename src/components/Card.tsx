@@ -35,9 +35,10 @@ const Card = () => {
         </tds-card>
       </div>
       <div className="card-carousel">
-        {Array.from({ length: 4 }).map(() => {
+        {Array.from({ length: 4 }).map((_, idx) => {
           return (
             <tds-card
+              key={idx}
               header="Card"
               clickable
               subheader="Simple Card"
@@ -49,7 +50,8 @@ const Card = () => {
               }
             >
               <div slot="card-body">
-                These Cards are part of a carousel, and can be scrolled. They are also using the body slot in the Card.
+                These Cards are part of a carousel, and can be scrolled. They
+                are also using the body slot in the Card.
               </div>
             </tds-card>
           );
