@@ -30,6 +30,7 @@ body,
 tds-header {
     position: sticky;
     top: 68px;
+    z-index: 900;
 }
 
 .side-menu-and-main {
