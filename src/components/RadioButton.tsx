@@ -1,6 +1,10 @@
+import { FormEvent, useRef } from "react";
+import "./RadioButton.scss";
+
 const data = {
   desserts: {
     name: "desserts",
+    title: "What would you like for dessert?",
     required: true,
     fields: [
       {
@@ -23,21 +27,38 @@ const data = {
   },
 };
 
+const onSubmit = (e: FormEvent) => {
+  e.preventDefault();
+
+  console.log("onSubmit, event", e);
+};
+
 const RadioButton = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
-    <form>
+    <form onSubmit={onSubmit} ref={formRef}>
       {Object.values(data).map((fieldset) => (
         <fieldset>
+          <legend className="tds-headline-05">{fieldset.title}</legend>
           {fieldset.fields.map((field) => (
             <tds-radio-button
               name={fieldset.name}
               value={field.name}
-              radioId={`${fieldset.name}-${field.name}`}
+              radio-id={`${fieldset.name}-${field.name}`}
               required={fieldset.required}
-            ></tds-radio-button>
+            >
+              <span slot="label">{field.name}</span>
+            </tds-radio-button>
           ))}
         </fieldset>
       ))}
+      <tds-button
+        text="Place Order"
+        onClick={() => {
+          formRef?.current?.requestSubmit();
+        }}
+      ></tds-button>
     </form>
   );
 };

@@ -208,7 +208,6 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <RadioButton />
         <div className="tds-headline-02 tds-u-pb1">Radio Button</div>
         <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
           <div slot="label">Label text 1</div>
@@ -217,6 +216,8 @@ export default function WebComponents() {
         <tds-radio-button name="rb-example" value="option1" radio-id="option-2">
           <div slot="label">Label text 2</div>
         </tds-radio-button>
+
+        <RadioButton />
       </div>
 
       <div>
