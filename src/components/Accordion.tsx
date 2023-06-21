@@ -61,10 +61,9 @@ const Accordion = () => {
   };
 
   const handleIconPositionChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const newPosition = event.target.value as 'end' | 'start';
+    const newPosition: 'end' | 'start' = event.target.value as 'end' | 'start';
     setIconPosition(newPosition);
   };
-
 
   const handleAccordionToggleChange = () => {
     const tdsToggleEvent = new CustomEvent('tdsToggle', {
@@ -78,6 +77,7 @@ const Accordion = () => {
     }
   };
 
+
   return (
     <div>
       <div className="tds-headline-02 tds-u-pb1">Accordion</div>
@@ -90,26 +90,31 @@ const Accordion = () => {
       </tds-toggle>
       <h2>Icon Position</h2>
       <div>
-      <label>
-          <input
-            type="radio"
-            name="icon-position"
-            value="end"
-            checked={iconPosition === 'end'}
-            onChange={handleIconPositionChange}
-          />
-          End
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="icon-position"
-            value="start"
-            checked={iconPosition === 'start'}
-            onChange={handleIconPositionChange}
-          />
-          Start
-        </label>
+      <tds-radio-button
+          name="icon-position"
+          value="end"
+          checked={iconPosition === 'end'}
+          ref={element => {
+            if (element) {
+              element.addEventListener('tdsChange', handleIconPositionChange as unknown as EventListener);
+            }
+          }}
+        >
+          <div slot="label">End</div>
+        </tds-radio-button>
+        <tds-radio-button
+          name="icon-position"
+          value="start"
+          checked={iconPosition === 'start'}
+          ref={element => {
+            if (element) {
+              element.addEventListener('tdsChange', handleIconPositionChange as unknown as EventListener);
+            }
+          }}
+        >
+          <div slot="label">Start</div>
+        </tds-radio-button>
+
       </div>
 
       <h2>Accordion with Primary Mode</h2>
