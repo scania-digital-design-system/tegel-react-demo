@@ -1,17 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import "./register-webcomponents";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import './register-webcomponents';
 
 import App from "./App";
 import WebComponents from "./pages/WebComponents";
-import FormPage from "./pages/FormPage";
-import TabsPage from "./pages/TabsPage";
-import TabsLinkPage from "./pages/TabsLinkPage";
 import TextPage from "./pages/TextPage/TextPage";
 import TablePage from './pages/TablePage';
+import FormPage from './pages/FormPage';
+import TabsLinkPage from './pages/TabsLinkPage';
+import TabsButtonPage from './pages/TabsButtonPage';
+import About from './pages/About';
+import SettingsPage from './pages/SettingsPage';
 
 
 const router = createBrowserRouter([
@@ -36,8 +41,12 @@ const router = createBrowserRouter([
         element: <FormPage />,
       },
       {
-        path: "tabs",
-        element: <TabsPage />,
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "tabs-buttons",
+        element: <TabsButtonPage/>,
       },
       {
         path: "tabs-links",
@@ -58,9 +67,13 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "text-page",
+        path: "text",
         element: <TextPage />,
       },
+      {
+        path: 'settings',
+        element: <SettingsPage/>
+      }
     ],
   },
 ]);

@@ -4,15 +4,14 @@
 
 html,
 body,
-.App,
 #root {
   height: 100%;
-  overflow-y: auto;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 .App.tds-mode-light {
@@ -23,21 +22,20 @@ body,
   background-color: var(--tds-black);
 }
 
-.mode-switcher {
-    position: absolute;
-    height: 60px;
-    top: calc(96px  + 68px);
-    right: 32px;
-    z-index: 1;
+.announcement-banner {
+  position: sticky;
+  top: 0;
+  z-index: 900;
 }
 
-.container {
-  display: flex;
-  position: relative;
-}
-
-.container > tds-side-menu {
+tds-header {
+    position: sticky;
     top: 68px;
+  }
+  
+  .side-menu-and-main {
+    display: flex;
+    flex-grow: 1;
 }
 
 main {
@@ -49,6 +47,13 @@ main {
   justify-content: center;
   margin: 0 auto;
   padding: 128px 0;
+}
+.mode-switcher {
+  position: absolute;
+  height: 60px;
+  top: calc(96px + 68px);
+  right: 32px;
+  z-index: 1;
 }
 
 .popover-container {
@@ -86,3 +91,24 @@ i {
     margin: auto;
   }
 }
+
+.mobile-nav-item {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-nav-item {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  tds-side-menu {
+    /* We suggest you attach the persistent side menu to your layout like this: */
+    height: calc(100vh - calc(64px + 68px));
+    position: sticky;
+    top: calc(64px + 68px);
+    left: 0px;
+  }
+}
+
