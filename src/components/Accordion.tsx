@@ -19,21 +19,24 @@ const Accordion = () => {
       setCheckboxState(detail.checked);
     };
 
-    if (toggleRef.current) {
-      toggleRef.current.addEventListener('tdsToggle', handlePaddingResetToggle);
+    const toggleElement = toggleRef.current;
+    const accordionToggleElement = accordionToggleRef.current;
+
+    if (toggleElement) {
+      toggleElement.addEventListener('tdsToggle', handlePaddingResetToggle);
     }
 
-    if (accordionToggleRef.current) {
-      accordionToggleRef.current.addEventListener('tdsToggle', handleAccordionToggle as EventListener);
+    if (accordionToggleElement) {
+      accordionToggleElement.addEventListener('tdsToggle', handleAccordionToggle as EventListener);
     }
 
     return () => {
-      if (toggleRef.current) {
-        toggleRef.current.removeEventListener('tdsToggle', handlePaddingResetToggle);
+      if (toggleElement) {
+        toggleElement.removeEventListener('tdsToggle', handlePaddingResetToggle);
       }
 
-      if (accordionToggleRef.current) {
-        accordionToggleRef.current.removeEventListener('tdsToggle', handleAccordionToggle as EventListener);
+      if (accordionToggleElement) {
+        accordionToggleElement.removeEventListener('tdsToggle', handleAccordionToggle as EventListener);
       }
     };
   }, []);
