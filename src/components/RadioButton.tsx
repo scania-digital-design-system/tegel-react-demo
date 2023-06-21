@@ -1,4 +1,4 @@
-import { FormEvent, Fragment, useEffect, useRef, useState } from "react";
+import { FormEvent, Fragment, useRef, useState } from "react";
 import "./RadioButton.scss";
 
 const data = {
@@ -9,11 +9,11 @@ const data = {
     fields: [
       {
         name: "Cucumber salad",
-        id: "cakdse8234",
+        id: "cakdse8sf234",
       },
       {
         name: "Garlic bread",
-        id: "cakdse8234",
+        id: "cakdse8sd234",
       },
     ],
   },
@@ -30,11 +30,11 @@ const data = {
         name: "Veal",
         id: "iceCrdseam8234",
         disabled: true,
-        preselected: true,
       },
       {
         name: "Chicken",
         id: "iceCrssddfeam8234",
+        preselected: true,
       },
     ],
   },
