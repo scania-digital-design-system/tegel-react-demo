@@ -1,26 +1,55 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import "./FormPage.scss";
+import townDataNorway from "./norway-town.json";
+import townDataSweden from "./sweden-town.json";
 
 const FormPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sendingStatus, setSendingStatus] = useState(false);
   const form = useRef<HTMLFormElement>(null);
-  const countryDropdown = useRef<HTMLTdsDropdownElement>(null);
+  const [countrySelected, setCountrySelected] = useState<string>("");
+  const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
+  const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
 
   const handleClick = () => {
     form.current?.requestSubmit();
   };
 
+  /* First useEffect for connection to JSON file, only run on an initial load */
+  useEffect(() => {
+    const swedishTown = swedenDropdownTown.current;
+
+    const norwayTown = norwayDropdownTown.current;
+
+    if (swedishTown) {
+      swedishTown.options = townDataSweden;
+    }
+
+    if (norwayTown) {
+      norwayTown.options = townDataNorway;
+    }
+  }, []);
+
+  /* Second useEffect for checking selected values of dropdown, run on dependency changes */
+  useEffect(() => {
+    /* Reset Sweden Town dropdown in case selected country is not Sweden */
+    if (countrySelected !== "sweden") {
+      swedenDropdownTown.current?.reset();
+    }
+
+    /* Reset Norway Town dropdown in case selected country is not Norway */
+    if (countrySelected !== "norway") {
+      norwayDropdownTown.current?.reset();
+    }
+  }, [countrySelected]);
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (form.current) {
-      const countryDropdownValue =
-        countryDropdown.current?.getAttribute("selected-value");
       const formData = new FormData(form.current);
       formData.forEach((value, key) => {
         console.log("Key:", key, "Value:", value);
       });
-      console.log("Dropdown value: " + countryDropdownValue);
     }
 
     setSendingStatus(true);
@@ -63,26 +92,61 @@ const FormPage = () => {
             </section>
 
             <section>
-              <tds-dropdown
-                ref={countryDropdown}
-                id="country-dropdown"
-                size="lg"
-                placeholder="Placeholder"
-                open-direction="auto"
+              <tds-dropdown-v2
+                ref={(countryDropdown) => {
+                  countryDropdown?.addEventListener("tdsChange", (event) => {
+                    const customEvent = event as CustomEvent;
+                    const { value } = customEvent.detail;
+                    setCountrySelected(value);
+                  });
+                }}
+                name="country"
+                label="Which country you want to select?"
                 label-position="outside"
-                label="Current country"
-                type="default"
+                placeholder="Country select"
+                size="lg"
+                open-direction="up"
               >
-                <tds-dropdown-option value="sweden" tabIndex={0}>
+                <tds-dropdown-option-v2 value="sweden">
                   Sweden
-                </tds-dropdown-option>
-                <tds-dropdown-option value="norway" tabIndex={0}>
-                  Norway
-                </tds-dropdown-option>
-                <tds-dropdown-option value="finland" tabIndex={0}>
+                </tds-dropdown-option-v2>
+                <tds-dropdown-option-v2 disabled value="Finland">
                   Finland
-                </tds-dropdown-option>
-              </tds-dropdown>
+                </tds-dropdown-option-v2>
+                <tds-dropdown-option-v2 value="norway">
+                  Norway
+                </tds-dropdown-option-v2>
+              </tds-dropdown-v2>
+            </section>
+
+            <section>
+              <tds-dropdown-v2
+                ref={norwayDropdownTown}
+                name="norweiganTown"
+                label="Which towns have you visited in Norway?"
+                label-position="outside"
+                placeholder="Norweigan Town"
+                helper=""
+                size="lg"
+                open-direction="auto"
+                multiselect
+                disabled={countrySelected !== "norway"}
+              ></tds-dropdown-v2>
+            </section>
+
+            <section>
+              <tds-dropdown-v2
+                ref={swedenDropdownTown}
+                name="swedishTown"
+                label="Select your favourite Swedish town"
+                label-position="outside"
+                placeholder="Swedish Town"
+                helper=""
+                size="lg"
+                open-direction="auto"
+                filter
+                disabled={countrySelected !== "sweden"}
+              ></tds-dropdown-v2>
             </section>
 
             <section>
@@ -116,11 +180,15 @@ const FormPage = () => {
                 <div slot="label">+ 5 years</div>
               </tds-radio-button>
             </section>
-            <tds-textarea
-              name="textarea"
-              label="What do you do at Scania?"
-              label-position="outside"
-            ></tds-textarea>
+
+            <section>
+              <tds-textarea
+                name="textarea"
+                label="What do you do at Scania?"
+                label-position="outside"
+              ></tds-textarea>
+            </section>
+
             <section>
               <h5>Tell us how you feel about your..</h5>
               <tds-slider
