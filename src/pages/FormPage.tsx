@@ -6,6 +6,8 @@ import townDataSweden from "./sweden-town.json";
 const FormPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sendingStatus, setSendingStatus] = useState(false);
+  const [occupationEssayState, setOccupationEssayState] = useState<"default" | "error">("default");
+  const [helperTextOccupationEssayState, setHelpterTextOccupationEssayState] = useState<undefined | string>(undefined);
   const form = useRef<HTMLFormElement>(null);
   const [countrySelected, setCountrySelected] = useState<string>("");
   const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
@@ -54,6 +56,15 @@ const FormPage = () => {
         setAddressValidation(false);
       } else {
         setAddressValidation(true);
+      const occupationalEssay = formData.get("occupationalEssay");
+      
+      if (occupationalEssay !== undefined && occupationalEssay && occupationalEssay.toString().length < 50) {
+        setOccupationEssayState("error");
+        setHelpterTextOccupationEssayState("You don't have enough characters")
+      }
+      else {
+        setOccupationEssayState("default");
+        setHelpterTextOccupationEssayState(undefined)
         formData.forEach((value, key) => {
           console.log("Key:", key, "Value:", value);
         });
@@ -68,6 +79,13 @@ const FormPage = () => {
         setTimeout(() => {
           document.querySelector("tds-toast")?.hideToast();
         }, 10000);
+
+        setSubmitted(true);
+        form.current.reset();
+        setTimeout(() => {
+          document.querySelector("tds-toast")?.hideToast();
+        }, 5000);
+
       }
     }
   };
@@ -324,6 +342,84 @@ const FormPage = () => {
             <tds-spinner size="md" variant="standard"></tds-spinner>
           </div>
           <section className="tds-u-mt3">
+          <h5>Textarea</h5>
+          <tds-textarea
+            name="occupationalEssay"
+            label="What do you do at Scania? (Minimum 50 chars)"
+            label-position="outside"
+            state={occupationEssayState}
+            helper={helperTextOccupationEssayState}
+            ref={(element) => {element?.addEventListener('tdsInput', event => {
+              console.log(event)
+            })}}
+          ></tds-textarea>
+          </section>
+          <section>
+            <h5>Tell us how you feel about your..</h5>
+            <tds-slider
+              label="..happiness at work"
+              name="happinessAtWork"
+              min="0"
+              value="5"
+              show-tick-numbers
+              max="10"
+              ticks="9"
+              snap
+            ></tds-slider>
+            <tds-slider
+              label="..stress level"
+              name="stressLevel"
+              min="0"
+              value="5"
+              show-tick-numbers
+              max="10"
+              ticks="9"
+              snap
+            ></tds-slider>
+            <tds-slider
+              label="..work/life balance."
+              name="workLifeBalance"
+              min="0"
+              value="5"
+              show-tick-numbers
+              max="10"
+              ticks="9"
+              snap
+            ></tds-slider>
+          </section>
+          <section>
+            <h5>What topics would you like to learn more about?</h5>
+            <div className="chips">
+              <tds-chip value="webDevelopment" type="checkbox" name="insterest">
+                <div slot="label">Web developement</div>
+              </tds-chip>
+              <tds-chip value="ciCd" type="checkbox" name="insterest">
+                <div slot="label">CI/CD</div>
+              </tds-chip>
+              <tds-chip value="docker" type="checkbox" name="insterest">
+                <div slot="label">Docker</div>
+              </tds-chip>
+              <tds-chip value="Kafka" type="checkbox" name="insterest">
+                <div slot="label">Kafka</div>
+              </tds-chip>
+              <tds-chip value="beDevelopment" type="checkbox" name="insterest">
+                <div slot="label">Backend development</div>
+              </tds-chip>
+              <tds-chip value="python" type="checkbox" name="insterest">
+                <div slot="label">Python</div>
+              </tds-chip>
+              <tds-chip value="js" type="checkbox" name="insterest">
+                <div slot="label">Javascript</div>
+              </tds-chip>
+              <tds-chip value="angular" type="checkbox" name="insterest">
+                <div slot="label">Angular</div>
+              </tds-chip>
+              <tds-chip value="react" type="checkbox" name="insterest">
+                <div slot="label">React</div>
+              </tds-chip>
+            </div>
+          </section>
+          <section className="tds-u-mt3 tds-u-flex">
             <tds-button
               size="sm"
               fullbleed
