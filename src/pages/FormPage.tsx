@@ -1,38 +1,75 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import "./FormPage.scss";
+import townDataNorway from "./norway-town.json";
+import townDataSweden from "./sweden-town.json";
 
 const FormPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sendingStatus, setSendingStatus] = useState(false);
   const form = useRef<HTMLFormElement>(null);
-  const countryDropdown = useRef<HTMLTdsDropdownElement>(null);
+  const [countrySelected, setCountrySelected] = useState<string>("");
+  const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
+  const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
+
+  const [addressValidation, setAddressValidation] = useState(true);
 
   const handleClick = () => {
     form.current?.requestSubmit();
   };
 
+  /* First useEffect for connection to JSON file, only run on an initial load */
+  useEffect(() => {
+    const swedishTown = swedenDropdownTown.current;
+
+    const norwayTown = norwayDropdownTown.current;
+
+    if (swedishTown) {
+      swedishTown.options = townDataSweden;
+    }
+
+    if (norwayTown) {
+      norwayTown.options = townDataNorway;
+    }
+  }, []);
+
+  /* Second useEffect for checking selected values of dropdown, run on dependency changes */
+  useEffect(() => {
+    /* Reset Sweden Town dropdown in case selected country is not Sweden */
+    if (countrySelected !== "sweden") {
+      swedenDropdownTown.current?.reset();
+    }
+
+    /* Reset Norway Town dropdown in case selected country is not Norway */
+    if (countrySelected !== "norway") {
+      norwayDropdownTown.current?.reset();
+    }
+  }, [countrySelected]);
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (form.current) {
-      const countryDropdownValue =
-        countryDropdown.current?.getAttribute("selected-value");
       const formData = new FormData(form.current);
-      formData.forEach((value, key) => {
-        console.log("Key:", key, "Value:", value);
-      });
-      console.log("Dropdown value: " + countryDropdownValue);
+
+      if (formData.get("homeAddress") === "") {
+        setAddressValidation(false);
+      } else {
+        setAddressValidation(true);
+        formData.forEach((value, key) => {
+          console.log("Key:", key, "Value:", value);
+        });
+
+        setSendingStatus(true);
+
+        setTimeout(() => {
+          setSendingStatus(false);
+          setSubmitted(true);
+        }, 3000);
+
+        setTimeout(() => {
+          document.querySelector("tds-toast")?.hideToast();
+        }, 10000);
+      }
     }
-
-    setSendingStatus(true);
-
-    setTimeout(() => {
-      setSendingStatus(false);
-      setSubmitted(true);
-    }, 3000);
-
-    setTimeout(() => {
-      document.querySelector("tds-toast")?.hideToast();
-    }, 10000);
   };
 
   return (
@@ -49,12 +86,17 @@ const FormPage = () => {
             <section>
               <h4>Text Input</h4>
               <tds-text-field
+                mode-variant="secondary"
                 name="text-field"
                 label="Full name"
                 label-position="outside"
                 placeholder="John Doe"
               ></tds-text-field>
+            </section>
+
+            <section>
               <tds-datetime
+                mode-variant="secondary"
                 label="Date of birth"
                 name="dateOfBirth"
                 type="date"
@@ -62,32 +104,105 @@ const FormPage = () => {
               ></tds-datetime>
             </section>
 
-            <section>
-              <tds-dropdown
-                ref={countryDropdown}
-                id="country-dropdown"
+            <section className="side-by-side-input">
+              <tds-text-field
+                mode-variant="secondary"
+                type="text"
                 size="lg"
-                placeholder="Placeholder"
-                open-direction="auto"
+                state="success"
+                label="Phone number"
+                name="phoneNumber"
                 label-position="outside"
-                label="Current country"
-                type="default"
+                no-min-width
+                placeholder="08 456 32"
               >
-                <tds-dropdown-option value="sweden" tabIndex={0}>
+                <span slot="prefix">
+                  <tds-icon name="phone" size="16px"></tds-icon>
+                </span>
+              </tds-text-field>
+
+              <tds-text-field
+                mode-variant="secondary"
+                type="text"
+                size="lg"
+                state={addressValidation ? "default" : "error"}
+                label="Address"
+                name="homeAddress"
+                label-position="outside"
+                no-min-width
+                placeholder="Majorvägen 32"
+                helper={addressValidation ? "" : "Address is mandatory field!"}
+              >
+                <span slot="prefix">
+                  <tds-icon name="pin" size="16px"></tds-icon>
+                </span>
+              </tds-text-field>
+            </section>
+
+            <section>
+              <tds-dropdown-v2
+                ref={(countryDropdown) => {
+                  countryDropdown?.addEventListener("tdsChange", (event) => {
+                    const customEvent = event as CustomEvent;
+                    const { value } = customEvent.detail;
+                    setCountrySelected(value);
+                  });
+                }}
+                mode-variant="secondary"
+                name="country"
+                label="Which country you want to select?"
+                label-position="outside"
+                placeholder="Country select"
+                size="lg"
+                open-direction="up"
+              >
+                <tds-dropdown-option-v2 value="sweden">
                   Sweden
-                </tds-dropdown-option>
-                <tds-dropdown-option value="norway" tabIndex={0}>
-                  Norway
-                </tds-dropdown-option>
-                <tds-dropdown-option value="finland" tabIndex={0}>
+                </tds-dropdown-option-v2>
+                <tds-dropdown-option-v2 disabled value="Finland">
                   Finland
-                </tds-dropdown-option>
-              </tds-dropdown>
+                </tds-dropdown-option-v2>
+                <tds-dropdown-option-v2 value="norway">
+                  Norway
+                </tds-dropdown-option-v2>
+              </tds-dropdown-v2>
+            </section>
+
+            <section>
+              <tds-dropdown-v2
+                ref={norwayDropdownTown}
+                mode-variant="secondary"
+                name="norweiganTown"
+                label="Which towns have you visited in Norway?"
+                label-position="outside"
+                placeholder="Norweigan Town"
+                helper=""
+                size="lg"
+                open-direction="auto"
+                multiselect
+                disabled={countrySelected !== "norway"}
+              ></tds-dropdown-v2>
+            </section>
+
+            <section>
+              <tds-dropdown-v2
+                ref={swedenDropdownTown}
+                mode-variant="secondary"
+                name="swedishTown"
+                label="Select your favourite Swedish town"
+                label-position="outside"
+                placeholder="Swedish Town"
+                helper=""
+                size="lg"
+                open-direction="auto"
+                filter
+                disabled={countrySelected !== "sweden"}
+              ></tds-dropdown-v2>
             </section>
 
             <section>
               <h5>Which offices do you work from?</h5>
-              <tds-checkbox value="sodertalje321" name="office">
+              <tds-checkbox value="sodertalje321" name="office" checked>
                 <div slot="label">Södertälje 321</div>
               </tds-checkbox>
               <tds-checkbox value="sergel" name="office">
@@ -95,6 +210,9 @@ const FormPage = () => {
               </tds-checkbox>
               <tds-checkbox value="homeoffice" name="office">
                 <div slot="label">Home office</div>
+              </tds-checkbox>
+              <tds-checkbox value="b260" name="office" disabled>
+                <div slot="label">Building 260</div>
               </tds-checkbox>
               <h5>How long have you been at Scania?</h5>
               <tds-radio-button checked value="radio-1" name="yearsAtScania">
@@ -113,11 +231,16 @@ const FormPage = () => {
                 <div slot="label">+ 5 years</div>
               </tds-radio-button>
             </section>
-            <tds-textarea
-              name="textarea"
-              label="What do you do at Scania?"
-              label-position="outside"
-            ></tds-textarea>
+
+            <section>
+              <tds-textarea
+                mode-variant="secondary"
+                name="textarea"
+                label="What do you do at Scania?"
+                label-position="outside"
+              ></tds-textarea>
+            </section>
+
             <section>
               <h5>Tell us how you feel about your..</h5>
               <tds-slider
@@ -192,7 +315,7 @@ const FormPage = () => {
               </div>
             </section>
           </tds-block>
-          <section id="anonymous-toggle" className="tds-u-mt1 tds-u-flex-end">
+          <section className="tds-u-flex-end">
             <tds-toggle required name="toggle" size="sm">
               <div slot="label">Answer anonymously</div>
             </tds-toggle>

@@ -1,32 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import "./WebComponents.scss";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import DataTable from "../components/DataTable";
 import Toast from "../components/Toast";
 import Modal from "../components/Modal";
 import Toggle from "../components/Toggle";
 import Block from "../components/Block";
 import RadioButton from "../components/RadioButton";
+import { PopoverMenu } from "../components/PopOverCanvas";
+import PopoverCanvas from "../components/PopOverCanvas";
+import AccordionExample from "../components/Accordion";
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
   return (
     <>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Accordion</div>
-        <tds-accordion>
-          <tds-accordion-item header="First item">
-            This is the panel, which contains associated information with the
-            header. Usually it contains text, set in the same size as the
-            header. Lorem ipsum doler sit amet.
-          </tds-accordion-item>
-          <tds-accordion-item header="Second item">
-            This is the panel, which contains associated information with the
-            header. Usually it contains text, set in the same size as the
-            header. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Duis laoreet vestibulum fermentum.
-          </tds-accordion-item>
-        </tds-accordion>
+        <AccordionExample />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Badge</div>
@@ -69,11 +60,6 @@ export default function WebComponents() {
         <tds-chip type="button" size="lg">
           <span slot="label">Label</span>
         </tds-chip>
-      </div>
-
-      <div>
-        <div className="tds-headline-02 tds-u-pb1">Data table</div>
-        <DataTable />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Datetime</div>
@@ -213,106 +199,8 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Popover</div>
-        <div className="tds-headline-03 tds-u-pb1">Canvas</div>
-
-        <div className="popover-container">
-          <tds-button
-            aria-label="menu"
-            only-icon
-            id="trigger"
-            type="ghost"
-            size="sm"
-          >
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></tds-icon>
-          </tds-button>
-        </div>
-        <tds-popover-canvas
-          placement="auto"
-          selector="#trigger"
-          className="tds-u-p2"
-        >
-          <h2>A popover canvas!</h2>
-          <p>Where you can put anything you want!</p>
-          <p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
-              Even links!
-            </a>
-          </p>
-        </tds-popover-canvas>
-
-        <div className="tds-headline-03 tds-u-pb1">Menu</div>
-
-        <div className="popover-container">
-          <tds-button
-            aria-label="menu"
-            only-icon
-            id="my-popover-button"
-            type="ghost"
-            size="sm"
-          >
-            <tds-icon
-              slot="icon"
-              className="tds-btn-icon"
-              size="16px"
-              name="kebab"
-            ></tds-icon>
-          </tds-button>
-        </div>
-        <tds-popover-menu
-          selector="#my-popover-button"
-          placement="auto"
-          id="my-popover-menu"
-        >
-          <ul className="tds-popover-menu-wrapper">
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
-                </i>
-                Menu item 1
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
-                </i>
-                Menu item 2
-              </a>
-            </li>
-            <li className="divider"></li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitaldesign.scania.com"
-              >
-                <i>
-                  <tds-icon name="save" size="16px"></tds-icon>
-                </i>
-                Menu item 4
-              </a>
-            </li>
-          </ul>
-        </tds-popover-menu>
+      <PopoverMenu /> 
+      <PopoverCanvas />
       </div>
 
       <div>
