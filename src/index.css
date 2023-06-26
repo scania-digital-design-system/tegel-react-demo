@@ -14,6 +14,20 @@ body,
   min-height: 100%;
 }
 
+.App.tds-mode-dark {
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-958);
+} 
+
+.App.tds-mode-dark.tds-mode-primary {
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-958);
+}
+.App.tds-mode-dark.tds-mode-secondary {
+    color: var(--tds-grey-100);
+    background-color: var(--tds-grey-900);
+}
+
 .announcement-banner {
   position: sticky;
   top: 0;
