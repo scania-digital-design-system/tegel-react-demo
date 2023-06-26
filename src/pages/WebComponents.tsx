@@ -11,6 +11,7 @@ import RadioButton from "../components/RadioButton";
 import { PopoverMenu } from "../components/PopOverCanvas";
 import PopoverCanvas from "../components/PopOverCanvas";
 import AccordionExample from "../components/Accordion";
+import Datetime from "../components/Datetime";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -62,14 +63,7 @@ export default function WebComponents() {
         </tds-chip>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Datetime</div>
-        <tds-datetime
-          id="datetime"
-          type="datetime-local"
-          state="none"
-          label="Label text"
-          helper="Helper text"
-        ></tds-datetime>
+        <Datetime />
       </div>
 
       <div>
