@@ -117,7 +117,7 @@ const Accordion = () => {
 
       </div>
 
-      <h2>Accordion with Primary Mode</h2>
+      <h2>Accordion with Primary Mode Variant</h2>
 
       <tds-accordion mode-variant="primary">
         <tds-accordion-item
@@ -150,7 +150,7 @@ const Accordion = () => {
         </tds-accordion-item>
       </tds-accordion>
 
-      <h2>Accordion with Secondary Mode</h2>
+      <h2>Accordion with Secondary Mode Variant</h2>
 
       <tds-accordion mode-variant="secondary">
         <tds-accordion-item header="Item 1" disabled={!checkboxState} expand-icon-position={iconPosition}>
