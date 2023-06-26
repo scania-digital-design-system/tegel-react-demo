@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Navigation/Header";
 import SideMenu from "./components/Navigation/SideMenu";
 import { createContext } from 'react';
+import ModeVariantSwitcher from "./components/ModeVariantSwitcher";
 
 export interface User {
   userName: string;
@@ -21,6 +22,7 @@ export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
   const [mode, setMode] = useState<"Light" | "Dark">("Light");
+  const [modeVariant, setModeVariant] = useState<"Primary" | "Secondary">("Primary");
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
@@ -45,9 +47,12 @@ function App() {
   };
 
   return (
-    <div className={`App tds-mode-${mode.toLowerCase()}`}>
+    <div className={`App tds-mode-${mode.toLowerCase()} tds-mode-variant-${modeVariant.toLowerCase()}`}>
       <UserContext.Provider value={userContextValue}>
-        <ModeSwitcher mode={mode} setMode={setMode} />
+        <div className="switcher-container">
+          <ModeSwitcher mode={mode} setMode={setMode} />
+          <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
+        </div>
         <div className="announcement-banner">
           <tds-banner
             type="information"
