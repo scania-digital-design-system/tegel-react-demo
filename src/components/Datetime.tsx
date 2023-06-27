@@ -7,6 +7,14 @@ const Datetime = () => {
   const [noMinWidth, setNoMinWidth] = useState(false); // State for noMinWidth
 	const [isDatetimeDisabled, setIsDatetimeDisabled] = useState(false);
 
+  // Get current date and format it
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const formattedDate = `${year}-${month}-${day}`;
+  
+
   const handleNewState = (event: Event) => {
     const newState = (event.target as HTMLTdsRadioButtonElement).value as 'error' | 'success';
     setTypeOfState(newState);
@@ -171,14 +179,11 @@ const Datetime = () => {
       ></tds-datetime>
       <h2>Secondary mode</h2>
       <tds-datetime
-        type={typeOfInput}
-        state={typeOfState}
-				no-min-width={noMinWidth}
-        size={typeOfSize}
-				disabled={isDatetimeDisabled}
         mode-variant="secondary"
-        label="Choose a datetime"
-        helper="Helper text"
+        label="Date of birth"
+        name="dateOfBirth"
+        type="date"
+        default-value={formattedDate}
       ></tds-datetime>
     </>
   );
