@@ -8,7 +8,9 @@ const FormPage = () => {
   const [sendingStatus, setSendingStatus] = useState(false);
   const [occupationEssayState, setOccupationEssayState] = useState<"default" | "error">("default");
   const [helperTextOccupationEssayState, setHelperTextOccupationEssayState] = useState<undefined | string>(undefined);
+  const [textareaDisabled, setTextareaDisabled] = useState(true)
   const form = useRef<HTMLFormElement>(null);
+  const [addressValue, setAddressValue] = useState<null | string>("");
   const [countrySelected, setCountrySelected] = useState<string>("");
   const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
@@ -46,6 +48,13 @@ const FormPage = () => {
       norwayDropdownTown.current?.reset();
     }
   }, [countrySelected]);
+
+  useEffect(() => {
+    if(addressValue !== null && addressValue !== "") {
+      setTextareaDisabled(false)
+    }
+    
+  }, [addressValue]);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -144,6 +153,13 @@ const FormPage = () => {
                 no-min-width
                 placeholder="Majorvägen 32"
                 helper={addressValidation ? "" : "Address is mandatory field!"}
+                ref={(element) => {
+                  element?.addEventListener('tdsInput', (event) => {
+                    const customEvent = event as CustomEvent;
+                    const { value } = customEvent.detail;
+                    setAddressValue(value)
+                  })
+                }}
               >
                 <span slot="prefix">
                   <tds-icon name="pin" size="16px"></tds-icon>
@@ -253,6 +269,7 @@ const FormPage = () => {
                 label-position="outside"
                 state={occupationEssayState}
                 helper={helperTextOccupationEssayState}
+                disabled={textareaDisabled === true}
                 ref={(element) => {
                   element?.addEventListener('tdsInput', event => {
                     console.log(event)
