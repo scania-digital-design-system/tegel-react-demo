@@ -44,16 +44,17 @@ tds-header {
     flex-grow: 1;
 }
 
-main {
+.wrapper {
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 32px;
   max-width: 600px;
   justify-content: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 128px 0;
 }
+
 .switcher-container {
   position: absolute;
   height: 60px;

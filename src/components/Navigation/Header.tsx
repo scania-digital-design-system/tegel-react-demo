@@ -2,6 +2,7 @@
 import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
+import "./Header.scss";
 
 interface HeaderProps {
   pathname: string;
@@ -55,8 +56,14 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>
       </tds-header-dropdown>
-      <tds-header-item selected={pathname === "/text"}>
-        <Link to="text">Text</Link>
+      <tds-header-item
+        selected={pathname === "/lorem-ipsum/text-with-a-very-long-title"}
+      >
+        <Link to="lorem-ipsum/text-with-a-very-long-title">
+          <div className="header-item-text-wrap">
+            Text with a very long title
+          </div>
+        </Link>
       </tds-header-item>
 
       <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>

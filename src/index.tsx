@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "tabs-buttons",
-        element: <TabsButtonPage/>,
+        element: <TabsButtonPage />,
       },
       {
         path: "tabs-links",
@@ -67,13 +67,13 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "text",
+        path: "lorem-ipsum/text-with-a-very-long-title",
         element: <TextPage />,
       },
       {
-        path: 'settings',
-        element: <SettingsPage/>
-      }
+        path: "settings",
+        element: <SettingsPage />,
+      },
     ],
   },
 ]);
