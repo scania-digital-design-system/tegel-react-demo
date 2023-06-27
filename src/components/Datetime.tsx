@@ -1,15 +1,14 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const Datetime = () => {
   const [typeOfState, setTypeOfState] = useState<'success' | 'error'>('success');
   const [typeOfSize, setTypeOfSize] = useState<'sm' | 'md' | 'lg'>('lg');
   const [typeOfInput, setTypeOfInput] = useState<'datetime-local' | 'date' | 'time'>('datetime-local');
-  const tdsDatetimeRef = useRef<HTMLTdsDatetimeElement>(null);
   const [noMinWidth, setNoMinWidth] = useState(false); // State for noMinWidth
 	const [isDatetimeDisabled, setIsDatetimeDisabled] = useState(false);
 
   const handleNewState = (event: Event) => {
-    const newState: 'error' | 'success' = (event.target as HTMLTdsRadioButtonElement).value as 'error' | 'success';
+    const newState = (event.target as HTMLTdsRadioButtonElement).value as 'error' | 'success';
     setTypeOfState(newState);
   };
 
@@ -23,14 +22,14 @@ const Datetime = () => {
     setTypeOfSize(newSize);
   };
 
-	const handleToggle = (event: CustomEvent) => {
-		const { detail } = event as CustomEvent<{ checked: boolean }>;
+	const handleToggle = (event: CustomEvent<{ checked: boolean }>) => {
+		const { detail } = event;
 		setNoMinWidth(detail.checked);
 	};
 
-	const handleDisabledState = (event: CustomEvent) => {
-		const { checked } = event.detail;
-		setIsDatetimeDisabled(checked);
+	const handleDisabledState = (event: CustomEvent<{ checked: boolean }>) => {
+		const { detail } = event;
+		setIsDatetimeDisabled(detail.checked);
 	};
 
   return (
@@ -44,7 +43,7 @@ const Datetime = () => {
           checked={typeOfState === 'success'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleNewState as unknown as EventListener);
+              element.addEventListener('tdsChange', handleNewState);
             }
           }}
         >
@@ -56,7 +55,7 @@ const Datetime = () => {
           checked={typeOfState === 'error'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleNewState as unknown as EventListener);
+              element.addEventListener('tdsChange', handleNewState);
             }
           }}
         >
@@ -72,7 +71,7 @@ const Datetime = () => {
           checked={typeOfInput === 'datetime-local'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleType as unknown as EventListener);
+              element.addEventListener('tdsChange', handleType);
             }
           }}
         >
@@ -84,7 +83,7 @@ const Datetime = () => {
           checked={typeOfInput === 'date'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleType as unknown as EventListener);
+              element.addEventListener('tdsChange', handleType);
             }
           }}
         >
@@ -96,7 +95,7 @@ const Datetime = () => {
           checked={typeOfInput === 'time'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleType as unknown as EventListener);
+              element.addEventListener('tdsChange', handleType);
             }
           }}
         >
@@ -112,7 +111,7 @@ const Datetime = () => {
           checked={typeOfSize === 'sm'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleSize as unknown as EventListener);
+              element.addEventListener('tdsChange', handleSize);
             }
           }}
         >
@@ -124,7 +123,7 @@ const Datetime = () => {
           checked={typeOfSize === 'md'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleSize as unknown as EventListener);
+              element.addEventListener('tdsChange', handleSize);
             }
           }}
         >
@@ -136,7 +135,7 @@ const Datetime = () => {
           checked={typeOfSize === 'lg'}
           ref={element => {
             if (element) {
-              element.addEventListener('tdsChange', handleSize as unknown as EventListener);
+              element.addEventListener('tdsChange', handleSize);
             }
           }}
         >
@@ -161,7 +160,6 @@ const Datetime = () => {
 			</tds-toggle>
       <h2>Primary mode</h2>
       <tds-datetime
-        ref={tdsDatetimeRef}
         type={typeOfInput}
         state={typeOfState}
         size={typeOfSize}
@@ -173,7 +171,6 @@ const Datetime = () => {
       ></tds-datetime>
       <h2>Secondary mode</h2>
       <tds-datetime
-        ref={tdsDatetimeRef}
         type={typeOfInput}
         state={typeOfState}
 				no-min-width={noMinWidth}
