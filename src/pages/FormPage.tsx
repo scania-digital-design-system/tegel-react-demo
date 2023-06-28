@@ -152,10 +152,8 @@ const FormPage = () => {
                 placeholder="Majorvägen 32"
                 helper={addressValidation ? "" : "Address is mandatory field!"}
                 ref={(element) => {
-                  element?.addEventListener('tdsInput', (event) => {
-                    const customEvent = event as CustomEvent;
-                    const { value } = customEvent.detail.target;
-                    setAddressValue(value)
+                  element?.addEventListener('tdsInput', (event: any) => {
+                    setAddressValue(event.detail.target.value)
                   })
                 }}
               >
