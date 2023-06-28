@@ -17,61 +17,67 @@ import TabsLinkPage from './pages/TabsLinkPage';
 import TabsButtonPage from './pages/TabsButtonPage';
 import About from './pages/About';
 import SettingsPage from './pages/SettingsPage';
-
+import TextSubpage from './pages/TextSubpage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
-        path: "",
+        path: '',
         element: <WebComponents />,
       },
       {
-        path: "web-components",
+        path: 'web-components',
         element: <WebComponents />,
       },
       {
-        path: "table",
+        path: 'table',
         element: <TablePage />,
       },
       {
-        path: "form",
+        path: 'form',
         element: <FormPage />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
-        path: "tabs-buttons",
+        path: 'tabs-buttons',
         element: <TabsButtonPage />,
       },
       {
-        path: "tabs-links",
+        path: 'tabs-links',
         element: <TabsLinkPage />,
         children: [
           {
-            path: "first-tab",
+            path: 'first-tab',
             element: <TabsLinkPage />,
           },
           {
-            path: "second-tab",
+            path: 'second-tab',
             element: <TabsLinkPage />,
           },
           {
-            path: "third-tab",
+            path: 'third-tab',
             element: <TabsLinkPage />,
           },
         ],
       },
       {
-        path: "lorem-ipsum/text-with-a-very-long-title",
+        path: 'text',
         element: <TextPage />,
+        children: [
+          {
+            path: 'subpage-with-a-very-long-title',
+            element: <TextSubpage />,
+          },
+        ],
       },
       {
-        path: "settings",
+        path: 'settings',
         element: <SettingsPage />,
       },
     ],
