@@ -3,6 +3,6 @@ export const capitalizeFirst = (str: string) => {
 };
 
 export function unslugify(slug: string) {
-  const words = slug.replace(/-/g, " ").split(" ");
-  return capitalizeFirst(words.join(" "));
+  const words = slug.replace(/-/g, ' ').split(' ');
+  return capitalizeFirst(words.join(' '));
 }

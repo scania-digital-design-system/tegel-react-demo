@@ -1,5 +1,5 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
-@import "utility-classes.css";
+@import 'utility-classes.css';
 @import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
 
 html,
@@ -17,15 +17,15 @@ body,
 .App.tds-mode-dark {
   color: var(--tds-grey-100);
   background-color: var(--tds-grey-958);
-} 
+}
 
 .App.tds-mode-dark.tds-mode-primary {
   color: var(--tds-grey-100);
   background-color: var(--tds-grey-958);
 }
 .App.tds-mode-dark.tds-mode-secondary {
-    color: var(--tds-grey-100);
-    background-color: var(--tds-grey-900);
+  color: var(--tds-grey-100);
+  background-color: var(--tds-grey-900);
 }
 
 .announcement-banner {
@@ -35,13 +35,13 @@ body,
 }
 
 tds-header {
-    position: sticky;
-    top: 68px;
-  }
-  
-  .side-menu-and-main {
-    display: flex;
-    flex-grow: 1;
+  position: sticky;
+  top: 68px;
+}
+
+.side-menu-and-main {
+  display: flex;
+  flex-grow: 1;
 }
 
 .wrapper {
@@ -121,4 +121,3 @@ i {
     left: 0px;
   }
 }
-

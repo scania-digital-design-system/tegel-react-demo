@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useRef, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import ModeSwitcher from "./components/ModeSwitcher";
-import Footer from "./components/Footer";
-import Header from "./components/Navigation/Header";
-import SideMenu from "./components/Navigation/SideMenu";
+import { useRef, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import ModeSwitcher from './components/ModeSwitcher';
+import Footer from './components/Footer';
+import Header from './components/Navigation/Header';
+import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
-import ModeVariantSwitcher from "./components/ModeVariantSwitcher";
-import AppBreadcrumb from "./components/Navigation/AppBreadcrumb";
+import ModeVariantSwitcher from './components/ModeVariantSwitcher';
+import AppBreadcrumb from './components/Navigation/AppBreadcrumb';
 
 export interface User {
   userName: string;
@@ -22,15 +22,13 @@ interface UserContextValue {
 export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
-  const [mode, setMode] = useState<"Light" | "Dark">("Light");
-  const [modeVariant, setModeVariant] = useState<"Primary" | "Secondary">(
-    "Primary"
-  );
+  const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
+  const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
-    userName: "Marcus Åström",
-    placeOfWork: "IXCD",
+    userName: 'Marcus Åström',
+    placeOfWork: 'IXCD',
   });
 
   const updateUser = (newUser: User) => {
@@ -58,15 +56,10 @@ function App() {
           <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
         </div>
         <div className="announcement-banner">
-          <tds-banner
-            type="information"
-            icon="info"
-            header="React demo"
-            persistent
-          >
+          <tds-banner type="information" icon="info" header="React demo" persistent>
             <div slot="banner-subheader">
-              This is a demo page in React using{" "}
-              <tds-link style={{ display: "inline-block" }}>
+              This is a demo page in React using{' '}
+              <tds-link style={{ display: 'inline-block' }}>
                 <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
                   @scania/tegel
                 </a>
