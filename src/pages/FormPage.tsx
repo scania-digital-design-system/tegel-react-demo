@@ -50,9 +50,7 @@ const FormPage = () => {
   }, [countrySelected]);
 
   useEffect(() => {
-    if(addressValue !== null && addressValue !== "") {
-      setTextareaDisabled(false)
-    }
+    setTextareaDisabled(addressValue === null || addressValue === "")
     
   }, [addressValue]);
 
@@ -156,7 +154,7 @@ const FormPage = () => {
                 ref={(element) => {
                   element?.addEventListener('tdsInput', (event) => {
                     const customEvent = event as CustomEvent;
-                    const { value } = customEvent.detail;
+                    const { value } = customEvent.detail.target;
                     setAddressValue(value)
                   })
                 }}
@@ -269,7 +267,7 @@ const FormPage = () => {
                 label-position="outside"
                 state={occupationEssayState}
                 helper={helperTextOccupationEssayState}
-                disabled={textareaDisabled === true}
+                disabled={textareaDisabled}
                 ref={(element) => {
                   element?.addEventListener('tdsInput', event => {
                     console.log(event)
