@@ -69,12 +69,10 @@ const router = createBrowserRouter([
       {
         path: 'text',
         element: <TextPage />,
-        children: [
-          {
-            path: 'subpage-with-a-very-long-title',
-            element: <TextSubpage />,
-          },
-        ],
+      },
+      {
+        path: 'text/subpage-with-a-very-long-title',
+        element: <TextSubpage />,
       },
       {
         path: 'settings',

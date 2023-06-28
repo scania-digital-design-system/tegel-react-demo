@@ -1,6 +1,6 @@
 const TextSubpage = () => {
   return (
-    <>
+    <div>
       <h1>Text Subpage</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar neque a risus
@@ -16,7 +16,7 @@ const TextSubpage = () => {
         neque fermentum, eget dapibus lorem varius. Etiam in sapien id urna lacinia posuere. Nulla
         facilisi.
       </p>
-    </>
+    </div>
   );
 };
 
