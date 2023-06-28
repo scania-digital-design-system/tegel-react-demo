@@ -21,12 +21,12 @@ const Datetime = () => {
   };
 
   const handleType = (event: Event) => {
-    const newTypeOfInput: 'datetime-local' | 'date' | 'time' = (event.target as HTMLTdsRadioButtonElement).value as 'datetime-local' | 'date' | 'time';
+    const newTypeOfInput = (event.target as HTMLTdsRadioButtonElement).value as 'datetime-local' | 'date' | 'time';
     setTypeOfInput(newTypeOfInput);
   };
 
   const handleSize = (event: Event) => {
-    const newSize: 'sm' | 'md' | 'lg' = (event.target as HTMLTdsRadioButtonElement).value as 'sm' | 'md' | 'lg';
+    const newSize = (event.target as HTMLTdsRadioButtonElement).value as 'sm' | 'md' | 'lg';
     setTypeOfSize(newSize);
   };
 
