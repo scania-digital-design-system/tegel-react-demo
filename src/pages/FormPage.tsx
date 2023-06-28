@@ -268,11 +268,6 @@ const FormPage = () => {
                 state={occupationEssayState}
                 helper={helperTextOccupationEssayState}
                 disabled={textareaDisabled}
-                ref={(element) => {
-                  element?.addEventListener('tdsInput', event => {
-                    console.log(event)
-                  })
-                }}
               ></tds-textarea>
             </section>
 
