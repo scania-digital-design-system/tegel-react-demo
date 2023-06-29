@@ -39,6 +39,15 @@ tds-header {
   top: 68px;
 }
 
+tds-side-menu {
+  top: 68px;
+}
+
+.side-menu-and-main {
+  display: flex;
+  flex-grow: 1;
+}
+
 .side-menu-and-main {
   display: flex;
   flex-grow: 1;

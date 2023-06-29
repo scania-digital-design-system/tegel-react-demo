@@ -41,6 +41,12 @@ const SideMenu = ({
           Stepper
         </Link>
       </tds-side-menu-item>
+      <tds-side-menu-item selected={pathname === "/table"}>
+        <Link to={"/table"} onClick={() => toggleMobileNav()}>
+          <tds-icon name="document_tool" size="24"></tds-icon>
+          Table
+        </Link>
+      </tds-side-menu-item>
       <div className="mobile-nav-item">
         <tds-side-menu-item selected={pathname === "/web-components"}>
           <Link to={"/web-components"} onClick={() => toggleMobileNav()}>
