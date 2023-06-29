@@ -6,7 +6,11 @@ import townDataSweden from "./sweden-town.json";
 const FormPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sendingStatus, setSendingStatus] = useState(false);
+  const [occupationEssayState, setOccupationEssayState] = useState<"default" | "error">("default");
+  const [helperTextOccupationEssayState, setHelperTextOccupationEssayState] = useState<undefined | string>(undefined);
+  const [textareaDisabled, setTextareaDisabled] = useState(true)
   const form = useRef<HTMLFormElement>(null);
+  const [addressValue, setAddressValue] = useState<null | string>("");
   const [countrySelected, setCountrySelected] = useState<string>("");
   const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
@@ -45,6 +49,11 @@ const FormPage = () => {
     }
   }, [countrySelected]);
 
+  useEffect(() => {
+    setTextareaDisabled(!addressValue)
+    
+  }, [addressValue]);
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (form.current) {
@@ -54,20 +63,30 @@ const FormPage = () => {
         setAddressValidation(false);
       } else {
         setAddressValidation(true);
-        formData.forEach((value, key) => {
-          console.log("Key:", key, "Value:", value);
-        });
+        const occupationalEssay = formData.get("occupationalEssay") as string;
 
-        setSendingStatus(true);
+        if (occupationalEssay?.length < 50) {
+          setOccupationEssayState("error");
+          setHelperTextOccupationEssayState("You don't have enough characters")
+        } else {
+          setOccupationEssayState("default");
+          setHelperTextOccupationEssayState(undefined);
+          setAddressValidation(true);
+          formData.forEach((value, key) => {
+            console.log("Key:", key, "Value:", value);
+          });
 
-        setTimeout(() => {
-          setSendingStatus(false);
-          setSubmitted(true);
-        }, 3000);
+          setSendingStatus(true);
 
-        setTimeout(() => {
-          document.querySelector("tds-toast")?.hideToast();
-        }, 10000);
+          setTimeout(() => {
+            setSendingStatus(false);
+            setSubmitted(true);
+          }, 3000);
+
+          setTimeout(() => {
+            document.querySelector("tds-toast")?.hideToast();
+          }, 10000);
+        }
       }
     }
   };
@@ -132,6 +151,11 @@ const FormPage = () => {
                 no-min-width
                 placeholder="Majorvägen 32"
                 helper={addressValidation ? "" : "Address is mandatory field!"}
+                ref={(element) => {
+                  element?.addEventListener('tdsInput', (event: any) => {
+                    setAddressValue(event.detail.target.value)
+                  })
+                }}
               >
                 <span slot="prefix">
                   <tds-icon name="pin" size="16px"></tds-icon>
@@ -232,12 +256,16 @@ const FormPage = () => {
               </tds-radio-button>
             </section>
 
-            <section>
+            <section className="tds-u-mt3">
+              <h5>Textarea</h5>
               <tds-textarea
                 mode-variant="secondary"
-                name="textarea"
-                label="What do you do at Scania?"
+                name="occupationalEssay"
+                label="What do you do at Scania? (Minimum 50 chars)"
                 label-position="outside"
+                state={occupationEssayState}
+                helper={helperTextOccupationEssayState}
+                disabled={textareaDisabled}
               ></tds-textarea>
             </section>
 
