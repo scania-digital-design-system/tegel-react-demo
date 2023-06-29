@@ -7,7 +7,7 @@ import Header from './components/Navigation/Header';
 import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
 import ModeVariantSwitcher from './components/ModeVariantSwitcher';
-import AppBreadcrumb from './components/Navigation/AppBreadcrumb';
+import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumbs';
 
 export interface User {
   userName: string;
@@ -75,7 +75,7 @@ function App() {
             toggleMobileNav={toggleMobileNav}
           />
           <main className="tds-u-h-100 tds-u-w-100">
-            <AppBreadcrumb />
+            <AppBreadcrumbs />
             <div className="wrapper tds-u-h-100 tds-u-p3">
               <Outlet />
             </div>
