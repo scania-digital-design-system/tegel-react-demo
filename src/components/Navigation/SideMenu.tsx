@@ -30,9 +30,15 @@ const SideMenu = ({
         slot="close-button"
       ></tds-side-menu-close-button>
       <tds-side-menu-item selected={pathname === "/about"}>
-        <Link  to={"/about"} onClick={() => toggleMobileNav()}>
+        <Link to={"/about"} onClick={() => toggleMobileNav()}>
           <tds-icon name="info" size="24"></tds-icon>
           About us
+        </Link>
+      </tds-side-menu-item>
+      <tds-side-menu-item selected={pathname === "/stepper"}>
+        <Link to={"/stepper"} onClick={() => toggleMobileNav()}>
+          <tds-icon name="report" size="24"></tds-icon>
+          Stepper
         </Link>
       </tds-side-menu-item>
       <div className="mobile-nav-item">
@@ -83,7 +89,7 @@ const SideMenu = ({
         </tds-side-menu-item>
       </div>
       <div slot="end" >
-        <tds-side-menu-dropdown  selected={pathname.includes('settings')}>
+        <tds-side-menu-dropdown selected={pathname.includes('settings')}>
           <tds-side-menu-user
             slot="button-label"
             heading={userContext?.user.userName}
@@ -98,7 +104,7 @@ const SideMenu = ({
                 <div className="tds-u-pl1">Settings</div>
               </Link>
             </tds-side-menu-dropdown-list-item>
-            
+
           </tds-side-menu-dropdown-list>
         </tds-side-menu-dropdown>
       </div>
