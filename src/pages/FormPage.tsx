@@ -50,7 +50,7 @@ const FormPage = () => {
   }, [countrySelected]);
 
   useEffect(() => {
-    setTextareaDisabled(addressValue === null || addressValue === "")
+    setTextareaDisabled(!addressValue)
     
   }, [addressValue]);
 
@@ -63,9 +63,9 @@ const FormPage = () => {
         setAddressValidation(false);
       } else {
         setAddressValidation(true);
-        const occupationalEssay = formData.get("occupationalEssay");
+        const occupationalEssay = formData.get("occupationalEssay") as string;
 
-        if (occupationalEssay !== undefined && occupationalEssay && occupationalEssay.toString().length < 50) {
+        if (occupationalEssay?.length < 50) {
           setOccupationEssayState("error");
           setHelperTextOccupationEssayState("You don't have enough characters")
         } else {
