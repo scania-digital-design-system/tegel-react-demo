@@ -13,6 +13,7 @@ import PopoverCanvas from "../components/PopOverCanvas";
 import AccordionExample from "../components/Accordion";
 import Datetime from "../components/Datetime";
 import Message from "../components/Message";
+import Slider from "../components/Slider";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -192,18 +193,7 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Slider</div>
-        <tds-slider
-          id="tds-slider"
-          min="0"
-          max="100"
-          value="50"
-          tooltip
-          label="Test label"
-          ticks="4"
-          controls
-          show-tick-numbers
-        ></tds-slider>
+        <Slider />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Spinner</div>
