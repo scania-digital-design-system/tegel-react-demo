@@ -16,6 +16,7 @@ import About from './pages/About';
 import SettingsPage from './pages/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
+import NotificationPage from './pages/NotificationPage';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         path: 'settings',
         element: <SettingsPage />,
       },
+      {
+        path: 'notifications',
+        element: <NotificationPage />
+      }
     ],
   },
 ]);

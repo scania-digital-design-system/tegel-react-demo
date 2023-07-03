@@ -12,11 +12,17 @@ import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumb
 export interface User {
   userName: string;
   placeOfWork: string;
+  notificiations: Notification[]
 }
 
 interface UserContextValue {
   user: User;
   updateUser: (newUser: User) => void;
+}
+
+interface Notification {
+  notification: string,
+  type: 'error' | 'success' | 'information' | 'warning'
 }
 
 export const UserContext = createContext<UserContextValue | null>(null);
@@ -29,6 +35,24 @@ function App() {
   const [user, setUser] = useState<User>({
     userName: 'Marcus Åström',
     placeOfWork: 'IXCD',
+    notificiations: [
+      {
+        notification: 'You need to update your username.',
+        type: 'error'
+      },
+      {
+        notification: 'Your vacation request has been approved.',
+        type: 'success'
+      },
+      {
+        notification: 'You need to update your password.',
+        type: 'error'
+      },
+      {
+        notification: 'Your username is about to expire.',
+        type: 'warning'
+      },
+    ]
   });
 
   const updateUser = (newUser: User) => {

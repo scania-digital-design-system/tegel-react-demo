@@ -2,6 +2,7 @@
 import { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import './Header.scss';
 
 interface HeaderProps {
   pathname: string;
@@ -56,12 +57,14 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
         <Link to="text">Text</Link>
       </tds-header-item>
 
-      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
-        <img
-          slot="button-icon"
-          src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-          alt="User menu."
-        />
+      <tds-header-dropdown onClick={() => { }} slot="end" no-dropdown-icon>
+        <div slot="button-icon">
+          <img
+            src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+            alt="User menu."
+          />
+          {userContext?.user.notificiations && userContext?.user.notificiations?.length > 0 && (<tds-badge size="sm"></tds-badge>)}
+        </div>
         <tds-header-dropdown-list type="lg">
           <tds-header-dropdown-list-user
             heading={userContext?.user.userName}
@@ -71,6 +74,12 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
             <Link to="settings">
               <tds-icon name="settings"></tds-icon>
               <div className="tds-u-pl1">Settings</div>
+            </Link>
+          </tds-header-dropdown-list-item>
+          <tds-header-dropdown-list-item>
+            <Link to="notifications">
+              <tds-badge value={userContext?.user.notificiations?.length.toString()}></tds-badge>
+              <div className="tds-u-pl1">Notifications</div>
             </Link>
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>

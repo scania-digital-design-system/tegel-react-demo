@@ -43,6 +43,7 @@ const SettingsPage = () => {
         const updatedUser: User = {
           userName: formData.get("userName")?.toString() || "",
           placeOfWork: formData.get("placeOfWork")?.toString() || "",
+          notificiations: userContext?.user.notificiations ?? []
         };
         userContext?.updateUser(updatedUser);
         form.current.reset()
