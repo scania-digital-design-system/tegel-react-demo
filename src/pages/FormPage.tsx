@@ -358,8 +358,18 @@ const FormPage = () => {
             </section>
           </tds-block>
           <section className="tds-u-flex-end">
+          <tds-tooltip
+            placement="right"
+            selector="#anonymously"
+            mouse-over-tooltip="false"
+          >
+            <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
+              This option is required in order to submit the form.
+            </p>
+          </tds-tooltip>
             <tds-toggle required name="toggle" size="sm">
-              <div slot="label">Answer anonymously</div>
+              <div slot="label" id="anonymously">Answer anonymously
+              <tds-icon name="info" size="16px" style={{ paddingLeft: '4px' }}></tds-icon></div>
             </tds-toggle>
           </section>
           <div className="spinner-container">
