@@ -368,8 +368,10 @@ const FormPage = () => {
             </p>
           </tds-tooltip>
             <tds-toggle required name="toggle" size="sm">
-              <div slot="label" id="anonymously">Answer anonymously
-              <tds-icon name="info" size="16px" style={{ paddingLeft: '4px' }}></tds-icon></div>
+              <div slot="label" id="anonymously">
+                Answer anonymously
+                <tds-icon name="info" size="16px"></tds-icon>
+              </div>
             </tds-toggle>
           </section>
           <div className="spinner-container">
