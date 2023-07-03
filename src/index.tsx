@@ -43,7 +43,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: 'tabs-buttons',
         path: "stepper",
         element: <StepperPage />,
       },
