@@ -11,6 +11,8 @@ import RadioButton from "../components/RadioButton";
 import { PopoverMenu } from "../components/PopOverCanvas";
 import PopoverCanvas from "../components/PopOverCanvas";
 import AccordionExample from "../components/Accordion";
+import Datetime from "../components/Datetime";
+import Message from "../components/Message";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -62,14 +64,7 @@ export default function WebComponents() {
         </tds-chip>
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Datetime</div>
-        <tds-datetime
-          id="datetime"
-          type="datetime-local"
-          state="none"
-          label="Label text"
-          helper="Helper text"
-        ></tds-datetime>
+        <Datetime />
       </div>
 
       <div>
@@ -154,14 +149,7 @@ export default function WebComponents() {
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Message</div>
-        <tds-message
-          type="information"
-          header="Message header"
-          mode-variant="inherit from parent"
-        >
-          Longer message text can be placed here. Longer message text can be
-          placed here.
-        </tds-message>
+        <Message />
       </div>
 
       <div>
@@ -199,8 +187,8 @@ export default function WebComponents() {
       </div>
 
       <div>
-      <PopoverMenu /> 
-      <PopoverCanvas />
+        <PopoverMenu />
+        <PopoverCanvas />
       </div>
 
       <div>

@@ -15,6 +15,7 @@ import TabsButtonPage from './pages/TabsButtonPage';
 import About from './pages/About';
 import SettingsPage from './pages/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
+import StepperPage from './pages/StepperPage';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'tabs-buttons',
+        path: "stepper",
+        element: <StepperPage />,
+      },
+      {
+        path: "tabs-buttons",
         element: <TabsButtonPage />,
       },
       {
