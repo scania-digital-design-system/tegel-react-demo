@@ -14,8 +14,10 @@ const FormPage = () => {
   const [countrySelected, setCountrySelected] = useState<string>("");
   const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
-
   const [addressValidation, setAddressValidation] = useState(true);
+  const happinesSlider = useRef<HTMLTdsSliderElement>(null);
+  const stressSlider = useRef<HTMLTdsSliderElement>(null);
+  const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
 
   const handleClick = () => {
     form.current?.requestSubmit();
@@ -24,16 +26,23 @@ const FormPage = () => {
   /* First useEffect for connection to JSON file, only run on an initial load */
   useEffect(() => {
     const swedishTown = swedenDropdownTown.current;
-
     const norwayTown = norwayDropdownTown.current;
-
     if (swedishTown) {
       swedishTown.options = townDataSweden;
-    }
-
-    if (norwayTown) {
+    } else if (norwayTown) {
       norwayTown.options = townDataNorway;
     }
+
+    happinesSlider.current?.addEventListener("tdsChange", () => {
+      if (stressSlider.current) {
+        stressSlider.current.disabled = false;
+      }
+    });
+    stressSlider.current?.addEventListener("tdsChange", () => {
+      if (workLifeSlider.current) {
+        workLifeSlider.current.readOnly = false;
+      }
+    });
   }, []);
 
   /* Second useEffect for checking selected values of dropdown, run on dependency changes */
@@ -272,6 +281,7 @@ const FormPage = () => {
             <section>
               <h5>Tell us how you feel about your..</h5>
               <tds-slider
+                ref={happinesSlider}
                 label="..happiness at work"
                 name="happinessAtWork"
                 min="0"
@@ -282,6 +292,7 @@ const FormPage = () => {
                 snap
               ></tds-slider>
               <tds-slider
+                ref={stressSlider}
                 label="..stress level"
                 name="stressLevel"
                 min="0"
@@ -290,8 +301,10 @@ const FormPage = () => {
                 max="10"
                 ticks="9"
                 snap
+                disabled
               ></tds-slider>
               <tds-slider
+                ref={workLifeSlider}
                 label="..work/life balance."
                 name="workLifeBalance"
                 min="0"
@@ -300,6 +313,7 @@ const FormPage = () => {
                 max="10"
                 ticks="9"
                 snap
+                read-only
               ></tds-slider>
             </section>
             <section>

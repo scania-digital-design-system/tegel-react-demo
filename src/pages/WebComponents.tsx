@@ -13,7 +13,6 @@ import PopoverCanvas from "../components/PopOverCanvas";
 import AccordionExample from "../components/Accordion";
 import Datetime from "../components/Datetime";
 import Message from "../components/Message";
-import Slider from "../components/Slider";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -190,10 +189,6 @@ export default function WebComponents() {
       <div>
         <PopoverMenu />
         <PopoverCanvas />
-      </div>
-
-      <div>
-        <Slider />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Spinner</div>
