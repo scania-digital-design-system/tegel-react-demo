@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useRef, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import ModeSwitcher from "./components/ModeSwitcher";
-import Footer from "./components/Footer";
-import Header from "./components/Navigation/Header";
-import SideMenu from "./components/Navigation/SideMenu";
+import { useRef, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import ModeSwitcher from './components/ModeSwitcher';
+import Footer from './components/Footer';
+import Header from './components/Navigation/Header';
+import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
-import ModeVariantSwitcher from "./components/ModeVariantSwitcher";
+import ModeVariantSwitcher from './components/ModeVariantSwitcher';
+import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumbs';
 
 export interface User {
   userName: string;
@@ -21,8 +22,8 @@ interface UserContextValue {
 export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
-  const [mode, setMode] = useState<"Light" | "Dark">("Light");
-  const [modeVariant, setModeVariant] = useState<"Primary" | "Secondary">("Primary");
+  const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
+  const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
@@ -39,7 +40,6 @@ function App() {
     updateUser,
   };
 
-
   const toggleMobileNav = () => {
     if (sideMenuRef.current) {
       sideMenuRef.current.open = !sideMenuRef.current.open;
@@ -47,22 +47,19 @@ function App() {
   };
 
   return (
-    <div className={`App tds-mode-${mode.toLowerCase()} tds-mode-variant-${modeVariant.toLowerCase()}`}>
+    <div
+      className={`App tds-mode-${mode.toLowerCase()} tds-mode-variant-${modeVariant.toLowerCase()}`}
+    >
       <UserContext.Provider value={userContextValue}>
         <div className="switcher-container">
           <ModeSwitcher mode={mode} setMode={setMode} />
           <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
         </div>
         <div className="announcement-banner">
-          <tds-banner
-            type="information"
-            icon="info"
-            header="React demo"
-            persistent
-          >
+          <tds-banner type="information" icon="info" header="React demo" persistent>
             <div slot="banner-subheader">
-              This is a demo page in React using{" "}
-              <tds-link style={{ display: "inline-block" }}>
+              This is a demo page in React using{' '}
+              <tds-link style={{ display: 'inline-block' }}>
                 <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
                   @scania/tegel
                 </a>
@@ -72,9 +69,16 @@ function App() {
         </div>
         <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
         <div className="side-menu-and-main">
-          <SideMenu sideMenuRef={sideMenuRef} pathname={pathname} toggleMobileNav={toggleMobileNav} />
-          <main className="tds-u-h-100 tds-u-p3">
-            <Outlet />
+          <SideMenu
+            sideMenuRef={sideMenuRef}
+            pathname={pathname}
+            toggleMobileNav={toggleMobileNav}
+          />
+          <main className="tds-u-h-100 tds-u-w-100">
+            <AppBreadcrumbs />
+            <div className="wrapper tds-u-h-100 tds-u-p3">
+              <Outlet />
+            </div>
           </main>
         </div>
         <Footer />

@@ -1,48 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import './register-webcomponents';
 
-import App from "./App";
-import WebComponents from "./pages/WebComponents";
-import TextPage from "./pages/TextPage/TextPage";
+import App from './App';
+import WebComponents from './pages/WebComponents';
+import TextPage from './pages/TextPage/TextPage';
 import TablePage from './pages/TablePage';
 import FormPage from './pages/FormPage';
 import TabsLinkPage from './pages/TabsLinkPage';
 import TabsButtonPage from './pages/TabsButtonPage';
 import About from './pages/About';
 import SettingsPage from './pages/SettingsPage';
+import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
-
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
-        path: "",
+        path: '',
         element: <WebComponents />,
       },
       {
-        path: "web-components",
+        path: 'web-components',
         element: <WebComponents />,
       },
       {
-        path: "table",
+        path: 'table',
         element: <TablePage />,
       },
       {
-        path: "form",
+        path: 'form',
         element: <FormPage />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
@@ -54,42 +51,44 @@ const router = createBrowserRouter([
         element: <TabsButtonPage />,
       },
       {
-        path: "tabs-links",
+        path: 'tabs-links',
         element: <TabsLinkPage />,
         children: [
           {
-            path: "first-tab",
+            path: 'first-tab',
             element: <TabsLinkPage />,
           },
           {
-            path: "second-tab",
+            path: 'second-tab',
             element: <TabsLinkPage />,
           },
           {
-            path: "third-tab",
+            path: 'third-tab',
             element: <TabsLinkPage />,
           },
         ],
       },
       {
-        path: "text",
+        path: 'text',
         element: <TextPage />,
       },
       {
+        path: 'text/subpage-with-a-very-long-title',
+        element: <TextSubpage />,
+      },
+      {
         path: 'settings',
-        element: <SettingsPage />
-      }
+        element: <SettingsPage />,
+      },
     ],
   },
 ]);
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

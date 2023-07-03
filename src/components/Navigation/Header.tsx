@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
-import { UserContext } from "../../App";
+import { useContext, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 interface HeaderProps {
   pathname: string;
@@ -29,33 +29,30 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
       ></tds-header-hamburger>
 
       <tds-header-title>React Demo</tds-header-title>
-      <tds-header-item selected={pathname.includes("web-components")}>
+      <tds-header-item selected={pathname.includes('web-components')}>
         <Link to="web-components">Components</Link>
       </tds-header-item>
-      <tds-header-item selected={pathname === "/form"}>
+      <tds-header-item selected={pathname === '/form'}>
         <Link to="form">Form</Link>
       </tds-header-item>
-      <tds-header-dropdown
-        ref={headerDropdown}
-        selected={pathname.includes("tabs")}
-      >
+      <tds-header-dropdown ref={headerDropdown} selected={pathname.includes('tabs')}>
         <span slot="button-label">Tabs</span>
         <tds-header-dropdown-list>
           <tds-header-dropdown-list-item
-            selected={pathname === "/tabs-buttons"}
+            selected={pathname === '/tabs-buttons'}
             onClick={closeHeaderDropdown}
           >
             <Link to="/tabs-buttons">Buttons</Link>
           </tds-header-dropdown-list-item>
           <tds-header-dropdown-list-item
-            selected={pathname === "/tabs-links"}
+            selected={pathname === '/tabs-links'}
             onClick={closeHeaderDropdown}
           >
             <Link to="tabs-links">Links</Link>
           </tds-header-dropdown-list-item>
         </tds-header-dropdown-list>
       </tds-header-dropdown>
-      <tds-header-item selected={pathname === "/text"}>
+      <tds-header-item selected={pathname.startsWith('/text')}>
         <Link to="text">Text</Link>
       </tds-header-item>
 

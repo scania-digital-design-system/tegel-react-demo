@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import { capitalizeFirst } from '../utility';
 
 const Block = () => {
   const [modeVariant, setModeVariant] = useState('primary');
-
-  const capitalizeFirst = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
 
   const handleVariantChange = (event: Event) => {
     const target = event.target as HTMLElement;
@@ -51,11 +48,12 @@ const Block = () => {
       <tds-block mode-variant={modeVariant}>
         <div className="tds-headline-02 tds-u-pb1">{capitalizeFirst(modeVariant)} Block</div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend ultrices. Nunc
-          venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et ligula consectetur interdum.
-          Vestibulum condimentum, augue vitae lobortis rhoncus, mi est ultricies mi, sed tincidunt magna nibh in lectus.
-          Pellentesque vel vulputate orci, vel lacinia orci. Sed suscipit leo at diam ullamcorper, vitae volutpat neque
-          dapibus. Maecenas sit amet rhoncus arcu.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
+          ultrices. Nunc venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et
+          ligula consectetur interdum. Vestibulum condimentum, augue vitae lobortis rhoncus, mi est
+          ultricies mi, sed tincidunt magna nibh in lectus. Pellentesque vel vulputate orci, vel
+          lacinia orci. Sed suscipit leo at diam ullamcorper, vitae volutpat neque dapibus. Maecenas
+          sit amet rhoncus arcu.
         </p>
       </tds-block>
     </div>
