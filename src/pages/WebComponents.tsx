@@ -1,18 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import "./WebComponents.scss";
-import Banner from "../components/Banner";
-import Card from "../components/Card";
-import Button from "../components/Button";
-import Toast from "../components/Toast";
-import Modal from "../components/Modal";
-import Toggle from "../components/Toggle";
-import Block from "../components/Block";
-import RadioButton from "../components/RadioButton";
-import { PopoverMenu } from "../components/PopOverCanvas";
-import PopoverCanvas from "../components/PopOverCanvas";
-import AccordionExample from "../components/Accordion";
-import Datetime from "../components/Datetime";
-import Message from "../components/Message";
+import './WebComponents.scss';
+import Banner from '../components/Banner';
+import Card from '../components/Card';
+import Button from '../components/Button';
+import Toast from '../components/Toast';
+import Modal from '../components/Modal';
+import Toggle from '../components/Toggle';
+import Block from '../components/Block';
+import RadioButton from '../components/RadioButton';
+import { PopoverMenu } from '../components/PopOverCanvas';
+import PopoverCanvas from '../components/PopOverCanvas';
+import AccordionExample from '../components/Accordion';
+import Datetime from '../components/Datetime';
+import Message from '../components/Message';
+import Chips from './ChipsPage/ChipsPage';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -62,6 +63,7 @@ export default function WebComponents() {
         <tds-chip type="button" size="lg">
           <span slot="label">Label</span>
         </tds-chip>
+        <Chips />
       </div>
       <div>
         <Datetime />
@@ -164,15 +166,12 @@ export default function WebComponents() {
         </div>
 
         <p>
-          Modals can also be opened programatically, see it in action by
-          hovering the Icon below.
+          Modals can also be opened programatically, see it in action by hovering the Icon below.
         </p>
         <tds-icon
           onMouseEnter={() => {
             (
-              document.querySelector(
-                `[selector="hover-modal-button"]`
-              ) as HTMLTdsModalElement
+              document.querySelector(`[selector="hover-modal-button"]`) as HTMLTdsModalElement
             ).showModal();
           }}
           name="truck"
