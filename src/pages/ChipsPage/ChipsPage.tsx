@@ -1,9 +1,11 @@
+import { FormEvent, useRef, useState } from 'react';
+
 const data = {
-  topics: {
-    name: 'topics',
+  topic: {
+    name: 'topic',
     title: 'Which topic are you interested in?',
     required: true,
-    preselected: 'topic1',
+    preselected: 'topic5',
     fields: [
       { name: 'Qwik', id: 'topic1', disabled: false },
       { name: 'Svelte', id: 'topic2', disabled: false },
@@ -20,11 +22,11 @@ const data = {
       { name: 'Aurelia', id: 'topic13', disabled: false },
     ],
   },
-  sizes: {
-    name: 'sizes',
+  size: {
+    name: 'size',
     title: 'What is your preferred size?',
     required: true,
-    preselected: 'size1',
+    preselected: null,
     fields: [
       { name: 'xxs', id: 'size1', disabled: false },
       { name: 'xs', id: 'size2', disabled: false },
@@ -41,6 +43,26 @@ const data = {
 };
 
 const ChipsPage = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [submittedData, setSubmittedData] = useState<any>();
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    const formEl = e.target as HTMLFormElement;
+    const elements = formEl.elements;
+
+    const checkboxNodeList = (elements as any)['topic'];
+    const checkedBoxes = Array.from(checkboxNodeList).filter((checkbox: any) => checkbox.checked);
+    const topics = checkedBoxes.map((checkbox: any) => checkbox.value);
+
+    setSubmittedData({
+      topics,
+      size: (elements as any).size.value,
+    });
+  };
+
   return (
     <div>
       <h1>Start testing Chips by exploring the actions below</h1>
@@ -74,7 +96,7 @@ const ChipsPage = () => {
           </span>
         </tds-chip>
       </div>
-      <form>
+      <form onSubmit={onSubmit} ref={formRef}>
         <p className="tds-u-mb3">
           Checkbox chips are versatile UI components allowing multiple selections within a dataset.
           Unlike traditional checkboxes, these chips provide a modern, compact, and intuitive way to
@@ -87,10 +109,16 @@ const ChipsPage = () => {
           <legend className="tds-headline-02 tds-u-mb3">Pick your favourite topics</legend>
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {data.topics.fields.map((topic) => {
+            {data.topic.fields.map((topic) => {
               const uid = `topic-${topic.id}`;
               return (
-                <tds-chip key={uid} type="checkbox" name="topic" value={topic.name}>
+                <tds-chip
+                  key={uid}
+                  type="checkbox"
+                  name="topic"
+                  value={topic.name}
+                  checked={data.topic.preselected === topic.id}
+                >
                   <span slot="label">{topic.name}</span>
                 </tds-chip>
               );
@@ -98,11 +126,11 @@ const ChipsPage = () => {
           </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset className="tds-u-mb3">
           <legend className="tds-headline-02 tds-u-mb3">Wheel size</legend>
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {data.sizes.fields.map((size) => {
+            {data.size.fields.map((size) => {
               const uid = `size-${size.id}`;
               return (
                 <tds-chip
@@ -112,7 +140,7 @@ const ChipsPage = () => {
                   value={size.name}
                   // required={data.sizes.required}
                   // disabled={size.disabled}
-                  checked={data.sizes.preselected === size.id}
+                  checked={data.size.preselected === size.id}
                   ref={(ref) => {
                     if (ref) {
                       // Note: workaround for React, in a real world app
@@ -133,7 +161,14 @@ const ChipsPage = () => {
             })}
           </div>
         </fieldset>
+        <tds-button
+          text="Submit"
+          onClick={() => {
+            formRef?.current?.requestSubmit();
+          }}
+        ></tds-button>
       </form>
+      <pre>{JSON.stringify(submittedData, null, 2)}</pre>
     </div>
   );
 };
