@@ -72,41 +72,43 @@ function App() {
 
   return (
     <div
-      className={`App tds-mode-${mode.toLowerCase()} tds-mode-variant-${modeVariant.toLowerCase()}`}
+      className={`App tds-mode-${mode.toLowerCase()}`}
     >
-      <UserContext.Provider value={userContextValue}>
-        <div className="switcher-container">
-          <ModeSwitcher mode={mode} setMode={setMode} />
-          <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
-        </div>
-        <div className="announcement-banner">
-          <tds-banner type="information" icon="info" header="React demo" persistent>
-            <div slot="banner-subheader">
-              This is a demo page in React using{' '}
-              <tds-link style={{ display: 'inline-block' }}>
-                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                  @scania/tegel
-                </a>
-              </tds-link>
-            </div>
-          </tds-banner>
-        </div>
-        <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
-        <div className="side-menu-and-main">
-          <SideMenu
-            sideMenuRef={sideMenuRef}
-            pathname={pathname}
-            toggleMobileNav={toggleMobileNav}
-          />
-          <main className="tds-u-h-100 tds-u-w-100">
-            <AppBreadcrumbs />
-            <div className="wrapper tds-u-h-100 tds-u-p3">
-              <Outlet />
-            </div>
-          </main>
-        </div>
-        <Footer />
-      </UserContext.Provider>
+      <div className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
+        <UserContext.Provider value={userContextValue}>
+          <div className="switcher-container">
+            <ModeSwitcher mode={mode} setMode={setMode} />
+            <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
+          </div>
+          <div className="announcement-banner">
+            <tds-banner type="information" icon="info" header="React demo" persistent>
+              <div slot="banner-subheader">
+                This is a demo page in React using{' '}
+                <tds-link style={{ display: 'inline-block' }}>
+                  <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+                    @scania/tegel
+                  </a>
+                </tds-link>
+              </div>
+            </tds-banner>
+          </div>
+          <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
+          <div className="side-menu-and-main">
+            <SideMenu
+              sideMenuRef={sideMenuRef}
+              pathname={pathname}
+              toggleMobileNav={toggleMobileNav}
+            />
+            <main className="tds-u-h-100 tds-u-w-100">
+              <AppBreadcrumbs />
+              <div className="wrapper tds-u-h-100 tds-u-p3">
+                <Outlet />
+              </div>
+            </main>
+          </div>
+          <Footer />
+        </UserContext.Provider>
+      </div>
     </div>
   );
 }
