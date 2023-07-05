@@ -39,6 +39,12 @@
         grid-column-gap: 16px;
         grid-template-columns: 1fr 2fr;
     }
+
+    #anonymously {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
 }
 
 tds-toast {
