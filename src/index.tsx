@@ -17,6 +17,7 @@ import SettingsPage from './pages/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';
+import ChipsPage from './pages/ChipsPage/ChipsPage';
 
 const router = createBrowserRouter([
   {
@@ -44,11 +45,15 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "stepper",
+        path: 'stepper',
         element: <StepperPage />,
       },
       {
-        path: "tabs-buttons",
+        path: 'tabs-buttons',
+        element: <TabsButtonPage />,
+      },
+      {
+        path: 'tabs-buttons',
         element: <TabsButtonPage />,
       },
       {
@@ -83,8 +88,12 @@ const router = createBrowserRouter([
       },
       {
         path: 'notifications',
-        element: <NotificationPage />
-      }
+        element: <NotificationPage />,
+      },
+      {
+        path: 'chips',
+        element: <ChipsPage />,
+      },
     ],
   },
 ]);

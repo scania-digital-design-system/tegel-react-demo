@@ -57,13 +57,19 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
         <Link to="text">Text</Link>
       </tds-header-item>
 
-      <tds-header-dropdown onClick={() => { }} slot="end" no-dropdown-icon>
+      <tds-header-item selected={pathname.startsWith('/chips')}>
+        <Link to="chips">Chips</Link>
+      </tds-header-item>
+
+      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
         <div slot="button-icon">
           <img
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
             alt="User menu."
           />
-          {userContext?.user.notificiations && userContext?.user.notificiations?.length > 0 && (<tds-badge size="sm"></tds-badge>)}
+          {userContext?.user.notificiations && userContext?.user.notificiations?.length > 0 && (
+            <tds-badge size="sm"></tds-badge>
+          )}
         </div>
         <tds-header-dropdown-list type="lg">
           <tds-header-dropdown-list-user
