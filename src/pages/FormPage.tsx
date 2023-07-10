@@ -29,16 +29,18 @@ const FormPage = () => {
     const norwayTown = norwayDropdownTown.current;
     if (swedishTown) {
       swedishTown.options = townDataSweden;
-    } else if (norwayTown) {
+    }
+
+    if (norwayTown) {
       norwayTown.options = townDataNorway;
     }
 
-    happinesSlider.current?.addEventListener("tdsChange", () => {
+    happinesSlider.current?.addEventListener('tdsChange', () => {
       if (stressSlider.current) {
         stressSlider.current.disabled = false;
       }
     });
-    stressSlider.current?.addEventListener("tdsChange", () => {
+    stressSlider.current?.addEventListener('tdsChange', () => {
       if (workLifeSlider.current) {
         workLifeSlider.current.readOnly = false;
       }
@@ -60,7 +62,7 @@ const FormPage = () => {
 
   useEffect(() => {
     setTextareaDisabled(!addressValue)
-    
+
   }, [addressValue]);
 
   const handleSubmit = (event: FormEvent) => {
