@@ -18,6 +18,7 @@ const FormPage = () => {
   const happinesSlider = useRef<HTMLTdsSliderElement>(null);
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
   const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
+  const [sliderDisabled, setSliderDisabled] = useState(false)
 
   const handleClick = () => {
     form.current?.requestSubmit();
@@ -280,6 +281,14 @@ const FormPage = () => {
 
             <section>
               <h5>Tell us how you feel about your..</h5>
+              <tds-toggle name="disable-slider" size="sm" onClick={() => {
+                setSliderDisabled(!sliderDisabled);
+                console.log(sliderDisabled);
+              }}>
+              <div slot="label">
+                Disable Slider
+              </div>
+            </tds-toggle>
               <tds-slider
                 ref={happinesSlider}
                 label="..happiness at work"
@@ -290,6 +299,7 @@ const FormPage = () => {
                 max="10"
                 ticks="9"
                 snap
+                disabled={sliderDisabled}
               ></tds-slider>
               <tds-slider
                 ref={stressSlider}
