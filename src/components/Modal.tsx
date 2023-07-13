@@ -25,7 +25,7 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
       size={size}
       actions="static"
     >
-      <h5 className="tds-modal-headline" slot="headler">
+      <h5 className="tds-modal-headline" slot="header">
         Modal
       </h5>
       <span slot="body">
