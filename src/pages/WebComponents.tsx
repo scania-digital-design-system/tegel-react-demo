@@ -34,7 +34,7 @@ export default function WebComponents() {
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
-        <tds-breadcrumb>
+        <tds-breadcrumbs>
           <tds-breadcrumb>
             <a href="#">Page 1</a>
           </tds-breadcrumb>
@@ -44,7 +44,7 @@ export default function WebComponents() {
           <tds-breadcrumb current>
             <a href="#">Page 3</a>
           </tds-breadcrumb>
-        </tds-breadcrumb>
+        </tds-breadcrumbs>
       </div>
       <div className="tds-u-w-100">
         <Button />
