@@ -1,9 +1,16 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import exampleData from './example-data.json';
 
 const BatchActionTable = () => {
   const table = useRef<HTMLTdsTableBodyElement>(null);
   const modal = useRef<HTMLTdsModalElement>(null);
   const [data, setData] = useState<string>('[]');
+
+  useEffect(() => {
+    if (table.current) {
+      table.current.bodyData = exampleData;
+    }
+  });
 
   const handleClick = () => {
     if (table.current) {
@@ -22,7 +29,7 @@ const BatchActionTable = () => {
         <span slot="body">
           {data !== '[]' ? (
             <>
-              <p>Downdloaded data:</p>
+              <p>Downloaded data:</p>
               {data}
             </>
           ) : (
@@ -40,7 +47,7 @@ const BatchActionTable = () => {
         <tds-table-toolbar table-title="Batch action">
           <tds-button
             onClick={handleClick}
-            slot="tds-table__actionbar"
+            slot="end"
             type="primary"
             size="sm"
             text="Download"
@@ -56,7 +63,7 @@ const BatchActionTable = () => {
             text-align="right"
           ></tds-header-cell>
         </tds-table-header>
-        <tds-table-body ref={table} enable-dummy-data></tds-table-body>
+        <tds-table-body ref={table}></tds-table-body>
       </tds-table>
     </>
   );
