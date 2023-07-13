@@ -79,10 +79,8 @@ const ChipsPage = () => {
             alert('clicked');
           }}
         >
-          <span slot="label">
-            <tds-icon name="lock_inactive" size="16px"></tds-icon>
-            Lock
-          </span>
+          <tds-icon slot="prefix" name="lock_inactive" size="16px"></tds-icon>
+          <span slot="label">Lock</span>
         </tds-chip>
         <tds-chip
           size="lg"
@@ -90,10 +88,8 @@ const ChipsPage = () => {
             alert('clicked');
           }}
         >
-          <span slot="label">
-            <tds-icon name="notification" size="16px"></tds-icon>
-            Set alarm
-          </span>
+          <tds-icon slot="prefix" name="notification" size="16px"></tds-icon>
+          <span slot="label">Set alarm</span>
         </tds-chip>
       </div>
       <form onSubmit={onSubmit} ref={formRef}>
