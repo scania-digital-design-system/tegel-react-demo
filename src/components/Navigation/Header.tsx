@@ -37,7 +37,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
         <Link to="form">Form</Link>
       </tds-header-item>
       <tds-header-dropdown ref={headerDropdown} selected={pathname.includes('tabs')}>
-        <span slot="button-label">Tabs</span>
+        <span slot="label">Tabs</span>
         <tds-header-dropdown-list>
           <tds-header-dropdown-list-item
             selected={pathname === '/tabs-buttons'}
