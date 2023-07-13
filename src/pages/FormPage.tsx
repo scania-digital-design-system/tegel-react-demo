@@ -12,8 +12,8 @@ const FormPage = () => {
   const form = useRef<HTMLFormElement>(null);
   const [addressValue, setAddressValue] = useState<null | string>("");
   const [countrySelected, setCountrySelected] = useState<string>("");
-  const norwayDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
-  const swedenDropdownTown = useRef<HTMLTdsDropdownV2Element>(null);
+  const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
+  const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const [addressValidation, setAddressValidation] = useState(true);
   const happinesSlider = useRef<HTMLTdsSliderElement>(null);
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
@@ -173,7 +173,7 @@ const FormPage = () => {
             </section>
 
             <section>
-              <tds-dropdown-v2
+              <tds-dropdown
                 ref={(countryDropdown) => {
                   countryDropdown?.addEventListener("tdsChange", (event) => {
                     const customEvent = event as CustomEvent;
@@ -189,20 +189,20 @@ const FormPage = () => {
                 size="lg"
                 open-direction="up"
               >
-                <tds-dropdown-option-v2 value="sweden">
+                <tds-dropdown-option value="sweden">
                   Sweden
-                </tds-dropdown-option-v2>
-                <tds-dropdown-option-v2 disabled value="Finland">
+                </tds-dropdown-option>
+                <tds-dropdown-option disabled value="Finland">
                   Finland
-                </tds-dropdown-option-v2>
-                <tds-dropdown-option-v2 value="norway">
+                </tds-dropdown-option>
+                <tds-dropdown-option value="norway">
                   Norway
-                </tds-dropdown-option-v2>
-              </tds-dropdown-v2>
+                </tds-dropdown-option>
+              </tds-dropdown>
             </section>
 
             <section>
-              <tds-dropdown-v2
+              <tds-dropdown
                 ref={norwayDropdownTown}
                 mode-variant="secondary"
                 name="norweiganTown"
@@ -214,11 +214,11 @@ const FormPage = () => {
                 open-direction="auto"
                 multiselect
                 disabled={countrySelected !== "norway"}
-              ></tds-dropdown-v2>
+              ></tds-dropdown>
             </section>
 
             <section>
-              <tds-dropdown-v2
+              <tds-dropdown
                 ref={swedenDropdownTown}
                 mode-variant="secondary"
                 name="swedishTown"
@@ -230,7 +230,7 @@ const FormPage = () => {
                 open-direction="auto"
                 filter
                 disabled={countrySelected !== "sweden"}
-              ></tds-dropdown-v2>
+              ></tds-dropdown>
             </section>
 
             <section>

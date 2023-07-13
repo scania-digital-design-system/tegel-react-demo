@@ -36,11 +36,6 @@ body,
 
 tds-header {
   position: sticky;
-  top: 68px;
-}
-
-tds-side-menu {
-  top: 68px;
 }
 
 .side-menu-and-main {

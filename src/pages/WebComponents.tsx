@@ -75,72 +75,24 @@ export default function WebComponents() {
       </div>
 
       <div className="tds-headline-02 tds-u-pb1">Dropdown</div>
-      <div className="tds-headline-04 tds-u-pb1">Default</div>
       <tds-dropdown
-        id="tds-dropdown-reg"
-        size="lg"
+        name="dropdown"
+        label="Label text"
+        label-position="outside"
         placeholder="Placeholder"
-        disabled={false}
+        helper="Helper text"
+        size="lg"
+        multiselect
         open-direction="auto"
-        label-position="no-default"
-        type="default"
-        default-option="option-1"
       >
-        <tds-dropdown-option value="option-1" tabIndex={0} disabled>
-          Option 1
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-2" tabIndex={0}>
-          Option 2
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-3" tabIndex={0}>
-          Option 3
-        </tds-dropdown-option>
+        <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+        <tds-dropdown-option disabled value="option-2">Option 2</tds-dropdown-option>
+        <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+        <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
+        <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
+        <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
+        <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
       </tds-dropdown>
-      <div className="tds-headline-04 tds-u-pb1">Multiselect</div>
-      <tds-dropdown
-        id="tds-dropdown-reg"
-        size="lg"
-        placeholder="Placeholder"
-        disabled={false}
-        open-direction="auto"
-        label-position="no-default"
-        type="multiselect"
-        default-option="option-1"
-      >
-        <tds-dropdown-option value="option-1" tabIndex={0} disabled>
-          Option 1
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-2" tabIndex={0}>
-          Option 2
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-3" tabIndex={0}>
-          Option 3
-        </tds-dropdown-option>
-      </tds-dropdown>
-      <div className="tds-headline-04 tds-u-pb1">Filter</div>
-
-      <tds-dropdown-filter
-        id="tds-dropdown-filter"
-        size="lg"
-        placeholder="Placeholder"
-        open-direction="auto"
-        label-position="no-label"
-        data='[
-              {
-                "value": "option-1",
-                "label":"Jakarta"
-              },
-              {
-                "value":"option-2"
-                ,"label":"Stockholm"
-              },
-              {
-                "value":"option-3",
-                "label":"Barcelona"
-              }
-            ]'
-        default-option="option-1"
-      ></tds-dropdown-filter>
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Link</div>
