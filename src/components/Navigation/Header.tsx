@@ -62,7 +62,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
       </tds-header-item>
 
       <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
-        <div slot="button-icon">
+        <div slot="icon">
           <img
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
             alt="User menu."
