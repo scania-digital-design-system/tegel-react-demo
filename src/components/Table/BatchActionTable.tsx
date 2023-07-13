@@ -1,14 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
 const BatchActionTable = () => {
   const table = useRef<HTMLTdsTableBodyElement>(null);
   const modal = useRef<HTMLTdsModalElement>(null);
-  const [data, setData] = useState<string>("[]");
+  const [data, setData] = useState<string>('[]');
 
   const handleClick = () => {
     if (table.current) {
-      if (table.current.getAttribute("data-selected-rows")) {
-        setData(table.current.getAttribute("data-selected-rows") as string);
+      if (table.current.getAttribute('data-selected-rows')) {
+        setData(table.current.getAttribute('data-selected-rows') as string);
       }
       modal.current?.showModal();
     }
@@ -16,11 +16,11 @@ const BatchActionTable = () => {
   return (
     <>
       <tds-modal ref={modal} id="my-modal" size="lg" actions="static">
-        <h5 className="tds-modal-headline" slot="tds-modal-headline">
+        <h5 className="tds-modal-headline" slot="header">
           Batch Actions example
         </h5>
-        <span slot="tds-modal-body">
-          {data !== "[]" ? (
+        <span slot="body">
+          {data !== '[]' ? (
             <>
               <p>Downdloaded data:</p>
               {data}
@@ -47,18 +47,9 @@ const BatchActionTable = () => {
           ></tds-button>
         </tds-table-toolbar>
         <tds-table-header>
-          <tds-header-cell
-            column-key="truck"
-            column-title="Truck type"
-          ></tds-header-cell>
-          <tds-header-cell
-            column-key="driver"
-            column-title="Driver name"
-          ></tds-header-cell>
-          <tds-header-cell
-            column-key="country"
-            column-title="Country"
-          ></tds-header-cell>
+          <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
+          <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
+          <tds-header-cell column-key="country" column-title="Country"></tds-header-cell>
           <tds-header-cell
             column-key="mileage"
             column-title="Mileage"

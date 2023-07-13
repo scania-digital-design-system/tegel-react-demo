@@ -1,8 +1,8 @@
-import "./Modal.scss";
+import './Modal.scss';
 
 type ModalProps = {
   selector: string;
-  size: "sm" | "md" | "lg";
+  size: 'sm' | 'md' | 'lg';
   prevent?: boolean;
 };
 
@@ -25,22 +25,18 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
       size={size}
       actions="static"
     >
-      <h5 className="tds-modal-headline" slot="tds-modal-headline">
+      <h5 className="tds-modal-headline" slot="headler">
         Modal
       </h5>
-      <span slot="tds-modal-body">
+      <span slot="body">
         <p>This is a Modal.</p>
         {prevent && (
-          <p>
-            Since this one is has "prevent=true" it won't close when you press
-            the overlay.
-          </p>
+          <p>Since this one is has "prevent=true" it won't close when you press the overlay.</p>
         )}
-        {size === "lg" && (
+        {size === 'lg' && (
           <p>
-            This modal is closed programatically. Instead of
-            'data-dismiss-modal' buttons that close it on click. You can hover
-            the button below to close the modal.
+            This modal is closed programatically. Instead of 'data-dismiss-modal' buttons that close
+            it on click. You can hover the button below to close the modal.
           </p>
         )}
         <p>It can contain other components or just text.</p>
@@ -50,10 +46,10 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
           <tds-card header="Card" subheader="In a Modal"></tds-card>
         </div>
       </span>
-      {size !== "lg" ? (
+      {size !== 'lg' ? (
         <>
           <tds-button
-            slot="tds-modal-actions"
+            slot="actions"
             data-dismiss-modal
             size="md"
             text="Delete"
@@ -68,12 +64,10 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
         </>
       ) : (
         <tds-button
-          slot="tds-modal-actions"
+          slot="actions"
           onMouseOver={() => {
             (
-              document.querySelector(
-                `[selector="${selector}"]`
-              ) as HTMLTdsModalElement
+              document.querySelector(`[selector="${selector}"]`) as HTMLTdsModalElement
             ).closeModal();
           }}
           size="md"
