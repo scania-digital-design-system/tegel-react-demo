@@ -82,7 +82,7 @@ function App() {
           </div>
           <div className="announcement-banner">
             <tds-banner type="information" icon="info" header="React demo" persistent>
-              <div slot="banner-subheader">
+              <div slot="subheader">
                 This is a demo page in React using{' '}
                 <tds-link style={{ display: 'inline-block' }}>
                   <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
