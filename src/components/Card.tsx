@@ -9,7 +9,8 @@ const Card = () => {
         <div slot="body">This is a simple Card example</div>
       </tds-card>
       <div className="split-cards">
-        <tds-card header="Card" subheader="Card with image" body-img={CardImg}>
+        <tds-card header="Card" subheader="Card with image">
+          <img className="tds-u-w-100" slot="body-image" src={CardImg} />
           <div slot="bottom">
             <p className="tds-text-grey-958">
               The bottom section can have a{" "}
@@ -24,8 +25,8 @@ const Card = () => {
           image-placement="above-header"
           header="Card"
           subheader="Card with image"
-          body-img={CardImg}
         >
+          <img className="tds-u-w-100" slot="body-image" src={CardImg} />
           <div slot="bottom">
             <p className="tds-text-grey-958">
               This is the bottom section, this Card has its image-placement above-header
