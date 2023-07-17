@@ -6,29 +6,30 @@ const Card = () => {
     <div className="card-container">
       <div className="tds-headline-02 tds-u-pb1">Card</div>
       <tds-card header="Card" subheader="Simple Card">
-        <div slot="card-body">This is a simple Card example</div>
+        <div slot="body">This is a simple Card example</div>
       </tds-card>
       <div className="split-cards">
-        <tds-card header="Card" subheader="Card with image" body-img={CardImg}>
-          <div slot="card-bottom">
+        <tds-card header="Card" subheader="Card with image">
+          <img className="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src={CardImg} />
+          <div slot="bottom">
             <p className="tds-text-grey-958">
               The bottom section can have a{" "}
               <tds-link style={{ display: "inline-block" }}>
                 <a href="/"> link.</a>
               </tds-link>{" "}
-              This Card has it's header-placement above.
+              This Card has its image-placement below-header.
             </p>
           </div>
         </tds-card>
         <tds-card
-          header-placement="below"
+          image-placement="above-header"
           header="Card"
           subheader="Card with image"
-          body-img={CardImg}
         >
-          <div slot="card-bottom">
+          <img className="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src={CardImg} />
+          <div slot="bottom">
             <p className="tds-text-grey-958">
-              This is the bottom section, this Card has it's header-placement
+              This is the bottom section, this Card has its image-placement above-header
               below.
             </p>
           </div>
@@ -49,7 +50,7 @@ const Card = () => {
                 })
               }
             >
-              <div slot="card-body">
+              <div slot="body">
                 These Cards are part of a carousel, and can be scrolled. They
                 are also using the body slot in the Card.
               </div>
