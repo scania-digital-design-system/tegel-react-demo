@@ -70,12 +70,6 @@ tds-header {
   gap: 8px;
 }
 
-.popover-container {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
 .tooltip-container {
   display: flex;
   justify-content: center;
@@ -122,6 +116,6 @@ i {
     height: calc(100vh - calc(64px + 68px));
     position: sticky;
     top: calc(64px + 68px);
-    left: 0px;
+    left: 0;
   }
 }
