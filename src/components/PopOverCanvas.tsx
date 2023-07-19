@@ -21,12 +21,7 @@ const PopoverMenu = () => {
           size="sm"
           onClick={toggleMenu} // Add onClick event to trigger toggleMenu
         >
-          <tds-icon
-            slot="icon"
-            className="tds-btn-icon"
-            size="16px"
-            name="kebab"
-          ></tds-icon>
+          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
       <tds-popover-menu
@@ -37,11 +32,7 @@ const PopoverMenu = () => {
       >
         <ul className="tds-popover-menu-wrapper">
           <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
               <i>
                 <tds-icon name="save" size="16px"></tds-icon>
               </i>
@@ -49,11 +40,7 @@ const PopoverMenu = () => {
             </a>
           </li>
           <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
               <i>
                 <tds-icon name="save" size="16px"></tds-icon>
               </i>
@@ -62,11 +49,7 @@ const PopoverMenu = () => {
           </li>
           <li className="divider"></li>
           <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
               <i>
                 <tds-icon name="save" size="16px"></tds-icon>
               </i>
@@ -93,28 +76,20 @@ const PopoverCanvas = () => {
           size="sm"
           onClick={() => setShowPopover(!showPopover)}
         >
-          <tds-icon
-            slot="icon"
-            className="tds-btn-icon"
-            size="16px"
-            name="kebab"
-          ></tds-icon>
+          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
-      <tds-popover-canvas placement="auto" show={showPopover}>
+
+      <tds-popover-canvas placement="left-end" show={showPopover}>
         <div className="tds-u-p2">
-          <h2>A popover canvas!</h2>
-          <p>Where you can put anything you want!</p>
-          <p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://digitaldesign.scania.com"
-            >
+          <h2 className="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
+          <p className="tds-body-01">Where you can put anything you want!</p>
+          <tds-link>
+            <a target="_blank" rel="noopener noreferrer" href="https://tegel.scania.com">
               Even links!
             </a>
-          </p>
-          </div>
+          </tds-link>
+        </div>
       </tds-popover-canvas>
     </div>
   );
