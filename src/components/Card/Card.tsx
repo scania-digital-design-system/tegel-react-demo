@@ -1,5 +1,5 @@
-import CardImg from "../assets/card-img.png";
-import "./Card.scss";
+import CardImg from '../../assets/card-img.png';
+import './Card.scss';
 
 const Card = () => {
   return (
@@ -10,27 +10,32 @@ const Card = () => {
       </tds-card>
       <div className="split-cards">
         <tds-card header="Card" subheader="Card with image">
-          <img className="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src={CardImg} />
+          <img
+            className="tds-u-w-100"
+            slot="body-image"
+            alt="Scania graphical lettering sign"
+            src={CardImg}
+          />
           <div slot="bottom">
             <p className="tds-text-grey-958">
-              The bottom section can have a{" "}
-              <tds-link style={{ display: "inline-block" }}>
+              The bottom section can have a{' '}
+              <tds-link style={{ display: 'inline-block' }}>
                 <a href="/"> link.</a>
-              </tds-link>{" "}
+              </tds-link>{' '}
               This Card has its image-placement below-header.
             </p>
           </div>
         </tds-card>
-        <tds-card
-          image-placement="above-header"
-          header="Card"
-          subheader="Card with image"
-        >
-          <img className="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src={CardImg} />
+        <tds-card image-placement="above-header" header="Card" subheader="Card with image">
+          <img
+            className="tds-u-w-100"
+            slot="body-image"
+            alt="Scania graphical lettering sign"
+            src={CardImg}
+          />
           <div slot="bottom">
             <p className="tds-text-grey-958">
-              This is the bottom section, this Card has its image-placement above-header
-              below.
+              This is the bottom section, this Card has its image-placement above-header below.
             </p>
           </div>
         </tds-card>
@@ -45,14 +50,14 @@ const Card = () => {
               subheader="Simple Card"
               body-divider
               ref={(element) =>
-                element?.addEventListener("tdsClick", (event) => {
+                element?.addEventListener('tdsClick', (event) => {
                   console.log(event);
                 })
               }
             >
               <div slot="body">
-                These Cards are part of a carousel, and can be scrolled. They
-                are also using the body slot in the Card.
+                These Cards are part of a carousel, and can be scrolled. They are also using the
+                body slot in the Card.
               </div>
             </tds-card>
           );
