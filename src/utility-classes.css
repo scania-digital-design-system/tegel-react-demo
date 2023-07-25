@@ -16,3 +16,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.tds-u-flex-dir-col {
+    flex-direction: column;
+}
+
+.tds-u-flex-gap-1 {
+    gap: 8px;
+}

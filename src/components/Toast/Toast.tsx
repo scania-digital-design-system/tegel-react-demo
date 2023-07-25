@@ -19,6 +19,7 @@ const Toast = () => {
         <tds-toast
           variant="success"
           header="Successful Toast!"
+          subheader="( Closing prevented ! )"
           ref={(element) =>
             element?.addEventListener('tdsClose', (event) => {
               event.preventDefault();
@@ -27,16 +28,16 @@ const Toast = () => {
         >
           <div slot="toast-subheader">This Toasts can't be closed.</div>
         </tds-toast>
-        <tds-toast variant="error" header="Error Toast!">
+        <tds-toast id="error-toast-example" variant="error" header="Error Toast!">
           <div slot="toast-subheader">This Toasts can be closed.</div>
         </tds-toast>
-        <tds-toast variant="information" header="Information Toast!">
+        <tds-toast id="information-toast-example" variant="information" header="Information Toast!">
           <div slot="toast-subheader">This Toasts has a link.</div>
           <a slot="toast-link" href="/">
             This is a link.
           </a>
         </tds-toast>
-        <tds-toast ref={toast} variant="warning" header="Warning Toast!">
+        <tds-toast id="warning-toast-example" ref={toast} variant="warning" header="Warning Toast!">
           <div slot="toast-subheader">This Toast can be closed programmatically.</div>
         </tds-toast>
         <div>

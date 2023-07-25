@@ -28,7 +28,7 @@ const Button = () => {
           disabled
         ></tds-button>
       </div>
-      <div className="tds-u-flex tds-u-pb1">
+      <div className="tds-u-flex tds-u-flex-gap-1 tds-u-pb1">
         <tds-button
           onClick={() => {
             alert('Clicked button!');
@@ -57,7 +57,7 @@ const Button = () => {
           size="md"
         ></tds-button>
       </div>
-      <div className="tds-u-flex tds-u-pb1">
+      <div className="tds-u-flex tds-u-flex-gap-1 tds-u-pb1">
         <tds-button
           onClick={() => {
             alert('Clicked button!');
@@ -110,7 +110,7 @@ const Button = () => {
           disabled
         ></tds-button>
       </div>
-      <div className="tds-u-flex tds-u-pb1">
+      <div className="tds-u-flex tds-u-flex-gap-1 tds-u-pb1">
         <tds-button
           onClick={() => {
             alert('Clicked button!');

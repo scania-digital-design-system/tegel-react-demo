@@ -28,33 +28,35 @@ const Message = () => {
           <div slot="label">Minimal</div>
         </tds-toggle>
       </div>
-      <tds-message
-        no-icon={!useIcon}
-        minimal={useMinimal}
-        variant="information"
-        header="Message header"
-        mode-variant="inherit from parent"
-      >
-        <div>Longer message text can be placed here. Longer message text can be placed here.</div>
-      </tds-message>
-      <tds-message
-        no-icon={!useIcon}
-        minimal={useMinimal}
-        variant="error"
-        header="Message header"
-        mode-variant="inherit from parent"
-      >
-        <div>Longer message text can be placed here. Longer message text can be placed here.</div>
-      </tds-message>
-      <tds-message
-        no-icon={!useIcon}
-        minimal={useMinimal}
-        variant="success"
-        header="Message header"
-        mode-variant="inherit from parent"
-      >
-        <div>Longer message text can be placed here. Longer message text can be placed here.</div>
-      </tds-message>
+      <div className="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-1">
+        <tds-message
+          no-icon={!useIcon}
+          minimal={useMinimal}
+          variant="information"
+          header="Message header"
+          mode-variant="inherit from parent"
+        >
+          <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+        </tds-message>
+        <tds-message
+          no-icon={!useIcon}
+          minimal={useMinimal}
+          variant="error"
+          header="Message header"
+          mode-variant="inherit from parent"
+        >
+          <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+        </tds-message>
+        <tds-message
+          no-icon={!useIcon}
+          minimal={useMinimal}
+          variant="success"
+          header="Message header"
+          mode-variant="inherit from parent"
+        >
+          <div>Longer message text can be placed here. Longer message text can be placed here.</div>
+        </tds-message>
+      </div>
     </>
   );
 };
