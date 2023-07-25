@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import "./Toggle.scss";
+import { useRef } from 'react';
+import './Toggle.scss';
 
 const Toggle = () => {
   const toggle = useRef<HTMLTdsToggleElement>(null);
@@ -26,20 +26,13 @@ const Toggle = () => {
           <div slot="label">Label</div>
         </tds-toggle>
       </div>
-      <p>
-        A toggle can aslo be toggle programatically, try it by pressing the
-        button below.
-      </p>
-      <tds-button
-        onClick={handleToggle}
-        size="sm"
-        text="Press me!"
-      ></tds-button>
+      <p>A toggle can also be toggle programmatically, try it by pressing the button below.</p>
+      <tds-button onClick={handleToggle} size="sm" text="Press me!"></tds-button>
       <div className="toggle-container tds-u-pt3">
         <tds-toggle size="sm">
           <div slot="label">Small</div>
         </tds-toggle>
-        <tds-toggle >
+        <tds-toggle>
           <div slot="label">Large</div>
         </tds-toggle>
       </div>

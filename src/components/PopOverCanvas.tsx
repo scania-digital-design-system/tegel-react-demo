@@ -17,7 +17,7 @@ const PopoverMenu = () => {
           aria-label="menu"
           only-icon
           id="triggerElement"
-          type="ghost"
+          variant="ghost"
           size="sm"
           onClick={toggleMenu} // Add onClick event to trigger toggleMenu
         >
@@ -72,7 +72,7 @@ const PopoverCanvas = () => {
         <tds-button
           aria-label="menu"
           only-icon
-          type="ghost"
+          variant="ghost"
           size="sm"
           onClick={() => setShowPopover(!showPopover)}
         >

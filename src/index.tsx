@@ -6,14 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import './register-webcomponents';
 
 import App from './App';
-import WebComponents from './pages/WebComponents';
+import WebComponents from './pages/WebComponents/WebComponents';
 import TextPage from './pages/TextPage/TextPage';
 import TablePage from './pages/TablePage';
-import FormPage from './pages/FormPage';
+import FormPage from './pages/FormPages/FormPage';
 import TabsLinkPage from './pages/TabsLinkPage';
 import TabsButtonPage from './pages/TabsButtonPage';
 import About from './pages/About';
-import SettingsPage from './pages/SettingsPage';
+import SettingsPage from './pages/SettingsPage/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';

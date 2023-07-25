@@ -19,8 +19,8 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
         )}
         {size === 'lg' && (
           <p>
-            This modal is closed programatically. Instead of 'data-dismiss-modal' buttons that close
-            it on click. You can hover the button below to close the modal.
+            This modal is closed programmatically. Instead of 'data-dismiss-modal' buttons that
+            close it on click. You can hover the button below to close the modal.
           </p>
         )}
         <p>It can contain other components or just text.</p>
@@ -37,7 +37,7 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
             data-dismiss-modal
             size="md"
             text="Delete"
-            type="danger"
+            variant="danger"
           ></tds-button>
           <tds-button
             slot="tds-modal-actions"

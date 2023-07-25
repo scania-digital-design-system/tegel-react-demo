@@ -12,7 +12,7 @@ import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumb
 export interface User {
   userName: string;
   placeOfWork: string;
-  notificiations: Notification[]
+  notifications: Notification[];
 }
 
 interface UserContextValue {
@@ -21,8 +21,8 @@ interface UserContextValue {
 }
 
 interface Notification {
-  notification: string,
-  type: 'error' | 'success' | 'information' | 'warning'
+  notification: string;
+  type: 'error' | 'success' | 'information' | 'warning';
 }
 
 export const UserContext = createContext<UserContextValue | null>(null);
@@ -35,24 +35,24 @@ function App() {
   const [user, setUser] = useState<User>({
     userName: 'Marcus Åström',
     placeOfWork: 'IXCD',
-    notificiations: [
+    notifications: [
       {
         notification: 'You need to update your username.',
-        type: 'error'
+        type: 'error',
       },
       {
         notification: 'Your vacation request has been approved.',
-        type: 'success'
+        type: 'success',
       },
       {
         notification: 'You need to update your password.',
-        type: 'error'
+        type: 'error',
       },
       {
         notification: 'Your username is about to expire.',
-        type: 'warning'
+        type: 'warning',
       },
-    ]
+    ],
   });
 
   const updateUser = (newUser: User) => {
@@ -71,9 +71,7 @@ function App() {
   };
 
   return (
-    <div
-      className={`App tds-mode-${mode.toLowerCase()}`}
-    >
+    <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <div className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
         <UserContext.Provider value={userContextValue}>
           <div className="switcher-container">
@@ -81,7 +79,7 @@ function App() {
             <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
           </div>
           <div className="announcement-banner">
-            <tds-banner type="information" icon="info" header="React demo" persistent>
+            <tds-banner variant="information" icon="info" header="React demo" persistent>
               <div slot="subheader">
                 This is a demo page in React using{' '}
                 <tds-link style={{ display: 'inline-block' }}>

@@ -49,7 +49,7 @@ const ExpandTable = () => {
                 alert('Your order has been placed!');
               }}
               size="md"
-              type="primary"
+              variant="primary"
               text="Order"
             ></tds-button>
           </div>

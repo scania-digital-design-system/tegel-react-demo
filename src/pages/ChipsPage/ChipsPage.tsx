@@ -157,12 +157,7 @@ const ChipsPage = () => {
             })}
           </div>
         </fieldset>
-        <tds-button
-          text="Submit"
-          onClick={() => {
-            formRef?.current?.requestSubmit();
-          }}
-        ></tds-button>
+        <tds-button text="Submit" type="submit"></tds-button>
       </form>
       <pre>{JSON.stringify(submittedData, null, 2)}</pre>
     </div>

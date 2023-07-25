@@ -1,19 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './WebComponents.scss';
-import Banner from '../components/Banner';
-import Card from '../components/Card/Card';
-import Button from '../components/Button';
-import Toast from '../components/Toast/Toast';
-import Modal from '../components/Modal/Modal';
-import Toggle from '../components/Toggle/Toggle';
-import Block from '../components/Block';
-import RadioButton from '../components/RadioButton/RadioButton';
-import { PopoverMenu } from '../components/PopOverCanvas';
-import PopoverCanvas from '../components/PopOverCanvas';
-import AccordionExample from '../components/Accordion';
-import Datetime from '../components/Datetime';
-import Message from '../components/Message';
-import Chips from './ChipsPage/ChipsPage';
+import Banner from '../../components/Banner';
+import Card from '../../components/Card/Card';
+import Button from '../../components/Button';
+import Toast from '../../components/Toast/Toast';
+import Modal from '../../components/Modal/Modal';
+import Toggle from '../../components/Toggle/Toggle';
+import Block from '../../components/Block';
+import RadioButton from '../../components/RadioButton/RadioButton';
+import { PopoverMenu } from '../../components/PopOverCanvas';
+import PopoverCanvas from '../../components/PopOverCanvas';
+import AccordionExample from '../../components/Accordion';
+import Datetime from '../../components/Datetime';
+import Message from '../../components/Message';
+import Chips from '../ChipsPage/ChipsPage';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
@@ -110,7 +110,7 @@ export default function WebComponents() {
 
       <div>
         <div className="tds-headline-02 tds-u-pb1">Modal</div>
-        <div className="tds-u-flex">
+        <div className="tds-u-flex tds-u-flex-gap-1">
           <tds-button id="sm-modal-button" text="Small Modal"></tds-button>
           <Modal prevent size="sm" selector="#sm-modal-button" />
           <tds-button id="md-modal-button" text="Medium Modal"></tds-button>
