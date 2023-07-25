@@ -22,10 +22,6 @@ const FormPage = () => {
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
   const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
 
-  const handleClick = () => {
-    form.current?.requestSubmit();
-  };
-
   /* First useEffect for connection to JSON file, only run on an initial load */
   useEffect(() => {
     const swedishTown = swedenDropdownTown.current;
@@ -363,31 +359,33 @@ const FormPage = () => {
               </div>
             </section>
           </tds-block>
-          <section className="tds-u-flex-end">
+          <section>
             <tds-tooltip placement="right" selector="#anonymously" mouse-over-tooltip="true" show>
               <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
                 This option is required in order to submit the form.
               </p>
             </tds-tooltip>
-            <tds-toggle required name="toggle" size="sm">
-              <div slot="label" id="anonymously">
+            <tds-toggle id="privacy-toggle" required name="toggle" size="sm">
+              <span slot="label" id="anonymously">
                 Answer anonymously
                 <tds-icon name="info" size="16px"></tds-icon>
-              </div>
+              </span>
             </tds-toggle>
           </section>
           <div className="spinner-container">
             <tds-spinner size="md" variant="standard"></tds-spinner>
           </div>
-          <section className="tds-u-mt3">
-            <tds-button
-              size="sm"
-              fullbleed
-              onClick={() => {
-                handleClick();
-              }}
-              text="Submit"
-            ></tds-button>
+          <section>
+            <tds-button type="submit" size="sm" fullbleed text="Submit"></tds-button>
+            <span className="tds-u-mt1">
+              <tds-button
+                type="reset"
+                size="sm"
+                variant="ghost"
+                fullbleed
+                text="Reset"
+              ></tds-button>
+            </span>
           </section>
         </form>
       </article>

@@ -12,10 +12,6 @@ const SettingsPage = () => {
   const [userNameHelper, setUserNameHelper] = useState<string | undefined>(undefined);
   const [placeOfWorkHelper, setPlaceOfWorkHelper] = useState<string | undefined>(undefined);
 
-  const handleClick = () => {
-    form.current?.requestSubmit();
-  };
-
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
@@ -68,10 +64,10 @@ const SettingsPage = () => {
             helper={placeOfWorkHelper}
           ></tds-text-field>
         </div>
+        <div>
+          <tds-button size="md" text="Save" type="submit"></tds-button>
+        </div>
       </form>
-      <div>
-        <tds-button size="md" text="Save" onClick={handleClick}></tds-button>
-      </div>
     </div>
   );
 };
