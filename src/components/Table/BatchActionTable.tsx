@@ -48,7 +48,7 @@ const BatchActionTable = () => {
           <tds-button
             onClick={handleClick}
             slot="end"
-            type="primary"
+            variant="primary"
             size="sm"
             text="Download"
           ></tds-button>

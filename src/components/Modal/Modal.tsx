@@ -37,7 +37,7 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
             data-dismiss-modal
             size="md"
             text="Delete"
-            type="danger"
+            variant="danger"
           ></tds-button>
           <tds-button
             slot="tds-modal-actions"

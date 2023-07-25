@@ -3,15 +3,15 @@ const Button = () => {
     <div>
       <div className="tds-headline-02 tds-u-pb1">Button</div>
       <p>
-        These buttons trigger the same function on click, but the disabled
-        button will prevent default and never run the function.
+        These buttons trigger the same function on click, but the disabled button will prevent
+        default and never run the function.
       </p>
       <div className="tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="primary"
+          variant="primary"
           size="lg"
           fullbleed
           text="Primary fullbleed"
@@ -20,9 +20,9 @@ const Button = () => {
       <div className="tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="primary"
+          variant="primary"
           text="Primary fullbleed (disabled)"
           fullbleed
           disabled
@@ -31,28 +31,28 @@ const Button = () => {
       <div className="tds-u-flex tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="danger"
+          variant="danger"
           text="Danger"
           size="md"
         ></tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="ghost"
+          variant="ghost"
           text="Ghost"
           size="md"
         ></tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="secondary"
+          variant="secondary"
           text="Secondary"
           size="md"
         ></tds-button>
@@ -60,30 +60,30 @@ const Button = () => {
       <div className="tds-u-flex tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="danger"
+          variant="danger"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="error"></tds-icon>
         </tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="ghost"
+          variant="ghost"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="truck"></tds-icon>
         </tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
           fullbleed
-          type="secondary"
+          variant="secondary"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="arrow_diagonal"></tds-icon>
@@ -92,9 +92,9 @@ const Button = () => {
       <div className="tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="primary"
+          variant="primary"
           text="Primary"
           size="sm"
         ></tds-button>
@@ -102,9 +102,9 @@ const Button = () => {
       <div className="tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="primary"
+          variant="primary"
           text="Primary (disabled)"
           size="sm"
           disabled
@@ -113,25 +113,25 @@ const Button = () => {
       <div className="tds-u-flex tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="danger"
+          variant="danger"
           text="Danger"
           size="xs"
         ></tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="ghost"
+          variant="ghost"
           text="Ghost"
           size="xs"
         ></tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="secondary"
+          variant="secondary"
           text="Secondary"
           size="xs"
         ></tds-button>
@@ -139,27 +139,27 @@ const Button = () => {
       <div className="tds-u-flex tds-u-pb1">
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="danger"
+          variant="danger"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="error"></tds-icon>
         </tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="ghost"
+          variant="ghost"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="truck"></tds-icon>
         </tds-button>
         <tds-button
           onClick={() => {
-            alert("Clicked button!");
+            alert('Clicked button!');
           }}
-          type="secondary"
+          variant="secondary"
           size="sm"
         >
           <tds-icon slot="icon" size="16px" name="arrow_diagonal"></tds-icon>

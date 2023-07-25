@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
 const Banner = () => {
-  const banner = useRef<HTMLTdsBannerElement>(null)
+  const banner = useRef<HTMLTdsBannerElement>(null);
   const [bannerVisibility, setBannerVisibility] = useState(true);
 
   const handleBanner = () => {
     setBannerVisibility(!bannerVisibility);
-    if(banner.current){
+    if (banner.current) {
       bannerVisibility ? banner.current.hideBanner() : banner.current.showBanner();
     }
   };
@@ -16,22 +16,16 @@ const Banner = () => {
       <tds-banner
         icon="error"
         header="This Banner won't close"
-        type="error"
+        variant="error"
         ref={(element) => {
-          element?.addEventListener("tdsClose", (event) => {
+          element?.addEventListener('tdsClose', (event) => {
             event.preventDefault();
           });
         }}
       >
-        <div slot="banner-subheader">
-          Due to its tdsClose event being prevented.
-        </div>
+        <div slot="banner-subheader">Due to its tdsClose event being prevented.</div>
       </tds-banner>
-      <tds-banner
-        icon="info"
-        header="This Banner will close."
-        type="information"
-      >
+      <tds-banner icon="info" header="This Banner will close." variant="information">
         <div slot="banner-subheader">And it also has a link.</div>
         <tds-link slot="banner-link">
           <a href="/">Link example</a>
@@ -44,26 +38,19 @@ const Banner = () => {
         persistent
         header={`This Banner is "persistent".`}
       >
-        <div slot="banner-subheader">
-          That means it doesn't have a "close button"
-        </div>
+        <div slot="banner-subheader">That means it doesn't have a "close button"</div>
       </tds-banner>
 
       <div className="tds-u-mt-2">
-        <p>
-          But you can close the persistant banner programatically by toggling
-          the toggle below.
-        </p>
+        <p>But you can close the persistant banner programatically by toggling the toggle below.</p>
         <tds-toggle
           ref={(element) =>
-            element?.addEventListener("tdsToggle", () => {
+            element?.addEventListener('tdsToggle', () => {
               handleBanner();
             })
           }
         >
-          <div slot="label">
-            {bannerVisibility ? "Hide Banner" : "Show Banner"}
-          </div>
+          <div slot="label">{bannerVisibility ? 'Hide Banner' : 'Show Banner'}</div>
         </tds-toggle>
       </div>
     </div>

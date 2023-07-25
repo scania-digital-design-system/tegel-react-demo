@@ -71,7 +71,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
             <tds-badge size="sm"></tds-badge>
           )}
         </div>
-        <tds-header-dropdown-list type="lg">
+        <tds-header-dropdown-list size="lg">
           <tds-header-dropdown-list-user
             header={userContext?.user.userName}
             subheader={userContext?.user.placeOfWork}

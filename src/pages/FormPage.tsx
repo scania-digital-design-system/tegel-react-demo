@@ -1,17 +1,20 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
-import "./FormPage.scss";
-import townDataNorway from "./norway-town.json";
-import townDataSweden from "./sweden-town.json";
+import { FormEvent, useEffect, useRef, useState } from 'react';
+import './FormPage.scss';
+import townDataNorway from './norway-town.json';
+import townDataSweden from './sweden-town.json';
 
 const FormPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sendingStatus, setSendingStatus] = useState(false);
-  const [occupationEssayState, setOccupationEssayState] = useState<"default" | "error">("default");
-  const [helperTextOccupationEssayState, setHelperTextOccupationEssayState] = useState<undefined | string>(undefined);
-  const [textareaDisabled, setTextareaDisabled] = useState(true)
+  const [occupationEssayState, setOccupationEssayState] = useState<'default' | 'error'>('default');
+  const [helperTextOccupationEssayState, setHelperTextOccupationEssayState] = useState<
+    undefined | string
+  >(undefined);
+  const [textareaDisabled, setTextareaDisabled] = useState(true);
   const form = useRef<HTMLFormElement>(null);
-  const [addressValue, setAddressValue] = useState<null | string>("");
-  const [countrySelected, setCountrySelected] = useState<string>("");
+  const [addressValue, setAddressValue] = useState<null | string>('');
+  const [countrySelected, setCountrySelected] = useState<string>('');
+  const countryDropdown = useRef<HTMLTdsDropdownElement>(null);
   const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const [addressValidation, setAddressValidation] = useState(true);
@@ -50,41 +53,59 @@ const FormPage = () => {
   /* Second useEffect for checking selected values of dropdown, run on dependency changes */
   useEffect(() => {
     /* Reset Sweden Town dropdown in case selected country is not Sweden */
-    if (countrySelected !== "sweden") {
+    if (countrySelected !== 'sweden') {
       swedenDropdownTown.current?.reset();
     }
 
     /* Reset Norway Town dropdown in case selected country is not Norway */
-    if (countrySelected !== "norway") {
+    if (countrySelected !== 'norway') {
       norwayDropdownTown.current?.reset();
     }
   }, [countrySelected]);
 
   useEffect(() => {
-    setTextareaDisabled(!addressValue)
-
+    setTextareaDisabled(!addressValue);
   }, [addressValue]);
+
+  useEffect(() => {
+    const countryDropdownElement = countryDropdown?.current;
+
+    const handleTdsChange = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      const { value } = customEvent.detail;
+      console.log('Value of state dropdown: ' + value);
+      setCountrySelected(value);
+    };
+
+    countryDropdownElement?.addEventListener('tdsChange', handleTdsChange);
+
+    return () => {
+      if (countryDropdownElement) {
+        countryDropdownElement.removeEventListener('tdsChange', handleTdsChange);
+      }
+    };
+  });
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (form.current) {
       const formData = new FormData(form.current);
 
-      if (formData.get("homeAddress") === "") {
+      if (formData.get('homeAddress') === '') {
         setAddressValidation(false);
       } else {
         setAddressValidation(true);
-        const occupationalEssay = formData.get("occupationalEssay") as string;
+        const occupationalEssay = formData.get('occupationalEssay') as string;
 
         if (occupationalEssay?.length < 50) {
-          setOccupationEssayState("error");
-          setHelperTextOccupationEssayState("You don't have enough characters")
+          setOccupationEssayState('error');
+          setHelperTextOccupationEssayState("You don't have enough characters");
         } else {
-          setOccupationEssayState("default");
+          setOccupationEssayState('default');
           setHelperTextOccupationEssayState(undefined);
           setAddressValidation(true);
           formData.forEach((value, key) => {
-            console.log("Key:", key, "Value:", value);
+            console.log('Key:', key, 'Value:', value);
           });
 
           setSendingStatus(true);
@@ -95,7 +116,7 @@ const FormPage = () => {
           }, 3000);
 
           setTimeout(() => {
-            document.querySelector("tds-toast")?.hideToast();
+            document.querySelector('tds-toast')?.hideToast();
           }, 10000);
         }
       }
@@ -104,7 +125,7 @@ const FormPage = () => {
 
   return (
     <>
-      <article className={`form ${sendingStatus ? "form-sending" : ""}`}>
+      <article className={`form ${sendingStatus ? 'form-sending' : ''}`}>
         <form
           ref={form}
           onSubmit={(event: FormEvent) => {
@@ -155,17 +176,17 @@ const FormPage = () => {
                 mode-variant="secondary"
                 type="text"
                 size="lg"
-                state={addressValidation ? "default" : "error"}
+                state={addressValidation ? 'default' : 'error'}
                 label="Address"
                 name="homeAddress"
                 label-position="outside"
                 no-min-width
                 placeholder="Majorvägen 32"
-                helper={addressValidation ? "" : "Address is mandatory field!"}
+                helper={addressValidation ? '' : 'Address is mandatory field!'}
                 ref={(element) => {
                   element?.addEventListener('tdsInput', (event: any) => {
-                    setAddressValue(event.detail.target.value)
-                  })
+                    setAddressValue(event.detail.target.value);
+                  });
                 }}
               >
                 <span slot="prefix">
@@ -176,13 +197,7 @@ const FormPage = () => {
 
             <section>
               <tds-dropdown
-                ref={(countryDropdown) => {
-                  countryDropdown?.addEventListener("tdsChange", (event) => {
-                    const customEvent = event as CustomEvent;
-                    const { value } = customEvent.detail;
-                    setCountrySelected(value);
-                  });
-                }}
+                ref={countryDropdown}
                 mode-variant="secondary"
                 name="country"
                 label="Which country you want to select?"
@@ -190,16 +205,13 @@ const FormPage = () => {
                 placeholder="Country select"
                 size="lg"
                 open-direction="up"
+                default-value={'sweden'}
               >
-                <tds-dropdown-option value="sweden">
-                  Sweden
-                </tds-dropdown-option>
+                <tds-dropdown-option value="sweden">Sweden</tds-dropdown-option>
                 <tds-dropdown-option disabled value="Finland">
                   Finland
                 </tds-dropdown-option>
-                <tds-dropdown-option value="norway">
-                  Norway
-                </tds-dropdown-option>
+                <tds-dropdown-option value="norway">Norway</tds-dropdown-option>
               </tds-dropdown>
             </section>
 
@@ -215,7 +227,7 @@ const FormPage = () => {
                 size="lg"
                 open-direction="auto"
                 multiselect
-                disabled={countrySelected !== "norway"}
+                disabled={countrySelected !== 'norway'}
               ></tds-dropdown>
             </section>
 
@@ -231,7 +243,7 @@ const FormPage = () => {
                 size="lg"
                 open-direction="auto"
                 filter
-                disabled={countrySelected !== "sweden"}
+                disabled={countrySelected !== 'sweden'}
               ></tds-dropdown>
             </section>
 
@@ -321,11 +333,7 @@ const FormPage = () => {
             <section>
               <h5>What topics would you like to learn more about?</h5>
               <div className="chips">
-                <tds-chip
-                  value="webDevelopment"
-                  type="checkbox"
-                  name="insterest"
-                >
+                <tds-chip value="webDevelopment" type="checkbox" name="insterest">
                   <div slot="label">Web developement</div>
                 </tds-chip>
                 <tds-chip value="ciCd" type="checkbox" name="insterest">
@@ -337,11 +345,7 @@ const FormPage = () => {
                 <tds-chip value="Kafka" type="checkbox" name="insterest">
                   <div slot="label">Kafka</div>
                 </tds-chip>
-                <tds-chip
-                  value="beDevelopment"
-                  type="checkbox"
-                  name="insterest"
-                >
+                <tds-chip value="beDevelopment" type="checkbox" name="insterest">
                   <div slot="label">Backend development</div>
                 </tds-chip>
                 <tds-chip value="python" type="checkbox" name="insterest">
@@ -360,16 +364,11 @@ const FormPage = () => {
             </section>
           </tds-block>
           <section className="tds-u-flex-end">
-          <tds-tooltip
-            placement="right"
-            selector="#anonymously"
-            mouse-over-tooltip="true"
-            show
-          >
-            <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
-              This option is required in order to submit the form.
-            </p>
-          </tds-tooltip>
+            <tds-tooltip placement="right" selector="#anonymously" mouse-over-tooltip="true" show>
+              <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
+                This option is required in order to submit the form.
+              </p>
+            </tds-tooltip>
             <tds-toggle required name="toggle" size="sm">
               <div slot="label" id="anonymously">
                 Answer anonymously
@@ -393,7 +392,7 @@ const FormPage = () => {
         </form>
       </article>
       {submitted && (
-        <tds-toast type="success" header="Thanks!">
+        <tds-toast variant="success" header="Thanks!">
           <div slot="toast-subheader">Check the console for FormData.</div>
         </tds-toast>
       )}
