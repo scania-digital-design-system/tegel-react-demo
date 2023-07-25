@@ -8,17 +8,17 @@ const NotificationPage = () => {
     userContext?.updateUser({
       userName: userContext.user.userName,
       placeOfWork: userContext.user.placeOfWork,
-      notificiations: [],
+      notifications: [],
     });
   };
   return (
     <>
       <h2>
-        {userContext?.user.notificiations && userContext?.user.notificiations.length > 0
+        {userContext?.user.notifications && userContext?.user.notifications.length > 0
           ? 'Notifications'
           : 'No new notifications'}
       </h2>
-      {userContext?.user.notificiations?.map((notification, index) => {
+      {userContext?.user.notifications?.map((notification, index) => {
         return (
           <tds-message
             variant={notification.type}
@@ -29,7 +29,7 @@ const NotificationPage = () => {
           </tds-message>
         );
       })}
-      {userContext?.user.notificiations && userContext?.user.notificiations.length > 0 && (
+      {userContext?.user.notifications && userContext?.user.notifications.length > 0 && (
         <>
           <tds-button
             id="clear-notifications-btn"

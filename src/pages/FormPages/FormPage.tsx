@@ -18,7 +18,7 @@ const FormPage = () => {
   const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const [addressValidation, setAddressValidation] = useState(true);
-  const happinesSlider = useRef<HTMLTdsSliderElement>(null);
+  const happinessSlider = useRef<HTMLTdsSliderElement>(null);
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
   const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
 
@@ -34,7 +34,7 @@ const FormPage = () => {
       norwayTown.options = townDataNorway;
     }
 
-    happinesSlider.current?.addEventListener('tdsChange', () => {
+    happinessSlider.current?.addEventListener('tdsChange', () => {
       if (stressSlider.current) {
         stressSlider.current.disabled = false;
       }
@@ -291,7 +291,7 @@ const FormPage = () => {
             <section>
               <h5>Tell us how you feel about your..</h5>
               <tds-slider
-                ref={happinesSlider}
+                ref={happinessSlider}
                 label="..happiness at work"
                 name="happinessAtWork"
                 min="0"

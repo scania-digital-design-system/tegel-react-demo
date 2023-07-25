@@ -12,7 +12,7 @@ import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumb
 export interface User {
   userName: string;
   placeOfWork: string;
-  notificiations: Notification[];
+  notifications: Notification[];
 }
 
 interface UserContextValue {
@@ -35,7 +35,7 @@ function App() {
   const [user, setUser] = useState<User>({
     userName: 'Marcus Åström',
     placeOfWork: 'IXCD',
-    notificiations: [
+    notifications: [
       {
         notification: 'You need to update your username.',
         type: 'error',

@@ -67,7 +67,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
             alt="User menu."
           />
-          {userContext?.user.notificiations && userContext?.user.notificiations?.length > 0 && (
+          {userContext?.user.notifications && userContext?.user.notifications?.length > 0 && (
             <tds-badge size="sm"></tds-badge>
           )}
         </div>
@@ -84,7 +84,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
           </tds-header-dropdown-list-item>
           <tds-header-dropdown-list-item>
             <Link to="notifications">
-              <tds-badge value={userContext?.user.notificiations?.length.toString()}></tds-badge>
+              <tds-badge value={userContext?.user.notifications?.length.toString()}></tds-badge>
               <div className="tds-u-pl1">Notifications</div>
             </Link>
           </tds-header-dropdown-list-item>

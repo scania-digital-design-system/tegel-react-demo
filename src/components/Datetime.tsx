@@ -3,17 +3,18 @@ import { useState } from 'react';
 const Datetime = () => {
   const [typeOfState, setTypeOfState] = useState<'success' | 'error'>('success');
   const [typeOfSize, setTypeOfSize] = useState<'sm' | 'md' | 'lg'>('lg');
-  const [typeOfInput, setTypeOfInput] = useState<'datetime-local' | 'date' | 'time'>('datetime-local');
+  const [typeOfInput, setTypeOfInput] = useState<'datetime-local' | 'date' | 'time'>(
+    'datetime-local',
+  );
   const [noMinWidth, setNoMinWidth] = useState(false); // State for noMinWidth
-	const [isDatetimeDisabled, setIsDatetimeDisabled] = useState(false);
+  const [isDatetimeDisabled, setIsDatetimeDisabled] = useState(false);
 
-  // Get current date and format it
+  // Get the current date and format it
   const today = new Date();
   const year = today.getFullYear();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
   const formattedDate = `${year}-${month}-${day}`;
-  
 
   const handleNewState = (event: Event) => {
     const newState = (event.target as HTMLTdsRadioButtonElement).value as 'error' | 'success';
@@ -21,7 +22,10 @@ const Datetime = () => {
   };
 
   const handleType = (event: Event) => {
-    const newTypeOfInput = (event.target as HTMLTdsRadioButtonElement).value as 'datetime-local' | 'date' | 'time';
+    const newTypeOfInput = (event.target as HTMLTdsRadioButtonElement).value as
+      | 'datetime-local'
+      | 'date'
+      | 'time';
     setTypeOfInput(newTypeOfInput);
   };
 
@@ -30,15 +34,15 @@ const Datetime = () => {
     setTypeOfSize(newSize);
   };
 
-	const handleToggle = (event: CustomEvent<{ checked: boolean }>) => {
-		const { detail } = event;
-		setNoMinWidth(detail.checked);
-	};
+  const handleToggle = (event: CustomEvent<{ checked: boolean }>) => {
+    const { detail } = event;
+    setNoMinWidth(detail.checked);
+  };
 
-	const handleDisabledState = (event: CustomEvent<{ checked: boolean }>) => {
-		const { detail } = event;
-		setIsDatetimeDisabled(detail.checked);
-	};
+  const handleDisabledState = (event: CustomEvent<{ checked: boolean }>) => {
+    const { detail } = event;
+    setIsDatetimeDisabled(detail.checked);
+  };
 
   return (
     <>
@@ -49,7 +53,7 @@ const Datetime = () => {
           name="success"
           value="success"
           checked={typeOfState === 'success'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleNewState);
             }
@@ -61,7 +65,7 @@ const Datetime = () => {
           name="error"
           value="error"
           checked={typeOfState === 'error'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleNewState);
             }
@@ -77,7 +81,7 @@ const Datetime = () => {
           name="datetime"
           value="datetime-local"
           checked={typeOfInput === 'datetime-local'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleType);
             }
@@ -89,7 +93,7 @@ const Datetime = () => {
           name="date"
           value="date"
           checked={typeOfInput === 'date'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleType);
             }
@@ -101,7 +105,7 @@ const Datetime = () => {
           name="time"
           value="time"
           checked={typeOfInput === 'time'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleType);
             }
@@ -117,7 +121,7 @@ const Datetime = () => {
           name="sm"
           value="sm"
           checked={typeOfSize === 'sm'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleSize);
             }
@@ -129,7 +133,7 @@ const Datetime = () => {
           name="md"
           value="md"
           checked={typeOfSize === 'md'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleSize);
             }
@@ -141,7 +145,7 @@ const Datetime = () => {
           name="lg"
           value="lg"
           checked={typeOfSize === 'lg'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
               element.addEventListener('tdsChange', handleSize);
             }
@@ -150,29 +154,27 @@ const Datetime = () => {
           <div slot="label">Lg</div>
         </tds-radio-button>
       </div>
-			<br />
-			<div className="tds-headline-04 tds-u-pb1">No minimum width</div>
+      <br />
+      <div className="tds-headline-04 tds-u-pb1">No minimum width</div>
       <tds-toggle
-				 ref={(element) =>
-          element?.addEventListener('tdsToggle', handleToggle as EventListener)
-        }
+        ref={(element) => element?.addEventListener('tdsToggle', handleToggle as EventListener)}
       />
-			<br />
-			<div className="tds-headline-04 tds-u-pb1">Disable</div>
-			<tds-toggle
-				ref={(element) =>
-					element?.addEventListener("tdsToggle", handleDisabledState as EventListener)
-				}
-			>
-				<div slot="label">{isDatetimeDisabled ? 'Disable Datetime' : 'Enable Datetime'}</div>
-			</tds-toggle>
+      <br />
+      <div className="tds-headline-04 tds-u-pb1">Disable</div>
+      <tds-toggle
+        ref={(element) =>
+          element?.addEventListener('tdsToggle', handleDisabledState as EventListener)
+        }
+      >
+        <div slot="label">{isDatetimeDisabled ? 'Disable Datetime' : 'Enable Datetime'}</div>
+      </tds-toggle>
       <h2>Primary mode</h2>
       <tds-datetime
         type={typeOfInput}
         state={typeOfState}
         size={typeOfSize}
         no-min-width={noMinWidth}
-				disabled={isDatetimeDisabled}
+        disabled={isDatetimeDisabled}
         mode-variant="primary"
         label="Choose a datetime"
         helper="Helper text"

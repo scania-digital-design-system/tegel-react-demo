@@ -37,7 +37,7 @@ const Toast = () => {
           </a>
         </tds-toast>
         <tds-toast ref={toast} variant="warning" header="Warning Toast!">
-          <div slot="toast-subheader">This Toast can be closed programatically.</div>
+          <div slot="toast-subheader">This Toast can be closed programmatically.</div>
         </tds-toast>
         <div>
           <p>You can show or hide the toast with the toggle below.</p>

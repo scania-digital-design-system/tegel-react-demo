@@ -42,7 +42,9 @@ const Banner = () => {
       </tds-banner>
 
       <div className="tds-u-mt-2">
-        <p>But you can close the persistant banner programatically by toggling the toggle below.</p>
+        <p>
+          But you can close the persistent banner programmatically by toggling the toggle below.
+        </p>
         <tds-toggle
           ref={(element) =>
             element?.addEventListener('tdsToggle', () => {

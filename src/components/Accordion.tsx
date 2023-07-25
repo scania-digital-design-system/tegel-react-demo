@@ -36,7 +36,10 @@ const Accordion = () => {
       }
 
       if (accordionToggleElement) {
-        accordionToggleElement.removeEventListener('tdsToggle', handleAccordionToggle as EventListener);
+        accordionToggleElement.removeEventListener(
+          'tdsToggle',
+          handleAccordionToggle as EventListener,
+        );
       }
     };
   }, []);
@@ -77,7 +80,6 @@ const Accordion = () => {
     }
   };
 
-
   return (
     <div>
       <div className="tds-headline-02 tds-u-pb1">Accordion</div>
@@ -85,18 +87,25 @@ const Accordion = () => {
         <div slot="label">{paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset'}</div>
       </tds-toggle>
       <br />
-      <tds-toggle ref={accordionToggleRef} checked={checkboxState} onTdsToggle={handleAccordionToggleChange}>
+      <tds-toggle
+        ref={accordionToggleRef}
+        checked={checkboxState}
+        onTdsToggle={handleAccordionToggleChange}
+      >
         <div slot="label">{checkboxState ? 'Disable Accordion' : 'Enable Accordion'}</div>
       </tds-toggle>
       <h2>Icon Position</h2>
       <div>
-      <tds-radio-button
+        <tds-radio-button
           name="icon-position"
           value="end"
           checked={iconPosition === 'end'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
-              element.addEventListener('tdsChange', handleIconPositionChange as unknown as EventListener);
+              element.addEventListener(
+                'tdsChange',
+                handleIconPositionChange as unknown as EventListener,
+              );
             }
           }}
         >
@@ -106,15 +115,17 @@ const Accordion = () => {
           name="icon-position"
           value="start"
           checked={iconPosition === 'start'}
-          ref={element => {
+          ref={(element) => {
             if (element) {
-              element.addEventListener('tdsChange', handleIconPositionChange as unknown as EventListener);
+              element.addEventListener(
+                'tdsChange',
+                handleIconPositionChange as unknown as EventListener,
+              );
             }
           }}
         >
           <div slot="label">Start</div>
         </tds-radio-button>
-
       </div>
 
       <h2>Accordion with Primary Mode Variant</h2>
@@ -128,7 +139,8 @@ const Accordion = () => {
           padding-reset={paddingReset}
           onTdsToggle={() => handleAccordionItemClick('item1')}
         >
-          This is the panel, which contains associated information with the header. Usually, it contains text, set in the same size as the header. Lorem ipsum doler sit amet.
+          This is the panel, which contains associated information with the header. Usually, it
+          contains text, set in the same size as the header. Lorem ipsum doler sit amet.
         </tds-accordion-item>
         <tds-accordion-item
           header="Item 2"
@@ -137,7 +149,9 @@ const Accordion = () => {
           disabled={!checkboxState}
           padding-reset={paddingReset}
         >
-          This is the panel, which contains associated information with the header. Usually, it contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet vestibulum fermentum.
+          This is the panel, which contains associated information with the header. Usually, it
+          contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Duis laoreet vestibulum fermentum.
         </tds-accordion-item>
         <tds-accordion-item
           header="Item 3"
@@ -146,20 +160,34 @@ const Accordion = () => {
           disabled={!checkboxState}
           padding-reset={paddingReset}
         >
-          This is the panel, which contains associated information with the header. Usually, it contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet vestibulum fermentum.
+          This is the panel, which contains associated information with the header. Usually, it
+          contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Duis laoreet vestibulum fermentum.
         </tds-accordion-item>
       </tds-accordion>
 
       <h2>Accordion with Secondary Mode Variant</h2>
 
       <tds-accordion mode-variant="secondary">
-        <tds-accordion-item header="Item 1" disabled={!checkboxState} expand-icon-position={iconPosition}>
+        <tds-accordion-item
+          header="Item 1"
+          disabled={!checkboxState}
+          expand-icon-position={iconPosition}
+        >
           Content for Item 1
         </tds-accordion-item>
-        <tds-accordion-item header="Item 2" disabled={!checkboxState} expand-icon-position={iconPosition}>
+        <tds-accordion-item
+          header="Item 2"
+          disabled={!checkboxState}
+          expand-icon-position={iconPosition}
+        >
           Content for Item 2
         </tds-accordion-item>
-        <tds-accordion-item header="Item 3" disabled={!checkboxState} expand-icon-position={iconPosition}>
+        <tds-accordion-item
+          header="Item 3"
+          disabled={!checkboxState}
+          expand-icon-position={iconPosition}
+        >
           Content for Item 3
         </tds-accordion-item>
       </tds-accordion>
