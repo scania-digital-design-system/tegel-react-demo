@@ -22,6 +22,8 @@ const FormPage = () => {
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
   const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
 
+  const [conditionalInsert, setConditionalInsert] = useState(false);
+
   /* First useEffect for connection to JSON file, only run on an initial load */
   useEffect(() => {
     const swedishTown = swedenDropdownTown.current;
@@ -201,13 +203,16 @@ const FormPage = () => {
                 placeholder="Country select"
                 size="lg"
                 open-direction="up"
-                default-value={'sweden'}
+                value={'norway'}
               >
                 <tds-dropdown-option value="sweden">Sweden</tds-dropdown-option>
                 <tds-dropdown-option disabled value="Finland">
                   Finland
                 </tds-dropdown-option>
                 <tds-dropdown-option value="norway">Norway</tds-dropdown-option>
+                {conditionalInsert && (
+                  <tds-dropdown-option value="croatia">Croatia</tds-dropdown-option>
+                )}
               </tds-dropdown>
             </section>
 
@@ -384,6 +389,14 @@ const FormPage = () => {
                 variant="ghost"
                 fullbleed
                 text="Reset"
+              ></tds-button>
+              <tds-button
+                type="button"
+                size="sm"
+                variant="danger"
+                fullbleed
+                text="Add value to dropdown"
+                onClick={() => setConditionalInsert(true)}
               ></tds-button>
             </span>
           </section>
