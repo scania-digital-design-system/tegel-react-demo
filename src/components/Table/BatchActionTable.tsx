@@ -2,21 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
 const BatchActionTable = () => {
-  const table = useRef<HTMLTdsTableBodyElement>(null);
+  const batchActionTable = useRef<HTMLTdsTableElement>(null);
   const modal = useRef<HTMLTdsModalElement>(null);
-  const [data, setData] = useState<string>('[]');
+  const [data, setData] = useState(exampleData);
+  const [selectedData, setSelectedData] = useState<string | null>()
 
-  useEffect(() => {
-    if (table.current) {
-      table.current.bodyData = exampleData;
-    }
-  });
+  useEffect(() => { }, []);
 
   const handleClick = () => {
-    if (table.current) {
-      if (table.current.getAttribute('data-selected-rows')) {
-        setData(table.current.getAttribute('data-selected-rows') as string);
+    if (batchActionTable.current) {
+      if (batchActionTable.current.getAttribute('data-selected-rows')) {
+        setSelectedData(batchActionTable.current.getAttribute('data-selected-rows'))
       }
+      console.log(batchActionTable.current.getAttribute('data-selected-rows'))
       modal.current?.showModal();
     }
   };
@@ -27,10 +25,10 @@ const BatchActionTable = () => {
           Batch Actions example
         </h5>
         <span slot="body">
-          {data !== '[]' ? (
+          {data.length ? (
             <>
               <p>Downloaded data:</p>
-              {data}
+              {selectedData}
             </>
           ) : (
             <p>No data selected.</p>
@@ -43,6 +41,7 @@ const BatchActionTable = () => {
         compact-design="false"
         responsive
         multiselect
+        ref={batchActionTable}
       >
         <tds-table-toolbar table-title="Batch action">
           <tds-button
@@ -63,7 +62,16 @@ const BatchActionTable = () => {
             text-align="right"
           ></tds-header-cell>
         </tds-table-header>
-        <tds-table-body ref={table}></tds-table-body>
+        <tds-table-body>
+          {data.map((object, index) => (
+            <tds-table-body-row key={index}>
+              <tds-body-cell>{object.truck}</tds-body-cell>
+              <tds-body-cell>{object.driver}</tds-body-cell>
+              <tds-body-cell>{object.country}</tds-body-cell>
+              <tds-body-cell>{object.mileage}</tds-body-cell>
+            </tds-table-body-row>
+          ))}
+        </tds-table-body>
       </tds-table>
     </>
   );
