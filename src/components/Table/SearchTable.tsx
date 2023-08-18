@@ -41,8 +41,8 @@ const SearchTable = () => {
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        {data.map((row) => (
-          <tds-table-body-row>
+        {data.map((row, index) => (
+          <tds-table-body-row key={index}>
             <tds-body-cell>{row.country}</tds-body-cell>
             <tds-body-cell>{row.driver}</tds-body-cell>
             <tds-body-cell>{row.mileage}</tds-body-cell>
