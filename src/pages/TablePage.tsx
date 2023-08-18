@@ -33,8 +33,6 @@ const TablePage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination</div>
       <p>This Table uses pagination.</p>
       <PaginationTable />
-      <p>This Table prevents the default pagination and implements it's own logic.</p>
-      <PaginationTable customPagination />
     </div>
   );
 };
