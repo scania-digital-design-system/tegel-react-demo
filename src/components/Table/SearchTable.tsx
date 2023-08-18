@@ -1,36 +1,25 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
-interface SearchTableProps {
-  cancelEvent?: boolean;
-}
-
-const SearchTable = ({ cancelEvent }: SearchTableProps) => {
+const SearchTable = () => {
   const searchTable = useRef<HTMLTdsTableElement>(null);
-  const searchTableBody = useRef<HTMLTdsTableBodyElement>(null);
+  const [data, setFilteredData] = useState(exampleData);
+  const handleFilter = (event: any) => {
+    const query = event.detail.query;
+    const filteredData = data.filter((object) =>
+      Object.values(object).some((value) =>
+        value.toString().toLowerCase().includes(query.toLowerCase()),
+      ),
+    );
+    setFilteredData(filteredData);
+  };
 
   useEffect(() => {
     const searchTableElement = searchTable?.current;
-    const searchTableBodyElement = searchTableBody?.current;
-    const handleSortEvent = (event: Event) => {
-      if (cancelEvent) {
-        event?.preventDefault();
-      }
-    };
-
-    if (searchTableBodyElement) {
-      searchTableBodyElement.bodyData = exampleData;
-    }
-
     if (searchTableElement) {
-      searchTableElement.addEventListener('tdsFilterChange', handleSortEvent);
+      searchTableElement.addEventListener('tdsFilterChange', handleFilter);
     }
-    return () => {
-      if (searchTableElement) {
-        searchTableElement.removeEventListener('tdsFilterChange', handleSortEvent);
-      }
-    };
-  });
+  }, []);
 
   return (
     <tds-table
@@ -51,10 +40,21 @@ const SearchTable = ({ cancelEvent }: SearchTableProps) => {
           text-align="right"
         ></tds-header-cell>
       </tds-table-header>
-      <tds-table-body
-        no-result-message="The query did not match any data."
-        ref={searchTableBody}
-      ></tds-table-body>
+      <tds-table-body>
+        {data.map((row) => (
+          <tds-table-body-row>
+            <tds-body-cell>{row.country}</tds-body-cell>
+            <tds-body-cell>{row.driver}</tds-body-cell>
+            <tds-body-cell>{row.mileage}</tds-body-cell>
+            <tds-body-cell>{row.truck}</tds-body-cell>
+          </tds-table-body-row>
+        ))}
+        {!data.length && (
+          <tds-table-body-row>
+            <p className='tds-u-p2'>No result found.</p>
+          </tds-table-body-row>
+        )}
+      </tds-table-body>
     </tds-table>
   );
 };
