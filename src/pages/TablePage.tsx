@@ -19,11 +19,6 @@ const TablePage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Sortable Table</div>
       <p>This Table is sortable.</p>
       <SortableTable />
-      <p>
-        This Table prevents the default behaviour of the sorting by listening for a{' '}
-        <code>tdsSortChange</code> event.
-      </p>
-      <SortableTable cancelEvent />
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Search Table</div>
       <p>This Table is searchable.</p>
       <SearchTable />
