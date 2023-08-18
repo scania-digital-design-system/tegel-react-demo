@@ -3,42 +3,49 @@
     "truck": "L-series",
     "driver": "Sonya Bruce",
     "country": "Brazil",
-    "mileage": 123987
+    "mileage": 123987,
+    "selected": true
   },
   {
     "truck": "P-series",
     "driver": "Guerra Bowman",
     "country": "Sweden",
-    "mileage": 2000852
+    "mileage": 2000852,
+    "selected": false
   },
   {
     "truck": "G-series",
     "driver": "Ferrell Wallace",
     "country": "Germany",
-    "mileage": 564
+    "mileage": 564,
+    "selected": true
   },
   {
     "truck": "R-series",
     "driver": "Cox Burris",
     "country": "Spain",
-    "mileage": 1789357
+    "mileage": 1789357,
+    "selected": true
   },
   {
     "truck": "S-series",
     "driver": "Montgomery Cervantes",
     "country": "Croatia",
-    "mileage": 65
+    "mileage": 65,
+    "selected": true
   },
   {
     "truck": "L-series",
     "driver": "Sheryl Nielsen",
     "country": "Greece",
-    "mileage": 365784
+    "mileage": 365784,
+    "selected": false
   },
   {
     "truck": "G-series",
     "driver": "Benton Gomez",
     "country": "France",
-    "mileage": 80957
+    "mileage": 80957,
+    "selected": true
   }
 ]

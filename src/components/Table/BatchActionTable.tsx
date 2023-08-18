@@ -4,20 +4,17 @@ import exampleData from './example-data.json';
 const BatchActionTable = () => {
   const batchActionTable = useRef<HTMLTdsTableElement>(null);
   const modal = useRef<HTMLTdsModalElement>(null);
-  const [data, setData] = useState(exampleData);
-  const [selectedData, setSelectedData] = useState<string | null>()
+  const [selectedData, setSelectedData] = useState<any[]>();
 
   useEffect(() => { }, []);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (batchActionTable.current) {
-      if (batchActionTable.current.getAttribute('data-selected-rows')) {
-        setSelectedData(batchActionTable.current.getAttribute('data-selected-rows'))
-      }
-      console.log(batchActionTable.current.getAttribute('data-selected-rows'))
+      setSelectedData(await batchActionTable.current.getSelectedRows());
       modal.current?.showModal();
     }
   };
+
   return (
     <>
       <tds-modal ref={modal} id="my-modal" size="lg" actions="static">
@@ -25,10 +22,15 @@ const BatchActionTable = () => {
           Batch Actions example
         </h5>
         <span slot="body">
-          {data.length ? (
+          {selectedData?.length ? (
             <>
               <p>Downloaded data:</p>
-              {selectedData}
+              {selectedData.map((row, index) => (
+                <>
+                  <h5>Row {index}</h5>
+                  <pre>{JSON.stringify(row, null, 2)}</pre>
+                </>
+              ))}
             </>
           ) : (
             <p>No data selected.</p>
@@ -63,12 +65,12 @@ const BatchActionTable = () => {
           ></tds-header-cell>
         </tds-table-header>
         <tds-table-body>
-          {data.map((object, index) => (
-            <tds-table-body-row key={index}>
-              <tds-body-cell>{object.truck}</tds-body-cell>
-              <tds-body-cell>{object.driver}</tds-body-cell>
-              <tds-body-cell>{object.country}</tds-body-cell>
-              <tds-body-cell>{object.mileage}</tds-body-cell>
+          {exampleData.map((object, index) => (
+            <tds-table-body-row key={index} selected={object.selected}>
+              <tds-body-cell cell-key={`Truck`}>{object.truck}</tds-body-cell>
+              <tds-body-cell cell-key={`Driver`}>{object.driver}</tds-body-cell>
+              <tds-body-cell cell-key={`Country`}>{object.country}</tds-body-cell>
+              <tds-body-cell cell-key={`Milage`}>{object.mileage}</tds-body-cell>
             </tds-table-body-row>
           ))}
         </tds-table-body>
