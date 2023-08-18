@@ -1,27 +1,32 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
-interface SortableTableProps {
-  cancelEvent?: boolean;
-}
-
-const SortableTable = ({ cancelEvent }: SortableTableProps) => {
+const SortableTable = () => {
   const sortableTable = useRef<HTMLTdsTableElement>(null);
-  const sortableTableBody = useRef<HTMLTdsTableBodyElement>(null);
+  const [data, setData] = useState(exampleData)
 
   useEffect(() => {
-    const handleSortEvent = (event: Event) => {
-      if (cancelEvent) {
-        event?.preventDefault();
-      }
+    const handleSortEvent = (event: any) => {
+      const key = event.detail.columnKey as keyof typeof data[0];
+      const direction = event.detail.sortingDirection;
+
+
+      let comparison = 0;
+      const updatedData = data.slice().sort((a, b) => {
+        if (a[key] < b[key]) {
+          comparison = -1
+        }
+        if (a[key] > b[key]) {
+          comparison = 1
+        }
+        return direction === 'desc' ? comparison * -1 : comparison;;
+      });
+      setData(updatedData)
     };
 
-    const sortableTableElement = sortableTable?.current;
-    const sortableTableBodyElement = sortableTableBody?.current;
 
-    if (sortableTableBodyElement) {
-      sortableTableBodyElement.bodyData = exampleData;
-    }
+    const sortableTableElement = sortableTable?.current;
+
 
     if (sortableTableElement) {
       sortableTableElement.addEventListener('tdsSortChange', handleSortEvent);
@@ -32,7 +37,7 @@ const SortableTable = ({ cancelEvent }: SortableTableProps) => {
         sortableTableElement.removeEventListener('tdsSortChange', handleSortEvent);
       }
     };
-  });
+  }, []);
 
   return (
     <tds-table
@@ -54,7 +59,15 @@ const SortableTable = ({ cancelEvent }: SortableTableProps) => {
           text-align="right"
         ></tds-header-cell>
       </tds-table-header>
-      <tds-table-body ref={sortableTableBody}></tds-table-body>
+      <tds-table-body>
+        {data.map((object, index) =>
+          <tds-table-body-row key={index}>
+            <tds-body-cell>{object.truck}</tds-body-cell>
+            <tds-body-cell>{object.driver}</tds-body-cell>
+            <tds-body-cell>{object.country}</tds-body-cell>
+            <tds-body-cell>{object.mileage}</tds-body-cell>
+          </tds-table-body-row>)}
+      </tds-table-body>
     </tds-table>
   );
 };
