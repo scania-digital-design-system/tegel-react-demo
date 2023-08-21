@@ -102,9 +102,9 @@ function App() {
               <div className="wrapper tds-u-h-100 tds-u-p3">
                 <Outlet />
               </div>
+              <Footer />
             </main>
           </div>
-          <Footer />
         </UserContext.Provider>
       </div>
     </div>
