@@ -200,7 +200,7 @@ const FormPage = () => {
                 label-position="outside"
                 placeholder="Country select"
                 size="lg"
-                open-direction="up"
+                open-direction="down"
                 default-value={'sweden'}
               >
                 <tds-dropdown-option value="sweden">Sweden</tds-dropdown-option>
@@ -221,7 +221,7 @@ const FormPage = () => {
                 placeholder="Norweigan Town"
                 helper=""
                 size="lg"
-                open-direction="auto"
+                open-direction="down"
                 multiselect
                 disabled={countrySelected !== 'norway'}
               ></tds-dropdown>
