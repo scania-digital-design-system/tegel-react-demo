@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "truck": "L-series",
     "driver": "Sonya Bruce",
     "country": "Brazil",
@@ -7,6 +8,7 @@
     "selected": true
   },
   {
+    "id": 2,
     "truck": "P-series",
     "driver": "Guerra Bowman",
     "country": "Sweden",
@@ -14,6 +16,7 @@
     "selected": false
   },
   {
+    "id": 3,
     "truck": "G-series",
     "driver": "Ferrell Wallace",
     "country": "Germany",
@@ -21,6 +24,7 @@
     "selected": true
   },
   {
+    "id": 4,
     "truck": "R-series",
     "driver": "Cox Burris",
     "country": "Spain",
@@ -28,6 +32,7 @@
     "selected": true
   },
   {
+    "id": 5,
     "truck": "S-series",
     "driver": "Montgomery Cervantes",
     "country": "Croatia",
@@ -35,6 +40,7 @@
     "selected": true
   },
   {
+    "id": 6,
     "truck": "L-series",
     "driver": "Sheryl Nielsen",
     "country": "Greece",
@@ -42,6 +48,7 @@
     "selected": false
   },
   {
+    "id": 7,
     "truck": "G-series",
     "driver": "Benton Gomez",
     "country": "France",

@@ -5,8 +5,22 @@ const BatchActionTable = () => {
   const batchActionTable = useRef<HTMLTdsTableElement>(null);
   const modal = useRef<HTMLTdsModalElement>(null);
   const [selectedData, setSelectedData] = useState<any[]>();
+  const [allSelected, setAllSelected] = useState(exampleData.every((row) => row.selected))
+  const [data, setData] = useState(exampleData);
+  useEffect(() => {
+    batchActionTable.current?.addEventListener('tdsSelectAll', (event: any) => {
+      setAllSelected(true)
+      const updatedData = data?.map((row) => (
+        {
+          ...row,
+          selected: event.detail.checked
+        }
+      ))
+      setData(updatedData)
+    })
 
-  useEffect(() => { }, []);
+
+  }, []);
 
   const handleClick = async () => {
     if (batchActionTable.current) {
@@ -39,8 +53,6 @@ const BatchActionTable = () => {
       </tds-modal>
       <tds-table
         no-min-width
-        vertical-dividers="false"
-        compact-design="false"
         responsive
         multiselect
         ref={batchActionTable}
@@ -54,7 +66,7 @@ const BatchActionTable = () => {
             text="Download"
           ></tds-button>
         </tds-table-toolbar>
-        <tds-table-header>
+        <tds-table-header all-selected={allSelected}>
           <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
           <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
           <tds-header-cell column-key="country" column-title="Country"></tds-header-cell>
@@ -65,8 +77,20 @@ const BatchActionTable = () => {
           ></tds-header-cell>
         </tds-table-header>
         <tds-table-body>
-          {exampleData.map((object, index) => (
-            <tds-table-body-row key={index} selected={object.selected}>
+          {data.map((object) => (
+            <tds-table-body-row ref={(el) => {
+              el?.addEventListener('tdsSelect', (event: any) => {
+
+                const updatedData = data.map((row) => {
+                  return {
+                    ...row,
+                    selected: row.id === object.id ? event.detail.checked : row.selected
+                  }
+                })
+                setData(updatedData)
+                setAllSelected(updatedData.every((row) => row.selected))
+              })
+            }} key={object.id} selected={object.selected}>
               <tds-body-cell cell-key={`Truck`}>{object.truck}</tds-body-cell>
               <tds-body-cell cell-key={`Driver`}>{object.driver}</tds-body-cell>
               <tds-body-cell cell-key={`Country`}>{object.country}</tds-body-cell>
