@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
 const PaginationTable = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const rowsPerPage = 2;
   const [data, setData] = useState(exampleData.slice(page, page + rowsPerPage));
   const paginationTable = useRef<HTMLTdsTableElement>(null);
@@ -11,7 +11,11 @@ const PaginationTable = () => {
     const paginationTableElement = paginationTable?.current;
 
     const handlePaginationEvent = (event: any) => {
-      setPage(event.detail.paginationValue)
+      setPage(event.detail.paginationValue);
+      const startIndex = (event.detail.paginationValue - 1) * rowsPerPage;
+      const endIndex = startIndex + rowsPerPage;
+      const updatedData = exampleData.slice(startIndex, endIndex);
+      setData(updatedData)
     };
 
     paginationTableElement?.addEventListener('tdsPageChange', handlePaginationEvent);
@@ -20,13 +24,8 @@ const PaginationTable = () => {
     };
   });
 
-  useEffect(() => {
-    const start = page * rowsPerPage;
-    setData(exampleData.slice(start, start + rowsPerPage));
-  }, [page]);
-
   return (
-    <tds-table ref={paginationTable} vertical-dividers="false" compact-design="false" responsive no-min-width>
+    <tds-table ref={paginationTable} responsive no-min-width>
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
@@ -47,7 +46,10 @@ const PaginationTable = () => {
           </tds-table-body-row>
         ))}
       </tds-table-body>
-      <tds-table-footer pagination pages={Math.floor((exampleData.length / rowsPerPage))}></tds-table-footer>
+      <tds-table-footer
+        pagination
+        pages={Math.ceil(exampleData.length / rowsPerPage)}
+      ></tds-table-footer>
     </tds-table>
   );
 };
