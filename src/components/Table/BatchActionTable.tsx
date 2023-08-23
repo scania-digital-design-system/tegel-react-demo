@@ -7,15 +7,21 @@ const BatchActionTable = () => {
   const [selectedData, setSelectedData] = useState<any[]>();
   const [allSelected, setAllSelected] = useState(exampleData.every((row) => row.selected));
   const [data, setData] = useState(exampleData);
+
+
   useEffect(() => {
-    batchActionTable.current?.addEventListener('tdsSelectAll', (event: any) => {
+    const handleSelectAll = (event: any) => {
       setAllSelected(true);
       const updatedData = data?.map((row) => ({
         ...row,
         selected: event.detail.checked,
       }));
       setData(updatedData);
-    });
+    }
+    batchActionTable.current?.addEventListener('tdsSelectAll', handleSelectAll);
+    return () => {
+      batchActionTable.current?.removeEventListener('tdsSelectAll', handleSelectAll);
+    };
   }, []);
 
   const handleClick = async () => {
