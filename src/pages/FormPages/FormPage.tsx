@@ -147,7 +147,9 @@ const FormPage = () => {
                 label="Date of birth"
                 name="dateOfBirth"
                 type="date"
-                default-value="2000-01-01"
+                default-value="2023-08-01"
+                min="2023-08-01"
+                max="2024-01-31"
               ></tds-datetime>
             </section>
 
