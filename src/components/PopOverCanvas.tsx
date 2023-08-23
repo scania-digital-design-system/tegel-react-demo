@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const PopoverMenu = () => {
   const [isPopoverMenuVisible, setIsPopoverMenuVisible] = useState(false);
@@ -65,6 +65,13 @@ const PopoverMenu = () => {
 const PopoverCanvas = () => {
   const [showPopover, setShowPopover] = useState(false);
 
+  const buttonRef = useRef(null);
+  const popoverRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (popoverRef.current) popoverRef.current.referenceEl = buttonRef.current;
+  });
+
   return (
     <div>
       <div className="tds-headline-03 tds-u-pb1">Canvas</div>
@@ -75,12 +82,13 @@ const PopoverCanvas = () => {
           variant="ghost"
           size="sm"
           onClick={() => setShowPopover(!showPopover)}
+          ref={buttonRef}
         >
           <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
 
-      <tds-popover-canvas placement="left-end" show={showPopover}>
+      <tds-popover-canvas placement="left" show={showPopover} ref={popoverRef}>
         <div className="tds-u-p2">
           <h2 className="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
           <p className="tds-body-01">Where you can put anything you want!</p>
