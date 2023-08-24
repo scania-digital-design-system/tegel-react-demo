@@ -20,9 +20,10 @@ const BatchActionTable = () => {
     }
     batchActionTable.current?.addEventListener('tdsSelectAll', handleSelectAll);
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       batchActionTable.current?.removeEventListener('tdsSelectAll', handleSelectAll);
     };
-  }, []);
+  });
 
   const handleClick = async () => {
     if (batchActionTable.current) {

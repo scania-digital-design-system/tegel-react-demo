@@ -19,7 +19,7 @@ const SearchTable = () => {
     if (searchTableElement) {
       searchTableElement.addEventListener('tdsFilterChange', handleFilter);
     }
-  }, []);
+  });
 
   return (
     <tds-table

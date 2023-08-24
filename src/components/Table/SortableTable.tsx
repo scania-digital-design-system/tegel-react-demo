@@ -37,7 +37,7 @@ const SortableTable = () => {
         sortableTableElement.removeEventListener('tdsSortChange', handleSortEvent);
       }
     };
-  }, []);
+  });
 
   return (
     <tds-table
