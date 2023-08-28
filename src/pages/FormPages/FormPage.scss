@@ -1,61 +1,54 @@
 .form {
-    position: relative;
+  position: relative;
 
-    section {
-        margin-top: 16px;
-    }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
+  tds-block {
+    transition: filter 250ms ease;
+  }
 
+  .spinner-container {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: bottom 250ms ease, opacity 250ms ease;
+  }
+
+  &.form-sending {
     tds-block {
-        transition: filter 250ms ease;
+      filter: blur(4px);
     }
-
     .spinner-container {
-        position: absolute;
-        bottom: -100px;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0;
-        transition: bottom 250ms ease,  opacity 250ms ease;
+      opacity: 1;
+      bottom: 100px;
     }
+  }
 
-    &.form-sending {
-        tds-block {
-            filter: blur(4px);
-        }
-        .spinner-container {
-            opacity: 1;
-            bottom: 100px;
-        }
-    }
+  .side-by-side-input {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr 2fr;
+  }
 
-    .side-by-side-input {
-        display: grid;
-        grid-column-gap: 16px;
-        grid-template-columns: 1fr 2fr;
-    }
+  #privacy-toggle {
+    margin: auto 0 auto auto;
+  }
 
-    #privacy-toggle {
-        margin: auto 0 auto auto;
-    }
-
-    #anonymously {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
+  #anonymously {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 }
 
 tds-toast {
-    position: fixed;
-    right: var(--tds-spacing-element-32);
-    bottom: var(--tds-spacing-element-32);
+  position: fixed;
+  right: var(--tds-spacing-element-32);
+  bottom: var(--tds-spacing-element-32);
 }
-
-
-
