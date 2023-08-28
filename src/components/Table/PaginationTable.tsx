@@ -18,11 +18,11 @@ const PaginationTable = () => {
       setData(updatedData)
     };
 
-    paginationTableElement?.addEventListener('tdsPageChange', handlePaginationEvent);
+    paginationTableElement?.addEventListener('tdsPagination', handlePaginationEvent);
     return () => {
-      paginationTableElement?.removeEventListener('tdsPageChange', handlePaginationEvent);
+      paginationTableElement?.removeEventListener('tdsPagination', handlePaginationEvent);
     };
-  });
+  }, []);
 
   return (
     <tds-table ref={paginationTable} responsive no-min-width>
