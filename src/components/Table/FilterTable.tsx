@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
-const SearchTable = () => {
-  const searchTable = useRef<HTMLTdsTableElement>(null);
+const FilterTable = () => {
+  const filterTable = useRef<HTMLTdsTableElement>(null);
   const [data, setData] = useState(exampleData);
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const SearchTable = () => {
     };
 
 
-    const searchTableElement = searchTable?.current;
-    searchTableElement?.addEventListener('tdsFilter', handleFilter);
+    const filterTableElement = filterTable?.current;
+    filterTableElement?.addEventListener('tdsFilter', handleFilter);
     return () => {
-      searchTableElement?.removeEventListener('tdsFilter', handleFilter);
+      filterTableElement?.removeEventListener('tdsFilter', handleFilter);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -32,7 +32,7 @@ const SearchTable = () => {
         vertical-dividers="false"
         compact-design="false"
         responsive
-        ref={searchTable}
+        ref={filterTable}
       >
         <tds-table-toolbar table-title="Filter" filter></tds-table-toolbar>
         <tds-table-header>
@@ -65,4 +65,4 @@ const SearchTable = () => {
   );
 };
 
-export default SearchTable;
+export default FilterTable;
