@@ -1,35 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 const PopoverMenu = () => {
-  const [isPopoverMenuVisible, setIsPopoverMenuVisible] = useState(false);
-  const popoverMenuRef = useRef<HTMLTdsPopoverMenuElement>(null);
-
-  const toggleMenu = () => {
-    setIsPopoverMenuVisible((prevValue) => !prevValue);
-  };
-
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Popover</div>
       <div className="tds-headline-03 tds-u-pb1 tds-u-pt3">Menu</div>
       <div className="popover-container">
-        <tds-button
-          aria-label="menu"
-          only-icon
-          id="triggerElement"
-          variant="ghost"
-          size="sm"
-          onClick={toggleMenu} // Add onClick event to trigger toggleMenu
-        >
+        <tds-button aria-label="menu" only-icon id="triggerElement" variant="ghost" size="sm">
           <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
-      <tds-popover-menu
-        placement="auto"
-        selector="#triggerElement"
-        show={isPopoverMenuVisible}
-        ref={popoverMenuRef}
-      >
+      <tds-popover-menu placement="auto" selector="#triggerElement">
         <ul className="tds-popover-menu-wrapper">
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
@@ -88,6 +69,10 @@ const PopoverCanvas = () => {
         </tds-button>
       </div>
 
+      {/* Note: the 'show' prop is not required. It can be used when you need to override
+      the visibility of the popover to control it manually with code. 
+      In this example the use of the 'show' prop actually results in a bug - the popover doesn't 
+      close when clicking outside. */}
       <tds-popover-canvas placement="left" show={showPopover} ref={popoverRef}>
         <div className="tds-u-p2">
           <h2 className="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
