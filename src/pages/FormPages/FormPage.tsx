@@ -133,7 +133,6 @@ const FormPage = () => {
             <section>
               <h4>Text Input</h4>
               <tds-text-field
-                mode-variant="secondary"
                 name="text-field"
                 label="Full name"
                 label-position="outside"
@@ -143,7 +142,6 @@ const FormPage = () => {
 
             <section>
               <tds-datetime
-                mode-variant="secondary"
                 label="Date of birth"
                 name="dateOfBirth"
                 type="date"
@@ -155,7 +153,6 @@ const FormPage = () => {
 
             <section className="side-by-side-input">
               <tds-text-field
-                mode-variant="secondary"
                 type="text"
                 size="lg"
                 state="success"
@@ -171,7 +168,6 @@ const FormPage = () => {
               </tds-text-field>
 
               <tds-text-field
-                mode-variant="secondary"
                 type="text"
                 size="lg"
                 state={addressValidation ? 'default' : 'error'}
@@ -196,7 +192,6 @@ const FormPage = () => {
             <section>
               <tds-dropdown
                 ref={countryDropdown}
-                mode-variant="secondary"
                 name="country"
                 label="Which country you want to select?"
                 label-position="outside"
@@ -216,7 +211,6 @@ const FormPage = () => {
             <section>
               <tds-dropdown
                 ref={norwayDropdownTown}
-                mode-variant="secondary"
                 name="norweiganTown"
                 label="Which towns have you visited in Norway?"
                 label-position="outside"
@@ -232,7 +226,6 @@ const FormPage = () => {
             <section>
               <tds-dropdown
                 ref={swedenDropdownTown}
-                mode-variant="secondary"
                 name="swedishTown"
                 label="Select your favourite Swedish town"
                 label-position="outside"
@@ -280,7 +273,6 @@ const FormPage = () => {
             <section className="tds-u-mt3">
               <h5>Textarea</h5>
               <tds-textarea
-                mode-variant="secondary"
                 name="occupationalEssay"
                 label="What do you do at Scania? (Minimum 50 chars)"
                 label-position="outside"
