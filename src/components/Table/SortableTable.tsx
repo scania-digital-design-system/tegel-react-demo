@@ -3,41 +3,35 @@ import exampleData from './example-data.json';
 
 const SortableTable = () => {
   const sortableTable = useRef<HTMLTdsTableElement>(null);
-  const [data, setData] = useState(exampleData)
+  const [data, setData] = useState(exampleData);
 
   useEffect(() => {
-    const handleSortEvent = (event: any) => {
-      const key = event.detail.columnKey as keyof typeof data[0];
-      const direction = event.detail.sortingDirection;
+    const sortableTableElement = sortableTable?.current;
 
+    const handleSortEvent = (event: any) => {
+      const key = event.detail.columnKey as keyof (typeof data)[0];
+      const direction = event.detail.sortingDirection;
 
       let comparison = 0;
       const updatedData = data.slice().sort((a, b) => {
         if (a[key] < b[key]) {
-          comparison = -1
+          comparison = -1;
         }
         if (a[key] > b[key]) {
-          comparison = 1
+          comparison = 1;
         }
-        return direction === 'desc' ? comparison * -1 : comparison;;
+        return direction === 'desc' ? comparison * -1 : comparison;
       });
-      setData(updatedData)
+      setData(updatedData);
     };
 
 
-    const sortableTableElement = sortableTable?.current;
-
-
-    if (sortableTableElement) {
-      sortableTableElement.addEventListener('tdsSortChange', handleSortEvent);
-    }
-
+    sortableTableElement?.addEventListener('tdsSort', handleSortEvent);
     return () => {
-      if (sortableTableElement) {
-        sortableTableElement.removeEventListener('tdsSortChange', handleSortEvent);
-      }
+      sortableTableElement?.removeEventListener('tdsSort', handleSortEvent);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <tds-table
@@ -60,13 +54,14 @@ const SortableTable = () => {
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        {data.map((object, index) =>
+        {data.map((object, index) => (
           <tds-table-body-row key={index}>
             <tds-body-cell>{object.truck}</tds-body-cell>
             <tds-body-cell>{object.driver}</tds-body-cell>
             <tds-body-cell>{object.country}</tds-body-cell>
             <tds-body-cell>{object.mileage}</tds-body-cell>
-          </tds-table-body-row>)}
+          </tds-table-body-row>
+        ))}
       </tds-table-body>
     </tds-table>
   );

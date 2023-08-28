@@ -8,7 +8,6 @@ const BatchActionTable = () => {
   const [allSelected, setAllSelected] = useState(exampleData.every((row) => row.selected));
   const [data, setData] = useState(exampleData);
 
-
   useEffect(() => {
     const handleSelectAll = (event: any) => {
       setAllSelected(true);
@@ -17,13 +16,14 @@ const BatchActionTable = () => {
         selected: event.detail.checked,
       }));
       setData(updatedData);
-    }
+    };
     batchActionTable.current?.addEventListener('tdsSelectAll', handleSelectAll);
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       batchActionTable.current?.removeEventListener('tdsSelectAll', handleSelectAll);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleClick = async () => {
     if (batchActionTable.current) {
@@ -43,10 +43,7 @@ const BatchActionTable = () => {
             <>
               <p>Downloaded data:</p>
               {selectedData.map((row, index) => (
-                <>
-                  <h5>Row {index}</h5>
-                  <pre>{JSON.stringify(row, null, 2)}</pre>
-                </>
+                <pre key={index}>{JSON.stringify(row, null, 2)}</pre>
               ))}
             </>
           ) : (
