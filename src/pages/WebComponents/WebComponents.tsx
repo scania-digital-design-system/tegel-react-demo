@@ -15,6 +15,7 @@ import Datetime from '../../components/Datetime';
 import Message from '../../components/Message';
 import Chips from '../ChipsPage/ChipsPage';
 import Badge from '../../components/Badge/Badge';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function WebComponents() {
   return (
@@ -31,20 +32,7 @@ export default function WebComponents() {
       <div>
         <Block />
       </div>
-      <div>
-        <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
-        <tds-breadcrumbs>
-          <tds-breadcrumb>
-            <a href="#">Page 1</a>
-          </tds-breadcrumb>
-          <tds-breadcrumb>
-            <a href="#">Page 2</a>
-          </tds-breadcrumb>
-          <tds-breadcrumb current>
-            <a href="#">Page 3</a>
-          </tds-breadcrumb>
-        </tds-breadcrumbs>
-      </div>
+      <Breadcrumbs />
       <div className="tds-u-w-100">
         <Button />
       </div>
