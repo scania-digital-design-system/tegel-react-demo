@@ -20,7 +20,6 @@ import Chip from '../../components/Chip';
 import Divider from '../../components/Divider';
 import Dropdown from '../../components/Dropdown';
 import Link from '../../components/Link';
-import Popover from '../../components/Popover';
 import Spinner from '../../components/Spinner';
 import Tabs from '../../components/Tabs';
 import Textarea from '../../components/Textarea';
