@@ -17,6 +17,7 @@ import Badge from '../../components/Badge/Badge';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Checkbox from '../../components/Checkbox';
 import Chip from '../../components/Chip';
+import Divider from '../../components/Divider';
 
 export default function WebComponents() {
   return (
@@ -53,8 +54,7 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Divider</div>
-        <tds-divider></tds-divider>
+        <Divider />
       </div>
 
       <div className="tds-headline-02 tds-u-pb1">Dropdown</div>
