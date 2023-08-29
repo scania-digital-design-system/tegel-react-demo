@@ -23,6 +23,8 @@ import Link from '../../components/Link';
 import Popover from '../../components/Popover';
 import Spinner from '../../components/Spinner';
 import Tabs from '../../components/Tabs';
+import Textarea from '../../components/Textarea';
+import TextField from '../../components/TextField';
 
 export default function WebComponents() {
   return (
@@ -132,21 +134,11 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Textarea</div>
-        <tds-textarea
-          rows={4}
-          state="error"
-          label="Hello label"
-          helper="Good guess, but wrong answer buddy"
-          label-position="outside"
-          placeholder="Placeholder test"
-        ></tds-textarea>
+        <Textarea />
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Text fields</div>
-        <div className="tds-headline-04 tds-u-pb1">Standard medium size</div>
-        <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
+        <TextField />
       </div>
       <div>
         <Toast />
