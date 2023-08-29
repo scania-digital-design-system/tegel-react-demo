@@ -21,6 +21,7 @@ import Divider from '../../components/Divider';
 import Dropdown from '../../components/Dropdown';
 import Link from '../../components/Link';
 import Popover from '../../components/Popover';
+import Spinner from '../../components/Spinner';
 
 export default function WebComponents() {
   return (
@@ -65,9 +66,7 @@ export default function WebComponents() {
       <div>
         <Link />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Message</div>
         <Message />
       </div>
 
@@ -98,7 +97,6 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb2">Radio Button</div>
         <RadioButton />
       </div>
 
@@ -107,13 +105,7 @@ export default function WebComponents() {
         <PopoverMenu />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Spinner</div>
-        <div className="tds-headline-03 tds-u-pb1">Standard</div>
-
-        <tds-spinner variant="standard"></tds-spinner>
-        <div className="tds-headline-03 tds-u-pb1">Inverted</div>
-
-        <tds-spinner variant="inverted"></tds-spinner>
+        <Spinner />
       </div>
 
       <div>
