@@ -24,6 +24,9 @@ import Spinner from '../../components/Spinner';
 import Tabs from '../../components/Tabs';
 import Textarea from '../../components/Textarea';
 import TextField from '../../components/TextField';
+import Tooltip from '../../components/Tooltip';
+import StepperExample from '../../components/StepperExample';
+import ModalExample from '../../components/ModalExample';
 
 export default function WebComponents() {
   return (
@@ -73,29 +76,7 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Modal</div>
-        <div className="tds-u-flex tds-u-flex-gap-1">
-          <tds-button id="sm-modal-button" text="Small Modal"></tds-button>
-          <Modal prevent size="sm" selector="#sm-modal-button" />
-          <tds-button id="md-modal-button" text="Medium Modal"></tds-button>
-          <Modal size="md" selector="#md-modal-button" />
-          <tds-button id="lg-modal-button" text="Large Modal"></tds-button>
-          <Modal size="lg" selector="#lg-modal-button" />
-        </div>
-
-        <p>
-          Modals can also be opened programatically, see it in action by hovering the Icon below.
-        </p>
-        <tds-icon
-          onMouseEnter={() => {
-            (
-              document.querySelector(`[selector="hover-modal-button"]`) as HTMLTdsModalElement
-            ).showModal();
-          }}
-          name="truck"
-          size="20px"
-        ></tds-icon>
-        <Modal size="sm" selector="hover-modal-button" />
+        <ModalExample />
       </div>
 
       <div>
@@ -111,21 +92,7 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Stepper</div>
-        <tds-stepper size="lg" label-position="below" orientation="horizontal">
-          <tds-step state="success" index="1">
-            <div slot="label">Success step</div>
-          </tds-step>
-          <tds-step state="error" index="2">
-            <div slot="label">Error step</div>
-          </tds-step>
-          <tds-step state="current" index="3">
-            <div slot="label">Current step</div>
-          </tds-step>
-          <tds-step index="4">
-            <div slot="label">Upcoming step</div>
-          </tds-step>
-        </tds-stepper>
+        <StepperExample />
       </div>
 
       <div>
@@ -146,25 +113,7 @@ export default function WebComponents() {
         <Toggle />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
-        <div className="tooltip-container">
-          <tds-tooltip
-            placement="bottom"
-            selector="#button-1"
-            text="Text inside tooltip"
-            mouse-over-tooltip="true"
-          >
-            <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
-              Paragraph tag inside of Tooltip with
-              <b>bold</b>
-              and
-              <i>italic</i>
-              tags too.
-            </p>
-          </tds-tooltip>
-
-          <tds-button size="sm" id="button-1" text="Hover me"></tds-button>
-        </div>
+        <Tooltip />
       </div>
     </>
   );
