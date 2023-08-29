@@ -16,6 +16,7 @@ import Message from '../../components/Message';
 import Chips from '../ChipsPage/ChipsPage';
 import Badge from '../../components/Badge/Badge';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import Checkbox from '../../components/Checkbox';
 
 export default function WebComponents() {
   return (
@@ -32,18 +33,17 @@ export default function WebComponents() {
       <div>
         <Block />
       </div>
-      <Breadcrumbs />
-      <div className="tds-u-w-100">
+      <div>
+        <Breadcrumbs />
+      </div>
+      <div>
         <Button />
       </div>
       <div>
         <Card />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
-        <tds-checkbox value="checkbox-value">
-          <div slot="label">Label</div>
-        </tds-checkbox>
+        <Checkbox />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Chip</div>
