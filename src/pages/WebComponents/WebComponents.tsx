@@ -8,8 +8,8 @@ import Modal from '../../components/Modal/Modal';
 import Toggle from '../../components/Toggle/Toggle';
 import Block from '../../components/Block';
 import RadioButton from '../../components/RadioButton/RadioButton';
-import { PopoverMenu } from '../../components/PopOverCanvas';
-import PopoverCanvas from '../../components/PopOverCanvas';
+import { PopoverMenu } from '../../components/Popover';
+import PopoverCanvas from '../../components/Popover';
 import AccordionExample from '../../components/Accordion';
 import Datetime from '../../components/Datetime';
 import Message from '../../components/Message';
@@ -20,6 +20,7 @@ import Chip from '../../components/Chip';
 import Divider from '../../components/Divider';
 import Dropdown from '../../components/Dropdown';
 import Link from '../../components/Link';
+import Popover from '../../components/Popover';
 
 export default function WebComponents() {
   return (
@@ -102,8 +103,8 @@ export default function WebComponents() {
       </div>
 
       <div>
-        <PopoverMenu />
         <PopoverCanvas />
+        <PopoverMenu />
       </div>
       <div>
         <div className="tds-headline-02 tds-u-pb1">Spinner</div>
