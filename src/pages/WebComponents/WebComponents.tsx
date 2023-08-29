@@ -16,7 +16,6 @@ import Message from '../../components/Message';
 import Chips from '../ChipsPage/ChipsPage';
 import Badge from '../../components/Badge/Badge';
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
   return (
     <>
@@ -25,8 +24,6 @@ export default function WebComponents() {
       </div>
       <div>
         <Badge />
-        <div className="tds-headline-02 tds-u-pb1">Badge</div>
-        <tds-badge value="1" size="lg"></tds-badge>
       </div>
       <div>
         <Banner />
