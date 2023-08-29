@@ -13,7 +13,7 @@ const BatchActionTable = () => {
       setAllSelected(true);
       const updatedData = data?.map((row) => ({
         ...row,
-        selected: event.detail.checked,
+        selected: event.detail.allSelected,
       }));
       setData(updatedData);
     };
