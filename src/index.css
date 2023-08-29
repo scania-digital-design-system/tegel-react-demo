@@ -59,7 +59,7 @@ main {
 }
 
 .switcher-container {
-  position: absolute;
+  position: fixed;
   height: 60px;
   top: calc(96px + 68px);
   right: 32px;
