@@ -12,6 +12,7 @@ body,
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  height: 100%;
 }
 
 .App.tds-mode-dark {
@@ -36,6 +37,7 @@ body,
 
 tds-header {
   position: sticky;
+  top: 0;
 }
 
 .side-menu-and-main {
@@ -43,18 +45,16 @@ tds-header {
   flex-grow: 1;
 }
 
-.side-menu-and-main {
+main {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
 }
-
 .wrapper {
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 32px;
   max-width: 600px;
-  justify-content: center;
   padding: 128px 0;
 }
 
@@ -111,9 +111,9 @@ i {
 
 @media (min-width: 992px) {
   tds-side-menu {
-    /* We suggest you attach the persistent side menu to your layout like this: */
-    height: calc(100vh);
+    height: calc(100vh - 64px);
     position: sticky;
+    top: 64px;
     left: 0;
   }
 }

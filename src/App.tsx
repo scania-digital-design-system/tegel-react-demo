@@ -97,9 +97,9 @@ function App() {
               pathname={pathname}
               toggleMobileNav={toggleMobileNav}
             />
-            <main className="tds-u-h-100 tds-u-w-100">
+            <main className="tds-u-w-100">
               <AppBreadcrumbs />
-              <div className="wrapper tds-u-h-100 tds-u-p3">
+              <div className="wrapper  tds-u-p3">
                 <Outlet />
               </div>
               <Footer />
