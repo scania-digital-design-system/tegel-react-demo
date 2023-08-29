@@ -61,7 +61,6 @@ export default function WebComponents() {
       <div>
         <Datetime />
       </div>
-
       <div>
         <Divider />
       </div>
@@ -74,35 +73,28 @@ export default function WebComponents() {
       <div>
         <Message />
       </div>
-
       <div>
         <ModalExample />
       </div>
-
-      <div>
-        <RadioButton />
-      </div>
-
       <div>
         <PopoverCanvas />
         <PopoverMenu />
       </div>
       <div>
+        <RadioButton />
+      </div>
+      <div>
         <Spinner />
       </div>
-
       <div>
         <StepperExample />
       </div>
-
       <div>
         <Tabs />
       </div>
-
       <div>
         <Textarea />
       </div>
-
       <div>
         <TextField />
       </div>
