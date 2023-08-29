@@ -57,11 +57,7 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
         <Link to="text">Text</Link>
       </tds-header-item>
 
-      <tds-header-item selected={pathname.startsWith('/chips')}>
-        <Link to="chips">Chips</Link>
-      </tds-header-item>
-
-      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
+      <tds-header-dropdown onClick={() => { }} slot="end" no-dropdown-icon>
         <div slot="icon">
           <img
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"

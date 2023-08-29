@@ -17,7 +17,6 @@ import SettingsPage from './pages/SettingsPage/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';
-import ChipsPage from './pages/ChipsPage/ChipsPage';
 
 const router = createBrowserRouter([
   {
@@ -89,10 +88,6 @@ const router = createBrowserRouter([
       {
         path: 'notifications',
         element: <NotificationPage />,
-      },
-      {
-        path: 'chips',
-        element: <ChipsPage />,
       },
     ],
   },

@@ -13,10 +13,10 @@ import PopoverCanvas from '../../components/PopOverCanvas';
 import AccordionExample from '../../components/Accordion';
 import Datetime from '../../components/Datetime';
 import Message from '../../components/Message';
-import Chips from '../ChipsPage/ChipsPage';
 import Badge from '../../components/Badge/Badge';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Checkbox from '../../components/Checkbox';
+import Chip from '../../components/Chip';
 
 export default function WebComponents() {
   return (
@@ -46,11 +46,7 @@ export default function WebComponents() {
         <Checkbox />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Chip</div>
-        <tds-chip type="button" size="lg">
-          <span slot="label">Label</span>
-        </tds-chip>
-        <Chips />
+        <Chip />
       </div>
       <div>
         <Datetime />
