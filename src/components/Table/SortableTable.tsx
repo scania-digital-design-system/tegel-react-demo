@@ -13,7 +13,7 @@ const SortableTable = () => {
       const direction = event.detail.sortingDirection;
 
       let comparison = 0;
-      const updatedData = data.slice().sort((a, b) => {
+      const updatedData = exampleData.slice().sort((a, b) => {
         if (a[key] < b[key]) {
           comparison = -1;
         }
@@ -30,8 +30,7 @@ const SortableTable = () => {
     return () => {
       sortableTableElement?.removeEventListener('tdsSort', handleSortEvent);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [data]);
 
   return (
     <tds-table

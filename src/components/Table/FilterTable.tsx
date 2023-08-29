@@ -8,7 +8,8 @@ const FilterTable = () => {
   useEffect(() => {
     const handleFilter = (event: any) => {
       const query = event.detail.query;
-      const filteredData = data.filter((object) =>
+      console.log(query)
+      const filteredData = exampleData.filter((object) =>
         Object.values(object).some((value) =>
           value.toString().toLowerCase().includes(query.toLowerCase()),
         ),
@@ -16,14 +17,12 @@ const FilterTable = () => {
       setData(filteredData);
     };
 
-
     const filterTableElement = filterTable?.current;
     filterTableElement?.addEventListener('tdsFilter', handleFilter);
     return () => {
       filterTableElement?.removeEventListener('tdsFilter', handleFilter);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [data]);
 
   return (
     <>

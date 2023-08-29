@@ -13,17 +13,16 @@ const BatchActionTable = () => {
       setAllSelected(true);
       const updatedData = data?.map((row) => ({
         ...row,
-        selected: event.detail.checked,
+        selected: event.detail.allSelected,
       }));
       setData(updatedData);
     };
-    batchActionTable.current?.addEventListener('tdsSelectAll', handleSelectAll);
+    const batchActionTableElement = batchActionTable?.current;
+    batchActionTableElement?.addEventListener('tdsSelectAll', handleSelectAll);
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      batchActionTable.current?.removeEventListener('tdsSelectAll', handleSelectAll);
+      batchActionTableElement?.removeEventListener('tdsSelectAll', handleSelectAll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [data]);
 
   const handleClick = async () => {
     if (batchActionTable.current) {
