@@ -1,11 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import TabsPanels from "./TabsPanels";
-import { useState } from "react";
 
 const TabsLinks = () => {
-  const [navigationTabIndex, setNavigationTabIndex] = useState(0);
-  const [folderTabIndex, setFolderTabIndex] = useState(0);
-  const [inlineTabIndex, setInlineTabIndex] = useState(0);
 
   const { pathname } = useLocation();
   const getSelectedIndex = () => {
@@ -30,12 +26,6 @@ const TabsLinks = () => {
       </p>
       <div className="tds-u-pb3 tabs">
         <tds-folder-tabs
-          ref={(element) =>
-            element?.addEventListener("tdsChange", (event: any) => {
-              setFolderTabIndex(event.detail.selectedTabIndex);
-              console.log(event);
-            })
-          }
           mode-variant="secondary"
           default-selected-index={getSelectedIndex()}
         >
@@ -49,16 +39,10 @@ const TabsLinks = () => {
             <Link to={"third-tab"}>Third tab</Link>
           </tds-folder-tab>
         </tds-folder-tabs>
-        <TabsPanels selectedTabIndex={folderTabIndex} />
+        <TabsPanels selectedTabIndex={getSelectedIndex()} />
       </div>
       <div className="tds-u-pb3 tabs">
         <tds-inline-tabs
-          ref={(element) =>
-            element?.addEventListener("tdsChange", (event: any) => {
-              setInlineTabIndex(event.detail.selectedTabIndex);
-              console.log(event);
-            })
-          }
           mode-variant="secondary"
           default-selected-index={getSelectedIndex()}
         >
@@ -72,16 +56,10 @@ const TabsLinks = () => {
             <Link to={"third-tab"}>Third tab</Link>
           </tds-inline-tab>
         </tds-inline-tabs>
-        <TabsPanels selectedTabIndex={inlineTabIndex} />
+        <TabsPanels selectedTabIndex={getSelectedIndex()} />
       </div>
       <div className="tds-u-pb3 tabs">
         <tds-navigation-tabs
-          ref={(element) =>
-            element?.addEventListener("tdsChange", (event: any) => {
-              setNavigationTabIndex(event.detail.selectedTabIndex);
-              console.log(event);
-            })
-          }
           mode-variant="secondary"
           default-selected-index={getSelectedIndex()}
         >
@@ -95,7 +73,7 @@ const TabsLinks = () => {
             <Link to={"third-tab"}>Third tab</Link>
           </tds-navigation-tab>
         </tds-navigation-tabs>
-        <TabsPanels selectedTabIndex={navigationTabIndex} />
+        <TabsPanels selectedTabIndex={getSelectedIndex()} />
       </div>
     </div>
   );
