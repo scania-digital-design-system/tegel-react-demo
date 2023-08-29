@@ -82,19 +82,8 @@ const Accordion = () => {
 
   return (
     <div>
-      <div className="tds-headline-02 tds-u-pb1">Accordion</div>
-      <tds-toggle ref={toggleRef}>
-        <div slot="label">{paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset'}</div>
-      </tds-toggle>
-      <br />
-      <tds-toggle
-        ref={accordionToggleRef}
-        checked={checkboxState}
-        onTdsToggle={handleAccordionToggleChange}
-      >
-        <div slot="label">{checkboxState ? 'Disable Accordion' : 'Enable Accordion'}</div>
-      </tds-toggle>
-      <h2>Icon Position</h2>
+      <div className="tds-headline-02">Accordion</div>
+      <p className='tds-u-mb0'>Icon position</p>
       <div>
         <tds-radio-button
           name="icon-position"
@@ -126,11 +115,21 @@ const Accordion = () => {
         >
           <div slot="label">Start</div>
         </tds-radio-button>
+        <br />
       </div>
-
-      <h2>Accordion with Primary Mode Variant</h2>
-
-      <tds-accordion mode-variant="primary">
+      <tds-toggle ref={toggleRef}>
+        <div slot="label">{paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset'}</div>
+      </tds-toggle>
+      <br />
+      <tds-toggle
+        ref={accordionToggleRef}
+        checked={checkboxState}
+        onTdsToggle={handleAccordionToggleChange}
+      >
+        <div slot="label">{checkboxState ? 'Disable Accordion' : 'Enable Accordion'}</div>
+      </tds-toggle>
+      <br />
+      <tds-accordion>
         <tds-accordion-item
           header="Item 1"
           expanded={expandedItem === 'item1'}
@@ -163,32 +162,6 @@ const Accordion = () => {
           This is the panel, which contains associated information with the header. Usually, it
           contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Duis laoreet vestibulum fermentum.
-        </tds-accordion-item>
-      </tds-accordion>
-
-      <h2>Accordion with Secondary Mode Variant</h2>
-
-      <tds-accordion mode-variant="secondary">
-        <tds-accordion-item
-          header="Item 1"
-          disabled={!checkboxState}
-          expand-icon-position={iconPosition}
-        >
-          Content for Item 1
-        </tds-accordion-item>
-        <tds-accordion-item
-          header="Item 2"
-          disabled={!checkboxState}
-          expand-icon-position={iconPosition}
-        >
-          Content for Item 2
-        </tds-accordion-item>
-        <tds-accordion-item
-          header="Item 3"
-          disabled={!checkboxState}
-          expand-icon-position={iconPosition}
-        >
-          Content for Item 3
         </tds-accordion-item>
       </tds-accordion>
     </div>
