@@ -41,8 +41,8 @@ const BatchActionTable = () => {
         no-min-width
         vertical-dividers="false"
         compact-design="false"
-        enable-responsive
-        enable-multiselect
+        responsive
+        multiselect
       >
         <tds-table-toolbar table-title="Batch action">
           <tds-button

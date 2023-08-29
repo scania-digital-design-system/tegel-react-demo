@@ -37,10 +37,10 @@ const SearchTable = ({ cancelEvent }: SearchTableProps) => {
       no-min-width
       vertical-dividers="false"
       compact-design="false"
-      enable-responsive
+      responsive
       ref={searchTable}
     >
-      <tds-table-toolbar table-title="Filter" enable-filtering></tds-table-toolbar>
+      <tds-table-toolbar table-title="Filter" filter></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell column-key="truck" column-title="Truck type"></tds-header-cell>
         <tds-header-cell column-key="driver" column-title="Driver name"></tds-header-cell>
