@@ -17,7 +17,6 @@ const Message = () => {
 
   return (
     <>
-      <h4 className="tds-u-pb1">Message types</h4>
       <div className="tds-u-pb1">
         <tds-toggle checked ref={iconToggle}>
           <div slot="label">With Icon</div>
