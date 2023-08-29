@@ -79,7 +79,7 @@ function App() {
             <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
           </div>
           <div className="announcement-banner">
-            <tds-banner variant="information" icon="info" header="React demo" persistent>
+            <tds-banner variant="information" icon="info" header="React demo">
               <div slot="subheader">
                 This is a demo page in React using{' '}
                 <tds-link style={{ display: 'inline-block' }}>

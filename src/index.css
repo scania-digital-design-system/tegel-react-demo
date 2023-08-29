@@ -36,7 +36,6 @@ body,
 
 tds-header {
   position: sticky;
-  top: 68px;
 }
 
 .side-menu-and-main {
@@ -113,9 +112,8 @@ i {
 @media (min-width: 992px) {
   tds-side-menu {
     /* We suggest you attach the persistent side menu to your layout like this: */
-    height: calc(100vh - calc(64px + 68px));
+    height: calc(100vh);
     position: sticky;
-    top: calc(64px + 68px);
     left: 0;
   }
 }
