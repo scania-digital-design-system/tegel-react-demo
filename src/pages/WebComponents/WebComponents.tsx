@@ -19,6 +19,7 @@ import Checkbox from '../../components/Checkbox';
 import Chip from '../../components/Chip';
 import Divider from '../../components/Divider';
 import Dropdown from '../../components/Dropdown';
+import Link from '../../components/Link';
 
 export default function WebComponents() {
   return (
@@ -61,10 +62,7 @@ export default function WebComponents() {
         <Dropdown />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Link</div>
-        <tds-link>
-          <a href="/">This is a link</a>
-        </tds-link>
+        <Link />
       </div>
 
       <div>
