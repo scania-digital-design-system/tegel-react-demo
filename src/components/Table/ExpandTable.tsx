@@ -1,10 +1,10 @@
 const ExpandTable = () => {
   return (
     <tds-table
-      enable-expandable-rows
+      expandable-rows
       vertical-dividers="false"
       compact-design="false"
-      enable-responsive
+      responsive
       no-min-width
     >
       <tds-table-header>

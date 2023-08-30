@@ -158,7 +158,7 @@ const PaginationTable = ({ customPagination }: PaginationTableProps) => {
           ref={paginationTable}
           vertical-dividers="false"
           compact-design="false"
-          enable-responsive
+          responsive
           no-min-width
         >
           <tds-table-header>

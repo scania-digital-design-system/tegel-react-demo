@@ -38,7 +38,7 @@ const SortableTable = ({ cancelEvent }: SortableTableProps) => {
     <tds-table
       ref={sortableTable}
       no-min-width
-      enable-responsive
+      responsive
       vertical-dividers="false"
       compact-design="false"
     >
