@@ -50,7 +50,7 @@ const FilterTable = () => {
               <tds-body-cell>{row.truck}</tds-body-cell>
               <tds-body-cell>{row.driver}</tds-body-cell>
               <tds-body-cell>{row.country}</tds-body-cell>
-              <tds-body-cell>{row.mileage}</tds-body-cell>
+              <tds-body-cell style={{ textAlign: 'right' }} >{row.mileage}</tds-body-cell>
             </tds-table-body-row>
           ))}
         </tds-table-body>

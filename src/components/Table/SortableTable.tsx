@@ -58,7 +58,7 @@ const SortableTable = () => {
             <tds-body-cell>{object.truck}</tds-body-cell>
             <tds-body-cell>{object.driver}</tds-body-cell>
             <tds-body-cell>{object.country}</tds-body-cell>
-            <tds-body-cell>{object.mileage}</tds-body-cell>
+            <tds-body-cell style={{ textAlign: 'right' }} >{object.mileage}</tds-body-cell>
           </tds-table-body-row>
         ))}
       </tds-table-body>

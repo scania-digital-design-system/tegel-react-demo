@@ -21,7 +21,7 @@ const BasicTable = () => {
             cell-key="driver"
           ></tds-body-cell>
           <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="4000" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell style={{ textAlign: 'right' }} cell-value="4000" cell-key="mileage"></tds-body-cell>
         </tds-table-body-row>
         <tds-table-body-row>
           <tds-body-cell cell-key="truck">
@@ -32,7 +32,7 @@ const BasicTable = () => {
             cell-key="driver"
           ></tds-body-cell>
           <tds-body-cell cell-value="Germany" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="260" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell style={{ textAlign: 'right' }} cell-value="260" cell-key="mileage"></tds-body-cell>
         </tds-table-body-row>
         <tds-table-body-row>
           <tds-body-cell cell-key="truck">
@@ -43,7 +43,7 @@ const BasicTable = () => {
             cell-key="driver"
           ></tds-body-cell>
           <tds-body-cell cell-value="Norway" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="5889" cell-key="mileage"></tds-body-cell>
+          <tds-body-cell style={{ textAlign: 'right' }} cell-value="5889" cell-key="mileage"></tds-body-cell>
         </tds-table-body-row>
       </tds-table-body>
     </tds-table>
