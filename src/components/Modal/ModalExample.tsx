@@ -1,4 +1,4 @@
-import Modal from "./Modal/Modal";
+import Modal from "./Modal";
 
 const ModalExample = () => {
     return (
