@@ -7,13 +7,24 @@ const Message = () => {
   const minimalToggle = useRef<HTMLTdsToggleElement>(null);
 
   useEffect(() => {
-    iconToggle.current?.addEventListener('tdsToggle', (event: any) => {
+    const iconToggleElement = iconToggle.current;
+    const minimalToggleElement = minimalToggle.current;
+    iconToggleElement?.addEventListener('tdsToggle', (event: TdsToggleEvent) => {
       setUseIcon(event.detail.checked);
     });
-    minimalToggle.current?.addEventListener('tdsToggle', (event: any) => {
+    minimalToggleElement?.addEventListener('tdsToggle', (event: TdsToggleEvent) => {
       setUseMinimal(event.detail.checked);
     });
-  }, []);
+
+    return () => {
+      iconToggleElement?.removeEventListener('tdsToggle', (event: TdsToggleEvent) => {
+        setUseIcon(event.detail.checked);
+      });
+      minimalToggleElement?.removeEventListener('tdsToggle', (event: TdsToggleEvent) => {
+        setUseMinimal(event.detail.checked);
+      });
+    };
+  });
 
   return (
     <>
