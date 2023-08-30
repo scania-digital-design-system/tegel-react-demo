@@ -8,7 +8,6 @@ const PopoverMenu = () => {
     if (popoverMenuRef.current) popoverMenuRef.current.referenceEl = buttonRef.current;
   });
 
-
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Popover Menu</div>
@@ -47,20 +46,11 @@ const PopoverMenu = () => {
         </ul>
       </tds-popover-menu>
       <div className="popover-container">
-        <tds-button
-          aria-label="menu"
-          only-icon
-          id="triggerElement"
-          variant="primary"
-          size="sm"
-        >
+        <tds-button aria-label="menu" only-icon id="triggerElement" variant="primary" size="sm">
           <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
-      <tds-popover-menu
-        placement="auto"
-        selector="#triggerElement"
-      >
+      <tds-popover-menu placement="auto" selector="#triggerElement">
         <ul className="tds-popover-menu-wrapper">
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">

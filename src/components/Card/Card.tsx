@@ -50,7 +50,7 @@ const Card = () => {
               subheader="Simple Card"
               body-divider
               onClick={() => {
-                console.log(`Clicked card: ${idx}`)
+                console.log(`Clicked card: ${idx}`);
               }}
             >
               <div slot="body">

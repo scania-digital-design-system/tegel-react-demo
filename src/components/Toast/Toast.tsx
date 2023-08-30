@@ -12,15 +12,15 @@ const Toast = () => {
   useEffect(() => {
     const handleToggle = () => {
       setToastVisibility(!toastVisibility);
-      !toastVisibility ? successToast?.showToast() : successToast?.hideToast()
-      !toastVisibility ? errorToast?.showToast() : errorToast?.hideToast()
-      !toastVisibility ? warningToast?.showToast() : warningToast?.hideToast()
-      !toastVisibility ? informationToast?.showToast() : informationToast?.hideToast()
+      !toastVisibility ? successToast?.showToast() : successToast?.hideToast();
+      !toastVisibility ? errorToast?.showToast() : errorToast?.hideToast();
+      !toastVisibility ? warningToast?.showToast() : warningToast?.hideToast();
+      !toastVisibility ? informationToast?.showToast() : informationToast?.hideToast();
     };
 
     const preventClose = (event: TdsCloseEvent) => {
-      event.preventDefault()
-    }
+      event.preventDefault();
+    };
 
     const toggle = toggleRef.current;
     const successToast = successToastRef.current;

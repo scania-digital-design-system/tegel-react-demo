@@ -1,10 +1,7 @@
-
-import TabsLinks from "../components/TabsLinks";
+import TabsLinks from '../components/TabsLinks';
 
 const TabsLinkPage = () => {
-  return(
-    <TabsLinks/>
-  )
+  return <TabsLinks />;
 };
 
 export default TabsLinkPage;

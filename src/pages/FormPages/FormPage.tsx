@@ -47,19 +47,17 @@ const FormPage = () => {
       }
     });
 
-
-
     addressTextFieldElement?.addEventListener('tdsInput', (event: TdsInputEvent) => {
-      const target = event.target as HTMLTdsTextFieldElement
+      const target = event.target as HTMLTdsTextFieldElement;
       setAddressValue(target.value);
     });
 
     return () => {
       addressTextFieldElement?.removeEventListener('tdsInput', (event: TdsInputEvent) => {
-        const target = event.target as HTMLTdsTextFieldElement
+        const target = event.target as HTMLTdsTextFieldElement;
         setAddressValue(target.value);
       });
-    }
+    };
   }, []);
 
   /* Second useEffect for checking selected values of dropdown, run on dependency changes */
@@ -198,7 +196,6 @@ const FormPage = () => {
                 placeholder="Majorvägen 32"
                 helper={addressValidation ? '' : 'Address is mandatory field!'}
                 ref={addressTextFieldRef}
-
               >
                 <span slot="prefix">
                   <tds-icon name="pin" size="16px"></tds-icon>

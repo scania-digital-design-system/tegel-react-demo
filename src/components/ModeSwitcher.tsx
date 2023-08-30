@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
-
 interface ModeSwitcherProps {
   mode: 'Light' | 'Dark';
   setMode: Dispatch<SetStateAction<'Light' | 'Dark'>>;
@@ -12,7 +11,6 @@ const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
     const toggleEl = toggleRef.current as HTMLTdsToggleElement;
 
     const toggleMode = (event: TdsToggleEvent) => {
-
       setMode(event.detail.checked ? 'Dark' : 'Light');
     };
 

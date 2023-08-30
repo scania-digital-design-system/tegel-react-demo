@@ -24,8 +24,7 @@ const Header = ({ toggleMobileNav }: HeaderProps) => {
 
       <tds-header-title>React Demo</tds-header-title>
 
-
-      <tds-header-dropdown onClick={() => { }} slot="end" no-dropdown-icon>
+      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
         <div slot="icon">
           <img
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"

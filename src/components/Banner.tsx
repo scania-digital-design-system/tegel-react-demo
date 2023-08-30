@@ -8,33 +8,32 @@ const Banner = () => {
   const informationBannerRef = useRef<HTMLTdsBannerElement>(null);
   const toggleRef = useRef<HTMLTdsToggleElement>(null);
 
-
   useEffect(() => {
     const handleToggle = () => {
       const errorBanner = errorBannerRef.current;
       const informationBanner = informationBannerRef.current;
       const defaultBanner = defaultBannerRef.current;
 
-      bannerVisibility ? errorBanner?.hideBanner() : errorBanner?.showBanner()
-      bannerVisibility ? informationBanner?.hideBanner() : informationBanner?.showBanner()
-      bannerVisibility ? defaultBanner?.hideBanner() : defaultBanner?.showBanner()
+      bannerVisibility ? errorBanner?.hideBanner() : errorBanner?.showBanner();
+      bannerVisibility ? informationBanner?.hideBanner() : informationBanner?.showBanner();
+      bannerVisibility ? defaultBanner?.hideBanner() : defaultBanner?.showBanner();
 
-      setBannerVisibility(!bannerVisibility)
+      setBannerVisibility(!bannerVisibility);
     };
     const preventClose = (event: TdsCloseEvent) => {
       event.preventDefault();
     };
 
-    const toggle = toggleRef.current
+    const toggle = toggleRef.current;
     const errorBanner = errorBannerRef.current;
 
-    toggle?.addEventListener('tdsToggle', handleToggle)
+    toggle?.addEventListener('tdsToggle', handleToggle);
     errorBanner?.addEventListener('tdsClose', preventClose);
 
     return () => {
       errorBanner?.removeEventListener('tdsClose', preventClose);
       toggle?.removeEventListener('tdsToggle', handleToggle);
-    }
+    };
   });
   return (
     <div>
@@ -70,12 +69,8 @@ const Banner = () => {
       </div>
 
       <div className="tds-u-mt-2">
-        <p>
-          You can also show and hide the banners using the toggle below.
-        </p>
-        <tds-toggle
-          ref={toggleRef}
-        >
+        <p>You can also show and hide the banners using the toggle below.</p>
+        <tds-toggle ref={toggleRef}>
           <div slot="label">{bannerVisibility ? 'Hide Banner' : 'Show Banner'}</div>
         </tds-toggle>
       </div>
