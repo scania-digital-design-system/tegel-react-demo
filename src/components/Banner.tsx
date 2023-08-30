@@ -21,14 +21,14 @@ const Banner = () => {
 
       setBannerVisibility(!bannerVisibility)
     };
-    const preventClose = (event: Event) => {
+    const preventClose = (event: TdsCloseEvent) => {
       event.preventDefault();
     };
 
     const toggle = toggleRef.current
-    toggle?.addEventListener('tdsToggle', handleToggle)
-
     const errorBanner = errorBannerRef.current;
+
+    toggle?.addEventListener('tdsToggle', handleToggle)
     errorBanner?.addEventListener('tdsClose', preventClose);
 
     return () => {
