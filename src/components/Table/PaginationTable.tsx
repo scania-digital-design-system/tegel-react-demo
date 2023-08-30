@@ -18,7 +18,7 @@ const PaginationTable = ({ customPagination }: PaginationTableProps) => {
       paginationTableBodyElement.bodyData = exampleData;
     }
 
-    const handlePaginationEvent = (event: Event) => {
+    const handlePaginationEvent = (event: TdsPaginationEvent) => {
       event.preventDefault();
       updateData(event);
     };
@@ -86,12 +86,9 @@ const PaginationTable = ({ customPagination }: PaginationTableProps) => {
     },
   ]);
 
-  const updateData = (event: any) => {
+  const updateData = (event: TdsPaginationEvent) => {
     if (tableFooter.current) {
-      console.log(tableFooter.current.getAttribute('pagination-value'));
-      console.log(event.detail.paginationValue);
       if (event.detail.paginationValue === 1) {
-        console.log('first');
         setData([
           {
             truck: 'L-series',
@@ -125,8 +122,6 @@ const PaginationTable = ({ customPagination }: PaginationTableProps) => {
           },
         ]);
       } else {
-        console.log('second');
-
         setData([
           {
             truck: 'S-series',

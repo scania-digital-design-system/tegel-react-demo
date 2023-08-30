@@ -20,7 +20,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
             }
         };
 
-        const handleChange = (event: TdsInputEvent, index: number) => {
+        const handleChange = (event: TdsChangeEvent, index: number) => {
             const target = event.target as HTMLTdsTextFieldElement;
             if (target.value.length < 5) {
                 setErrorStepIndex(index);
@@ -33,7 +33,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
             ref?.addEventListener('tdsInput', (event: TdsInputEvent) => {
                 handleInput(event, textFieldRefs.current.indexOf(ref));
             });
-            ref.addEventListener('tdsChange', (event: any) => {
+            ref.addEventListener('tdsChange', (event: TdsChangeEvent) => {
                 handleChange(event, textFieldRefs.current.indexOf(ref));
             });
         });
@@ -43,7 +43,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
                 ref?.removeEventListener('tdsInput', (event: TdsInputEvent) => {
                     handleInput(event, textFieldRefs.current.indexOf(ref));
                 });
-                ref.addEventListener('tdsChange', (event: any) => {
+                ref.addEventListener('tdsChange', (event: TdsChangeEvent) => {
                     handleChange(event, textFieldRefs.current.indexOf(ref));
                 });
             });

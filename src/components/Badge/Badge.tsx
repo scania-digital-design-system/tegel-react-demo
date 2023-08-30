@@ -6,14 +6,15 @@ const Badge = () => {
     const [emailCount, setEmailCount] = useState('100');
     useEffect(() => {
 
-        const handleInput = (event: any) => {
-            setEmailCount(event.target.value);
+        const handleInput = (event: TdsInputEvent) => {
+            const target = event.target as HTMLTdsTextFieldElement
+            setEmailCount(target.value);
         }
 
         const textField = textFieldRef?.current;
-        textField?.addEventListener('input', handleInput);
+        textField?.addEventListener('tdsInput', handleInput);
         return () => {
-            textField?.removeEventListener('input', handleInput)
+            textField?.removeEventListener('tdsInput', handleInput)
         }
     });
 

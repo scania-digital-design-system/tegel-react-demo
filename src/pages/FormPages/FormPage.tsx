@@ -18,6 +18,7 @@ const FormPage = () => {
   const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const [addressValidation, setAddressValidation] = useState(true);
+  const addressTextFieldRef = useRef<HTMLTdsTextFieldElement>(null);
   const happinessSlider = useRef<HTMLTdsSliderElement>(null);
   const stressSlider = useRef<HTMLTdsSliderElement>(null);
   const workLifeSlider = useRef<HTMLTdsSliderElement>(null);
@@ -26,6 +27,7 @@ const FormPage = () => {
   useEffect(() => {
     const swedishTown = swedenDropdownTown.current;
     const norwayTown = norwayDropdownTown.current;
+    const addressTextFieldElement = addressTextFieldRef.current;
     if (swedishTown) {
       swedishTown.options = townDataSweden;
     }
@@ -44,6 +46,20 @@ const FormPage = () => {
         workLifeSlider.current.readOnly = false;
       }
     });
+
+
+
+    addressTextFieldElement?.addEventListener('tdsInput', (event: TdsInputEvent) => {
+      const target = event.target as HTMLTdsTextFieldElement
+      setAddressValue(target.value);
+    });
+
+    return () => {
+      addressTextFieldElement?.removeEventListener('tdsInput', (event: TdsInputEvent) => {
+        const target = event.target as HTMLTdsTextFieldElement
+        setAddressValue(target.value);
+      });
+    }
   }, []);
 
   /* Second useEffect for checking selected values of dropdown, run on dependency changes */
@@ -181,11 +197,8 @@ const FormPage = () => {
                 no-min-width
                 placeholder="Majorvägen 32"
                 helper={addressValidation ? '' : 'Address is mandatory field!'}
-                ref={(element) => {
-                  element?.addEventListener('tdsInput', (event: any) => {
-                    setAddressValue(event.detail.target.value);
-                  });
-                }}
+                ref={addressTextFieldRef}
+
               >
                 <span slot="prefix">
                   <tds-icon name="pin" size="16px"></tds-icon>

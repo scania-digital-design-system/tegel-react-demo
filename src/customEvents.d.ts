@@ -89,7 +89,7 @@ interface HTMLElementEventMap {
   tdsClose: TdsCloseEvent;
   tdsCollapse: TdsCollapseEvent;
   tdsFilter: TdsFilterEvent;
-  tdsPagination: TdsPaginationEvent;
+  tdsPageChange: TdsPaginationEvent;
   tdsSort: TdsSortEvent;
   tdsToggle: TdsToggleEvent;
   tdsInput: TdsInputEvent;
