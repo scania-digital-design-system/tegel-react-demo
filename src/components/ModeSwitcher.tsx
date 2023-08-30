@@ -1,4 +1,3 @@
-import { TdsToggleCustomEvent } from '@scania/tegel';
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 
