@@ -7,15 +7,15 @@ const Toast = () => {
   const informationToastRef = useRef<HTMLTdsToastElement>(null);
   const warningToastRef = useRef<HTMLTdsToastElement>(null);
   const toggleRef = useRef<HTMLTdsToggleElement>(null);
-  const [toastVisibility, setToastVisibility] = useState(true);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const handleToggle = () => {
-      setToastVisibility(!toastVisibility);
-      !toastVisibility ? successToast?.showToast() : successToast?.hideToast();
-      !toastVisibility ? errorToast?.showToast() : errorToast?.hideToast();
-      !toastVisibility ? warningToast?.showToast() : warningToast?.hideToast();
-      !toastVisibility ? informationToast?.showToast() : informationToast?.hideToast();
+      setShowToast(!showToast);
+      !showToast ? successToast?.showToast() : successToast?.hideToast();
+      !showToast ? errorToast?.showToast() : errorToast?.hideToast();
+      !showToast ? warningToast?.showToast() : warningToast?.hideToast();
+      !showToast ? informationToast?.showToast() : informationToast?.hideToast();
     };
 
     const preventClose = (event: TdsCloseEvent) => {
@@ -40,6 +40,7 @@ const Toast = () => {
       <div className="tds-headline-02 tds-u-pb1">Toast</div>
       <div className="toast-container">
         <tds-toast
+          hidden
           variant="success"
           header="Successful Toast!"
           subheader="( Closing prevented ! )"
@@ -47,23 +48,23 @@ const Toast = () => {
         >
           <div slot="toast-subheader">This Toasts can't be closed.</div>
         </tds-toast>
-        <tds-toast ref={errorToastRef} variant="error" header="Error Toast!">
+        <tds-toast hidden ref={errorToastRef} variant="error" header="Error Toast!">
           <div slot="toast-subheader">This Toasts can be closed.</div>
         </tds-toast>
-        <tds-toast ref={informationToastRef} variant="information" header="Information Toast!">
+        <tds-toast hidden ref={informationToastRef} variant="information" header="Information Toast!">
           <div slot="toast-subheader">This Toasts has a link.</div>
           <a slot="toast-link" href="/">
             This is a link.
           </a>
         </tds-toast>
-        <tds-toast ref={warningToastRef} variant="warning" header="Warning Toast!">
+        <tds-toast hidden ref={warningToastRef} variant="warning" header="Warning Toast!">
           <div slot="toast-subheader">This Toast can be closed programmatically.</div>
         </tds-toast>
       </div>
       <div>
         <p>You can show or hide the toasts with the toggle below.</p>
         <tds-toggle ref={toggleRef}>
-          <div slot="label">{toastVisibility ? 'Hide Toast' : 'Show Toast'}</div>
+          <div slot="label">{showToast ? 'Hide Toast' : 'Show Toast'}</div>
         </tds-toggle>
       </div>
     </div>
