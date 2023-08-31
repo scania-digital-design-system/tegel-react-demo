@@ -1,15 +1,25 @@
 import { Link, useLocation } from 'react-router-dom';
 import TabsPanels from './TabsPanels';
+import { useEffect, useRef, useState } from 'react';
 
 const TabsLinks = () => {
+  const folderTabsRef = useRef<HTMLTdsFolderTabsElement>(null)
+  const inlineTabsRef = useRef<HTMLTdsInlineTabsElement>(null)
+  const navigationTabsRef = useRef<HTMLTdsNavigationTabsElement>(null)
   const { pathname } = useLocation();
-  const getSelectedIndex = () => {
+
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  useEffect(() => {
     const index = ['first-tab', 'second-tab', 'third-tab'].findIndex((pathSegment) =>
       pathname.includes(pathSegment),
     );
-    // if no index is found return 0
-    return index === -1 ? 0 : index;
-  };
+    console.log(index)
+    folderTabsRef.current?.selectTab(index)
+    inlineTabsRef.current?.selectTab(index)
+    navigationTabsRef.current?.selectTab(index)
+    setSelectedIndex(index)
+  }, [pathname])
 
   return (
     <div>
@@ -23,7 +33,7 @@ const TabsLinks = () => {
         and you'll land on a page for the second tab.
       </p>
       <div className="tds-u-pb3 tabs">
-        <tds-folder-tabs mode-variant="secondary" default-selected-index={getSelectedIndex()}>
+        <tds-folder-tabs ref={folderTabsRef} mode-variant="secondary" default-selected-index={0}>
           <tds-folder-tab>
             <Link to={'first-tab'}>First tab</Link>
           </tds-folder-tab>
@@ -34,10 +44,10 @@ const TabsLinks = () => {
             <Link to={'third-tab'}>Third tab</Link>
           </tds-folder-tab>
         </tds-folder-tabs>
-        <TabsPanels selectedTabIndex={getSelectedIndex()} />
+        <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-        <tds-inline-tabs mode-variant="secondary" default-selected-index={getSelectedIndex()}>
+        <tds-inline-tabs ref={inlineTabsRef} mode-variant="secondary" default-selected-index={0}>
           <tds-inline-tab>
             <Link to={'first-tab'}>First tab</Link>
           </tds-inline-tab>
@@ -48,10 +58,10 @@ const TabsLinks = () => {
             <Link to={'third-tab'}>Third tab</Link>
           </tds-inline-tab>
         </tds-inline-tabs>
-        <TabsPanels selectedTabIndex={getSelectedIndex()} />
+        <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-        <tds-navigation-tabs mode-variant="secondary" default-selected-index={getSelectedIndex()}>
+        <tds-navigation-tabs ref={navigationTabsRef} mode-variant="secondary" default-selected-index={0}>
           <tds-navigation-tab>
             <Link to={'first-tab'}>First tab</Link>
           </tds-navigation-tab>
@@ -62,7 +72,7 @@ const TabsLinks = () => {
             <Link to={'third-tab'}>Third tab</Link>
           </tds-navigation-tab>
         </tds-navigation-tabs>
-        <TabsPanels selectedTabIndex={getSelectedIndex()} />
+        <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
     </div>
   );
