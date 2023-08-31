@@ -136,7 +136,7 @@ const Button = () => {
           size="xs"
         ></tds-button>
       </div>
-      <div className="tds-u-flex tds-u-pb1">
+      <div className="tds-u-flex tds-u-gap1 tds-u-pb1">
         <tds-button
           onClick={() => {
             alert('Clicked button!');

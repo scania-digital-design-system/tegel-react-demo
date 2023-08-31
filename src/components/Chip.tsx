@@ -42,7 +42,7 @@ const data = {
   },
 };
 
-const ChipsPage = () => {
+const Chip = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [submittedData, setSubmittedData] = useState<any>();
@@ -65,13 +65,8 @@ const ChipsPage = () => {
 
   return (
     <div>
-      <h1>Start testing Chips by exploring the actions below</h1>
-      <p>
-        Action chips are interactive UI elements triggering actions tied to main content. Compact
-        and context-specific, they enhance user experience by providing additional functionality.
-        For instance, in a music app, a chip may allow users to add songs to a playlist, or share
-        them, thus seamlessly integrating extra features.
-      </p>
+      <div className="tds-headline-02 tds-u-pb1">Chip</div>
+      <p>Button</p>
       <div style={{ display: 'flex', gap: 8 }}>
         <tds-chip
           size="lg"
@@ -93,17 +88,9 @@ const ChipsPage = () => {
         </tds-chip>
       </div>
       <form onSubmit={onSubmit} ref={formRef}>
-        <p className="tds-u-mb3">
-          Checkbox chips are versatile UI components allowing multiple selections within a dataset.
-          Unlike traditional checkboxes, these chips provide a modern, compact, and intuitive way to
-          select options. They are particularly effective in scenarios where users may want to apply
-          multiple filters or categories simultaneously, improving user experience through their
-          simplicity and ease of use.
-        </p>
+        <p>Checkbox</p>
 
-        <fieldset className="tds-u-mb3">
-          <legend className="tds-headline-02 tds-u-mb3">Pick your favourite topics</legend>
-
+        <fieldset>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {data.topic.fields.map((topic) => {
               const uid = `topic-${topic.id}`;
@@ -123,8 +110,7 @@ const ChipsPage = () => {
         </fieldset>
 
         <fieldset className="tds-u-mb3">
-          <legend className="tds-headline-02 tds-u-mb3">Wheel size</legend>
-
+          <p>Radio Button</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {data.size.fields.map((size) => {
               const uid = `size-${size.id}`;
@@ -134,22 +120,7 @@ const ChipsPage = () => {
                   type="radio"
                   name="size"
                   value={size.name}
-                  // required={data.sizes.required}
-                  // disabled={size.disabled}
                   checked={data.size.preselected === size.id}
-                  ref={(ref) => {
-                    if (ref) {
-                      // Note: workaround for React, in a real world app
-                      // listeners should be removed as well to prevent memory leaks
-                      ref.addEventListener('tdsChange', (e: any) => {
-                        console.log('tdsChange event.detail', e.detail);
-                      });
-
-                      (ref as any).handleChange = () => {
-                        console.log('should not work');
-                      };
-                    }
-                  }}
                 >
                   <span slot="label">{size.name}</span>
                 </tds-chip>
@@ -164,4 +135,4 @@ const ChipsPage = () => {
   );
 };
 
-export default ChipsPage;
+export default Chip;

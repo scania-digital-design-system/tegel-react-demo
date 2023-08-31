@@ -49,11 +49,9 @@ const Card = () => {
               clickable
               subheader="Simple Card"
               body-divider
-              ref={(element) =>
-                element?.addEventListener('tdsClick', (event) => {
-                  console.log(event);
-                })
-              }
+              onClick={() => {
+                console.log(`Clicked card: ${idx}`);
+              }}
             >
               <div slot="body">
                 These Cards are part of a carousel, and can be scrolled. They are also using the

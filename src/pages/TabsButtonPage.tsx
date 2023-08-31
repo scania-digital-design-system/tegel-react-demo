@@ -1,9 +1,9 @@
-import TabsButtons from "../components/TabsButtons";
+import TabsButtons from '../components/TabsButtons';
 
 const TabsButtonPage = () => {
   return (
     <div>
-      <TabsButtons/>
+      <TabsButtons />
     </div>
   );
 };

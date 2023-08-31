@@ -1,23 +1,12 @@
 .toast-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: var(--tds-spacing-element-8);
+  position: fixed;
+  right: var(--tds-spacing-element-32);
+  bottom: var(--tds-spacing-element-32);
 
-.toast-absolute {
-    position: fixed;
-    right: 32px;
-    bottom: 32px;
-}
-
-#error-toast-example {
-    bottom: 110px;
-}
-
-#information-toast-example {
-    bottom: 165px;
-}
-
-#warning-toast-example {
-    bottom: 220px;
+  tds-toast {
+    position: initial;
+  }
 }

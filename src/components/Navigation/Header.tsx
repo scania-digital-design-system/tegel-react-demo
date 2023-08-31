@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useContext, useRef } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Header.scss';
@@ -9,15 +9,8 @@ interface HeaderProps {
   toggleMobileNav: Function;
 }
 
-const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
+const Header = ({ toggleMobileNav }: HeaderProps) => {
   const userContext = useContext(UserContext);
-  const headerDropdown = useRef<HTMLTdsHeaderDropdownElement>(null);
-  const closeHeaderDropdown = () => {
-    if (headerDropdown.current) {
-      // TODO - Need to be able to close the dropdown.
-    }
-  };
-
   return (
     <tds-header>
       <tds-header-hamburger
@@ -30,36 +23,6 @@ const Header = ({ pathname, toggleMobileNav }: HeaderProps) => {
       ></tds-header-hamburger>
 
       <tds-header-title>React Demo</tds-header-title>
-      <tds-header-item selected={pathname.includes('web-components')}>
-        <Link to="web-components">Components</Link>
-      </tds-header-item>
-      <tds-header-item selected={pathname === '/form'}>
-        <Link to="form">Form</Link>
-      </tds-header-item>
-      <tds-header-dropdown ref={headerDropdown} selected={pathname.includes('tabs')}>
-        <span slot="label">Tabs</span>
-        <tds-header-dropdown-list>
-          <tds-header-dropdown-list-item
-            selected={pathname === '/tabs-buttons'}
-            onClick={closeHeaderDropdown}
-          >
-            <Link to="/tabs-buttons">Buttons</Link>
-          </tds-header-dropdown-list-item>
-          <tds-header-dropdown-list-item
-            selected={pathname === '/tabs-links'}
-            onClick={closeHeaderDropdown}
-          >
-            <Link to="tabs-links">Links</Link>
-          </tds-header-dropdown-list-item>
-        </tds-header-dropdown-list>
-      </tds-header-dropdown>
-      <tds-header-item selected={pathname.startsWith('/text')}>
-        <Link to="text">Text</Link>
-      </tds-header-item>
-
-      <tds-header-item selected={pathname.startsWith('/chips')}>
-        <Link to="chips">Chips</Link>
-      </tds-header-item>
 
       <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
         <div slot="icon">

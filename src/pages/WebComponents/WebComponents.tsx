@@ -4,18 +4,29 @@ import Banner from '../../components/Banner';
 import Card from '../../components/Card/Card';
 import Button from '../../components/Button';
 import Toast from '../../components/Toast/Toast';
-import Modal from '../../components/Modal/Modal';
 import Toggle from '../../components/Toggle/Toggle';
 import Block from '../../components/Block';
 import RadioButton from '../../components/RadioButton/RadioButton';
-import { PopoverMenu } from '../../components/PopOverCanvas';
-import PopoverCanvas from '../../components/PopOverCanvas';
+import { PopoverMenu } from '../../components/Popover';
+import PopoverCanvas from '../../components/Popover';
 import AccordionExample from '../../components/Accordion';
 import Datetime from '../../components/Datetime';
 import Message from '../../components/Message';
-import Chips from '../ChipsPage/ChipsPage';
+import Badge from '../../components/Badge/Badge';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import Checkbox from '../../components/Checkbox';
+import Chip from '../../components/Chip';
+import Divider from '../../components/Divider';
+import Dropdown from '../../components/Dropdown';
+import Link from '../../components/Link';
+import Spinner from '../../components/Spinner';
+import Tabs from '../../components/Tabs';
+import Textarea from '../../components/Textarea';
+import TextField from '../../components/TextField';
+import Tooltip from '../../components/Tooltip';
+import StepperExample from '../../components/Stepper/StepperExample';
+import ModalExample from '../../components/Modal/ModalExample';
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function WebComponents() {
   return (
     <>
@@ -23,8 +34,7 @@ export default function WebComponents() {
         <AccordionExample />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Badge</div>
-        <tds-badge value="1" size="lg"></tds-badge>
+        <Badge />
       </div>
       <div>
         <Banner />
@@ -33,213 +43,59 @@ export default function WebComponents() {
         <Block />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
-        <tds-breadcrumbs>
-          <tds-breadcrumb>
-            <a href="#">Page 1</a>
-          </tds-breadcrumb>
-          <tds-breadcrumb>
-            <a href="#">Page 2</a>
-          </tds-breadcrumb>
-          <tds-breadcrumb current>
-            <a href="#">Page 3</a>
-          </tds-breadcrumb>
-        </tds-breadcrumbs>
+        <Breadcrumbs />
       </div>
-      <div className="tds-u-w-100">
+      <div>
         <Button />
       </div>
       <div>
         <Card />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Checkbox</div>
-        <tds-checkbox value="checkbox-value">
-          <div slot="label">Label</div>
-        </tds-checkbox>
+        <Checkbox />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Chip</div>
-        <tds-chip type="button" size="lg">
-          <span slot="label">Label</span>
-        </tds-chip>
-        <Chips />
+        <Chip />
       </div>
       <div>
         <Datetime />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Divider</div>
-        <tds-divider></tds-divider>
+        <Divider />
       </div>
-
-      <div className="tds-headline-02 tds-u-pb1">Dropdown</div>
-      <tds-dropdown
-        name="dropdown"
-        label="Label text"
-        label-position="outside"
-        placeholder="Placeholder"
-        helper="Helper text"
-        size="lg"
-        multiselect
-        open-direction="auto"
-      >
-        <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
-        <tds-dropdown-option disabled value="option-2">
-          Option 2
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
-        <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
-        <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
-        <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
-        <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
-      </tds-dropdown>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Link</div>
-        <tds-link>
-          <a href="/">This is a link</a>
-        </tds-link>
+        <Dropdown />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Message</div>
+        <Link />
+      </div>
+      <div>
         <Message />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Modal</div>
-        <div className="tds-u-flex tds-u-flex-gap-1">
-          <tds-button id="sm-modal-button" text="Small Modal"></tds-button>
-          <Modal prevent size="sm" selector="#sm-modal-button" />
-          <tds-button id="md-modal-button" text="Medium Modal"></tds-button>
-          <Modal size="md" selector="#md-modal-button" />
-          <tds-button id="lg-modal-button" text="Large Modal"></tds-button>
-          <Modal size="lg" selector="#lg-modal-button" />
-        </div>
-
-        <p>
-          Modals can also be opened programatically, see it in action by hovering the Icon below.
-        </p>
-        <tds-icon
-          onMouseEnter={() => {
-            (
-              document.querySelector(`[selector="hover-modal-button"]`) as HTMLTdsModalElement
-            ).showModal();
-          }}
-          name="truck"
-          size="20px"
-        ></tds-icon>
-        <Modal size="sm" selector="hover-modal-button" />
+        <ModalExample />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb2">Radio Button</div>
+        <PopoverCanvas />
+        <PopoverMenu />
+      </div>
+      <div>
         <RadioButton />
       </div>
-
       <div>
-        <PopoverMenu />
-        <PopoverCanvas />
+        <Spinner />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Spinner</div>
-        <div className="tds-headline-03 tds-u-pb1">Standard</div>
-
-        <tds-spinner variant="standard"></tds-spinner>
-        <div className="tds-headline-03 tds-u-pb1">Inverted</div>
-
-        <tds-spinner variant="inverted"></tds-spinner>
+        <StepperExample />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Stepper</div>
-        <tds-stepper size="lg" label-position="below" orientation="horizontal">
-          <tds-step state="success" index="1">
-            <div slot="label">Success step</div>
-          </tds-step>
-          <tds-step state="error" index="2">
-            <div slot="label">Error step</div>
-          </tds-step>
-          <tds-step state="current" index="3">
-            <div slot="label">Current step</div>
-          </tds-step>
-          <tds-step index="4">
-            <div slot="label">Upcoming step</div>
-          </tds-step>
-        </tds-stepper>
+        <Tabs />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Tabs</div>
-        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</div>
-
-        <tds-folder-tabs>
-          <tds-folder-tab>
-            <button>First tab</button>
-          </tds-folder-tab>
-          <tds-folder-tab>
-            <button>Second tab is much longer</button>
-          </tds-folder-tab>
-          <tds-folder-tab>
-            <button>Third tab</button>
-          </tds-folder-tab>
-          <tds-folder-tab disabled>
-            <button>Fourth tab</button>
-          </tds-folder-tab>
-        </tds-folder-tabs>
-
-        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</div>
-
-        <tds-inline-tabs>
-          <tds-inline-tab>
-            <button>First tab</button>
-          </tds-inline-tab>
-          <tds-inline-tab>
-            <button>Second tab is much longer</button>
-          </tds-inline-tab>
-          <tds-inline-tab>
-            <button>Third tab</button>
-          </tds-inline-tab>
-          <tds-inline-tab disabled>
-            <button>Fourth tab</button>
-          </tds-inline-tab>
-        </tds-inline-tabs>
-        <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
-
-        <tds-navigation-tabs>
-          <tds-navigation-tab>
-            <a href="/">First tab</a>
-          </tds-navigation-tab>
-          <tds-navigation-tab>
-            <a href="/">Second tab is much longer</a>
-          </tds-navigation-tab>
-          <tds-navigation-tab>
-            <a href="/">Third tab</a>
-          </tds-navigation-tab>
-          <tds-navigation-tab disabled>
-            <a href="/">Fourth tab</a>
-          </tds-navigation-tab>
-        </tds-navigation-tabs>
+        <Textarea />
       </div>
-
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Textarea</div>
-        <tds-textarea
-          rows={4}
-          state="error"
-          label="Hello label"
-          helper="Good guess, but wrong answer buddy"
-          label-position="outside"
-          placeholder="Placeholder test"
-        ></tds-textarea>
-      </div>
-
-      <div>
-        <div className="tds-headline-02 tds-u-pb1">Text fields</div>
-        <div className="tds-headline-04 tds-u-pb1">Standard medium size</div>
-        <tds-text-field size="md" placeholder="Placeholder"></tds-text-field>
+        <TextField />
       </div>
       <div>
         <Toast />
@@ -248,25 +104,7 @@ export default function WebComponents() {
         <Toggle />
       </div>
       <div>
-        <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
-        <div className="tooltip-container">
-          <tds-tooltip
-            placement="bottom"
-            selector="#button-1"
-            text="Text inside tooltip"
-            mouse-over-tooltip="true"
-          >
-            <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
-              Paragraph tag inside of Tooltip with
-              <b>bold</b>
-              and
-              <i>italic</i>
-              tags too.
-            </p>
-          </tds-tooltip>
-
-          <tds-button size="sm" id="button-1" text="Hover me"></tds-button>
-        </div>
+        <Tooltip />
       </div>
     </>
   );
