@@ -42,12 +42,12 @@ const SortableTable = () => {
     >
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
-        <tds-header-cell column-key="truck" column-title="Truck type" sortable></tds-header-cell>
-        <tds-header-cell column-key="driver" column-title="Driver name" sortable></tds-header-cell>
-        <tds-header-cell column-key="country" column-title="Country" sortable></tds-header-cell>
+        <tds-header-cell cell-key="truck" cell-value="Truck type" sortable></tds-header-cell>
+        <tds-header-cell cell-key="driver" cell-value="Driver name" sortable></tds-header-cell>
+        <tds-header-cell cell-key="country" cell-value="Country" sortable></tds-header-cell>
         <tds-header-cell
-          column-key="mileage"
-          column-title="Mileage"
+          cell-key="mileage"
+          cell-value="Mileage"
           sortable
           text-align="right"
         ></tds-header-cell>
