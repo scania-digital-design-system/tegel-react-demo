@@ -8,7 +8,7 @@ type ModalProps = {
 
 const Modal = ({ selector, size, prevent }: ModalProps) => {
   return (
-    <tds-modal prevent={prevent} selector={selector} id="my-modal" size={size} actions="static">
+    <tds-modal prevent={prevent} selector={selector} id="my-modal" size={size} actions-position="static">
       <h5 className="tds-modal-headline" slot="header">
         Modal
       </h5>

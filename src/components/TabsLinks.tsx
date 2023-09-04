@@ -14,7 +14,7 @@ const TabsLinks = () => {
     const index = ['first-tab', 'second-tab', 'third-tab'].findIndex((pathSegment) =>
       pathname.includes(pathSegment),
     );
-    setSelectedIndex(index)
+    setSelectedIndex(index === -1 ? 0 : index)
   }, [pathname])
 
   return (
