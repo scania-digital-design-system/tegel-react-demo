@@ -24,10 +24,8 @@ interface Notification {
 export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
-  const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
-  const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
-  const [shouldRenderBreadcrumbs, setShouldRenderBreadcrumbs] = useState(true);
-  const [shouldRenderModeSwitcher, setShouldRenderModeSwitcher] = useState(true);
+  const [mode] = useState<'Light' | 'Dark'>('Light');
+  const [modeVariant] = useState<'Primary' | 'Secondary'>('Primary');
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
@@ -74,9 +72,10 @@ function App() {
         pathname={pathname}
         toggleMobileNav={toggleMobileNav}
         modeVariant={modeVariant}
-        sideMenuRef={sideMenuRef} userContextValue={undefined} 
-        shouldRenderModeSwitcher={shouldRenderModeSwitcher}
-        shouldRenderBreadcrumbs={shouldRenderBreadcrumbs}>
+        mode={mode}
+        sideMenuRef={sideMenuRef} userContextValue={userContextValue}
+        shouldRenderModeSwitcher={true}
+        shouldRenderBreadcrumbs={true}>
         <Outlet />
       </MainLayout>
     </UserContext.Provider>

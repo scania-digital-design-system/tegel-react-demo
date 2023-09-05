@@ -10,9 +10,9 @@ import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumb
 interface MainLayoutProps {
   children?: React.ReactNode;
   pathname?: string;
-	mode?: string;
   toggleMobileNav?: () => void;
   userContextValue?: any; // Define the type for userContextValue
+	mode?: string;
   modeVariant?: string; // Define the type for modeVariant
   sideMenuRef?: React.RefObject<any>; // Define the type for sideMenuRef
   shouldRenderBreadcrumbs?: boolean; // Define the type for shouldRenderBreadcrumbs
@@ -44,7 +44,7 @@ const MainLayout = ({
         <UserContext.Provider value={userContextValue}>
 					{ shouldRenderModeSwitcher && 
 						<div className="switcher-container">
-							<ModeSwitcher mode={mode} setMode={() => {}} />
+							<ModeSwitcher mode={mode} setMode={setMode} />
 							<ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
 						</div>
 					}		
