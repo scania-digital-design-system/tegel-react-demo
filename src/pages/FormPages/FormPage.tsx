@@ -320,6 +320,7 @@ const FormPage = () => {
                 max="10"
                 ticks="9"
                 snap
+                thumb-size="sm"
               ></tds-slider>
               <tds-slider
                 ref={stressSlider}
