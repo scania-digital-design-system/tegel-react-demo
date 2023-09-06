@@ -48,10 +48,10 @@ const FilterTable = () => {
         <tds-table-body>
           {data.map((row, index) => (
             <tds-table-body-row key={index}>
-              <tds-body-cell>{row.truck}</tds-body-cell>
-              <tds-body-cell>{row.driver}</tds-body-cell>
-              <tds-body-cell>{row.country}</tds-body-cell>
-              <tds-body-cell style={{ textAlign: 'right' }} >{row.mileage}</tds-body-cell>
+              <tds-body-cell cell-key="truck">{row.truck}</tds-body-cell>
+              <tds-body-cell cell-key="driver">{row.driver}</tds-body-cell>
+              <tds-body-cell cell-key="country">{row.country}</tds-body-cell>
+              <tds-body-cell cell-key="milage" style={{ textAlign: 'right' }} >{row.mileage}</tds-body-cell>
             </tds-table-body-row>
           ))}
         </tds-table-body>

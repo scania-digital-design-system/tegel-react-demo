@@ -88,10 +88,10 @@ const BatchActionTable = () => {
               key={object.id}
               selected={object.selected}
             >
-              <tds-body-cell cell-key={`Truck`}>{object.truck}</tds-body-cell>
-              <tds-body-cell cell-key={`Driver`}>{object.driver}</tds-body-cell>
-              <tds-body-cell cell-key={`Country`}>{object.country}</tds-body-cell>
-              <tds-body-cell style={{ textAlign: 'right' }} cell-key={`Milage`}>{object.mileage}</tds-body-cell>
+              <tds-body-cell cell-key={`truck`}>{object.truck}</tds-body-cell>
+              <tds-body-cell cell-key={`driver`}>{object.driver}</tds-body-cell>
+              <tds-body-cell cell-key={`country`}>{object.country}</tds-body-cell>
+              <tds-body-cell style={{ textAlign: 'right' }} cell-key={`milage`}>{object.mileage}</tds-body-cell>
             </tds-table-body-row>
           ))}
         </tds-table-body>

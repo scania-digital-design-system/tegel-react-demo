@@ -37,12 +37,12 @@ const PaginationTable = () => {
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        {data.map((object, index) => (
+        {data.map((row, index) => (
           <tds-table-body-row key={index}>
-            <tds-body-cell>{object.truck}</tds-body-cell>
-            <tds-body-cell>{object.driver}</tds-body-cell>
-            <tds-body-cell>{object.country}</tds-body-cell>
-            <tds-body-cell style={{ textAlign: 'right' }} >{object.mileage}</tds-body-cell>
+            <tds-body-cell cell-key="truck">{row.truck}</tds-body-cell>
+            <tds-body-cell cell-key="driver">{row.driver}</tds-body-cell>
+            <tds-body-cell cell-key="country">{row.country}</tds-body-cell>
+            <tds-body-cell cell-key="milage" style={{ textAlign: 'right' }} >{row.mileage}</tds-body-cell>
           </tds-table-body-row>
         ))}
       </tds-table-body>
