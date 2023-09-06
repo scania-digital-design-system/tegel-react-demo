@@ -34,6 +34,7 @@ const SortableTable = () => {
 
   return (
     <tds-table
+      table-id="sortable-table"
       ref={sortableTable}
       no-min-width
       responsive

@@ -1,6 +1,6 @@
 const BasicTable = () => {
   return (
-    <tds-table no-min-width vertical-dividers="false" compact-design="false" responsive>
+    <tds-table table-id="basic-table" no-min-width vertical-dividers="false" compact-design="false" responsive>
       <tds-table-header>
         <tds-header-cell cell-key="truck" cell-value="Truck type"></tds-header-cell>
         <tds-header-cell cell-key="driver" cell-value="Driver name"></tds-header-cell>

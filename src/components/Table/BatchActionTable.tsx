@@ -50,7 +50,7 @@ const BatchActionTable = () => {
           )}
         </span>
       </tds-modal>
-      <tds-table no-min-width responsive multiselect ref={batchActionTable}>
+      <tds-table table-id="batch-action-table" no-min-width responsive multiselect ref={batchActionTable}>
         <tds-table-toolbar table-title="Batch action">
           <tds-button
             onClick={handleClick}

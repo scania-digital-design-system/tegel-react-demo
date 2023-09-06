@@ -1,6 +1,7 @@
 const ExpandTable = () => {
   return (
     <tds-table
+      table-id="expandable-table"
       expandable-rows
       vertical-dividers="false"
       compact-design="false"

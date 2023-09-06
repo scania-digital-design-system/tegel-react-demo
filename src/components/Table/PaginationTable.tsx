@@ -25,7 +25,7 @@ const PaginationTable = () => {
   }, []);
 
   return (
-    <tds-table ref={paginationTable} responsive no-min-width>
+    <tds-table table-id="pagination-table" ref={paginationTable} responsive no-min-width>
       <tds-table-header>
         <tds-header-cell cell-key="truck" cell-value="Truck type"></tds-header-cell>
         <tds-header-cell cell-key="driver" cell-value="Driver name"></tds-header-cell>

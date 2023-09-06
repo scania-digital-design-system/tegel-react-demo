@@ -27,6 +27,7 @@ const FilterTable = () => {
   return (
     <>
       <tds-table
+        table-id="filter-table"
         no-min-width
         vertical-dividers="false"
         compact-design="false"
