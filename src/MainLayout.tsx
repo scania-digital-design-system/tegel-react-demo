@@ -24,7 +24,10 @@ export const UserContext = createContext<any | null>(null);
 const MainLayout = ({
     children,
     pathname = '/',
-    toggleMobileNav = () => { },
+    toggleMobileNav = () => {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        sideMenuRef.current.open = !sideMenuRef.current.open
+    },
     userContextValue,
     sideMenuRef = React.createRef(),
     shouldRenderBreadcrumbs,
@@ -40,7 +43,7 @@ const MainLayout = ({
 
     return (
         <div className={`App tds-mode-${mode.toLowerCase()}`}>
-            <div className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
+            <div style={{ display: 'contents' }} className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
                 <UserContext.Provider value={userContextValue}>
                     {shouldRenderModeSwitcher &&
                         <div className="switcher-container">
@@ -48,7 +51,7 @@ const MainLayout = ({
                             <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
                         </div>
                     }
-                    <div className="announcement-banner">
+                    <div>
                         <tds-banner variant="information" icon="info" header="React demo">
                             <div slot="subheader">
                                 This is a demo page in React using{' '}

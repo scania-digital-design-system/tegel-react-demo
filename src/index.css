@@ -29,10 +29,6 @@ body,
   background-color: var(--tds-grey-900);
 }
 
-.announcement-banner {
-  z-index: 600;
-}
-
 tds-header {
   position: sticky;
   top: 0;
