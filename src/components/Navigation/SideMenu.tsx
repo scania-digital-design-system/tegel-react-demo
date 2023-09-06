@@ -11,7 +11,7 @@ interface SideMenuProps {
 const SideMenu = ({ pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => {
   const userContext = useContext(UserContext);
   return (
-    <tds-side-menu ref={sideMenuRef} id="demo-side-menu" aria-label="Side menu" persistent>
+    <tds-side-menu ref={sideMenuRef} id="demo-side-menu" aria-label="Side menu">
       <tds-side-menu-overlay
         onClick={() => toggleMobileNav()}
         slot="overlay"
