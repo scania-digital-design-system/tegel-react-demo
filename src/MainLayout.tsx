@@ -12,11 +12,11 @@ interface MainLayoutProps {
   pathname?: string;
   toggleMobileNav?: () => void;
   userContextValue?: any; // Define the type for userContextValue
-	mode?: string;
+  mode?: string;
   modeVariant?: string; // Define the type for modeVariant
   sideMenuRef?: React.RefObject<any>; // Define the type for sideMenuRef
   shouldRenderBreadcrumbs?: boolean; // Define the type for shouldRenderBreadcrumbs
-	shouldRenderModeSwitcher?: boolean; // Define the type for shouldRenderBreadcrumbs
+  shouldRenderModeSwitcher?: boolean; // Define the type for shouldRenderBreadcrumbs
 }
 
 export const UserContext = createContext<any | null>(null);
@@ -24,31 +24,31 @@ export const UserContext = createContext<any | null>(null);
 const MainLayout = ({
   children,
   pathname = '/',
-  toggleMobileNav = () => {},
+  toggleMobileNav = () => { },
   userContextValue,
   sideMenuRef = React.createRef(),
   shouldRenderBreadcrumbs,
-	shouldRenderModeSwitcher,
+  shouldRenderModeSwitcher,
 }: MainLayoutProps) => {
 
-	const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
-	const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
+  const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
+  const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
 
-	const wrapperClassName = shouldRenderBreadcrumbs
-	? 'wrapper tds-u-p3'
-	: 'tds-u-p3'; 
+  const wrapperClassName = shouldRenderBreadcrumbs
+    ? 'wrapper tds-u-p3'
+    : 'tds-u-p3 tds-u-h-100';
 
   return (
     <div className={`App tds-mode-${mode.toLowerCase()}`}>
       <div className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
         <UserContext.Provider value={userContextValue}>
-					{ shouldRenderModeSwitcher && 
-						<div className="switcher-container">
-							<ModeSwitcher mode={mode} setMode={setMode} />
-							<ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
-						</div>
-					}		
-					<div className="announcement-banner">
+          {shouldRenderModeSwitcher &&
+            <div className="switcher-container">
+              <ModeSwitcher mode={mode} setMode={setMode} />
+              <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
+            </div>
+          }
+          <div className="announcement-banner">
             <tds-banner variant="information" icon="info" header="React demo">
               <div slot="subheader">
                 This is a demo page in React using{' '}
