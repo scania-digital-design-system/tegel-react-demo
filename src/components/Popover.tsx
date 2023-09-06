@@ -17,33 +17,36 @@ const PopoverMenu = () => {
         </tds-button>
       </div>
       <tds-popover-menu ref={popoverMenuRef} placement="auto">
-        <ul className="tds-popover-menu-wrapper">
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 1
-            </a>
-          </li>
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 2
-            </a>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 4
-            </a>
-          </li>
-        </ul>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item disabled>
+          <button>Action</button>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <button>Action</button>
+        </tds-popover-menu-item>
       </tds-popover-menu>
       <div className="popover-container">
         <tds-button aria-label="menu" only-icon id="triggerElement" variant="primary" size="sm">
@@ -51,33 +54,36 @@ const PopoverMenu = () => {
         </tds-button>
       </div>
       <tds-popover-menu placement="auto" selector="#triggerElement">
-        <ul className="tds-popover-menu-wrapper">
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 1
-            </a>
-          </li>
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 2
-            </a>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://digitaldesign.scania.com">
-              <i>
-                <tds-icon name="save" size="16px"></tds-icon>
-              </i>
-              Menu item 4
-            </a>
-          </li>
-        </ul>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item disabled>
+          <button>Action</button>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-divider></tds-divider>
+        <tds-popover-menu-item>
+          <a href="tegel.scania.com">Action</a>
+        </tds-popover-menu-item>
+        <tds-popover-menu-item>
+          <button>Action</button>
+        </tds-popover-menu-item>
       </tds-popover-menu>
     </>
   );

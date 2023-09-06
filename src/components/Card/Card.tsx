@@ -16,7 +16,7 @@ const Card = () => {
             alt="Scania graphical lettering sign"
             src={CardImg}
           />
-          <div slot="bottom">
+          <div slot="actions">
             <p className="tds-text-grey-958">
               The bottom section can have a{' '}
               <tds-link style={{ display: 'inline-block' }}>
@@ -33,7 +33,7 @@ const Card = () => {
             alt="Scania graphical lettering sign"
             src={CardImg}
           />
-          <div slot="bottom">
+          <div slot="actions">
             <p className="tds-text-grey-958">
               This is the bottom section, this Card has its image-placement above-header below.
             </p>
