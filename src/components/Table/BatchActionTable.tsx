@@ -33,7 +33,7 @@ const BatchActionTable = () => {
 
   return (
     <>
-      <tds-modal ref={modal} id="my-modal" size="lg" actions="static">
+      <tds-modal ref={modal} id="my-modal" size="lg" actions-position="static">
         <h5 className="tds-modal-headline" slot="header">
           Batch Actions example
         </h5>

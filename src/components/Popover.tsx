@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const PopoverMenu = () => {
   const buttonRef = useRef<HTMLTdsButtonElement>(null);
-  const popoverMenuRef = useRef<HTMLTdsPopoverCanvasElement>(null);
+  const popoverMenuRef = useRef<HTMLTdsPopoverMenuElement>(null);
 
   useEffect(() => {
     if (popoverMenuRef.current) popoverMenuRef.current.referenceEl = buttonRef.current;
