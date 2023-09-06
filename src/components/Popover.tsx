@@ -53,13 +53,13 @@ const PopoverMenu = () => {
           <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
         </tds-button>
       </div>
-      <tds-popover-menu placement="auto" selector="#triggerElement">
+      <tds-popover-menu fluid-width placement="auto" selector="#triggerElement">
         <tds-popover-menu-item>
           <a href="tegel.scania.com">Action</a>
         </tds-popover-menu-item>
         <tds-divider></tds-divider>
         <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
+          <a href="tegel.scania.com">The menu width adjusts to the widest word</a>
         </tds-popover-menu-item>
         <tds-popover-menu-item>
           <a href="tegel.scania.com">Action</a>
