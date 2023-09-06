@@ -17,11 +17,12 @@
 .error-page__icon-wrapper {
   margin-top: 18px;
 }
+.error-page__info {
+  h2 {
+    color: var(--tds-grey-900);
+  }
 
-h2 {
-  color: var(--tds-grey-900);
-}
-
-p {
-  color: var(--tds-grey-900);
+  p {
+    color: var(--tds-grey-900);
+  }
 }
