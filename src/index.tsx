@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouteObject, RouterProvider } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import './register-webcomponents';
@@ -17,8 +17,10 @@ import SettingsPage from './pages/SettingsPage/SettingsPage';
 import TextSubpage from './pages/TextSubpage';
 import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';
+import MainLayout from './MainLayout';
+import NotFound from './pages/NotFoundPage/NotFound';
 
-const router = createBrowserRouter([
+export const mainRoutes: RouteObject[] = [
   {
     path: '/',
     element: <App />,
@@ -88,6 +90,24 @@ const router = createBrowserRouter([
       {
         path: 'notifications',
         element: <NotificationPage />,
+      },
+    ],
+  },
+];
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Outlet />, // Use Outlet here to render nested routes
+    children: [
+      ...mainRoutes,
+      {
+        path: '*',
+        element: <MainLayout shouldRenderBreadcrumbs={false} shouldRenderModeSwitcher={false}>
+          <NotFound />
+        </MainLayout>
       },
     ],
   },

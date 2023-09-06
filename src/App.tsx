@@ -1,13 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import ModeSwitcher from './components/ModeSwitcher';
-import Footer from './components/Footer';
-import Header from './components/Navigation/Header';
-import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
-import ModeVariantSwitcher from './components/ModeVariantSwitcher';
-import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumbs';
+import MainLayout from './MainLayout'; // Import the MainLayout component
+
 
 export interface User {
   userName: string;
@@ -28,8 +24,8 @@ interface Notification {
 export const UserContext = createContext<UserContextValue | null>(null);
 
 function App() {
-  const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
-  const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
+  const [mode] = useState<'Light' | 'Dark'>('Light');
+  const [modeVariant] = useState<'Primary' | 'Secondary'>('Primary');
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
@@ -71,43 +67,18 @@ function App() {
   };
 
   return (
-    <div className={`App tds-mode-${mode.toLowerCase()}`}>
-      <div className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
-        <UserContext.Provider value={userContextValue}>
-          <div className="switcher-container">
-            <ModeSwitcher mode={mode} setMode={setMode} />
-            <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
-          </div>
-          <div className="announcement-banner">
-            <tds-banner variant="information" icon="info" header="React demo">
-              <div slot="subheader">
-                This is a demo page in React using{' '}
-                <tds-link style={{ display: 'inline-block' }}>
-                  <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                    @scania/tegel
-                  </a>
-                </tds-link>
-              </div>
-            </tds-banner>
-          </div>
-          <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
-          <div className="side-menu-and-main">
-            <SideMenu
-              sideMenuRef={sideMenuRef}
-              pathname={pathname}
-              toggleMobileNav={toggleMobileNav}
-            />
-            <main className="tds-u-w-100">
-              <AppBreadcrumbs />
-              <div className="wrapper  tds-u-p3">
-                <Outlet />
-              </div>
-              <Footer />
-            </main>
-          </div>
-        </UserContext.Provider>
-      </div>
-    </div>
+    <UserContext.Provider value={userContextValue}>
+      <MainLayout
+        pathname={pathname}
+        toggleMobileNav={toggleMobileNav}
+        modeVariant={modeVariant}
+        mode={mode}
+        sideMenuRef={sideMenuRef} userContextValue={userContextValue}
+        shouldRenderModeSwitcher={true}
+        shouldRenderBreadcrumbs={true}>
+        <Outlet />
+      </MainLayout>
+    </UserContext.Provider>
   );
 }
 
