@@ -74,7 +74,7 @@ const SideMenu = ({ pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => 
       <div slot="end">
         <tds-side-menu-dropdown selected={pathname.includes('settings')}>
           <tds-side-menu-user
-            slot="button-label"
+            slot="label"
             heading={userContext?.user.userName}
             subheading={userContext?.user.placeOfWork}
             img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
