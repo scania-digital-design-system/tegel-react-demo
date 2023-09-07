@@ -91,7 +91,7 @@ const BatchActionTable = () => {
               <tds-body-cell cell-key={`truck`}>{object.truck}</tds-body-cell>
               <tds-body-cell cell-key={`driver`}>{object.driver}</tds-body-cell>
               <tds-body-cell cell-key={`country`}>{object.country}</tds-body-cell>
-              <tds-body-cell style={{ textAlign: 'right' }} cell-key={`milage`}>{object.mileage}</tds-body-cell>
+              <tds-body-cell style={{ textAlign: 'right' }} cell-key={`mileage`}>{object.mileage}</tds-body-cell>
             </tds-table-body-row>
           ))}
         </tds-table-body>
