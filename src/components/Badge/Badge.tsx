@@ -1,21 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import './Badge.scss';
 
 const Badge = () => {
-  const textFieldRef = useRef<HTMLTdsTextFieldElement>(null);
   const [emailCount, setEmailCount] = useState('100');
-  useEffect(() => {
-    const handleInput = (event: TdsInputEvent) => {
-      const target = event.target as HTMLTdsTextFieldElement;
-      setEmailCount(target.value);
-    };
 
-    const textField = textFieldRef?.current;
-    textField?.addEventListener('tdsInput', handleInput);
-    return () => {
-      textField?.removeEventListener('tdsInput', handleInput);
-    };
-  });
+  const handleInput = (event: FormEvent) => {
+    const target = event.target as HTMLTdsTextFieldElement;
+    setEmailCount(target.value);
+  };
 
   return (
     <div>
@@ -35,7 +27,6 @@ const Badge = () => {
       <br />
       <br />
       <tds-text-field
-        ref={textFieldRef}
         type="text"
         size="sm"
         state="success"
@@ -45,6 +36,7 @@ const Badge = () => {
         no-min-width
         placeholder="0"
         value={emailCount}
+        onInput={handleInput}
       ></tds-text-field>
       <br />
       <tds-button>

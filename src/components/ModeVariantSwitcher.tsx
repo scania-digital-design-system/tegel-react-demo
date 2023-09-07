@@ -1,8 +1,9 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import { capitalizeFirst } from '../utility';
 
 interface ModeVariantSwitcherProps {
-  mode: 'Primary' | 'Secondary';
-  setMode: Dispatch<SetStateAction<'Primary' | 'Secondary'>>;
+  mode: 'on' | 'off';
+  setMode: Dispatch<SetStateAction<'on' | 'off'>>;
 }
 const ModeVariantSwitcher = ({ mode, setMode }: ModeVariantSwitcherProps) => {
   const toggleRef = useRef<HTMLTdsToggleElement>(null);
@@ -10,19 +11,19 @@ const ModeVariantSwitcher = ({ mode, setMode }: ModeVariantSwitcherProps) => {
   useEffect(() => {
     const toggleElement = toggleRef.current;
     toggleElement?.addEventListener('tdsToggle', () => {
-      setMode(mode === 'Primary' ? 'Secondary' : 'Primary');
+      setMode(mode === 'on' ? 'off' : 'on');
     });
 
     return () => {
       toggleElement?.removeEventListener('tdsToggle', () => {
-        setMode(mode === 'Primary' ? 'Secondary' : 'Primary');
+        setMode(mode === 'on' ? 'off' : 'on');
       });
     };
   });
   return (
     <div className="mode-switcher">
-      <tds-toggle ref={toggleRef}>
-        <div slot="label">{mode} mode variant</div>
+      <tds-toggle size='sm' headline='Primary variant' checked ref={toggleRef}>
+        <div slot="label">{capitalizeFirst(mode)}</div>
       </tds-toggle>
     </div>
   );

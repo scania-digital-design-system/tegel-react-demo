@@ -34,21 +34,21 @@ const MainLayout = ({
     shouldRenderModeSwitcher,
 }: MainLayoutProps) => {
 
-    const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
-    const [modeVariant, setModeVariant] = useState<'Primary' | 'Secondary'>('Primary');
+    const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
+    const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
 
     const wrapperClassName = shouldRenderBreadcrumbs
         ? 'wrapper tds-u-p3'
         : 'tds-u-p3 tds-u-h-100';
 
     return (
-        <div className={`App tds-mode-${mode.toLowerCase()}`}>
-            <div style={{ display: 'contents' }} className={`tds-mode-variant-${modeVariant.toLowerCase()}`}>
+        <div className={`App tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
+            <div style={{ display: 'contents' }} className={`tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
                 <UserContext.Provider value={userContextValue}>
                     {shouldRenderModeSwitcher &&
                         <div className="switcher-container">
-                            <ModeSwitcher mode={mode} setMode={setMode} />
-                            <ModeVariantSwitcher mode={modeVariant} setMode={setModeVariant} />
+                            <ModeSwitcher mode={lightMode} setMode={setLightMode} />
+                            <ModeVariantSwitcher mode={primaryVariant} setMode={setPrimaryVariant} />
                         </div>
                     }
                     <div>

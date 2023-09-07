@@ -25,16 +25,16 @@ const FormPage = () => {
 
   /* First useEffect for connection to JSON file, only run on an initial load */
   useEffect(() => {
-    const swedishTown = swedenDropdownTown.current;
-    const norwayTown = norwayDropdownTown.current;
+    /* const swedishTown = swedenDropdownTown.current;
+    const norwayTown = norwayDropdownTown.current; */
     const addressTextFieldElement = addressTextFieldRef.current;
-    if (swedishTown) {
+    /*  if (swedishTown) {
       swedishTown.options = townDataSweden;
     }
 
     if (norwayTown) {
       norwayTown.options = townDataNorway;
-    }
+    } */
 
     happinessSlider.current?.addEventListener('tdsChange', () => {
       if (stressSlider.current) {
@@ -236,7 +236,11 @@ const FormPage = () => {
                 open-direction="auto"
                 multiselect
                 disabled={countrySelected !== 'norway'}
-              ></tds-dropdown>
+              >
+                {townDataNorway.map((town) => (
+                  <tds-dropdown-option disabled={town.disabled} value={town.value}>{town.label}</tds-dropdown-option>
+                ))}
+              </tds-dropdown>
             </section>
 
             <section>
@@ -252,7 +256,11 @@ const FormPage = () => {
                 open-direction="auto"
                 filter
                 disabled={countrySelected !== 'sweden'}
-              ></tds-dropdown>
+              >
+                {townDataSweden.map((town) => (
+                  <tds-dropdown-option disabled={town.disabled} value={town.value}>{town.label}</tds-dropdown-option>
+                ))}
+              </tds-dropdown>
             </section>
 
             <section>
@@ -312,6 +320,7 @@ const FormPage = () => {
                 max="10"
                 ticks="9"
                 snap
+                thumb-size="sm"
               ></tds-slider>
               <tds-slider
                 ref={stressSlider}

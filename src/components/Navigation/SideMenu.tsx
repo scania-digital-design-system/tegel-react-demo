@@ -54,8 +54,8 @@ const SideMenu = ({ pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => 
         default-open={pathname.includes('/tabs')}
         selected={pathname.includes('/tabs')}
       >
-        <tds-icon slot="button-icon" name="folder" size="24"></tds-icon>
-        <span slot="button-label">Tabs</span>
+        <tds-icon slot="icon" name="folder" size="24"></tds-icon>
+        <span slot="label">Tabs</span>
         <tds-side-menu-dropdown-list>
           <tds-side-menu-dropdown-list-item selected={pathname.includes('/tabs-button')}>
             <Link to="/tabs-buttons">Button</Link>
@@ -74,7 +74,7 @@ const SideMenu = ({ pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => 
       <div slot="end">
         <tds-side-menu-dropdown selected={pathname.includes('settings')}>
           <tds-side-menu-user
-            slot="button-label"
+            slot="label"
             heading={userContext?.user.userName}
             subheading={userContext?.user.placeOfWork}
             img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"

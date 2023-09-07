@@ -46,19 +46,19 @@ const Toast = () => {
           subheader="( Closing prevented ! )"
           ref={successToastRef}
         >
-          <div slot="toast-subheader">This Toasts can't be closed.</div>
+          <div slot="subheader">This Toasts can't be closed.</div>
         </tds-toast>
         <tds-toast hidden ref={errorToastRef} variant="error" header="Error Toast!">
-          <div slot="toast-subheader">This Toasts can be closed.</div>
+          <div slot="subheader">This Toasts can be closed.</div>
         </tds-toast>
         <tds-toast hidden ref={informationToastRef} variant="information" header="Information Toast!">
-          <div slot="toast-subheader">This Toasts has a link.</div>
-          <a slot="toast-link" href="/">
+          <div slot="subheader">This Toasts has a link.</div>
+          <a slot="actions" href="/">
             This is a link.
           </a>
         </tds-toast>
         <tds-toast hidden ref={warningToastRef} variant="warning" header="Warning Toast!">
-          <div slot="toast-subheader">This Toast can be closed programmatically.</div>
+          <div slot="subheader">This Toast can be closed programmatically.</div>
         </tds-toast>
       </div>
       <div>

@@ -1,41 +1,40 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import exampleData from './example-data.json';
 
-interface SortableTableProps {
-  cancelEvent?: boolean;
-}
-
-const SortableTable = ({ cancelEvent }: SortableTableProps) => {
+const SortableTable = () => {
   const sortableTable = useRef<HTMLTdsTableElement>(null);
-  const sortableTableBody = useRef<HTMLTdsTableBodyElement>(null);
+  const [data, setData] = useState(exampleData);
 
   useEffect(() => {
-    const handleSortEvent = (event: Event) => {
-      if (cancelEvent) {
-        event?.preventDefault();
-      }
-    };
-
     const sortableTableElement = sortableTable?.current;
-    const sortableTableBodyElement = sortableTableBody?.current;
 
-    if (sortableTableBodyElement) {
-      sortableTableBodyElement.bodyData = exampleData;
-    }
+    const handleSortEvent = (event: any) => {
+      const key = event.detail.columnKey as keyof (typeof data)[0];
+      const direction = event.detail.sortingDirection;
 
-    if (sortableTableElement) {
-      sortableTableElement.addEventListener('tdsSortChange', handleSortEvent);
-    }
-
-    return () => {
-      if (sortableTableElement) {
-        sortableTableElement.removeEventListener('tdsSortChange', handleSortEvent);
-      }
+      let comparison = 0;
+      const updatedData = exampleData.slice().sort((a, b) => {
+        if (a[key] < b[key]) {
+          comparison = -1;
+        }
+        if (a[key] > b[key]) {
+          comparison = 1;
+        }
+        return direction === 'desc' ? comparison * -1 : comparison;
+      });
+      setData(updatedData);
     };
-  });
+
+
+    sortableTableElement?.addEventListener('tdsSort', handleSortEvent);
+    return () => {
+      sortableTableElement?.removeEventListener('tdsSort', handleSortEvent);
+    };
+  }, [data]);
 
   return (
     <tds-table
+      table-id="sortable-table"
       ref={sortableTable}
       no-min-width
       responsive
@@ -44,17 +43,26 @@ const SortableTable = ({ cancelEvent }: SortableTableProps) => {
     >
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
-        <tds-header-cell column-key="truck" column-title="Truck type" sortable></tds-header-cell>
-        <tds-header-cell column-key="driver" column-title="Driver name" sortable></tds-header-cell>
-        <tds-header-cell column-key="country" column-title="Country" sortable></tds-header-cell>
+        <tds-header-cell cell-key="truck" cell-value="Truck type" sortable></tds-header-cell>
+        <tds-header-cell cell-key="driver" cell-value="Driver name" sortable></tds-header-cell>
+        <tds-header-cell cell-key="country" cell-value="Country" sortable></tds-header-cell>
         <tds-header-cell
-          column-key="mileage"
-          column-title="Mileage"
+          cell-key="mileage"
+          cell-value="Mileage"
           sortable
           text-align="right"
         ></tds-header-cell>
       </tds-table-header>
-      <tds-table-body ref={sortableTableBody}></tds-table-body>
+      <tds-table-body>
+        {data.map((row, index) => (
+          <tds-table-body-row key={index}>
+            <tds-body-cell cell-key="truck">{row.truck}</tds-body-cell>
+            <tds-body-cell cell-key="driver">{row.driver}</tds-body-cell>
+            <tds-body-cell cell-key="country">{row.country}</tds-body-cell>
+            <tds-body-cell cell-key="milage" style={{ textAlign: 'right' }} >{row.mileage}</tds-body-cell>
+          </tds-table-body-row>
+        ))}
+      </tds-table-body>
     </tds-table>
   );
 };

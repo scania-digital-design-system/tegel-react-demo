@@ -14,12 +14,14 @@ const TabsLinks = () => {
     const index = ['first-tab', 'second-tab', 'third-tab'].findIndex((pathSegment) =>
       pathname.includes(pathSegment),
     );
-    console.log(index)
-    folderTabsRef.current?.selectTab(index)
-    inlineTabsRef.current?.selectTab(index)
-    navigationTabsRef.current?.selectTab(index)
-    setSelectedIndex(index)
-  }, [pathname])
+
+    const selectedIndex = index !== -1 ? index : 0;
+
+    folderTabsRef.current?.selectTab(selectedIndex);
+    inlineTabsRef.current?.selectTab(selectedIndex);
+    navigationTabsRef.current?.selectTab(selectedIndex);
+    setSelectedIndex(selectedIndex);
+  }, [pathname]);
 
   return (
     <div>
