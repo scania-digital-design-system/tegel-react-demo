@@ -1,8 +1,9 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import { capitalizeFirst } from '../utility';
 
 interface ModeSwitcherProps {
-  mode: 'Light' | 'Dark';
-  setMode: Dispatch<SetStateAction<'Light' | 'Dark'>>;
+  mode: 'on' | 'off';
+  setMode: Dispatch<SetStateAction<'on' | 'off'>>;
 }
 const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
   const toggleRef = useRef<HTMLTdsToggleElement>(null);
@@ -11,7 +12,7 @@ const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
     const toggleEl = toggleRef.current as HTMLTdsToggleElement;
 
     const toggleMode = (event: TdsToggleEvent) => {
-      setMode(event.detail.checked ? 'Dark' : 'Light');
+      setMode(event.detail.checked ? 'on' : 'off');
     };
 
     toggleEl.addEventListener('tdsToggle', toggleMode);
@@ -23,8 +24,8 @@ const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
 
   return (
     <div className="mode-switcher">
-      <tds-toggle ref={toggleRef}>
-        <div slot="label">{mode} mode</div>
+      <tds-toggle headline='Light mode' ref={toggleRef}>
+        <div slot="label">{capitalizeFirst(mode)}</div>
       </tds-toggle>
     </div>
   );
