@@ -24,7 +24,7 @@ const ModeSwitcher = ({ mode, setMode }: ModeSwitcherProps) => {
 
   return (
     <div className="mode-switcher">
-      <tds-toggle checked headline='Light mode' ref={toggleRef}>
+      <tds-toggle size='sm' checked headline='Light mode' ref={toggleRef}>
         <div slot="label">{capitalizeFirst(mode)}</div>
       </tds-toggle>
     </div>

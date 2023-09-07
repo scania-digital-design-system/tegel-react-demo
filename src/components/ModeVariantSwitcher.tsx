@@ -22,7 +22,7 @@ const ModeVariantSwitcher = ({ mode, setMode }: ModeVariantSwitcherProps) => {
   });
   return (
     <div className="mode-switcher">
-      <tds-toggle headline='Primary variant' checked ref={toggleRef}>
+      <tds-toggle size='sm' headline='Primary variant' checked ref={toggleRef}>
         <div slot="label">{capitalizeFirst(mode)}</div>
       </tds-toggle>
     </div>
