@@ -28,14 +28,6 @@ const Toggle = () => {
       </div>
       <p>A toggle can also be toggle programmatically, try it by pressing the button below.</p>
       <tds-button onClick={handleToggle} size="sm" text="Press me!"></tds-button>
-      <div className="toggle-container tds-u-pt3">
-        <tds-toggle size="sm">
-          <div slot="label">Small</div>
-        </tds-toggle>
-        <tds-toggle>
-          <div slot="label">Large</div>
-        </tds-toggle>
-      </div>
     </>
   );
 };
