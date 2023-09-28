@@ -8,12 +8,17 @@ type ModalProps = {
 
 const Modal = ({ selector, size, prevent }: ModalProps) => {
   return (
-    <tds-modal prevent={prevent} selector={selector} id="my-modal" size={size} actions-position="static">
+    <tds-modal
+      prevent={prevent}
+      selector={selector}
+      id="my-modal"
+      size={size}
+      actions-position="static"
+    >
       <h5 className="tds-modal-headline" slot="header">
-        Modal
+        Modal Header
       </h5>
       <span slot="body">
-        <p>This is a Modal.</p>
         {prevent && (
           <p>Since this one is has "prevent=true" it won't close when you press the overlay.</p>
         )}
@@ -23,28 +28,13 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
             close it on click. You can hover the button below to close the modal.
           </p>
         )}
-        <p>It can contain other components or just text.</p>
-        <div className="card-container">
-          <tds-card header="Card" subheader="In a Modal"></tds-card>
-          <tds-card header="Card" subheader="In a Modal"></tds-card>
-          <tds-card header="Card" subheader="In a Modal"></tds-card>
-        </div>
+        The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+        different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+        never anything else?” he asked.
       </span>
       {size !== 'lg' ? (
         <>
-          <tds-button
-            slot="actions"
-            data-dismiss-modal
-            size="md"
-            text="Delete"
-            variant="danger"
-          ></tds-button>
-          <tds-button
-            slot="tds-modal-actions"
-            data-dismiss-modal
-            size="md"
-            text="Cancel"
-          ></tds-button>
+          <tds-button slot="actions" data-dismiss-modal size="md" text="Close"></tds-button>
         </>
       ) : (
         <tds-button
