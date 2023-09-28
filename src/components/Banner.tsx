@@ -45,7 +45,7 @@ const Banner = () => {
           header="This Banner won't close"
           variant="error"
         >
-          <div slot="banner-subheader">Due to its tdsClose event being prevented.</div>
+          <div slot="subheader">Due to its tdsClose event being prevented.</div>
         </tds-banner>
         <tds-banner
           ref={informationBannerRef}
@@ -53,8 +53,8 @@ const Banner = () => {
           header="This Banner will close."
           variant="information"
         >
-          <div slot="banner-subheader">And it also has a link.</div>
-          <tds-link slot="banner-link">
+          <div slot="subheader">And it also has a link.</div>
+          <tds-link slot="actions">
             <a href="/">Link example</a>
           </tds-link>
         </tds-banner>
@@ -64,7 +64,7 @@ const Banner = () => {
           icon="save"
           header={`This the default Banner.`}
         >
-          <div slot="banner-subheader">That means it doesn't have a "close button"</div>
+          <div slot="subheader">You can toggle visibility of this one programmatically with toggle below.</div>
         </tds-banner>
       </div>
 
