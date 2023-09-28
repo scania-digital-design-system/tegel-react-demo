@@ -2,11 +2,11 @@ import { FormEvent, useState } from 'react';
 import './Badge.scss';
 
 const Badge = () => {
-  const [emailCount, setEmailCount] = useState('100');
+  const [emailCount, setEmailCount] = useState(100);
 
   const handleInput = (event: FormEvent) => {
     const target = event.target as HTMLTdsTextFieldElement;
-    setEmailCount(target.value);
+    setEmailCount(target.value ? Number(target.value) : 0);
   };
 
   return (
@@ -24,7 +24,7 @@ const Badge = () => {
           label-position="outside"
           no-min-width
           placeholder="0"
-          value={emailCount}
+          value={emailCount.toString()}
           onInput={handleInput}
         ></tds-text-field>
 
@@ -32,7 +32,7 @@ const Badge = () => {
           <tds-button>
             <span slot="icon" className="button-badge-relative">
               <tds-icon name="email" size="24px"></tds-icon>
-              <tds-badge value={emailCount} size="lg"></tds-badge>
+              <tds-badge value={emailCount.toString()} size="lg"></tds-badge>
             </span>
           </tds-button>
           <tds-button>
