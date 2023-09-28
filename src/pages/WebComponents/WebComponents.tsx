@@ -92,10 +92,10 @@ export default function WebComponents() {
         <Tabs />
       </div>
       <div>
-        <Textarea />
+        <TextField />
       </div>
       <div>
-        <TextField />
+        <Textarea />
       </div>
       <div>
         <Toast />
