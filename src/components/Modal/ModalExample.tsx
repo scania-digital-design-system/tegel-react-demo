@@ -5,11 +5,11 @@ const ModalExample = () => {
     <>
       <div className="tds-headline-02 tds-u-pb1">Modal</div>
       <div className="tds-u-flex tds-u-flex-gap-1">
-        <tds-button id="sm-modal-button" text="Small Modal"></tds-button>
+        <tds-button id="sm-modal-button" size='sm' text="Small Modal"></tds-button>
         <Modal prevent size="sm" selector="#sm-modal-button" />
-        <tds-button id="md-modal-button" text="Medium Modal"></tds-button>
+        <tds-button id="md-modal-button" size='md' text="Medium Modal"></tds-button>
         <Modal size="md" selector="#md-modal-button" />
-        <tds-button id="lg-modal-button" text="Large Modal"></tds-button>
+        <tds-button id="lg-modal-button" size='lg' text="Large Modal"></tds-button>
         <Modal size="lg" selector="#lg-modal-button" />
       </div>
 
