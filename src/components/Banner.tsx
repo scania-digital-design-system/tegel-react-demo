@@ -64,7 +64,7 @@ const Banner = () => {
           icon="save"
           header={`This the default Banner.`}
         >
-          <div slot="subheader">That means it doesn't have a "close button"</div>
+          <div slot="subheader">You can toggle visibility of this one programmatically with toggle below.</div>
         </tds-banner>
       </div>
 
