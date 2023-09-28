@@ -3,7 +3,7 @@ const Link = () => {
     <>
       <div className="tds-headline-02 tds-u-pb1">Link</div>
       <tds-link>
-        <a href="/">This is a link</a>
+        <a href="https://tegel.scania.com/home">Tegel</a>
       </tds-link>
     </>
   );
