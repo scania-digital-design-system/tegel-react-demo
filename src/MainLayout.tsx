@@ -43,7 +43,7 @@ const MainLayout = ({
 
     return (
         <div className={`App tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
-            <div style={{ display: 'contents' }} className={`tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
+            <div className={`tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
                 <UserContext.Provider value={userContextValue}>
                     {shouldRenderModeSwitcher &&
                         <div className="switcher-container">
