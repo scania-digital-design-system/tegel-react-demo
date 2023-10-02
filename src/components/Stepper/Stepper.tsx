@@ -10,11 +10,12 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
   const [completedSteps, setCompletedSteps] = useState(0);
   const [errorStepIndex, setErrorStepIndex] = useState<number>();
   const textFieldRefs = useRef<HTMLTdsTextFieldElement[]>([]);
+  const minInputLength = 4;
 
   useEffect(() => {
     const handleInput = (event: TdsInputEvent, index: number) => {
       const target = event.target as HTMLTdsTextFieldElement;
-      if (target.value.length > 5) {
+      if (target.value.length >= minInputLength) {
         setCompletedSteps(index + 1);
         setErrorStepIndex(undefined);
       }
@@ -22,7 +23,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
 
     const handleChange = (event: TdsChangeEvent, index: number) => {
       const target = event.target as HTMLTdsTextFieldElement;
-      if (target.value.length < 5) {
+      if (target.value.length <= minInputLength) {
         setErrorStepIndex(index);
         setCompletedSteps(index);
       }
