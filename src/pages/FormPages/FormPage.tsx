@@ -13,7 +13,7 @@ const FormPage = () => {
   const [textareaDisabled, setTextareaDisabled] = useState(true);
   const form = useRef<HTMLFormElement>(null);
   const [addressValue, setAddressValue] = useState<null | string>('');
-  const [countrySelected, setCountrySelected] = useState<string>('');
+  const [countrySelected, setCountrySelected] = useState<string>('sweden');
   const countryDropdown = useRef<HTMLTdsDropdownElement>(null);
   const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
@@ -144,8 +144,12 @@ const FormPage = () => {
         >
           <h3>Form example</h3>
           <tds-block>
-            <section>
-              <h4>Text Input</h4>
+
+            <section className="tds-u-pt0">
+              <h3>Simple Form</h3>
+              <p>
+                This form uses the native form element and therefor it works out of the box with our components.
+              </p>
               <tds-text-field
                 mode-variant="secondary"
                 name="text-field"
@@ -402,7 +406,7 @@ const FormPage = () => {
               <tds-button
                 type="reset"
                 size="sm"
-                variant="ghost"
+                variant="secondary"
                 fullbleed
                 text="Reset"
               ></tds-button>
