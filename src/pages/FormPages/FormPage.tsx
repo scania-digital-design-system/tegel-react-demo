@@ -406,7 +406,7 @@ const FormPage = () => {
               <tds-button
                 type="reset"
                 size="sm"
-                variant="ghost"
+                variant="secondary"
                 fullbleed
                 text="Reset"
               ></tds-button>
