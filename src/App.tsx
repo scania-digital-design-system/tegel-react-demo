@@ -29,8 +29,8 @@ function App() {
   const { pathname } = useLocation();
   const sideMenuRef = useRef<HTMLTdsSideMenuElement>(null);
   const [user, setUser] = useState<User>({
-    userName: 'Marcus Åström',
-    placeOfWork: 'IXCD',
+    userName: 'Name Namesson',
+    placeOfWork: 'Scania',
     notifications: [
       {
         notification: 'You need to update your username.',
