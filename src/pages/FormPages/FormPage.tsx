@@ -13,7 +13,7 @@ const FormPage = () => {
   const [textareaDisabled, setTextareaDisabled] = useState(true);
   const form = useRef<HTMLFormElement>(null);
   const [addressValue, setAddressValue] = useState<null | string>('');
-  const [countrySelected, setCountrySelected] = useState<string>('');
+  const [countrySelected, setCountrySelected] = useState<string>('sweden');
   const countryDropdown = useRef<HTMLTdsDropdownElement>(null);
   const norwayDropdownTown = useRef<HTMLTdsDropdownElement>(null);
   const swedenDropdownTown = useRef<HTMLTdsDropdownElement>(null);
