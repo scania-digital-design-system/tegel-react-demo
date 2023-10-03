@@ -3,7 +3,7 @@ const Block = () => {
     <div>
       <div className="tds-headline-02 tds-u-pb1">Block</div>
       <tds-block>
-        <h2 className="tds-headline-02">Block</h2>
+        <div className="tds-headline-02">Block</div>
         <p className="tds-body-01">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
           ultrices. Nunc venenatis maximus sapien, ac bibendum nisl aliquam in. Morbi ac velit et

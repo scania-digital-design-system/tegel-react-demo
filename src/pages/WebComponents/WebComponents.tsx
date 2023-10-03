@@ -29,7 +29,7 @@ import ModalExample from '../../components/Modal/ModalExample';
 
 export default function WebComponents() {
   return (
-    <>
+    <section className="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
       <div>
         <AccordionExample />
       </div>
@@ -106,6 +106,6 @@ export default function WebComponents() {
       <div>
         <Tooltip />
       </div>
-    </>
+    </section>
   );
 }
