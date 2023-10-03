@@ -11,6 +11,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
   const [errorStepIndex, setErrorStepIndex] = useState<number>();
   const textFieldRefs = useRef<HTMLTdsTextFieldElement[]>([]);
   const minInputLength = 4;
+  console.log('hej')
 
   useEffect(() => {
     const handleInput = (event: TdsInputEvent, index: number) => {
