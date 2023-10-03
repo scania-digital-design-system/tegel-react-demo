@@ -43,7 +43,7 @@ const ExpandTable = () => {
           <tds-body-cell cell-value="Guerra Bowman" cell-key="driver"></tds-body-cell>
           <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
           <tds-body-cell cell-value="11551" cell-key="mileage"></tds-body-cell>
-          <div className="tds-u-flex" slot="expand-row">
+          <div slot="expand-row">
             <p>The M-series is in stock!</p>
             <tds-button
               onClick={() => {
