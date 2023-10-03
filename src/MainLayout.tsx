@@ -26,49 +26,52 @@ const MainLayout = ({
     pathname = '/',
     toggleMobileNav = () => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        sideMenuRef.current.open = !sideMenuRef.current.open
+        sideMenuRef.current.open = !sideMenuRef.current.open;
     },
     userContextValue,
     sideMenuRef = React.createRef(),
     shouldRenderBreadcrumbs,
     shouldRenderModeSwitcher,
 }: MainLayoutProps) => {
-
     const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
     const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
 
     const wrapperClassName = shouldRenderBreadcrumbs
-        ? 'wrapper tds-u-p3'
+        ? 'wrapper tds-u-p3 tds-u-h-100'
         : 'tds-u-p3 tds-u-h-100';
 
     return (
-        <div className={`App tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
-            <div className={`tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
+        <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
+            <div className={`mode-variant-wrapper tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
                 <UserContext.Provider value={userContextValue}>
-                    {shouldRenderModeSwitcher &&
-                        <div className="switcher-container">
-                            <ModeSwitcher mode={lightMode} setMode={setLightMode} />
-                            <ModeVariantSwitcher mode={primaryVariant} setMode={setPrimaryVariant} />
+                    <tds-banner variant="information" icon="info" header="React demo">
+                        <div slot="subheader">
+                            This is a demo page in React using{' '}
+                            <tds-link style={{ display: 'inline-block' }}>
+                                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+                                    @scania/tegel
+                                </a>
+                            </tds-link>
                         </div>
-                    }
-                    <div>
-                        <tds-banner variant="information" icon="info" header="React demo">
-                            <div slot="subheader">
-                                This is a demo page in React using{' '}
-                                <tds-link style={{ display: 'inline-block' }}>
-                                    <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                                        @scania/tegel
-                                    </a>
-                                </tds-link>
-                            </div>
-                        </tds-banner>
-                    </div>
+                    </tds-banner>
                     <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
                     <div className="side-menu-and-main">
-                        <SideMenu sideMenuRef={sideMenuRef} pathname={pathname} toggleMobileNav={toggleMobileNav} />
-                        <main className="tds-u-w-100">
+                        <SideMenu
+                            sideMenuRef={sideMenuRef}
+                            pathname={pathname}
+                            toggleMobileNav={toggleMobileNav}
+                        />
+                        <main className="tds-u-h-100">
+                            {shouldRenderModeSwitcher && (
+                                <div className="switcher-container">
+                                    <ModeSwitcher mode={lightMode} setMode={setLightMode} />
+                                    <ModeVariantSwitcher mode={primaryVariant} setMode={setPrimaryVariant} />
+                                </div>
+                            )}
                             {shouldRenderBreadcrumbs && <AppBreadcrumbs />}
-                            <div className={wrapperClassName}>{children}</div>
+                            <div className="main-container">
+                                <div className={wrapperClassName}>{children}</div>
+                            </div>
                             <Footer />
                         </main>
                     </div>

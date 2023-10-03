@@ -1,61 +1,14 @@
 @import url('@scania/tegel/dist/tegel/tegel.css');
-@import 'utility-classes.css';
-@import url('https://cdn.digitaldesign.scania.com/icons/webfont/css/sdds-icons.css');
-
-html,
-body,
-#root {
-  height: fit-content;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  height: 100%;
-}
-
-.App.tds-mode-dark {
-  color: var(--tds-grey-100);
-  background-color: var(--tds-grey-958);
-}
-
-.App.tds-mode-dark.tds-mode-primary {
-  color: var(--tds-grey-100);
-  background-color: var(--tds-grey-958);
-}
-.App.tds-mode-dark.tds-mode-secondary {
-  color: var(--tds-grey-100);
-  background-color: var(--tds-grey-900);
-}
+@import url('./reset.css');
 
 tds-header {
   position: sticky;
   top: 0;
 }
 
-.side-menu-and-main {
-  display: flex;
-  flex-grow: 1;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-}
-.wrapper {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 32px;
-  max-width: 600px;
-  padding: 128px 0;
-}
-
 .switcher-container {
-  position: fixed;
-  height: 60px;
-  top: 156px;
+  padding-top: 24px;
+  position: absolute;
   right: 32px;
   z-index: 1;
   display: flex;
@@ -63,27 +16,46 @@ main {
   gap: 16px;
 }
 
-.tooltip-container {
+.side-menu-and-main {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
+  overflow-y: hidden;
 }
 
-.tooltip-paragraph b,
-i {
-  padding: 0 2px;
+body {
+  min-height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.popover-container {
+.mode-wrapper {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
 }
 
-.tooltip-container {
+.mode-variant-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+main {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media (min-width: 992px) {
+  tds-side-menu {
+    height: 100%;
+    position: sticky;
+    top: 64px;
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -93,71 +65,8 @@ i {
   }
 }
 
-.mobile-nav-item {
-  display: none;
-}
-
 @media screen and (max-width: 992px) {
   .mobile-nav-item {
     display: block;
   }
 }
-
-@media (min-width: 992px) {
-  tds-side-menu {
-    height: calc(100vh - 64px);
-    position: sticky;
-    top: 64px;
-    left: 0;
-  }
-}
-
-/* BEGIN - CSS Reset */
-
-/*
-  Allow percentage-based heights in the application.
-*/
-html,
-body {
-  height: 100%;
-}
-/*
-  Improve text rendering on MacOS.
-*/
-body {
-  -webkit-font-smoothing: antialiased;
-}
-/*
-  Improve media defaults.
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  width: 100%;
-}
-/*
-  Remove built-in form typography styles.
-*/
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-/*
-  Prevent text from overflowing its container.
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* END - CSS Reset */
