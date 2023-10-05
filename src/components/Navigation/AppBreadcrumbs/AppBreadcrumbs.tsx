@@ -12,7 +12,7 @@ const AppBreadcrumbs = () => {
   return (
     <>
       {segments.length > 1 && segments[1].path !== '/web-components' && (
-        <div className="root">
+        <div className="breadcrumbs">
           <tds-breadcrumbs>
             {segments.map((segment, idx) => (
               <AppBreadcrumb

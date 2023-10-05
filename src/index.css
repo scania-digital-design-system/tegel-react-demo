@@ -43,7 +43,10 @@ body {
 }
 
 .main-container {
-  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
   max-width: 600px;
 }
 
