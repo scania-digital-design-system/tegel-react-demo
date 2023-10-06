@@ -2,7 +2,7 @@ const Tooltip = () => {
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Tooltip</div>
-      <div className="tooltip-container">
+      <div className="tds-u-flex-center">
         <tds-tooltip
           placement="bottom"
           selector="#button-1"
