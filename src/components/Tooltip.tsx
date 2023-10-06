@@ -10,7 +10,7 @@ const Tooltip = () => {
           mouse-over-tooltip="true"
         >
           <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
-            Paragraph tag inside of Tooltipwith
+            Paragraph tag inside of Tooltip with
             <b>bold</b>
             and
             <i>italic</i>
