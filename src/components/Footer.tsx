@@ -41,7 +41,7 @@ export default function Footer() {
           </tds-footer-item>
         </tds-footer-group>
       </div>
-      <div slot="main-left">
+      <div slot="start">
         <tds-footer-group>
           <tds-footer-item>
             <a href="/">Link text</a>
@@ -57,7 +57,7 @@ export default function Footer() {
           </tds-footer-item>
         </tds-footer-group>
       </div>
-      <div slot="main-right">
+      <div slot="end">
         <tds-footer-group>
           <tds-footer-item>
             <a href="/">
