@@ -4,7 +4,7 @@ const ModalExample = () => {
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Modal</div>
-      <div className="tds-u-flex tds-u-flex-gap-1">
+      <div className="tds-u-flex tds-u-gap1">
         <tds-button id="sm-modal-button" size='sm' text="Small Modal"></tds-button>
         <Modal prevent size="sm" selector="#sm-modal-button" />
         <tds-button id="md-modal-button" size='md' text="Medium Modal"></tds-button>

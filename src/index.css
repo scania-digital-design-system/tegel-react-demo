@@ -42,7 +42,16 @@ body {
   overflow-y: hidden;
 }
 
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
 main {
+  width: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

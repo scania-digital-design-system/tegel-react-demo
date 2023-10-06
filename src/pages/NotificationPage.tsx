@@ -18,17 +18,19 @@ const NotificationPage = () => {
           ? 'Notifications'
           : 'No new notifications'}
       </h2>
-      {userContext?.user.notifications?.map((notification, index) => {
-        return (
-          <tds-message
-            variant={notification.type}
-            key={`notification-${index}`}
-            header={`Notification ${index + 1}`}
-          >
-            {notification.notification}
-          </tds-message>
-        );
-      })}
+      <div className="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
+        {userContext?.user.notifications?.map((notification, index) => {
+          return (
+            <tds-message
+              variant={notification.type}
+              key={`notification-${index}`}
+              header={`Notification ${index + 1}`}
+            >
+              {notification.notification}
+            </tds-message>
+          );
+        })}
+      </div>
       {userContext?.user.notifications && userContext?.user.notifications.length > 0 && (
         <>
           <tds-button
