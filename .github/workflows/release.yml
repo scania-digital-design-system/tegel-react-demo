@@ -38,7 +38,7 @@ jobs:
 
       - name: Core - Read Package.json Version
         id: version
-        run: echo "::set-output name=version::$(jq -r .version package.json)"
+        run: echo "{version}={$(jq -r .version package.json)}" >> $GITHUB_STATE
 
       - name: Core - Create git tag
         run: git tag @scania/tegel@${{ steps.version.outputs.version }}
