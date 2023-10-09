@@ -30,6 +30,9 @@ jobs:
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
 
+      - name: Set user
+        run: git config --global user.name "Martin Jarsäter" && git config --global user.email "martin.jarsater@hotmail.com"
+
       - name: Core - Bump version
         run: npm version ${{ github.event.inputs.version }}
 
