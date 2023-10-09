@@ -51,3 +51,18 @@ jobs:
 
       - name: Core - Publish
         run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
+
+      - name: Commit and push branch
+        run: |
+          NEW_BRANCH_NAME="release/${{ steps.version.outputs.version }}"
+
+          git checkout -b $NEW_BRANCH_NAME
+
+          git add .
+
+          git commit -m "Release:${{ steps.version.outputs.version }}"
+
+          git push origin $NEW_BRANCH_NAME
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
