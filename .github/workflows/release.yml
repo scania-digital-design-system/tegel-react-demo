@@ -57,12 +57,7 @@ jobs:
 
       - name: Commit and push branch
         run: |
-
-          git add .
-
-          git commit -m "Release:${{ steps.version.outputs.version }}"
-
-          git push --set-upstream origin main
+          git status
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
