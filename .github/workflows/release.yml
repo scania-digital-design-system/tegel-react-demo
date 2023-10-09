@@ -58,7 +58,7 @@ jobs:
       - name: Commit and push branch
         run: |
 
-          git push --set-upstream origin main
+          git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
