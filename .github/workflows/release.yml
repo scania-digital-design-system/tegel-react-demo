@@ -38,7 +38,7 @@ jobs:
 
       - name: Core - Read Package.json Version
         id: version
-        run: echo "::set-output name=version::$(jq -r .version package.json)"
+        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
       - name: Check out new branch
         run: git checkout -b "release/${{ steps.version.outputs.version }}"
