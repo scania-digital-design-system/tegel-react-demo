@@ -47,7 +47,7 @@ jobs:
         run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
 
       - name: Core - Run build
-        run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
+        run: echo "Building Core"
 
       - name: Core - Publish
-        run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
+        run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
