@@ -61,7 +61,7 @@ jobs:
 
           git commit -m "Release:${{ steps.version.outputs.version }}"
 
-          git push origin "release/${{ steps.version.outputs.version }}"
+          git push --set-upstream origin main
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
