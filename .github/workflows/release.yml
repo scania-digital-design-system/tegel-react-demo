@@ -25,7 +25,7 @@ jobs:
 
       - name: Read Package.json Version
         id: version
-        run: echo "::set-output name=version::$(jq -r .version package.json)"
+        run: cd src && echo "::set-output name=version::$(jq -r .version package.json)"
 
       - name: Print Version
         run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
