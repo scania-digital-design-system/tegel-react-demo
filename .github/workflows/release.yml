@@ -2,22 +2,30 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'
+        description: 'Release type'
         required: true
-        default: 'warning'
+        default: 'patch'
         type: choice
         options:
-          - info
-          - warning
-          - debug
+          - major
+          - minor
+          - patch
       tags:
-        description: 'Test scenario tags'
-        required: true
-        type: boolean
+        description: 'Tag'
+        required: false
+        type: string
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
+      - name: Log Inputs
+        run: |
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}"
+
+      - name: Read Package.json Version
+        id: version
+        run: echo "::set-output name=version::$(jq -r .version package.json)"
+
+      - name: Print Version
+        run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
