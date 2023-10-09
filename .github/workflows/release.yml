@@ -2,7 +2,7 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
+      version:
         description: 'Release type'
         required: true
         default: 'patch'
@@ -27,14 +27,24 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Log Inputs
-        run: |
-          echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}"
+      - name: Core - CD into correct folder
+        run: echo "cd packages/core"
 
-      - name: Read Package.json Version
+      - name: Core - Bump version
+        run: npm version ${{ github.event.inputs.version }}
+
+      - name: Core - Read Package.json Version
         id: version
         run: echo "::set-output name=version::$(jq -r .version package.json)"
 
-      - name: Print Version
+      - name: Core - Create git tag
+        run: git tag @scania/tegel@${{ steps.version.outputs.version }}
+
+      - name: Core - Push git tag
+        run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
+
+      - name: Core - Run build
+        run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
+
+      - name: Core - Publish
         run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
