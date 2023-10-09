@@ -40,6 +40,9 @@ jobs:
         id: version
         run: echo "::set-output name=version::$(jq -r .version package.json)"
 
+      - name: Check out new branch
+        run: git checkout -b "release/${{ steps.version.outputs.version }}"
+
       - name: Core - Create git tag
         run: git tag @scania/tegel@${{ steps.version.outputs.version }}
 
@@ -54,8 +57,6 @@ jobs:
 
       - name: Commit and push branch
         run: |
-
-          git checkout -b "release/${{ steps.version.outputs.version }}"
 
           git add .
 
