@@ -1,4 +1,3 @@
-name: Release
 on:
   workflow_dispatch:
     inputs:
@@ -16,7 +15,7 @@ on:
         required: false
         type: string
 jobs:
-  log-the-inputs:
+  Release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
