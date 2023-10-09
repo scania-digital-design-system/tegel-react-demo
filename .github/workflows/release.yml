@@ -31,7 +31,7 @@ jobs:
         run: echo "cd packages/core"
 
       - name: Set user
-        run: git config --global user.name "Martin Jarsäter" && git config --global user.email "martin.jarsater@hotmail.com"
+        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
 
       - name: Core - Bump version
         run: npm version ${{ github.event.inputs.version }}
@@ -52,13 +52,10 @@ jobs:
       - name: Core - Run build
         run: echo "Building Core"
 
-      - name: Core - Publish
-        run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
-
-      - name: Commit and push branch
-        run: |
-
-          git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
-
+      - name: Push branch
+        run: git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Core - Publish
+        run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
