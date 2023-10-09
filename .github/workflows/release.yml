@@ -13,8 +13,13 @@ on:
           - patch
       tags:
         description: 'Tag'
-        required: false
-        type: string
+        required: true
+        default: 'beta'
+        type: choice
+        options:
+          - latest
+          - beta
+          - dev
 jobs:
   Release:
     runs-on: ubuntu-latest
