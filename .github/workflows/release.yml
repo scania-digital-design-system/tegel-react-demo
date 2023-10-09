@@ -18,6 +18,9 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
       - name: Log Inputs
         run: |
           echo "Log level: ${{ github.event.inputs.logLevel }}"
@@ -25,7 +28,7 @@ jobs:
 
       - name: Read Package.json Version
         id: version
-        run: ls -a
+        run: echo "::set-output name=version::$(jq -r .version package.json)"
 
       - name: Print Version
         run: echo "The version in package.json is ${{ steps.version.outputs.version }}"
