@@ -54,15 +54,14 @@ jobs:
 
       - name: Commit and push branch
         run: |
-          NEW_BRANCH_NAME="release/${{ steps.version.outputs.version }}"
 
-          git checkout -b $NEW_BRANCH_NAME
+          git checkout -b "release/${{ steps.version.outputs.version }}"
 
           git add .
 
           git commit -m "Release:${{ steps.version.outputs.version }}"
 
-          git push origin $NEW_BRANCH_NAME
+          git push origin "release/${{ steps.version.outputs.version }}"
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
