@@ -33,15 +33,10 @@ jobs:
   Release:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up node
-        # Setup .npmrc file to publish to npm
-        uses: actions/setup-node@v3
+      - name: Setup project
+        uses: ./.github/actions/setup-project
         with:
-          node-version: '18.16.0'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: ${{ github.event.inputs.tegelVersion }}
 
       - name: React - CD into correct folder
         run: echo "cd packages/react"
@@ -65,16 +60,8 @@ jobs:
         id: version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-      - name: Check out new branch
-        run: git checkout -b "release/${{ steps.version.outputs.version }}"
-
       - name: React - Run build
         run: npm run build
-
-      - name: Push branch
-        run: git commit -am "release/${{ steps.version.outputs.version }}" && git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: React - Publish
         run: |
@@ -85,3 +72,11 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Core - Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: release/@scania/tegel-react@${{ steps.version.outputs.version }}
+          commit-message: Release of @scania/tegel@${{ steps.version.outputs.version }}
+          branch: release/${{ steps.version.outputs.version }}
+          delete-branch: true

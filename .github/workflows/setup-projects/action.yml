@@ -1,0 +1,20 @@
+name: 'Setup project'
+description: 'Checks out the code and sets up Node.js'
+
+inputs:
+  node-version:
+    description: 'Node.js version'
+    required: true
+    default: '18.16.0'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+        registry-url: 'https://registry.npmjs.org'
