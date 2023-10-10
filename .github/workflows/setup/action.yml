@@ -1,0 +1,25 @@
+name: 'Code and Node setup'
+description: 'Checks out code and sets Node version'
+
+inputs:
+  node-version:
+    description: 'Node version'
+    required: true
+    default: '18.16.0'
+    type: string
+
+runs:
+  using: 'docker'
+  image: 'docker://node:${{ inputs.node-version }}'
+
+  jobs:
+    my_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out code
+          uses: actions/checkout@v2
+
+        - name: Set up Node
+          uses: your-username/custom-node-setup-action@v1
+          with:
+            node-version: ${{ github.event.inputs.nodeVersion }}
