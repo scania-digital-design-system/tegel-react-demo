@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code and set up Node
-        uses: ./.github/workflows/setup
+        uses: ./setup/action.yml
 
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"

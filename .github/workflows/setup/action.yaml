@@ -19,7 +19,8 @@ runs:
         - name: Check out code
           uses: actions/checkout@v2
 
-        - name: Set up Node
-          uses: your-username/custom-node-setup-action@v1
+        - name: Set up node
+          uses: actions/setup-node@v3
           with:
             node-version: ${{ github.event.inputs.nodeVersion }}
+            registry-url: 'https://registry.npmjs.org'
