@@ -90,3 +90,10 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Core - Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: release/@scania/tegel@${{ steps.version.outputs.version }}
+          commit-message: Release of @scania/tegel@${{ steps.version.outputs.version }}
+          branch: release/${{ steps.version.outputs.version }}
