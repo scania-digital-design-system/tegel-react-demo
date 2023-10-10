@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "main": "build/index.html",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@scania/tegel": "1.0.3",
     "@testing-library/jest-dom": "^5.16.5",
