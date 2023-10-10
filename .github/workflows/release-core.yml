@@ -48,6 +48,9 @@ jobs:
           node-version: '18.16.0'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Set Tegel user
+        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
+
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
 
@@ -57,9 +60,6 @@ jobs:
       - name: Core - Read Package.json Version
         id: version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
-
-      - name: Set user
-        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
 
       - name: Check out new branch
         run: git checkout -b "release/${{ steps.version.outputs.version }}"
