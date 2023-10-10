@@ -39,7 +39,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code and set up Node
-        uses: scania-digital-design-system/tegel-react-demo/.github/workflows/setup/action.yaml@main
+        uses: scania-digital-design-system/tegel-react-demo/.github/workflows/setup@main
+        with:
+          node-version: ${{ github.event.inputs.nodeVersion }}
 
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
