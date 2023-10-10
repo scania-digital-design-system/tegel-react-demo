@@ -74,7 +74,7 @@ jobs:
         run: npm run build
 
       - name: Push branch
-        run: git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
+        run: git push --set-upstream origin release/${{ steps.version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
