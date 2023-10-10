@@ -8,19 +8,13 @@ inputs:
     default: '18.16.0'
     type: string
 
-runs:
-  using: 'docker'
-  image: 'docker://node:${{ inputs.node-version }}'
+runs-on: ubuntu-latest
+steps:
+  - name: Check out code
+    uses: actions/checkout@v2
 
-  jobs:
-    my_job:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v2
-
-        - name: Set up node
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ github.event.inputs.nodeVersion }}
-            registry-url: 'https://registry.npmjs.org'
+  - name: Set up node
+    uses: actions/setup-node@v3
+    with:
+      node-version: ${{ github.event.inputs.nodeVersion }}
+      registry-url: 'https://registry.npmjs.org'
