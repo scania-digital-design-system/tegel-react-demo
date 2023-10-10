@@ -37,10 +37,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up node
-        # Setup .npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
-          node-version: '18.16.0'
+          node-version: ${{ github.event.inputs.nodeVersion }}
           registry-url: 'https://registry.npmjs.org'
 
       - name: Angular - CD into correct folder
@@ -49,11 +48,8 @@ jobs:
       - name: Angular - Remove package-lock
         run: echo "rm -rf package-lock.json"
 
-      - name: Angular - npm install
-        run: npm install
-
       - name: Angular - Install latest tegel package
-        run: npm @scania/tegel@${{ github.event.inputs.tegelVersion }}
+        run: npm install @scania/tegel@${{ github.event.inputs.tegelVersion }}
 
       - name: Set user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
@@ -65,16 +61,8 @@ jobs:
         id: version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-      - name: Check out new branch
-        run: git checkout -b "release/${{ steps.version.outputs.version }}"
-
       - name: Angular - Run build
         run: npm run build
-
-      - name: Push branch
-        run: git commit -am "release/${{ steps.version.outputs.version }}" && git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Angular - Publish
         run: |
@@ -85,3 +73,11 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Core - Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: release/@scania/tegel-react@${{ steps.version.outputs.version }}
+          commit-message: Release of @scania/tegel@${{ steps.version.outputs.version }}
+          branch: release/${{ steps.version.outputs.version }}
+          delete-branch: true

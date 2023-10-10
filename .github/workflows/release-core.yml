@@ -38,10 +38,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: ./.github/actions/setup-project
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ github.event.inputs.nodeVersion }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"

@@ -33,10 +33,14 @@ jobs:
   Release:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: ./.github/actions/setup-project
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ github.event.inputs.tegelVersion }}
+          node-version: ${{ github.event.inputs.nodeVersion }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: React - CD into correct folder
         run: echo "cd packages/react"
