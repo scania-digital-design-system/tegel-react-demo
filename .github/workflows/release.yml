@@ -48,6 +48,9 @@ jobs:
           node-version: '18.16.0'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Core - npm install
+        run: npm install
+
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
 
