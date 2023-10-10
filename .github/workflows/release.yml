@@ -84,9 +84,9 @@ jobs:
       - name: Core - Publish
         run: |
           if [ "${{ github.event.inputs.dryRun }}" == "true" ]; then
-            npm run publish --tag ${{ github.event.inputs.tags }} --dry-run
+            npm publish --tag ${{ github.event.inputs.tags }} --dry-run
           else
-            npm run publish --tag ${{ github.event.inputs.tags }}
+            npm publish --tag ${{ github.event.inputs.tags }}
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
