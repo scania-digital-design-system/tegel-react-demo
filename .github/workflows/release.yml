@@ -20,6 +20,12 @@ on:
           - latest
           - beta
           - dev
+
+      dryRun:
+        description: 'Dry run'
+        required: false
+        default: false
+        type: boolean
 jobs:
   Release:
     runs-on: ubuntu-latest
@@ -58,4 +64,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Core - Publish
-        run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
+        run: |
+          if [ "${{ github.event.inputs.dryRun }}" == "true" ]; then
+            npm run publish --tag ${{ github.event.inputs.tags }} --dry-run
+          else
+            npm run publish --tag ${{ github.event.inputs.tags }}
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
