@@ -11,6 +11,13 @@ on:
           - major
           - minor
           - patch
+
+      nodeVersion:
+        description: 'Node version'
+        required: true
+        default: '18.16.0'
+        type: string
+
       tags:
         description: 'Tag'
         required: true
@@ -26,12 +33,20 @@ on:
         required: false
         default: false
         type: boolean
+
 jobs:
   Release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Set up node
+        # Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
