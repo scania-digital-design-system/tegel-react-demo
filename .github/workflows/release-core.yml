@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code and set up Node
-        uses: ./setup/action.yml
+        uses: scania-digital-design-system/tegel-react-demo/workflows/setup/action.yaml@main
 
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
