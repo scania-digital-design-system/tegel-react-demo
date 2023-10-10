@@ -61,9 +61,6 @@ jobs:
         id: version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-      - name: Check out new branch
-        run: git checkout -b "release/${{ steps.version.outputs.version }}"
-
       - name: Core - Create git tag
         run: git tag @scania/tegel@${{ steps.version.outputs.version }}
 
@@ -96,4 +93,4 @@ jobs:
         with:
           title: release/@scania/tegel@${{ steps.version.outputs.version }}
           commit-message: Release of @scania/tegel@${{ steps.version.outputs.version }}
-          branch: main
+          branch: release/${{ steps.version.outputs.version }}
