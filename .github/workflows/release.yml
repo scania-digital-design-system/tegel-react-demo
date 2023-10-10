@@ -11,6 +11,13 @@ on:
           - major
           - minor
           - patch
+
+      nodeVersion:
+        description: 'Node version'
+        required: true
+        default: '18.16.0'
+        type: string
+
       tags:
         description: 'Tag'
         required: true
@@ -20,12 +27,26 @@ on:
           - latest
           - beta
           - dev
+
+      dryRun:
+        description: 'Dry run'
+        required: false
+        default: false
+        type: boolean
+
 jobs:
   Release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Set up node
+        # Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
@@ -50,7 +71,7 @@ jobs:
         run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
 
       - name: Core - Run build
-        run: echo "Building Core"
+        run: npm run build
 
       - name: Push branch
         run: git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
@@ -58,4 +79,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Core - Publish
-        run: echo "npm run publish --tag ${{ github.event.inputs.tags }} --dry-run"
+        run: |
+          if [ "${{ github.event.inputs.dryRun }}" == "true" ]; then
+            npm run publish --tag ${{ github.event.inputs.tags }} --dry-run
+          else
+            npm run publish --tag ${{ github.event.inputs.tags }}
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
