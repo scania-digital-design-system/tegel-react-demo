@@ -1,4 +1,4 @@
-name: Release Angular
+name: Release @scania/tegel-angular
 on:
   workflow_dispatch:
     inputs:

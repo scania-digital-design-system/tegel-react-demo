@@ -1,4 +1,4 @@
-name: Release React
+name: Release @scania/tegel-react
 on:
   workflow_dispatch:
     inputs:
