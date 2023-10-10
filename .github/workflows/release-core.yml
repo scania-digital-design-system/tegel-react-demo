@@ -1,4 +1,5 @@
 name: Release @scania/tegel
+
 on:
   workflow_dispatch:
     inputs:
@@ -35,38 +36,50 @@ on:
         type: boolean
 
 jobs:
-  Release:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
       - name: Set up node
-        # Setup .npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
-          node-version: '18.16.0'
+          node-version: ${{ github.event.inputs.nodeVersion }}
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Set user
+        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
+
+  installation:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
       - name: Core - npm install
         run: npm install
 
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
 
-      - name: Set user
-        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
-
       - name: Core - Bump version
         run: npm version ${{ github.event.inputs.version }}
 
       - name: Core - Read Package.json Version
         id: version
-        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
+        shell: bash
 
+  branchout:
+    runs-on: ubuntu-latest
+    needs: installation
+    steps:
       - name: Check out new branch
         run: git checkout -b "release/${{ steps.version.outputs.version }}"
 
+  tag:
+    runs-on: ubuntu-latest
+    needs: branchout
+    steps:
       - name: Core - Create git tag
         run: git tag @scania/tegel@${{ steps.version.outputs.version }}
 
@@ -81,6 +94,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  publish:
+    runs-on: ubuntu-latest
+    needs: tag
+    steps:
       - name: Core - Publish
         run: |
           if [ "${{ github.event.inputs.dryRun }}" == "true" ]; then
