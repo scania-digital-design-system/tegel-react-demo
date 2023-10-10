@@ -38,15 +38,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up node
-        # Setup .npmrc file to publish to npm
-        uses: actions/setup-node@v3
+      - name: Setup project
+        uses: ./.github/actions/setup-project
         with:
-          node-version: '18.16.0'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: ${{ github.event.inputs.nodeVersion }}
 
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
@@ -61,17 +56,17 @@ jobs:
         id: version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-      - name: Core - Create git tag
-        run: git tag @scania/tegel@${{ steps.version.outputs.version }}
-
-      - name: Core - Push git tag
-        run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
-
       - name: Core - npm install
         run: npm install
 
       - name: Core - Run build
         run: npm run build
+
+      - name: Core - Create git tag
+        run: git tag @scania/tegel@${{ steps.version.outputs.version }}
+
+      - name: Core - Push git tag
+        run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
 
       - name: Core - Publish
         run: |
