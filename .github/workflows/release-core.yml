@@ -48,9 +48,6 @@ jobs:
           node-version: '18.16.0'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Set Tegel user
-        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
-
       - name: Save workspace
         uses: actions/upload-artifact@v2
         with:
@@ -65,6 +62,8 @@ jobs:
         with:
           name: tegel-workspace
 
+      - name: Set Tegel user
+        run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
       - name: Core - CD into correct folder
         run: echo "cd packages/core"
 
