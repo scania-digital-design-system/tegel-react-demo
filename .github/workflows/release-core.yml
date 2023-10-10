@@ -73,11 +73,6 @@ jobs:
       - name: Core - Run build
         run: npm run build
 
-      - name: Push branch
-        run: git push --set-upstream origin release/${{ steps.version.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Core - Publish
         run: |
           if [ "${{ github.event.inputs.dryRun }}" == "true" ]; then
