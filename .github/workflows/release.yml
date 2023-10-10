@@ -50,7 +50,7 @@ jobs:
         run: git push origin @scania/tegel@${{ steps.version.outputs.version }}
 
       - name: Core - Run build
-        run: echo "Building Core"
+        run: npm run build
 
       - name: Push branch
         run: git push --set-upstream origin "release/${{ steps.version.outputs.version }}"

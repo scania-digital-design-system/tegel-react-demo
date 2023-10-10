@@ -1,7 +1,8 @@
 {
-  "name": "tegel-react-demo-cra",
-  "version": "0.1.0",
+  "name": "@scania/tegel-react-demo",
+  "version": "0.0.1",
   "private": true,
+  "main": "build/index.html",
   "dependencies": {
     "@scania/tegel": "1.0.3",
     "@testing-library/jest-dom": "^5.16.5",
