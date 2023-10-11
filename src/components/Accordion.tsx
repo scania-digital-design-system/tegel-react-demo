@@ -1,4 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import {
+  TdsAccordion,
+  TdsAccordionItem,
+  TdsRadioButton,
+  TdsToggle
+} from "@scania/tegel-react";
 
 const Accordion = () => {
   const [iconPosition, setIconPosition] = useState<string>('end');
@@ -45,34 +51,34 @@ const Accordion = () => {
       <div className="tds-headline-02">Accordion</div>
       <p className="tds-u-mb0">Icon position</p>
       <div>
-        <tds-radio-button
+        <TdsRadioButton
           name="icon-position"
           value="end"
           checked={iconPosition === 'end'}
           ref={radioButtonEndRef}
         >
           <div slot="label">End</div>
-        </tds-radio-button>
-        <tds-radio-button
+        </TdsRadioButton>
+        <TdsRadioButton
           name="icon-position"
           value="start"
           checked={iconPosition === 'start'}
           ref={radioButtonStartRef}
         >
           <div slot="label">Start</div>
-        </tds-radio-button>
+        </TdsRadioButton>
         <br />
       </div>
-      <tds-toggle ref={paddingToggleRef}>
+      <TdsToggle ref={paddingToggleRef}>
         <div slot="label">{paddingReset ? 'Disable Padding Reset' : 'Enable Padding Reset'}</div>
-      </tds-toggle>
+      </TdsToggle>
       <br />
-      <tds-toggle ref={disableToggleRef} checked={disabled}>
+      <TdsToggle ref={disableToggleRef} checked={disabled}>
         <div slot="label">{disabled ? 'Disable Accordion' : 'Enable Accordion'}</div>
-      </tds-toggle>
+      </TdsToggle>
       <br />
-      <tds-accordion>
-        <tds-accordion-item
+      <TdsAccordion>
+        <TdsAccordionItem
           header="Item 1"
           expand-icon-position={iconPosition}
           disabled={!disabled}
@@ -80,8 +86,8 @@ const Accordion = () => {
         >
           This is the panel, which contains associated information with the header. Usually, it
           contains text, set in the same size as the header. Lorem ipsum doler sit amet.
-        </tds-accordion-item>
-        <tds-accordion-item
+        </TdsAccordionItem>
+        <TdsAccordionItem
           header="Item 2"
           expand-icon-position={iconPosition}
           disabled={!disabled}
@@ -90,8 +96,8 @@ const Accordion = () => {
           This is the panel, which contains associated information with the header. Usually, it
           contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Duis laoreet vestibulum fermentum.
-        </tds-accordion-item>
-        <tds-accordion-item
+        </TdsAccordionItem>
+        <TdsAccordionItem
           header="Item 3"
           expand-icon-position={iconPosition}
           disabled={!disabled}
@@ -100,8 +106,8 @@ const Accordion = () => {
           This is the panel, which contains associated information with the header. Usually, it
           contains text, set in the same size as the header. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Duis laoreet vestibulum fermentum.
-        </tds-accordion-item>
-      </tds-accordion>
+        </TdsAccordionItem>
+      </TdsAccordion>
     </div>
   );
 };
