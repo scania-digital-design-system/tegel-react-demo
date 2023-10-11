@@ -34,7 +34,7 @@ const Message = () => {
     <>
       <div className="tds-headline-02 tds-u-pb1">Message</div>
       <div className="tds-u-pb1">
-        <TdsToggle checked ref={iconToggle}>
+        <TdsToggle checked={useIcon} ref={iconToggle}>
           <div slot="label">With Icon</div>
         </TdsToggle>
       </div>
