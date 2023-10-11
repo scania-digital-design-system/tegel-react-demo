@@ -36,7 +36,7 @@ on:
 
 jobs:
   setup:
-    uses: scania-digital-design-system/tegel-react-demo/.github/actions/setup.yml@main
+    uses: ./.github/actions/setup
     with:
       node-version: ${{ github.event.inputs.nodeVersion }}
   release:
