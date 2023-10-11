@@ -36,7 +36,7 @@ on:
 
 jobs:
   setup:
-    uses: .github/workflows/setup/action.yml
+    uses: ./.github/workflows/setup/action.yml
     with:
       node-version: ${{ github.event.inputs.nodeVersion }}
   release:
