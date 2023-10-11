@@ -1,4 +1,10 @@
 import { FormEvent, useState } from 'react';
+import {
+  TdsBadge,
+  TdsTextField,
+  TdsButton,
+  TdsIcon
+} from "@scania/tegel-react";
 import './Badge.scss';
 
 const Badge = () => {
@@ -13,9 +19,9 @@ const Badge = () => {
     <div>
       <div className="tds-headline-02 tds-u-pb1">Badge</div>
       <div className="tds-u-flex tds-u-gap2 tds-u-flex-dir-col">
-        <tds-badge value="1" size="lg"></tds-badge>
-        <tds-badge value="-5" size="lg"></tds-badge>
-        <tds-text-field
+        <TdsBadge value="1" size="lg"></TdsBadge>
+        <TdsBadge value="-5" size="lg"></TdsBadge>
+        <TdsTextField
           type="text"
           size="sm"
           state="success"
@@ -26,27 +32,27 @@ const Badge = () => {
           placeholder="0"
           value={emailCount.toString()}
           onInput={handleInput}
-        ></tds-text-field>
+        ></TdsTextField>
 
         <div className="tds-u-flex tds-u-gap2">
-          <tds-button>
+          <TdsButton>
             <span slot="icon" className="button-badge-relative">
-              <tds-icon name="email" size="24px"></tds-icon>
-              <tds-badge value={emailCount.toString()} size="lg"></tds-badge>
+              <TdsIcon name="email" size="24px"></TdsIcon>
+              <TdsBadge value={emailCount.toString()} size="lg"></TdsBadge>
             </span>
-          </tds-button>
-          <tds-button>
+          </TdsButton>
+          <TdsButton>
             <span slot="icon" className="button-badge-relative">
-              <tds-icon name="heart" size="24px"></tds-icon>
-              <tds-badge value="5" size="lg"></tds-badge>
+              <TdsIcon name="heart" size="24px"></TdsIcon>
+              <TdsBadge value="5" size="lg"></TdsBadge>
             </span>
-          </tds-button>
-          <tds-button>
+          </TdsButton>
+          <TdsButton>
             <span slot="icon" className="button-badge-relative">
-              <tds-icon name="settings" size="24px"></tds-icon>
-              <tds-badge value="5" size="sm"></tds-badge>
+              <TdsIcon name="settings" size="24px"></TdsIcon>
+              <TdsBadge value="5" size="sm"></TdsBadge>
             </span>
-          </tds-button>
+          </TdsButton>
         </div>
       </div>
     </div>
