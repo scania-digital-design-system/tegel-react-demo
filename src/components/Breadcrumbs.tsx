@@ -1,19 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import {
+  TdsBreadcrumbs,
+  TdsBreadcrumb
+} from "@scania/tegel-react";
 const Breadcrumbs = () => {
   return (
     <div>
       <div className="tds-headline-02 tds-u-pb1">Breadcrumbs</div>
-      <tds-breadcrumbs>
-        <tds-breadcrumb>
+      <TdsBreadcrumbs>
+        <TdsBreadcrumb>
           <a href="#">Page 1</a>
-        </tds-breadcrumb>
-        <tds-breadcrumb>
+        </TdsBreadcrumb>
+        <TdsBreadcrumb>
           <a href="#">Page 2</a>
-        </tds-breadcrumb>
-        <tds-breadcrumb current>
+        </TdsBreadcrumb>
+        <TdsBreadcrumb current>
           <a href="#">Page 3</a>
-        </tds-breadcrumb>
-      </tds-breadcrumbs>
+        </TdsBreadcrumb>
+      </TdsBreadcrumbs>
     </div>
   );
 };
