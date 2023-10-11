@@ -35,14 +35,13 @@ on:
         type: boolean
 
 jobs:
+  setup:
+    uses: scania-digital-design-system/tegel-react-demo/.github/workflows/setup@main
+    with:
+      node-version: ${{ github.event.inputs.nodeVersion }}
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: scania-digital-design-system/tegel-react-demo/.github/workflows/setup@main
-        with:
-          node-version: ${{ github.event.inputs.nodeVersion }}
-
       - name: Set Tegel user
         run: git config --global user.name "Tegel - Scania" && git config --global user.email "tegel.design.system@gmail.com"
 
