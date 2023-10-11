@@ -1,8 +1,13 @@
+import {
+  TdsDropdown,
+  TdsDropdownOption
+} from "@scania/tegel-react";
+
 const Dropdown = () => {
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Dropdown</div>
-      <tds-dropdown
+      <TdsDropdown
         name="dropdown"
         label="Label text"
         label-position="outside"
@@ -12,16 +17,16 @@ const Dropdown = () => {
         multiselect
         open-direction="auto"
       >
-        <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
-        <tds-dropdown-option disabled value="option-2">
+        <TdsDropdownOption value="option-1">Option 1</TdsDropdownOption>
+        <TdsDropdownOption disabled value="option-2">
           Option 2
-        </tds-dropdown-option>
-        <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
-        <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
-        <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
-        <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
-        <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
-      </tds-dropdown>
+        </TdsDropdownOption>
+        <TdsDropdownOption value="option-3">Option 3</TdsDropdownOption>
+        <TdsDropdownOption value="option-4">Option 4</TdsDropdownOption>
+        <TdsDropdownOption value="option-5">Option 5</TdsDropdownOption>
+        <TdsDropdownOption value="option-6">Option 6</TdsDropdownOption>
+        <TdsDropdownOption value="option-7">Option 7</TdsDropdownOption>
+      </TdsDropdown>
     </>
   );
 };
