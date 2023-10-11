@@ -10,7 +10,6 @@ inputs:
     steps:
         - name: Check out code
         uses: actions/checkout@v2
-    
         - name: Set up node
         uses: actions/setup-node@v3
         with:
