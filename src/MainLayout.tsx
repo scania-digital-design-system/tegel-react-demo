@@ -65,7 +65,7 @@ const MainLayout = ({
                             {shouldRenderModeSwitcher && (
                                 <div className="switcher-container">
                                     <ModeSwitcher mode={lightMode} setMode={setLightMode} />
-                                    <ModeVariantSwitcher mode={primaryVariant} setMode={setPrimaryVariant} />
+                                    <ModeVariantSwitcher modeVariant={primaryVariant} setModeVariant={setPrimaryVariant} />
                                 </div>
                             )}
                             {shouldRenderBreadcrumbs && <AppBreadcrumbs />}
