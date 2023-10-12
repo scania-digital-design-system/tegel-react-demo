@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tegelreactdemo-dev-114302-authRole",
+      "UnauthRoleArn": "arn:aws:iam::124783424610:role/amplify-tegelreactdemo-dev-114302-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::124783424610:role/amplify-tegelreactdemo-dev-114302-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-tegelreactdemo-dev-114302-deployment",
+      "UnauthRoleName": "amplify-tegelreactdemo-dev-114302-unauthRole",
+      "StackName": "amplify-tegelreactdemo-dev-114302",
+      "StackId": "arn:aws:cloudformation:eu-west-1:124783424610:stack/amplify-tegelreactdemo-dev-114302/bd2a3970-68e3-11ee-b4b5-022b5de4e089",
+      "AmplifyAppId": "d30a2w78hxyf7g"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
