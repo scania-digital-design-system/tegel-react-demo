@@ -1,5 +1,17 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  TdsSideMenu,
+  TdsSideMenuCloseButton,
+  TdsSideMenuDropdown,
+  TdsSideMenuDropdownList,
+  TdsSideMenuDropdownListItem,
+  TdsSideMenuItem,
+  TdsSideMenuOverlay,
+  TdsSideMenuCollapseButton,
+  TdsSideMenuUser,
+  TdsIcon,
+} from '@scania/tegel-react';
 import { UserContext } from '../../App';
 
 interface SideMenuProps {
@@ -11,87 +23,84 @@ interface SideMenuProps {
 const SideMenu = ({ pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => {
   const userContext = useContext(UserContext);
   return (
-    <tds-side-menu ref={sideMenuRef} id="demo-side-menu" aria-label="Side menu" persistent>
-      <tds-side-menu-overlay
-        onClick={() => toggleMobileNav()}
-        slot="overlay"
-      ></tds-side-menu-overlay>
-      <tds-side-menu-close-button
+    <TdsSideMenu ref={sideMenuRef} id="demo-side-menu" aria-label="Side menu" persistent>
+      <TdsSideMenuOverlay onClick={() => toggleMobileNav()} slot="overlay"></TdsSideMenuOverlay>
+      <TdsSideMenuCloseButton
         onClick={() => toggleMobileNav()}
         slot="close-button"
-      ></tds-side-menu-close-button>
-      <tds-side-menu-item selected={pathname === '/about'}>
+      ></TdsSideMenuCloseButton>
+      <TdsSideMenuItem selected={pathname === '/about'}>
         <Link to={'/about'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="info" size="24"></tds-icon>
+          <TdsIcon name="info" size="24"></TdsIcon>
           About us
         </Link>
-      </tds-side-menu-item>
-      <tds-side-menu-item selected={pathname === '/stepper'}>
+      </TdsSideMenuItem>
+      <TdsSideMenuItem selected={pathname === '/stepper'}>
         <Link to={'/stepper'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="report" size="24"></tds-icon>
+          <TdsIcon name="report" size="24"></TdsIcon>
           Stepper
         </Link>
-      </tds-side-menu-item>
-      <tds-side-menu-item selected={pathname === '/table'}>
+      </TdsSideMenuItem>
+      <TdsSideMenuItem selected={pathname === '/table'}>
         <Link to={'/table'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="document_tool" size="24"></tds-icon>
+          <TdsIcon name="document_tool" size="24"></TdsIcon>
           Table
         </Link>
-      </tds-side-menu-item>
-      <tds-side-menu-item selected={pathname === '/web-components'}>
+      </TdsSideMenuItem>
+      <TdsSideMenuItem selected={pathname === '/web-components'}>
         <Link to={'/web-components'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="tool" size="24"></tds-icon>
+          <TdsIcon name="tool" size="24"></TdsIcon>
           Components
         </Link>
-      </tds-side-menu-item>
-      <tds-side-menu-item selected={pathname === '/form'}>
+      </TdsSideMenuItem>
+      <TdsSideMenuItem selected={pathname === '/form'}>
         <Link to={'/form'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="edit" size="24"></tds-icon>
+          <TdsIcon name="edit" size="24"></TdsIcon>
           Form
         </Link>
-      </tds-side-menu-item>
-      <tds-side-menu-dropdown
+      </TdsSideMenuItem>
+      <TdsSideMenuDropdown
         default-open={pathname.includes('/tabs')}
         selected={pathname.includes('/tabs')}
       >
-        <tds-icon slot="icon" name="folder" size="24"></tds-icon>
+        <TdsIcon slot="icon" name="folder" size="24"></TdsIcon>
         <span slot="label">Tabs</span>
-        <tds-side-menu-dropdown-list>
-          <tds-side-menu-dropdown-list-item selected={pathname.includes('/tabs-button')}>
+        <TdsSideMenuDropdownList>
+          <TdsSideMenuDropdownListItem selected={pathname.includes('/tabs-button')}>
             <Link to="/tabs-buttons">Button</Link>
-          </tds-side-menu-dropdown-list-item>
-          <tds-side-menu-dropdown-list-item selected={pathname.includes('tabs-links')}>
+          </TdsSideMenuDropdownListItem>
+          <TdsSideMenuDropdownListItem selected={pathname.includes('tabs-links')}>
             <Link to="/tabs-links">Link</Link>
-          </tds-side-menu-dropdown-list-item>
-        </tds-side-menu-dropdown-list>
-      </tds-side-menu-dropdown>
-      <tds-side-menu-item selected={pathname === '/text'}>
+          </TdsSideMenuDropdownListItem>
+        </TdsSideMenuDropdownList>
+      </TdsSideMenuDropdown>
+      <TdsSideMenuItem selected={pathname === '/text'}>
         <Link to={'/text'} onClick={() => toggleMobileNav()}>
-          <tds-icon name="document" size="24"></tds-icon>
+          <TdsIcon name="document" size="24"></TdsIcon>
           Text
         </Link>
-      </tds-side-menu-item>
+      </TdsSideMenuItem>
       <div slot="end">
-        <tds-side-menu-dropdown selected={pathname.includes('settings')}>
-          <tds-side-menu-user
+        <TdsSideMenuDropdown selected={pathname.includes('settings')}>
+          <TdsSideMenuUser
             slot="label"
-            heading={userContext?.user.userName}
+            heading={userContext?.user.userName || 'Name Namesson'}
             subheading={userContext?.user.placeOfWork}
             img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
             img-alt=""
-          ></tds-side-menu-user>
-          <tds-side-menu-dropdown-list>
-            <tds-side-menu-dropdown-list-item selected={pathname.includes('settings')}>
+          ></TdsSideMenuUser>
+          <TdsSideMenuDropdownList>
+            <TdsSideMenuDropdownListItem selected={pathname.includes('settings')}>
               <Link to="settings">
-                <tds-icon name="settings"></tds-icon>
+                <TdsIcon name="settings"></TdsIcon>
                 <div className="tds-u-pl1">Settings</div>
               </Link>
-            </tds-side-menu-dropdown-list-item>
-          </tds-side-menu-dropdown-list>
-        </tds-side-menu-dropdown>
+            </TdsSideMenuDropdownListItem>
+          </TdsSideMenuDropdownList>
+        </TdsSideMenuDropdown>
       </div>
-      <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
-    </tds-side-menu>
+      <TdsSideMenuCollapseButton slot="sticky-end"></TdsSideMenuCollapseButton>
+    </TdsSideMenu>
   );
 };
 
