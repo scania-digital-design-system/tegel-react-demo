@@ -1,6 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  TdsHeader,
+  TdsHeaderHamburger,
+  TdsHeaderTitle,
+  TdsHeaderDropdown,
+  TdsHeaderDropdownList,
+  TdsBadge,
+  TdsHeaderDropdownListItem,
+  TdsHeaderDropdownListUser,
+  TdsHeaderBrandSymbol,
+  TdsIcon,
+} from '@scania/tegel-react';
 import { UserContext } from '../../App';
 import './Header.scss';
 
@@ -12,52 +24,52 @@ interface HeaderProps {
 const Header = ({ toggleMobileNav }: HeaderProps) => {
   const userContext = useContext(UserContext);
   return (
-    <tds-header>
-      <tds-header-hamburger
+    <TdsHeader>
+      <TdsHeaderHamburger
         onClick={() => {
           toggleMobileNav();
         }}
         aria-label="Open application drawer"
         aria-haspopup="true"
         aria-expanded="false"
-      ></tds-header-hamburger>
+      ></TdsHeaderHamburger>
 
-      <tds-header-title>React Demo</tds-header-title>
+      <TdsHeaderTitle>React Demo</TdsHeaderTitle>
 
-      <tds-header-dropdown onClick={() => {}} slot="end" no-dropdown-icon>
+      <TdsHeaderDropdown onClick={() => {}} slot="end" no-dropdown-icon>
         <div slot="icon">
           <img
             src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
             alt="User menu."
           />
           {userContext?.user.notifications && userContext?.user.notifications?.length > 0 && (
-            <tds-badge size="sm"></tds-badge>
+            <TdsBadge size="sm"></TdsBadge>
           )}
         </div>
-        <tds-header-dropdown-list size="lg">
-          <tds-header-dropdown-list-user
+        <TdsHeaderDropdownList size="lg">
+          <TdsHeaderDropdownListUser
             header={userContext?.user.userName}
             subheader={userContext?.user.placeOfWork}
-          ></tds-header-dropdown-list-user>
-          <tds-header-dropdown-list-item>
+          ></TdsHeaderDropdownListUser>
+          <TdsHeaderDropdownListItem>
             <Link to="settings">
-              <tds-icon name="settings"></tds-icon>
+              <TdsIcon name="settings"></TdsIcon>
               <div className="tds-u-pl1">Settings</div>
             </Link>
-          </tds-header-dropdown-list-item>
-          <tds-header-dropdown-list-item>
+          </TdsHeaderDropdownListItem>
+          <TdsHeaderDropdownListItem>
             <Link to="notifications">
-              <tds-badge value={userContext?.user.notifications?.length.toString()}></tds-badge>
+              <TdsBadge value={userContext?.user.notifications?.length.toString()}></TdsBadge>
               <div className="tds-u-pl1">Notifications</div>
             </Link>
-          </tds-header-dropdown-list-item>
-        </tds-header-dropdown-list>
-      </tds-header-dropdown>
+          </TdsHeaderDropdownListItem>
+        </TdsHeaderDropdownList>
+      </TdsHeaderDropdown>
 
-      <tds-header-brand-symbol slot="end">
+      <TdsHeaderBrandSymbol slot="end">
         <a aria-label="Scania - red gryphon on blue shield" href="/"></a>
-      </tds-header-brand-symbol>
-    </tds-header>
+      </TdsHeaderBrandSymbol>
+    </TdsHeader>
   );
 };
 
