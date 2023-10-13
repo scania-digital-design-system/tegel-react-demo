@@ -1,71 +1,66 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './Toast.scss';
+import { TdsToast, TdsToggle } from '@scania/tegel-react';
+import { TdsToastCustomEvent } from '@scania/tegel';
 
 const Toast = () => {
   const successToastRef = useRef<HTMLTdsToastElement>(null);
   const errorToastRef = useRef<HTMLTdsToastElement>(null);
   const informationToastRef = useRef<HTMLTdsToastElement>(null);
   const warningToastRef = useRef<HTMLTdsToastElement>(null);
-  const toggleRef = useRef<HTMLTdsToggleElement>(null);
-  const [showToast, setShowToast] = useState(false);
+  const [showToast, setShowToast] = useState(true);
 
-  useEffect(() => {
-    const handleToggle = () => {
-      setShowToast(!showToast);
-      !showToast ? successToast?.showToast() : successToast?.hideToast();
-      !showToast ? errorToast?.showToast() : errorToast?.hideToast();
-      !showToast ? warningToast?.showToast() : warningToast?.hideToast();
-      !showToast ? informationToast?.showToast() : informationToast?.hideToast();
-    };
+  const handleToggle = async () => {
+    setShowToast(!showToast);
+    !showToast
+      ? await successToastRef.current?.showToast()
+      : await successToastRef.current?.hideToast();
+    !showToast
+      ? await errorToastRef.current?.showToast()
+      : await errorToastRef.current?.hideToast();
+    !showToast
+      ? await warningToastRef.current?.showToast()
+      : await warningToastRef.current?.hideToast();
+    !showToast
+      ? await informationToastRef.current?.showToast()
+      : await informationToastRef.current?.hideToast();
+  };
 
-    const preventClose = (event: TdsCloseEvent) => {
-      event.preventDefault();
-    };
+  const preventClose = (event: TdsToastCustomEvent<{ toastId: string }>) => {
+    event.preventDefault();
+  };
 
-    const toggle = toggleRef.current;
-    const successToast = successToastRef.current;
-    const errorToast = errorToastRef.current;
-    const warningToast = warningToastRef.current;
-    const informationToast = informationToastRef.current;
-    toggle?.addEventListener('tdsToggle', handleToggle);
-    successToast?.addEventListener('tdsClose', preventClose);
-
-    return () => {
-      toggle?.removeEventListener('tdsToggle', handleToggle);
-      successToast?.removeEventListener('tdsClose', preventClose);
-    };
-  });
   return (
     <div>
       <div className="tds-headline-02 tds-u-pb1">Toast</div>
       <div className="toast-container">
-        <tds-toast
-          hidden
+        <TdsToast
+          ref={successToastRef}
           variant="success"
           header="Successful Toast!"
           subheader="( Closing prevented ! )"
-          ref={successToastRef}
+          onTdsClose={preventClose}
         >
           <div slot="subheader">This Toasts can't be closed.</div>
-        </tds-toast>
-        <tds-toast hidden ref={errorToastRef} variant="error" header="Error Toast!">
+        </TdsToast>
+        <TdsToast ref={errorToastRef} variant="error" header="Error Toast!">
           <div slot="subheader">This Toasts can be closed.</div>
-        </tds-toast>
-        <tds-toast hidden ref={informationToastRef} variant="information" header="Information Toast!">
+        </TdsToast>
+        <TdsToast ref={informationToastRef} variant="information" header="Information Toast!">
           <div slot="subheader">This Toasts has a link.</div>
           <a slot="actions" href="/">
             This is a link.
           </a>
-        </tds-toast>
-        <tds-toast hidden ref={warningToastRef} variant="warning" header="Warning Toast!">
+        </TdsToast>
+        <TdsToast ref={warningToastRef} variant="warning" header="Warning Toast!">
           <div slot="subheader">This Toast can be closed programmatically.</div>
-        </tds-toast>
+        </TdsToast>
       </div>
       <div>
         <p>You can show or hide the toasts with the toggle below.</p>
-        <tds-toggle ref={toggleRef}>
+        <TdsToggle onTdsToggle={handleToggle}>
           <div slot="label">{showToast ? 'Hide Toast' : 'Show Toast'}</div>
-        </tds-toggle>
+        </TdsToggle>
       </div>
     </div>
   );
