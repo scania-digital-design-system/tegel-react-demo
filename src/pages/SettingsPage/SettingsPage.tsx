@@ -1,6 +1,7 @@
 import { FormEvent, useContext, useRef, useState } from 'react';
 import './SettingsPage.scss';
 import { User, UserContext } from '../../App';
+import { TdsButton, TdsTextField } from '@scania/tegel-react';
 
 const SettingsPage = () => {
   const userContext = useContext(UserContext);
@@ -50,22 +51,22 @@ const SettingsPage = () => {
           handleSubmit(event);
         }}
       >
-        <tds-text-field
+        <TdsTextField
           name="userName"
           placeholder={userContext?.user.userName}
           state={userNameState}
           helper={userNameHelper}
-        ></tds-text-field>
+        ></TdsTextField>
         <div className="tds-u-pt2 tds-u-pb2">
-          <tds-text-field
+          <TdsTextField
             name="placeOfWork"
             placeholder={userContext?.user.placeOfWork}
             state={placeOfWorkState}
             helper={placeOfWorkHelper}
-          ></tds-text-field>
+          ></TdsTextField>
         </div>
         <div>
-          <tds-button size="md" text="Save" type="submit"></tds-button>
+          <TdsButton size="md" text="Save" type="submit"></TdsButton>
         </div>
       </form>
     </div>
