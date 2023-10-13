@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import './Toggle.scss';
+import { TdsButton, TdsToggle } from '@scania/tegel-react';
 
 const Toggle = () => {
   const toggle = useRef<HTMLTdsToggleElement>(null);
@@ -19,15 +20,15 @@ const Toggle = () => {
     <>
       <div className="tds-headline-02 tds-u-pb1">Toggle</div>
       <div className="toggle-container">
-        <tds-toggle ref={toggle} headline="Headline">
+        <TdsToggle ref={toggle} headline="Headline">
           <div slot="label">Label</div>
-        </tds-toggle>
-        <tds-toggle ref={disabledToggle} disabled headline="Headline">
+        </TdsToggle>
+        <TdsToggle ref={disabledToggle} disabled headline="Headline">
           <div slot="label">Label</div>
-        </tds-toggle>
+        </TdsToggle>
       </div>
       <p>A toggle can also be toggle programmatically, try it by pressing the button below.</p>
-      <tds-button onClick={handleToggle} size="sm" text="Press me!"></tds-button>
+      <TdsButton onClick={handleToggle} size="sm" text="Press me!"></TdsButton>
     </>
   );
 };
