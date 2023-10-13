@@ -11,7 +11,6 @@ import {
   TdsTableHeader,
   TdsTableToolbar,
 } from '@scania/tegel-react';
-import { TdsTableBodyRowCustomEvent } from '@scania/tegel';
 
 const BatchActionTable = () => {
   const batchActionTable = useRef<HTMLTdsTableElement>(null);
@@ -30,7 +29,7 @@ const BatchActionTable = () => {
   };
 
   const handleSelect = (
-    event: TdsTableBodyRowCustomEvent<{
+    event: CustomEvent<{
       checked: boolean;
     }>,
     object: (typeof exampleData)[0],

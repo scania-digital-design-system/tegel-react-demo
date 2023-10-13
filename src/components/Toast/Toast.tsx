@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import './Toast.scss';
 import { TdsToast, TdsToggle } from '@scania/tegel-react';
-import { TdsToastCustomEvent } from '@scania/tegel';
 
 const Toast = () => {
   const successToastRef = useRef<HTMLTdsToastElement>(null);
@@ -26,7 +25,7 @@ const Toast = () => {
       : await informationToastRef.current?.hideToast();
   };
 
-  const preventClose = (event: TdsToastCustomEvent<{ toastId: string }>) => {
+  const preventClose = (event: CustomEvent<{ toastId: string }>) => {
     event.preventDefault();
   };
 

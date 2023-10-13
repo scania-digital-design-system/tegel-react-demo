@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Stepper.scss';
 import { TdsStep, TdsStepper, TdsTextField } from '@scania/tegel-react';
-import { TdsTextFieldCustomEvent } from '@scania/tegel';
 
 interface StepperProps {
   orientation: 'vertical' | 'horizontal';
@@ -13,7 +12,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
   const [errorStepIndex, setErrorStepIndex] = useState<number>();
   const minInputLength = 4;
 
-  const handleInput = (event: TdsTextFieldCustomEvent<InputEvent>, index: number) => {
+  const handleInput = (event: CustomEvent<InputEvent>, index: number) => {
     const target = event.target as HTMLTdsTextFieldElement;
     if (target.value.length >= minInputLength) {
       setCompletedSteps(index + 1);
@@ -21,7 +20,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
     }
   };
 
-  const handleChange = (event: TdsTextFieldCustomEvent<any>, index: number) => {
+  const handleChange = (event: CustomEvent<any>, index: number) => {
     const target = event.target as HTMLTdsTextFieldElement;
     if (target.value.length <= minInputLength) {
       setErrorStepIndex(index);
