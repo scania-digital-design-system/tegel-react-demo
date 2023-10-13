@@ -1,3 +1,4 @@
+      - name: Check out code
 name: Lint
 on: [push]
 
