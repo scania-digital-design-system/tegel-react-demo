@@ -252,7 +252,7 @@ const FormPage = () => {
                 ref={swedenDropdownTown}
                 mode-variant="secondary"
                 name="swedishTown"
-                label="Select your favourite Swedish town."
+                label="Select your favourite Swedish town"
                 label-position="outside"
                 placeholder="Swedish Town"
                 helper=""
