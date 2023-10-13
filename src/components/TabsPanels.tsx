@@ -1,10 +1,12 @@
+import { TdsBlock } from "@scania/tegel-react";
+
 interface TabsPanelsProps {
   selectedTabIndex: number;
 }
 
 const TabsPanels = ({ selectedTabIndex }: TabsPanelsProps) => {
   return (
-    <tds-block key={`tab-panel-${selectedTabIndex}`}>
+    <TdsBlock key={`tab-panel-${selectedTabIndex}`}>
       <h5>Tab {selectedTabIndex}</h5>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi aut sit, accusantium,
@@ -13,7 +15,7 @@ const TabsPanels = ({ selectedTabIndex }: TabsPanelsProps) => {
         dignissimos non error nobis beatae fugiat temporibus cum at molestias et perferendis iste!
         Hic?
       </p>
-    </tds-block>
+    </TdsBlock>
   );
 };
 
