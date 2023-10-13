@@ -1,35 +1,53 @@
 /* Layout */
 
-.app-header {
-  position: sticky;
+.mode-wrapper,
+.mode-variant-wrapper {
+  height: 100%;
+}
+
+.mode-variant-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-and-banner {
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .side-menu-and-main {
+  flex: 1;
   display: flex;
-  flex-grow: 1;
-  overflow-y: hidden;
+  position: relative; /* This is needed for the fixed positioning of side-menu */
+  overflow: visible; /* Add this line */
 }
 
 main {
-  height: 100%;
-  width: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 }
 
-.main-container {
+.content-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;
-  width: 100%;
   max-width: 600px;
+  padding: 24px;
 }
 
 @media (min-width: 992px) {
+  tds-side-menu {
+    height: 100%;
+  }
   .app-side-menu {
+    max-height: calc(100vh - 64px); /* Adjust the height */
     height: 100%;
     position: sticky;
     top: 64px;
@@ -37,19 +55,7 @@ main {
   }
 }
 
-/* Mode & mode variant toggle */
-.mode-wrapper {
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
-}
-
-.mode-variant-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: hidden;
-}
+/* Mode switcher */
 
 .switcher-container {
   padding-top: 24px;

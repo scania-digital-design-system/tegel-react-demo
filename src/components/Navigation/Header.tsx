@@ -17,7 +17,7 @@ import { UserContext } from '../../App';
 import './Header.scss';
 
 interface HeaderProps {
-  className: string;
+  className?: string;
   pathname: string;
   toggleMobileNav: Function;
 }

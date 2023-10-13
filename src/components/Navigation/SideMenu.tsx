@@ -15,16 +15,17 @@ import {
 import { UserContext } from '../../App';
 
 interface SideMenuProps {
-  className: string;
+  className?: string;
+  style?: React.CSSProperties;
   pathname: string;
   toggleMobileNav: Function;
   sideMenuRef: React.RefObject<HTMLTdsSideMenuElement>;
 }
 
-const SideMenu = ({ className, pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => {
+const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => {
   const userContext = useContext(UserContext);
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <TdsSideMenu ref={sideMenuRef} id="demo-side-menu" aria-label="Side menu" persistent>
         <TdsSideMenuOverlay onClick={() => toggleMobileNav()} slot="overlay"></TdsSideMenuOverlay>
         <TdsSideMenuCloseButton

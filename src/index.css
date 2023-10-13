@@ -1,12 +1,12 @@
 @import url('./reset.css');
 @import url('@scania/tegel/dist/tegel/tegel.css');
 
-body {
+/* body {
   min-height: 100vh;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-}
+} */
 
 @media screen and (max-width: 650px) {
   .tabs {

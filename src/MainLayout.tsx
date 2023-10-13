@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import ModeSwitcher from './components/ModeSwitcher';
 import ModeVariantSwitcher from './components/ModeVariantSwitcher';
 import Footer from './components/Footer';
@@ -35,12 +35,26 @@ const MainLayout = ({
   shouldRenderBreadcrumbs,
   shouldRenderModeSwitcher,
 }: MainLayoutProps) => {
+  const headerAndBannerRef = useRef<HTMLDivElement>(null);
   const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
   const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
+  const [headerAndBannerHeight, setHeaderAndBannerHeight] = useState<number>();
 
-  const wrapperClassName = shouldRenderBreadcrumbs
-    ? 'wrapper tds-u-p3 tds-u-h-100'
-    : 'tds-u-p3 tds-u-h-100';
+  useEffect(() => {
+    const element = headerAndBannerRef?.current;
+    if (!element) return;
+
+    const handleLoad = () => {
+      const height = element.clientHeight;
+      setHeaderAndBannerHeight(height);
+    };
+
+    element.addEventListener('load', handleLoad, true);
+
+    return () => {
+      element.removeEventListener('load', handleLoad, true);
+    };
+  }, []);
 
   return (
     <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
@@ -50,25 +64,35 @@ const MainLayout = ({
         }`}
       >
         <UserContext.Provider value={userContextValue}>
-          <TdsBanner variant="information" icon="info" header="React demo">
-            <div slot="subheader">
-              This is a demo page in React using{' '}
-              <TdsLink style={{ display: 'inline-block' }}>
-                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                  @scania/tegel
-                </a>
-              </TdsLink>
-            </div>
-          </TdsBanner>
-          <Header className="app-header" pathname={pathname} toggleMobileNav={toggleMobileNav} />
+          <div className="header-and-banner" ref={headerAndBannerRef}>
+            <TdsBanner variant="information" icon="info" header="React demo">
+              <div slot="subheader">
+                This is a demo page in React using{' '}
+                <TdsLink style={{ display: 'inline-block' }}>
+                  <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
+                    @scania/tegel
+                  </a>
+                </TdsLink>
+              </div>
+            </TdsBanner>
+            <Header className="app-header" pathname={pathname} toggleMobileNav={toggleMobileNav} />
+          </div>
           <div className="side-menu-and-main">
             <SideMenu
               className="app-side-menu"
+              style={{
+                maxHeight: `calc(100vh - ${headerAndBannerHeight}px)`,
+                top: `${headerAndBannerHeight}px`,
+              }}
               sideMenuRef={sideMenuRef}
               pathname={pathname}
               toggleMobileNav={toggleMobileNav}
             />
-            <main>
+            <main
+              style={{
+                marginTop: `${headerAndBannerHeight}px`,
+              }}
+            >
               {shouldRenderModeSwitcher && (
                 <div className="switcher-container">
                   <ModeSwitcher mode={lightMode} setMode={setLightMode} />
@@ -79,9 +103,7 @@ const MainLayout = ({
                 </div>
               )}
               {shouldRenderBreadcrumbs && <AppBreadcrumbs />}
-              <div className="main-container">
-                <div className={wrapperClassName}>{children}</div>
-              </div>
+              <div className="content-container">{children}</div>
               <Footer />
             </main>
           </div>
