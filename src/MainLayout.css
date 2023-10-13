@@ -1,0 +1,62 @@
+/* Layout */
+
+.app-header {
+  position: sticky;
+  top: 0;
+}
+
+.side-menu-and-main {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (min-width: 992px) {
+  .app-side-menu {
+    height: 100%;
+    position: sticky;
+    top: 64px;
+    left: 0;
+  }
+}
+
+/* Mode & mode variant toggle */
+.mode-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.mode-variant-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.switcher-container {
+  padding-top: 24px;
+  position: absolute;
+  right: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
