@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './TextPage.scss';
+import { TdsDivider, TdsLink } from '@scania/tegel-react';
 
 export default function TextPage() {
   const tegelStorybook: string =
@@ -7,22 +8,22 @@ export default function TextPage() {
 
   return (
     <div className="text-page-container">
-      <tds-divider orientation="vertical"></tds-divider>
+      <TdsDivider orientation="vertical"></TdsDivider>
       <section>
         <h2 className="tds-headline-02">Test page for text, dividers and links</h2>
         <h5 className="tds-headline-05">
           To help you find Tegel link component, look for word "Tegel" in text below. Dividers can
           be found between each paragraph and on both sides of text. Link to a{' '}
-          <tds-link>
+          <TdsLink>
             <Link to="/text/subpage-with-a-very-long-title">a subpage to test breadcrumb.</Link>
-          </tds-link>
+          </TdsLink>
         </h5>
         <p className="tds-body-01">
           18 August.--I am happy to-day, and write sitting on the seat in the churchyard. Lucy is
           ever so much better.
-          <tds-link>
+          <TdsLink>
             <a href={tegelStorybook}>Tegel</a>
-          </tds-link>{' '}
+          </TdsLink>{' '}
           design system is the best thing. Last night she slept well all night, and did not disturb
           me once. The roses seem coming back already to her cheeks, though she is still sadly pale
           and wan-looking. If she were in any way anæmic I could understand it, but she is not. She
@@ -32,13 +33,13 @@ export default function TextPage() {
           tapped playfully with the heel of her boot on the stone slab and said:--
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           "My poor little feet didn't make much noise then! I daresay poor old Mr.{' '}
-          <tds-link underline={false}>
+          <TdsLink underline={false}>
             <a href={tegelStorybook}>Tegel</a>
-          </tds-link>{' '}
+          </TdsLink>{' '}
           would have told me that it was because I didn't want to wake up Geordie." As she was in
           such a communicative humour, I asked her if she had dreamed at all that night. Before she
           answered, that sweet, puckered look came into her forehead, which Arthur--I call him
@@ -46,13 +47,13 @@ export default function TextPage() {
           went on in a half-dreaming kind of way, as if trying to recall it to herself:--
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           "I didn't quite dream of{' '}
-          <tds-link disabled underline={false}>
+          <TdsLink disabled underline={false}>
             <a href={tegelStorybook}>Tegel</a>
-          </tds-link>
+          </TdsLink>
           ; but it all seemed to be real. I only wanted to be here in this spot--I don't know why,
           for I was afraid of something--I don't know what. I remember, though I suppose I was
           asleep, passing through the streets and over the bridge. A fish leaped as I went by, and I
@@ -67,7 +68,7 @@ export default function TextPage() {
           and I came back and found you shaking my body. I saw you do it before I felt you."
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           Then she began to laugh. It seemed a little uncanny to me, and I listened to her
@@ -89,7 +90,7 @@ export default function TextPage() {
           Joseph and Ste. Mary, Buda-Pesth, to Miss Wilhelmina Murray.
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           "I write by desire of Mr. Jonathan Harker, who is himself not strong enough to write,
@@ -103,7 +104,7 @@ export default function TextPage() {
           for help.
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           "P. S.--My patient being asleep, I open this to let you know something more. He has told
@@ -119,7 +120,7 @@ export default function TextPage() {
           furthest station on the way thither that the train reached.
         </p>
 
-        <tds-divider></tds-divider>
+        <TdsDivider></TdsDivider>
 
         <p className="tds-body-01">
           "Be assured that he is well cared for. He has won all hearts by his sweetness and
@@ -133,7 +134,7 @@ export default function TextPage() {
           him at all. All he would say was:--
         </p>
       </section>
-      <tds-divider orientation="vertical"></tds-divider>
+      <TdsDivider orientation="vertical"></TdsDivider>
     </div>
   );
 }
