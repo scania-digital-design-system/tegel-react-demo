@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { createContext } from 'react';
 import MainLayout from './MainLayout'; // Import the MainLayout component
-
+import '@scania/tegel/dist/tegel/tegel.css';
 
 export interface User {
   userName: string;

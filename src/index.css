@@ -1,5 +1,4 @@
 @import url('./reset.css');
-@import url('@scania/tegel-react/node_modules/@scania/tegel/dist/tegel/tegel.css');
 
 tds-header {
   position: sticky;
