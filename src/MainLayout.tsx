@@ -49,8 +49,8 @@ const MainLayout = ({
                         <div slot="subheader">
                             This is a demo page in React using{' '}
                             <TdsLink style={{ display: 'inline-block' }}>
-                                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                                    @scania/tegel
+                                <a href="https://www.npmjs.com/package/@scania/tegel-react">
+                                    @scania/tegel-react
                                 </a>
                             </TdsLink>
                         </div>
