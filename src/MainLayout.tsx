@@ -41,18 +41,20 @@ const MainLayout = ({
   const [headerAndBannerHeight, setHeaderAndBannerHeight] = useState<number>();
 
   useEffect(() => {
-    const element = headerAndBannerRef?.current;
-    if (!element) return;
+    const updateHeight = () => {
+      const element = headerAndBannerRef?.current;
+      if (!element) return;
 
-    const handleLoad = () => {
       const height = element.clientHeight;
       setHeaderAndBannerHeight(height);
     };
 
-    element.addEventListener('load', handleLoad, true);
+    window.addEventListener('resize', updateHeight);
+    window.addEventListener('load', updateHeight); // Set height on load
 
     return () => {
-      element.removeEventListener('load', handleLoad, true);
+      window.removeEventListener('resize', updateHeight);
+      window.removeEventListener('load', updateHeight); // Remove the load event listener when the component unmounts
     };
   }, []);
 
