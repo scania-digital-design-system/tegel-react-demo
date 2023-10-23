@@ -13,6 +13,7 @@ import {
   TdsIcon,
 } from '@scania/tegel-react';
 import { UserContext } from '../../App';
+import './SideMenu.scss';
 
 interface SideMenuProps {
   className?: string;

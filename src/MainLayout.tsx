@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ModeSwitcher from './components/ModeSwitcher';
 import ModeVariantSwitcher from './components/ModeVariantSwitcher';
 import Footer from './components/Footer';
@@ -6,8 +6,8 @@ import Header from './components/Navigation/Header';
 import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
 import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumbs';
-import { TdsBanner, TdsLink } from '@scania/tegel-react';
 import './MainLayout.css';
+import MainBanner from './MainBanner';
 
 interface MainLayoutProps {
   children?: React.ReactNode;
@@ -23,6 +23,9 @@ interface MainLayoutProps {
 
 export const UserContext = createContext<any | null>(null);
 
+const HEADER_HEIGHT = 64;
+const BANNER_HEIGHT = 68;
+
 const MainLayout = ({
   children,
   pathname = '/',
@@ -36,27 +39,10 @@ const MainLayout = ({
   shouldRenderModeSwitcher,
 }: MainLayoutProps) => {
   const headerAndBannerRef = useRef<HTMLDivElement>(null);
+  const [isBannerOpen, setIsBannerOpen] = useState(true);
   const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
   const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
-  const [headerAndBannerHeight, setHeaderAndBannerHeight] = useState<number>();
-
-  useEffect(() => {
-    const updateHeight = () => {
-      const element = headerAndBannerRef?.current;
-      if (!element) return;
-
-      const height = element.clientHeight;
-      setHeaderAndBannerHeight(height);
-    };
-
-    window.addEventListener('resize', updateHeight);
-    window.addEventListener('load', updateHeight); // Set height on load
-
-    return () => {
-      window.removeEventListener('resize', updateHeight);
-      window.removeEventListener('load', updateHeight); // Remove the load event listener when the component unmounts
-    };
-  }, []);
+  const headerAndBannerHeight = HEADER_HEIGHT + (isBannerOpen ? BANNER_HEIGHT : 0);
 
   return (
     <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
@@ -67,16 +53,11 @@ const MainLayout = ({
       >
         <UserContext.Provider value={userContextValue}>
           <div className="header-and-banner" ref={headerAndBannerRef}>
-            <TdsBanner variant="information" icon="info" header="React demo">
-              <div slot="subheader">
-                This is a demo page in React using{' '}
-                <TdsLink style={{ display: 'inline-block' }}>
-                  <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                    @scania/tegel
-                  </a>
-                </TdsLink>
-              </div>
-            </TdsBanner>
+            <MainBanner
+              onClose={() => {
+                setIsBannerOpen(false);
+              }}
+            />
             <Header className="app-header" pathname={pathname} toggleMobileNav={toggleMobileNav} />
           </div>
           <div className="side-menu-and-main">

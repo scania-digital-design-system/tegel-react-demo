@@ -43,15 +43,9 @@ main {
 }
 
 @media (min-width: 992px) {
-  tds-side-menu {
-    height: 100%;
-  }
   .app-side-menu {
-    max-height: calc(100vh - 64px); /* Adjust the height */
     height: 100%;
     position: sticky;
-    top: 64px;
-    left: 0;
   }
 }
 
