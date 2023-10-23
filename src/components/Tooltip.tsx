@@ -9,7 +9,7 @@ const Tooltip = () => {
           placement="bottom"
           selector="#button-1"
           text="Text inside tooltip"
-          mouseOverTooltip={true}
+          mouseOverTooltip
         >
           <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
             Paragraph tag inside of Tooltip with

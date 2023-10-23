@@ -72,9 +72,11 @@ function App() {
         toggleMobileNav={toggleMobileNav}
         modeVariant={modeVariant}
         mode={mode}
-        sideMenuRef={sideMenuRef} userContextValue={userContextValue}
-        shouldRenderModeSwitcher={true}
-        shouldRenderBreadcrumbs={true}>
+        sideMenuRef={sideMenuRef}
+        userContextValue={userContextValue}
+        shouldRenderModeSwitcher
+        shouldRenderBreadcrumbs
+      >
         <Outlet />
       </MainLayout>
     </UserContext.Provider>
