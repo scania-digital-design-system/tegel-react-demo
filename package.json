@@ -7,7 +7,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@scania/tegel": "^1.1.0",
     "@scania/tegel-react": "^1.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
