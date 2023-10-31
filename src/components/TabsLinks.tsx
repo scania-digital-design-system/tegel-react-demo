@@ -1,14 +1,23 @@
 import { Link, useLocation } from 'react-router-dom';
 import TabsPanels from './TabsPanels';
 import { useEffect, useRef, useState } from 'react';
+import {
+  TdsFolderTab,
+  TdsFolderTabs,
+  TdsInlineTab,
+  TdsInlineTabs,
+  TdsLink,
+  TdsNavigationTab,
+  TdsNavigationTabs,
+} from '@scania/tegel-react';
 
 const TabsLinks = () => {
-  const folderTabsRef = useRef<HTMLTdsFolderTabsElement>(null)
-  const inlineTabsRef = useRef<HTMLTdsInlineTabsElement>(null)
-  const navigationTabsRef = useRef<HTMLTdsNavigationTabsElement>(null)
+  const folderTabsRef = useRef<HTMLTdsFolderTabsElement>(null);
+  const inlineTabsRef = useRef<HTMLTdsInlineTabsElement>(null);
+  const navigationTabsRef = useRef<HTMLTdsNavigationTabsElement>(null);
   const { pathname } = useLocation();
 
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     const index = ['first-tab', 'second-tab', 'third-tab'].findIndex((pathSegment) =>
@@ -29,51 +38,51 @@ const TabsLinks = () => {
       <p>
         These tabs are linking to different pages (with different URLs), and this means that you can
         link to an individual tab via a URL. Try clicking this{' '}
-        <tds-link style={{ display: 'inline-block' }}>
+        <TdsLink style={{ display: 'inline-block' }}>
           <a href="/tabs-links/second-tab">link</a>
-        </tds-link>{' '}
+        </TdsLink>{' '}
         and you'll land on a page for the second tab.
       </p>
       <div className="tds-u-pb3 tabs">
-        <tds-folder-tabs ref={folderTabsRef} mode-variant="secondary" default-selected-index={0}>
-          <tds-folder-tab>
+        <TdsFolderTabs ref={folderTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
+          <TdsFolderTab>
             <Link to={'first-tab'}>First tab</Link>
-          </tds-folder-tab>
-          <tds-folder-tab>
+          </TdsFolderTab>
+          <TdsFolderTab>
             <Link to={'second-tab'}>Second tab</Link>
-          </tds-folder-tab>
-          <tds-folder-tab>
+          </TdsFolderTab>
+          <TdsFolderTab>
             <Link to={'third-tab'}>Third tab</Link>
-          </tds-folder-tab>
-        </tds-folder-tabs>
+          </TdsFolderTab>
+        </TdsFolderTabs>
         <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-        <tds-inline-tabs ref={inlineTabsRef} mode-variant="secondary" default-selected-index={0}>
-          <tds-inline-tab>
+        <TdsInlineTabs ref={inlineTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
+          <TdsInlineTab>
             <Link to={'first-tab'}>First tab</Link>
-          </tds-inline-tab>
-          <tds-inline-tab>
+          </TdsInlineTab>
+          <TdsInlineTab>
             <Link to={'second-tab'}>Second tab</Link>
-          </tds-inline-tab>
-          <tds-inline-tab>
+          </TdsInlineTab>
+          <TdsInlineTab>
             <Link to={'third-tab'}>Third tab</Link>
-          </tds-inline-tab>
-        </tds-inline-tabs>
+          </TdsInlineTab>
+        </TdsInlineTabs>
         <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
       <div className="tds-u-pb3 tabs">
-        <tds-navigation-tabs ref={navigationTabsRef} mode-variant="secondary" default-selected-index={0}>
-          <tds-navigation-tab>
+        <TdsNavigationTabs ref={navigationTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
+          <TdsNavigationTab>
             <Link to={'first-tab'}>First tab</Link>
-          </tds-navigation-tab>
-          <tds-navigation-tab>
+          </TdsNavigationTab>
+          <TdsNavigationTab>
             <Link to={'second-tab'}>Second tab</Link>
-          </tds-navigation-tab>
-          <tds-navigation-tab>
+          </TdsNavigationTab>
+          <TdsNavigationTab>
             <Link to={'third-tab'}>Third tab</Link>
-          </tds-navigation-tab>
-        </tds-navigation-tabs>
+          </TdsNavigationTab>
+        </TdsNavigationTabs>
         <TabsPanels selectedTabIndex={selectedIndex} />
       </div>
     </div>

@@ -6,6 +6,7 @@ import Header from './components/Navigation/Header';
 import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
 import AppBreadcrumbs from './components/Navigation/AppBreadcrumbs/AppBreadcrumbs';
+import { TdsBanner, TdsLink } from '@scania/tegel-react';
 
 interface MainLayoutProps {
     children?: React.ReactNode;
@@ -44,16 +45,16 @@ const MainLayout = ({
         <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
             <div className={`mode-variant-wrapper tds-mode-variant-${primaryVariant === 'on' ? 'primary' : 'secondary'}`}>
                 <UserContext.Provider value={userContextValue}>
-                    <tds-banner variant="information" icon="info" header="React demo">
+                    <TdsBanner variant="information" icon="info" header="React demo">
                         <div slot="subheader">
                             This is a demo page in React using{' '}
-                            <tds-link style={{ display: 'inline-block' }}>
-                                <a href="https://tegel-storybook.netlify.app/?path=/docs/components--banner">
-                                    @scania/tegel
+                            <TdsLink style={{ display: 'inline-block' }}>
+                                <a href="https://www.npmjs.com/package/@scania/tegel-react">
+                                    @scania/tegel-react
                                 </a>
-                            </tds-link>
+                            </TdsLink>
                         </div>
-                    </tds-banner>
+                    </TdsBanner>
                     <Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
                     <div className="side-menu-and-main">
                         <SideMenu
@@ -65,7 +66,7 @@ const MainLayout = ({
                             {shouldRenderModeSwitcher && (
                                 <div className="switcher-container">
                                     <ModeSwitcher mode={lightMode} setMode={setLightMode} />
-                                    <ModeVariantSwitcher mode={primaryVariant} setMode={setPrimaryVariant} />
+                                    <ModeVariantSwitcher modeVariant={primaryVariant} setModeVariant={setPrimaryVariant} />
                                 </div>
                             )}
                             {shouldRenderBreadcrumbs && <AppBreadcrumbs />}

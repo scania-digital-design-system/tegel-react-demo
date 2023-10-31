@@ -1,5 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import exampleData from './example-data.json';
+import {
+  TdsBodyCell,
+  TdsButton,
+  TdsHeaderCell,
+  TdsModal,
+  TdsTable,
+  TdsTableBody,
+  TdsTableBodyRow,
+  TdsTableHeader,
+  TdsTableToolbar,
+} from '@scania/tegel-react';
 
 const BatchActionTable = () => {
   const batchActionTable = useRef<HTMLTdsTableElement>(null);
@@ -8,21 +19,30 @@ const BatchActionTable = () => {
   const [allSelected, setAllSelected] = useState(exampleData.every((row) => row.selected));
   const [data, setData] = useState(exampleData);
 
-  useEffect(() => {
-    const handleSelectAll = (event: any) => {
-      setAllSelected(true);
-      const updatedData = data?.map((row) => ({
+  const handleSelectAll = (event: any) => {
+    setAllSelected(true);
+    const updatedData = data?.map((row) => ({
+      ...row,
+      selected: event.detail.checked,
+    }));
+    setData(updatedData);
+  };
+
+  const handleSelect = (
+    event: CustomEvent<{
+      checked: boolean;
+    }>,
+    object: (typeof exampleData)[0],
+  ) => {
+    const updatedData = data.map((row) => {
+      return {
         ...row,
-        selected: event.detail.checked,
-      }));
-      setData(updatedData);
-    };
-    const batchActionTableElement = batchActionTable?.current;
-    batchActionTableElement?.addEventListener('tdsSelectAll', handleSelectAll);
-    return () => {
-      batchActionTableElement?.removeEventListener('tdsSelectAll', handleSelectAll);
-    };
-  }, [data]);
+        selected: row.id === object.id ? event.detail.checked : row.selected,
+      };
+    });
+    setData(updatedData);
+    setAllSelected(updatedData.every((row) => row.selected));
+  };
 
   const handleClick = async () => {
     if (batchActionTable.current) {
@@ -33,7 +53,7 @@ const BatchActionTable = () => {
 
   return (
     <>
-      <tds-modal ref={modal} id="my-modal" size="lg" actions-position="static">
+      <TdsModal ref={modal} id="my-modal" size="lg" actionsPosition="static">
         <h5 className="tds-modal-headline" slot="header">
           Batch Actions example
         </h5>
@@ -49,53 +69,48 @@ const BatchActionTable = () => {
             <p>No data selected.</p>
           )}
         </span>
-      </tds-modal>
-      <tds-table table-id="batch-action-table" no-min-width responsive multiselect ref={batchActionTable}>
-        <tds-table-toolbar table-title="Batch action">
-          <tds-button
+      </TdsModal>
+      <TdsTable
+        tableId="batch-action-table"
+        noMinWidth
+        responsive
+        multiselect
+        ref={batchActionTable}
+      >
+        <TdsTableToolbar tableTitle="Batch action">
+          <TdsButton
             onClick={handleClick}
             slot="end"
             variant="primary"
             size="sm"
             text="Download"
-          ></tds-button>
-        </tds-table-toolbar>
-        <tds-table-header all-selected={allSelected}>
-          <tds-header-cell cell-key="truck" cell-value="Truck type"></tds-header-cell>
-          <tds-header-cell cell-key="driver" cell-value="Driver name"></tds-header-cell>
-          <tds-header-cell cell-key="country" cell-value="Country"></tds-header-cell>
-          <tds-header-cell
-            cell-key="mileage"
-            cell-value="Mileage"
-            text-align="right"
-          ></tds-header-cell>
-        </tds-table-header>
-        <tds-table-body>
+          ></TdsButton>
+        </TdsTableToolbar>
+        <TdsTableHeader onTdsSelectAll={handleSelectAll} allSelected={allSelected}>
+          <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
+          <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
+          <TdsHeaderCell cellKey="country" cellValue="Country"></TdsHeaderCell>
+          <TdsHeaderCell cellKey="mileage" cellValue="Mileage" textAlign="right"></TdsHeaderCell>
+        </TdsTableHeader>
+        <TdsTableBody>
           {data.map((object) => (
-            <tds-table-body-row
-              ref={(el) => {
-                el?.addEventListener('tdsSelect', (event: any) => {
-                  const updatedData = data.map((row) => {
-                    return {
-                      ...row,
-                      selected: row.id === object.id ? event.detail.checked : row.selected,
-                    };
-                  });
-                  setData(updatedData);
-                  setAllSelected(updatedData.every((row) => row.selected));
-                });
+            <TdsTableBodyRow
+              onTdsSelect={(event) => {
+                handleSelect(event, object);
               }}
               key={object.id}
               selected={object.selected}
             >
-              <tds-body-cell cell-key={`truck`}>{object.truck}</tds-body-cell>
-              <tds-body-cell cell-key={`driver`}>{object.driver}</tds-body-cell>
-              <tds-body-cell cell-key={`country`}>{object.country}</tds-body-cell>
-              <tds-body-cell style={{ textAlign: 'right' }} cell-key={`mileage`}>{object.mileage}</tds-body-cell>
-            </tds-table-body-row>
+              <TdsBodyCell cellKey={`truck`}>{object.truck}</TdsBodyCell>
+              <TdsBodyCell cellKey={`driver`}>{object.driver}</TdsBodyCell>
+              <TdsBodyCell cellKey={`country`}>{object.country}</TdsBodyCell>
+              <TdsBodyCell style={{ textAlign: 'right' }} cellKey={`mileage`}>
+                {object.mileage}
+              </TdsBodyCell>
+            </TdsTableBodyRow>
           ))}
-        </tds-table-body>
-      </tds-table>
+        </TdsTableBody>
+      </TdsTable>
     </>
   );
 };

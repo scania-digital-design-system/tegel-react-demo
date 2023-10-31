@@ -1,3 +1,7 @@
+import {
+  TdsModal,
+  TdsButton
+} from "@scania/tegel-react";
 import './Modal.scss';
 
 type ModalProps = {
@@ -8,7 +12,7 @@ type ModalProps = {
 
 const Modal = ({ selector, size, prevent }: ModalProps) => {
   return (
-    <tds-modal
+    <TdsModal
       prevent={prevent}
       selector={selector}
       id="my-modal"
@@ -34,10 +38,10 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
       </span>
       {size !== 'lg' ? (
         <>
-          <tds-button slot="actions" data-dismiss-modal size="md" text="Close"></tds-button>
+          <TdsButton slot="actions" data-dismiss-modal size="md" text="Close"></TdsButton>
         </>
       ) : (
-        <tds-button
+        <TdsButton
           slot="actions"
           onMouseOver={() => {
             (
@@ -46,9 +50,9 @@ const Modal = ({ selector, size, prevent }: ModalProps) => {
           }}
           size="md"
           text="Cancel"
-        ></tds-button>
+        ></TdsButton>
       )}
-    </tds-modal>
+    </TdsModal>
   );
 };
 

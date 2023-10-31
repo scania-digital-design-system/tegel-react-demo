@@ -1,4 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import {
+  TdsBanner,
+  TdsLink,
+  TdsToggle
+} from "@scania/tegel-react";
 
 const Banner = () => {
   const [bannerVisibility, setBannerVisibility] = useState(true);
@@ -39,40 +44,40 @@ const Banner = () => {
     <div>
       <div className="tds-headline-02 tds-u-pb1">Banner</div>
       <div className="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap-1">
-        <tds-banner
+        <TdsBanner
           ref={errorBannerRef}
           icon="error"
           header="This Banner won't close"
           variant="error"
         >
           <div slot="subheader">Due to its tdsClose event being prevented.</div>
-        </tds-banner>
-        <tds-banner
+        </TdsBanner>
+        <TdsBanner
           ref={informationBannerRef}
           icon="info"
           header="This Banner will close."
           variant="information"
         >
           <div slot="subheader">And it also has a link.</div>
-          <tds-link slot="actions">
+          <TdsLink slot="actions">
             <a href="/">Link example</a>
-          </tds-link>
-        </tds-banner>
-        <tds-banner
+          </TdsLink>
+        </TdsBanner>
+        <TdsBanner
           ref={defaultBannerRef}
           id="my-banner"
           icon="save"
           header={`This the default Banner.`}
         >
           <div slot="subheader">You can toggle visibility of this one programmatically with toggle below.</div>
-        </tds-banner>
+        </TdsBanner>
       </div>
 
       <div className="tds-u-mt-2">
         <p>You can also show and hide the banners using the toggle below.</p>
-        <tds-toggle ref={toggleRef}>
+        <TdsToggle ref={toggleRef}>
           <div slot="label">{bannerVisibility ? 'Hide Banner' : 'Show Banner'}</div>
-        </tds-toggle>
+        </TdsToggle>
       </div>
     </div>
   );

@@ -1,62 +1,67 @@
+import {
+  TdsBodyCell,
+  TdsButton,
+  TdsHeaderCell,
+  TdsLink,
+  TdsTable,
+  TdsTableBody,
+  TdsTableBodyRowExpandable,
+  TdsTableHeader,
+} from '@scania/tegel-react';
+
 const ExpandTable = () => {
   return (
-    <tds-table
-      table-id="expandable-table"
-      expandable-rows
-      vertical-dividers="false"
-      compact-design="false"
+    <TdsTable
+      tableId="expandable-table"
+      expandableRows
       responsive
-      no-min-width
+      noMinWidth
     >
-      <tds-table-header>
-        <tds-header-cell cell-key="truck" cell-value="Truck type"></tds-header-cell>
-        <tds-header-cell cell-key="driver" cell-value="Driver name"></tds-header-cell>
-        <tds-header-cell cell-key="country" cell-value="Country"></tds-header-cell>
-        <tds-header-cell
-          cell-key="mileage"
-          cell-value="Mileage"
-          text-align="right"
-        ></tds-header-cell>
-      </tds-table-header>
-      <tds-table-body>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="L-series" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Ferrell Wallace" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Brazil" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="8769" cell-key="mileage"></tds-body-cell>
+      <TdsTableHeader>
+        <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
+        <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
+        <TdsHeaderCell cellKey="country" cellValue="Country"></TdsHeaderCell>
+        <TdsHeaderCell cellKey="mileage" cellValue="Mileage" textAlign="right"></TdsHeaderCell>
+      </TdsTableHeader>
+      <TdsTableBody>
+        <TdsTableBodyRowExpandable>
+          <TdsBodyCell cellValue="L-series" cellKey="truck"></TdsBodyCell>
+          <TdsBodyCell cellValue="Ferrell Wallace" cellKey="driver"></TdsBodyCell>
+          <TdsBodyCell cellValue="Brazil" cellKey="country"></TdsBodyCell>
+          <TdsBodyCell cellValue="8769" cellKey="mileage"></TdsBodyCell>
           <div slot="expand-row">The L-series is great!</div>
-        </tds-table-body-row-expandable>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="P-series" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Sonya Bruce" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Portugal" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="789" cell-key="mileage"></tds-body-cell>
+        </TdsTableBodyRowExpandable>
+        <TdsTableBodyRowExpandable>
+          <TdsBodyCell cellValue="P-series" cellKey="truck"></TdsBodyCell>
+          <TdsBodyCell cellValue="Sonya Bruce" cellKey="driver"></TdsBodyCell>
+          <TdsBodyCell cellValue="Portugal" cellKey="country"></TdsBodyCell>
+          <TdsBodyCell cellValue="789" cellKey="mileage"></TdsBodyCell>
           <div slot="expand-row">
             The P-series is a great choice of truck. You can read more about it{' '}
-            <tds-link>
+            <TdsLink>
               <a href="/">here.</a>
-            </tds-link>
+            </TdsLink>
           </div>
-        </tds-table-body-row-expandable>
-        <tds-table-body-row-expandable>
-          <tds-body-cell cell-value="M-series" cell-key="truck"></tds-body-cell>
-          <tds-body-cell cell-value="Guerra Bowman" cell-key="driver"></tds-body-cell>
-          <tds-body-cell cell-value="Sweden" cell-key="country"></tds-body-cell>
-          <tds-body-cell cell-value="11551" cell-key="mileage"></tds-body-cell>
+        </TdsTableBodyRowExpandable>
+        <TdsTableBodyRowExpandable>
+          <TdsBodyCell cellValue="M-series" cellKey="truck"></TdsBodyCell>
+          <TdsBodyCell cellValue="Guerra Bowman" cellKey="driver"></TdsBodyCell>
+          <TdsBodyCell cellValue="Sweden" cellKey="country"></TdsBodyCell>
+          <TdsBodyCell cellValue="11551" cellKey="mileage"></TdsBodyCell>
           <div slot="expand-row">
             <p>The M-series is in stock!</p>
-            <tds-button
+            <TdsButton
               onClick={() => {
                 alert('Your order has been placed!');
               }}
               size="md"
               variant="primary"
               text="Order"
-            ></tds-button>
+            ></TdsButton>
           </div>
-        </tds-table-body-row-expandable>
-      </tds-table-body>
-    </tds-table>
+        </TdsTableBodyRowExpandable>
+      </TdsTableBody>
+    </TdsTable>
   );
 };
 

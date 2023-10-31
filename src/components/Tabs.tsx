@@ -1,56 +1,65 @@
+import {
+  TdsFolderTab,
+  TdsFolderTabs,
+  TdsInlineTab,
+  TdsInlineTabs,
+  TdsNavigationTab,
+  TdsNavigationTabs,
+} from '@scania/tegel-react';
+
 const Tabs = () => {
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Tabs</div>
       <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</div>
 
-      <tds-folder-tabs>
-        <tds-folder-tab>
+      <TdsFolderTabs>
+        <TdsFolderTab>
           <button>First tab</button>
-        </tds-folder-tab>
-        <tds-folder-tab>
+        </TdsFolderTab>
+        <TdsFolderTab>
           <button>Second tab is much longer</button>
-        </tds-folder-tab>
-        <tds-folder-tab>
+        </TdsFolderTab>
+        <TdsFolderTab>
           <button>Third tab</button>
-        </tds-folder-tab>
-        <tds-folder-tab disabled>
+        </TdsFolderTab>
+        <TdsFolderTab disabled>
           <button>Fourth tab</button>
-        </tds-folder-tab>
-      </tds-folder-tabs>
+        </TdsFolderTab>
+      </TdsFolderTabs>
 
       <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</div>
 
-      <tds-inline-tabs>
-        <tds-inline-tab>
+      <TdsInlineTabs>
+        <TdsInlineTab>
           <button>First tab</button>
-        </tds-inline-tab>
-        <tds-inline-tab>
+        </TdsInlineTab>
+        <TdsInlineTab>
           <button>Second tab is much longer</button>
-        </tds-inline-tab>
-        <tds-inline-tab>
+        </TdsInlineTab>
+        <TdsInlineTab>
           <button>Third tab</button>
-        </tds-inline-tab>
-        <tds-inline-tab disabled>
+        </TdsInlineTab>
+        <TdsInlineTab disabled>
           <button>Fourth tab</button>
-        </tds-inline-tab>
-      </tds-inline-tabs>
+        </TdsInlineTab>
+      </TdsInlineTabs>
       <div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
 
-      <tds-navigation-tabs>
-        <tds-navigation-tab>
+      <TdsNavigationTabs>
+        <TdsNavigationTab>
           <a href="/">First tab</a>
-        </tds-navigation-tab>
-        <tds-navigation-tab>
+        </TdsNavigationTab>
+        <TdsNavigationTab>
           <a href="/">Second tab is much longer</a>
-        </tds-navigation-tab>
-        <tds-navigation-tab>
+        </TdsNavigationTab>
+        <TdsNavigationTab>
           <a href="/">Third tab</a>
-        </tds-navigation-tab>
-        <tds-navigation-tab disabled>
+        </TdsNavigationTab>
+        <TdsNavigationTab disabled>
           <a href="/">Fourth tab</a>
-        </tds-navigation-tab>
-      </tds-navigation-tabs>
+        </TdsNavigationTab>
+      </TdsNavigationTabs>
     </>
   );
 };

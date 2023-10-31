@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { TdsTooltip, TdsBreadcrumb } from '@scania/tegel-react';
 import { PathSegment } from './AppBreadcrumbs.types';
 import { BREADCRUMB_MAX_LENGTH } from './AppBreadcrumbs.utils';
 
@@ -16,25 +17,25 @@ const AppBreadcrumb = ({ segment, isLast, idx }: BreadcrumbProps) => {
       const id = `breadcrumb-${idx}`;
       return (
         <Fragment key={segment.path}>
-          <tds-tooltip text={`${segment.title}`} selector={`#${id}`}></tds-tooltip>
+          <TdsTooltip text={`${segment.title}`} selector={`#${id}`}></TdsTooltip>
 
-          <tds-breadcrumb current id={id}>
+          <TdsBreadcrumb current id={id}>
             <a href={segment.path}>{segment.title.slice(0, BREADCRUMB_MAX_LENGTH)}...</a>
-          </tds-breadcrumb>
+          </TdsBreadcrumb>
         </Fragment>
       );
     } else {
       return (
-        <tds-breadcrumb current key={segment.path}>
+        <TdsBreadcrumb current key={segment.path}>
           <a href={segment.path}>{segment.title}</a>
-        </tds-breadcrumb>
+        </TdsBreadcrumb>
       );
     }
   } else {
     return (
-      <tds-breadcrumb key={segment.path}>
+      <TdsBreadcrumb key={segment.path}>
         <a href={segment.path}>{segment.title}</a>
-      </tds-breadcrumb>
+      </TdsBreadcrumb>
     );
   }
 };

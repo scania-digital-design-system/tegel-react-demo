@@ -4,7 +4,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { createContext } from 'react';
 import MainLayout from './MainLayout'; // Import the MainLayout component
 
-
 export interface User {
   userName: string;
   placeOfWork: string;
@@ -73,9 +72,11 @@ function App() {
         toggleMobileNav={toggleMobileNav}
         modeVariant={modeVariant}
         mode={mode}
-        sideMenuRef={sideMenuRef} userContextValue={userContextValue}
-        shouldRenderModeSwitcher={true}
-        shouldRenderBreadcrumbs={true}>
+        sideMenuRef={sideMenuRef}
+        userContextValue={userContextValue}
+        shouldRenderModeSwitcher
+        shouldRenderBreadcrumbs
+      >
         <Outlet />
       </MainLayout>
     </UserContext.Provider>

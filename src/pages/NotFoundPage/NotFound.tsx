@@ -1,3 +1,4 @@
+import { TdsIcon } from '@scania/tegel-react';
 import './NotFound.scss';
 
 const NotFound = () => {
@@ -5,7 +6,7 @@ const NotFound = () => {
         <div className="error-page tds-u-h-100">
             <div className="error-page__wrapper">
                 <div className="error-page__icon-wrapper">
-                    <tds-icon name="link_broken" size="24"></tds-icon>
+                    <TdsIcon name="link_broken" size="24"></TdsIcon>
                 </div>
                 <div className="error-page__info">
                     <h2 className="tds-headline-04">The requested page could not be found</h2>

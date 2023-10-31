@@ -1,4 +1,5 @@
 import { FormEvent, Fragment, useRef, useState } from 'react';
+import { TdsRadioButton, TdsButton } from '@scania/tegel-react';
 import './RadioButton.scss';
 
 const data = {
@@ -91,7 +92,7 @@ const RadioButton = () => {
           {fieldset.fields.map((field: any) => {
             const uid = `${fieldset.name}-${field.name}`;
             return (
-              <tds-radio-button
+              <TdsRadioButton
                 key={uid}
                 name={fieldset.name}
                 value={field.name}
@@ -117,12 +118,12 @@ const RadioButton = () => {
                   {field.name}
                   {field.disabled && ' (out of stock!)'}
                 </span>
-              </tds-radio-button>
+              </TdsRadioButton>
             );
           })}
         </fieldset>
       ))}
-      <tds-button text="Place order" type="submit"></tds-button>
+      <TdsButton text="Place order" type="submit"></TdsButton>
       {submittedData && (
         <>
           <p className="tds-headline-03">Thank you for your order.</p>

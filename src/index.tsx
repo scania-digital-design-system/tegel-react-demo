@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Outlet, RouteObject, RouterProvider } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import './register-webcomponents';
+
 
 import App from './App';
 import WebComponents from './pages/WebComponents/WebComponents';
@@ -19,6 +19,7 @@ import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';
 import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
+import { defineCustomElements } from '@scania/tegel-react';
 
 export const mainRoutes: RouteObject[] = [
   {
@@ -112,7 +113,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
+defineCustomElements()
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>

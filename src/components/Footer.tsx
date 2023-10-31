@@ -1,81 +1,88 @@
+import {
+  TdsFooter,
+  TdsFooterGroup,
+  TdsFooterItem,
+  TdsIcon
+} from "@scania/tegel-react";
+
 export default function Footer() {
   return (
-    <tds-footer>
+    <TdsFooter>
       <div slot="top">
-        <tds-footer-group title-text="Pages">
-          <tds-footer-item>
+        <TdsFooterGroup title-text="Pages">
+          <TdsFooterItem>
             <a href="/">Home</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/form">Form</a>
-          </tds-footer-item>
-        </tds-footer-group>
-        <tds-footer-group title-text="Legals">
-          <tds-footer-item>
+          </TdsFooterItem>
+        </TdsFooterGroup>
+        <TdsFooterGroup title-text="Legals">
+          <TdsFooterItem>
             <a href="/">Terms & Conditions</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Privacy policy</a>
-          </tds-footer-item>
-        </tds-footer-group>
-        <tds-footer-group title-text="Design">
-          <tds-footer-item>
+          </TdsFooterItem>
+        </TdsFooterGroup>
+        <TdsFooterGroup title-text="Design">
+          <TdsFooterItem>
             <a href="/">Grid system</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Icons</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Usability testing</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">User personas</a>
-          </tds-footer-item>
-        </tds-footer-group>
-        <tds-footer-group title-text="Support">
-          <tds-footer-item>
+          </TdsFooterItem>
+        </TdsFooterGroup>
+        <TdsFooterGroup title-text="Support">
+          <TdsFooterItem>
             <a href="/">Contact</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">FAQ</a>
-          </tds-footer-item>
-        </tds-footer-group>
+          </TdsFooterItem>
+        </TdsFooterGroup>
       </div>
       <div slot="start">
-        <tds-footer-group>
-          <tds-footer-item>
+        <TdsFooterGroup>
+          <TdsFooterItem>
             <a href="/">Link text</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Link text</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Link text</a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">Link text</a>
-          </tds-footer-item>
-        </tds-footer-group>
+          </TdsFooterItem>
+        </TdsFooterGroup>
       </div>
       <div slot="end">
-        <tds-footer-group>
-          <tds-footer-item>
+        <TdsFooterGroup>
+          <TdsFooterItem>
             <a href="/">
-              <tds-icon name="truck"></tds-icon>
+              <TdsIcon name="truck"></TdsIcon>
             </a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">
-              <tds-icon name="truck"></tds-icon>
+              <TdsIcon name="truck"></TdsIcon>
             </a>
-          </tds-footer-item>
-          <tds-footer-item>
+          </TdsFooterItem>
+          <TdsFooterItem>
             <a href="/">
-              <tds-icon name="truck"></tds-icon>
+              <TdsIcon name="truck"></TdsIcon>
             </a>
-          </tds-footer-item>
-        </tds-footer-group>
+          </TdsFooterItem>
+        </TdsFooterGroup>
       </div>
-    </tds-footer>
+    </TdsFooter>
   );
 }

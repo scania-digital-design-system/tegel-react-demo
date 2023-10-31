@@ -1,15 +1,17 @@
+import { TdsTextarea } from "@scania/tegel-react";
+
 const Textarea = () => {
   return (
     <>
       <div className="tds-headline-02 tds-u-pb1">Textarea</div>
-      <tds-textarea
+      <TdsTextarea
         rows={2}
         state="error"
         label="Hello label"
         helper="Good guess, but wrong answer buddy"
-        label-position="outside"
+        labelPosition="outside"
         placeholder="Placeholder test"
-      ></tds-textarea>
+      ></TdsTextarea>
     </>
   );
 };

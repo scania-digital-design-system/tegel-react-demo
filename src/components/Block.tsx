@@ -1,8 +1,12 @@
+import {
+  TdsBlock
+} from "@scania/tegel-react";
+
 const Block = () => {
   return (
     <div>
       <div className="tds-headline-02 tds-u-pb1">Block</div>
-      <tds-block>
+      <TdsBlock>
         <div className="tds-headline-02">Block</div>
         <p className="tds-body-01">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
@@ -13,7 +17,7 @@ const Block = () => {
           sit amet rhoncus arcu. Sed sed molestie elit. Nullam in interdum est, vitae aliquam ipsum.
           Nunc rutrum nibh ut arcu egestas egestas.
         </p>
-        <tds-block>
+        <TdsBlock>
           <h3 className="tds-headline-04">Nested block</h3>
           <p className="tds-detail-03">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum nisi ut eleifend
@@ -24,8 +28,8 @@ const Block = () => {
             Maecenas sit amet rhoncus arcu. Sed sed molestie elit. Nullam in interdum est, vitae
             aliquam ipsum. Nunc rutrum nibh ut arcu egestas egestas.
           </p>
-        </tds-block>
-      </tds-block>
+        </TdsBlock>
+      </TdsBlock>
     </div>
   );
 };

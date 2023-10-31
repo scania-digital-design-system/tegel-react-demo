@@ -1,3 +1,4 @@
+import { TdsButton, TdsChip, TdsIcon } from '@scania/tegel-react';
 import { FormEvent, useRef, useState } from 'react';
 
 const data = {
@@ -68,24 +69,24 @@ const Chip = () => {
       <div className="tds-headline-02 tds-u-pb1">Chip</div>
       <p>Button</p>
       <div style={{ display: 'flex', gap: 8 }}>
-        <tds-chip
+        <TdsChip
           size="lg"
           onClick={() => {
             alert('clicked');
           }}
         >
-          <tds-icon slot="prefix" name="lock_inactive" size="16px"></tds-icon>
+          <TdsIcon slot="prefix" name="lock_inactive" size="16px"></TdsIcon>
           <span slot="label">Lock</span>
-        </tds-chip>
-        <tds-chip
+        </TdsChip>
+        <TdsChip
           size="lg"
           onClick={() => {
             alert('clicked');
           }}
         >
-          <tds-icon slot="prefix" name="notification" size="16px"></tds-icon>
+          <TdsIcon slot="prefix" name="notification" size="16px"></TdsIcon>
           <span slot="label">Set alarm</span>
-        </tds-chip>
+        </TdsChip>
       </div>
       <form onSubmit={onSubmit} ref={formRef}>
         <p>Checkbox</p>
@@ -95,7 +96,7 @@ const Chip = () => {
             {data.topic.fields.map((topic) => {
               const uid = `topic-${topic.id}`;
               return (
-                <tds-chip
+                <TdsChip
                   key={uid}
                   type="checkbox"
                   name="topic"
@@ -103,7 +104,7 @@ const Chip = () => {
                   checked={data.topic.preselected === topic.id}
                 >
                   <span slot="label">{topic.name}</span>
-                </tds-chip>
+                </TdsChip>
               );
             })}
           </div>
@@ -115,7 +116,7 @@ const Chip = () => {
             {data.size.fields.map((size) => {
               const uid = `size-${size.id}`;
               return (
-                <tds-chip
+                <TdsChip
                   key={uid}
                   type="radio"
                   name="size"
@@ -123,12 +124,12 @@ const Chip = () => {
                   checked={data.size.preselected === size.id}
                 >
                   <span slot="label">{size.name}</span>
-                </tds-chip>
+                </TdsChip>
               );
             })}
           </div>
         </fieldset>
-        <tds-button text="Submit" type="submit"></tds-button>
+        <TdsButton text="Submit" type="submit"></TdsButton>
       </form>
       <pre>{JSON.stringify(submittedData, null, 2)}</pre>
     </div>

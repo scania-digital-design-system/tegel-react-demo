@@ -1,4 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import {
+  TdsButton,
+  TdsIcon,
+  TdsPopoverMenu,
+  TdsPopoverMenuItem,
+  TdsDivider,
+  TdsPopoverCanvas,
+  TdsLink,
+  TdsToggle
+} from "@scania/tegel-react";
 
 const PopoverMenu = () => {
   const buttonRef = useRef<HTMLTdsButtonElement>(null);
@@ -12,79 +22,79 @@ const PopoverMenu = () => {
     <>
       <div className="tds-headline-02 tds-u-pb1">Popover Menu</div>
       <div className="popover-container">
-        <tds-button aria-label="menu" only-icon variant="ghost" size="sm" ref={buttonRef}>
-          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
-        </tds-button>
+        <TdsButton aria-label="menu" only-icon variant="ghost" size="sm" ref={buttonRef}>
+          <TdsIcon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></TdsIcon>
+        </TdsButton>
       </div>
-      <tds-popover-menu ref={popoverMenuRef} placement="auto">
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item disabled>
+      <TdsPopoverMenu ref={popoverMenuRef} placement="auto">
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem disabled>
           <button>Action</button>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
           <button>Action</button>
-        </tds-popover-menu-item>
-      </tds-popover-menu>
+        </TdsPopoverMenuItem>
+      </TdsPopoverMenu>
       <div className="popover-container">
-        <tds-button aria-label="menu" only-icon id="triggerElement" variant="primary" size="sm">
-          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
-        </tds-button>
+        <TdsButton aria-label="menu" only-icon id="triggerElement" variant="primary" size="sm">
+          <TdsIcon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></TdsIcon>
+        </TdsButton>
       </div>
-      <tds-popover-menu fluid-width placement="auto" selector="#triggerElement">
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">The menu width adjusts to the widest word</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item disabled>
+      <TdsPopoverMenu fluid-width placement="auto" selector="#triggerElement">
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">The menu width adjusts to the widest word</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem disabled>
           <button>Action</button>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-divider></tds-divider>
-        <tds-popover-menu-item>
-          <a href="tegel.scania.com">Action</a>
-        </tds-popover-menu-item>
-        <tds-popover-menu-item>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsDivider></TdsDivider>
+        <TdsPopoverMenuItem>
+          <a href="https://tegel.scania.com">Action</a>
+        </TdsPopoverMenuItem>
+        <TdsPopoverMenuItem>
           <button>Action</button>
-        </tds-popover-menu-item>
-      </tds-popover-menu>
+        </TdsPopoverMenuItem>
+      </TdsPopoverMenu>
     </>
   );
 };
@@ -117,33 +127,33 @@ const PopoverCanvas = () => {
     <div>
       <div className="tds-headline-02 tds-u-pb1">Popover Canvas</div>
       <div>
-        <tds-button aria-label="menu" only-icon variant="ghost" size="sm" ref={buttonRef}>
-          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></tds-icon>
-        </tds-button>
+        <TdsButton aria-label="menu" only-icon variant="ghost" size="sm" ref={buttonRef}>
+          <TdsIcon slot="icon" className="tds-btn-icon" size="16px" name="kebab"></TdsIcon>
+        </TdsButton>
       </div>
 
-      <tds-popover-canvas placement="top" ref={popoverRef}>
+      <TdsPopoverCanvas placement="top" ref={popoverRef}>
         <div className="tds-u-p2">
           <h2 className="tds-headline-02 tds-u-mt0">A Popover Canvas!</h2>
           <p className="tds-body-01">Where you can put anything you want!</p>
-          <tds-link>
+          <TdsLink>
             <a target="_blank" rel="noopener noreferrer" href="https://tegel.scania.com">
               Even links!
             </a>
-          </tds-link>
+          </TdsLink>
         </div>
-      </tds-popover-canvas>
+      </TdsPopoverCanvas>
 
       <div className="tds-u-flex tds-u-gap3">
-        <tds-button size="sm" disabled ref={disabledButtonRef}>
-          <tds-icon slot="icon" className="tds-btn-icon" size="16px" name="print"></tds-icon>
-        </tds-button>
+        <TdsButton size="sm" disabled ref={disabledButtonRef}>
+          <TdsIcon slot="icon" className="tds-btn-icon" size="16px" name="print"></TdsIcon>
+        </TdsButton>
 
-        <tds-toggle ref={toggleRef}>
+        <TdsToggle ref={toggleRef}>
           <span slot="label">Show printer information</span>
-        </tds-toggle>
+        </TdsToggle>
       </div>
-      <tds-popover-canvas placement="top" ref={disabledPopoverRef} show={showPopover}>
+      <TdsPopoverCanvas placement="top" ref={disabledPopoverRef} show={showPopover}>
         <div className="tds-u-p2">
           <div className="tds-u-p2">
             <h2 className="tds-headline-04">Printer Notification</h2>
@@ -157,7 +167,7 @@ const PopoverCanvas = () => {
             <p>Contact the IT Support, if any errors occur.</p>
           </div>
         </div>
-      </tds-popover-canvas>
+      </TdsPopoverCanvas>
     </div>
   );
 };
