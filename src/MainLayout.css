@@ -1,0 +1,62 @@
+/* Layout */
+
+.mode-wrapper,
+.mode-variant-wrapper {
+  height: 100%;
+}
+
+.mode-variant-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-and-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.side-menu-and-main {
+  flex: 1;
+  display: flex;
+  position: relative; /* This is needed for the fixed positioning of side-menu */
+  overflow: visible; /* Add this line */
+}
+
+main {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 24px;
+}
+
+@media (min-width: 992px) {
+  .app-side-menu {
+    height: 100%;
+    position: sticky;
+  }
+}
+
+/* Mode switcher */
+
+.switcher-container {
+  padding-top: 24px;
+  position: absolute;
+  right: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
