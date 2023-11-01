@@ -1,4 +1,4 @@
-import { TdsTextarea } from "@scania/tegel-react";
+import { TdsTextarea } from '@scania/tegel-react';
 
 const Textarea = () => {
   return (

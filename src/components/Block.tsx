@@ -1,6 +1,4 @@
-import {
-  TdsBlock
-} from "@scania/tegel-react";
+import { TdsBlock } from '@scania/tegel-react';
 
 const Block = () => {
   return (

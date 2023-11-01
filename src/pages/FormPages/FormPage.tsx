@@ -37,7 +37,7 @@ const FormPage = () => {
   const [addressValidation, setAddressValidation] = useState(true);
   const [stressSliderDisabled, setStressSliderDisabled] = useState(true);
   const [workLifeSliderDisabled, setWorkLifeSliderDisabled] = useState(true);
-  const toastElement = useRef<HTMLTdsToastElement>(null)
+  const toastElement = useRef<HTMLTdsToastElement>(null);
 
   const handleTdsChange = (event: Event) => {
     const customEvent = event as CustomEvent;
@@ -81,7 +81,7 @@ const FormPage = () => {
           }, 3000);
 
           setTimeout(() => {
-            toastElement.current?.hideToast()
+            toastElement.current?.hideToast();
           }, 10000);
         }
       }

@@ -4,7 +4,6 @@ import { createBrowserRouter, Outlet, RouteObject, RouterProvider } from 'react-
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-
 import App from './App';
 import WebComponents from './pages/WebComponents/WebComponents';
 import TextPage from './pages/TextPage/TextPage';
@@ -96,8 +95,6 @@ export const mainRoutes: RouteObject[] = [
   },
 ];
 
-
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -106,14 +103,16 @@ const router = createBrowserRouter([
       ...mainRoutes,
       {
         path: '*',
-        element: <MainLayout shouldRenderBreadcrumbs={false} shouldRenderModeSwitcher={false}>
-          <NotFound />
-        </MainLayout>
+        element: (
+          <MainLayout shouldRenderBreadcrumbs={false} shouldRenderModeSwitcher={false}>
+            <NotFound />
+          </MainLayout>
+        ),
       },
     ],
   },
 ]);
-defineCustomElements()
+defineCustomElements();
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>

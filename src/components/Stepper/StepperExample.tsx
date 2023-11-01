@@ -1,4 +1,4 @@
-import { TdsStepper, TdsStep } from "@scania/tegel-react";
+import { TdsStepper, TdsStep } from '@scania/tegel-react';
 
 const StepperExample = () => {
   return (

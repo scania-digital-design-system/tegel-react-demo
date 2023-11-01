@@ -1,7 +1,4 @@
-import {
-  TdsModal,
-  TdsButton
-} from "@scania/tegel-react";
+import { TdsModal, TdsButton } from '@scania/tegel-react';
 import './Modal.scss';
 
 type ModalProps = {

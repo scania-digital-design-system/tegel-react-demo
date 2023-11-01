@@ -1,6 +1,4 @@
-import {
-  TdsDatetime
-} from "@scania/tegel-react";
+import { TdsDatetime } from '@scania/tegel-react';
 
 const Datetime = () => {
   return (

@@ -1,10 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import {
-  TdsAccordion,
-  TdsAccordionItem,
-  TdsRadioButton,
-  TdsToggle
-} from "@scania/tegel-react";
+import { TdsAccordion, TdsAccordionItem, TdsRadioButton, TdsToggle } from '@scania/tegel-react';
 
 const Accordion = () => {
   const [iconPosition, setIconPosition] = useState<string>('end');

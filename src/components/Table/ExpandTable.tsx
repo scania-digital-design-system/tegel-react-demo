@@ -11,12 +11,7 @@ import {
 
 const ExpandTable = () => {
   return (
-    <TdsTable
-      tableId="expandable-table"
-      expandableRows
-      responsive
-      noMinWidth
-    >
+    <TdsTable tableId="expandable-table" expandableRows responsive noMinWidth>
       <TdsTableHeader>
         <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
         <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>

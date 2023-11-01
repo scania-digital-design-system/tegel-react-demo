@@ -1,7 +1,4 @@
-import {
-  TdsCard,
-  TdsLink
-} from "@scania/tegel-react";
+import { TdsCard, TdsLink } from '@scania/tegel-react';
 import CardImg from '../../assets/card-img.png';
 import './Card.scss';
 

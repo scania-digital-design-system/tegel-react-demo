@@ -34,11 +34,7 @@ const NotificationPage = () => {
       </div>
       {userContext?.user.notifications && userContext?.user.notifications.length > 0 && (
         <>
-          <TdsButton
-            id="clear-notifications-btn"
-            text="Clear notifications"
-            size="md"
-          ></TdsButton>
+          <TdsButton id="clear-notifications-btn" text="Clear notifications" size="md"></TdsButton>
           <TdsModal selector="#clear-notifications-btn">
             <h5 className="tds-modal-headline" slot="header">
               Are you sure?

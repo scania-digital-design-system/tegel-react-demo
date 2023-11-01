@@ -1,7 +1,4 @@
-import {
-  TdsDropdown,
-  TdsDropdownOption
-} from "@scania/tegel-react";
+import { TdsDropdown, TdsDropdownOption } from '@scania/tegel-react';
 
 const Dropdown = () => {
   return (

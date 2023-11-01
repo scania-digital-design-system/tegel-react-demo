@@ -1,6 +1,4 @@
-import {
-  TdsCheckbox
-} from "@scania/tegel-react";
+import { TdsCheckbox } from '@scania/tegel-react';
 const Checkbox = () => {
   return (
     <>

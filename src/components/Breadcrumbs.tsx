@@ -1,8 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  TdsBreadcrumbs,
-  TdsBreadcrumb
-} from "@scania/tegel-react";
+import { TdsBreadcrumbs, TdsBreadcrumb } from '@scania/tegel-react';
 const Breadcrumbs = () => {
   return (
     <div>

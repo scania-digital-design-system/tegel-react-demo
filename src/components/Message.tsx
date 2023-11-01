@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  TdsToggle,
-  TdsMessage
-} from "@scania/tegel-react";
+import { TdsToggle, TdsMessage } from '@scania/tegel-react';
 
 const Message = () => {
   const [useIcon, setUseIcon] = useState(true);

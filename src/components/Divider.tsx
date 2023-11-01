@@ -1,6 +1,4 @@
-import {
-  TdsDivider
-} from "@scania/tegel-react";
+import { TdsDivider } from '@scania/tegel-react';
 
 const Divider = () => {
   return (

@@ -1,6 +1,4 @@
-import {
-  TdsLink
-} from "@scania/tegel-react";
+import { TdsLink } from '@scania/tegel-react';
 
 const Link = () => {
   return (

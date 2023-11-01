@@ -1,9 +1,4 @@
-import {
-  TdsFooter,
-  TdsFooterGroup,
-  TdsFooterItem,
-  TdsIcon
-} from "@scania/tegel-react";
+import { TdsFooter, TdsFooterGroup, TdsFooterItem, TdsIcon } from '@scania/tegel-react';
 
 export default function Footer() {
   return (
