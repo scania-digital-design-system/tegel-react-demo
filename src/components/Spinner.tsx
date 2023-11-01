@@ -1,4 +1,4 @@
-import { TdsSpinner } from "@scania/tegel-react";
+import { TdsSpinner } from '@scania/tegel-react';
 
 const Spinner = () => {
   return (

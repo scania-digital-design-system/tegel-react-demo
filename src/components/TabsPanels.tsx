@@ -1,4 +1,4 @@
-import { TdsBlock } from "@scania/tegel-react";
+import { TdsBlock } from '@scania/tegel-react';
 
 interface TabsPanelsProps {
   selectedTabIndex: number;

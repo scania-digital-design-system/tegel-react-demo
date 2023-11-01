@@ -1,9 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  TdsBanner,
-  TdsLink,
-  TdsToggle
-} from "@scania/tegel-react";
+import { TdsBanner, TdsLink, TdsToggle } from '@scania/tegel-react';
 
 const Banner = () => {
   const [bannerVisibility, setBannerVisibility] = useState(true);
@@ -69,7 +65,9 @@ const Banner = () => {
           icon="save"
           header={`This the default Banner.`}
         >
-          <div slot="subheader">You can toggle visibility of this one programmatically with toggle below.</div>
+          <div slot="subheader">
+            You can toggle visibility of this one programmatically with toggle below.
+          </div>
         </TdsBanner>
       </div>
 

@@ -3,24 +3,24 @@
 */
 
 .tds-u-flex-end {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .tds-u-flex-start {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .tds-u-flex-center {
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tds-u-flex-dir-col {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .tds-u-flex-gap-1 {
-    gap: 8px;
+  gap: 8px;
 }

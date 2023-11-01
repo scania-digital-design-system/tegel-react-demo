@@ -1,4 +1,4 @@
-import { TdsTextField } from "@scania/tegel-react";
+import { TdsTextField } from '@scania/tegel-react';
 
 const TextField = () => {
   return (

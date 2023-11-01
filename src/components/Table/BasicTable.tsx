@@ -1,4 +1,11 @@
-import { TdsBodyCell, TdsHeaderCell, TdsTable, TdsTableBody, TdsTableBodyRow, TdsTableHeader } from "@scania/tegel-react";
+import {
+  TdsBodyCell,
+  TdsHeaderCell,
+  TdsTable,
+  TdsTableBody,
+  TdsTableBodyRow,
+  TdsTableHeader,
+} from '@scania/tegel-react';
 
 const BasicTable = () => {
   return (
@@ -7,11 +14,7 @@ const BasicTable = () => {
         <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
         <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
         <TdsHeaderCell cellKey="country" cellValue="Country"></TdsHeaderCell>
-        <TdsHeaderCell
-          cellKey="mileage"
-          cellValue="Mileage"
-          textAlign="right"
-        ></TdsHeaderCell>
+        <TdsHeaderCell cellKey="mileage" cellValue="Mileage" textAlign="right"></TdsHeaderCell>
       </TdsTableHeader>
       <TdsTableBody>
         <TdsTableBodyRow>
@@ -23,7 +26,11 @@ const BasicTable = () => {
             cellKey="driver"
           ></TdsBodyCell>
           <TdsBodyCell cellValue="Sweden" cellKey="country"></TdsBodyCell>
-          <TdsBodyCell style={{ textAlign: 'right' }} cellValue="4000" cellKey="mileage"></TdsBodyCell>
+          <TdsBodyCell
+            style={{ textAlign: 'right' }}
+            cellValue="4000"
+            cellKey="mileage"
+          ></TdsBodyCell>
         </TdsTableBodyRow>
         <TdsTableBodyRow>
           <TdsBodyCell cellKey="truck">
@@ -34,7 +41,11 @@ const BasicTable = () => {
             cellKey="driver"
           ></TdsBodyCell>
           <TdsBodyCell cellValue="Germany" cellKey="country"></TdsBodyCell>
-          <TdsBodyCell style={{ textAlign: 'right' }} cellValue="260" cellKey="mileage"></TdsBodyCell>
+          <TdsBodyCell
+            style={{ textAlign: 'right' }}
+            cellValue="260"
+            cellKey="mileage"
+          ></TdsBodyCell>
         </TdsTableBodyRow>
         <TdsTableBodyRow>
           <TdsBodyCell cellKey="truck">
@@ -45,7 +56,11 @@ const BasicTable = () => {
             cellKey="driver"
           ></TdsBodyCell>
           <TdsBodyCell cellValue="Norway" cellKey="country"></TdsBodyCell>
-          <TdsBodyCell style={{ textAlign: 'right' }} cellValue="5889" cellKey="mileage"></TdsBodyCell>
+          <TdsBodyCell
+            style={{ textAlign: 'right' }}
+            cellValue="5889"
+            cellKey="mileage"
+          ></TdsBodyCell>
         </TdsTableBodyRow>
       </TdsTableBody>
     </TdsTable>

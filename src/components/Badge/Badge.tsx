@@ -1,10 +1,5 @@
 import { FormEvent, useState } from 'react';
-import {
-  TdsBadge,
-  TdsTextField,
-  TdsButton,
-  TdsIcon
-} from "@scania/tegel-react";
+import { TdsBadge, TdsTextField, TdsButton, TdsIcon } from '@scania/tegel-react';
 import './Badge.scss';
 
 const Badge = () => {

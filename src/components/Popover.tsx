@@ -7,8 +7,8 @@ import {
   TdsDivider,
   TdsPopoverCanvas,
   TdsLink,
-  TdsToggle
-} from "@scania/tegel-react";
+  TdsToggle,
+} from '@scania/tegel-react';
 
 const PopoverMenu = () => {
   const buttonRef = useRef<HTMLTdsButtonElement>(null);

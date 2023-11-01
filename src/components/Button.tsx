@@ -1,7 +1,4 @@
-import {
-  TdsButton,
-  TdsIcon
-} from "@scania/tegel-react";
+import { TdsButton, TdsIcon } from '@scania/tegel-react';
 
 const Button = () => {
   return (
