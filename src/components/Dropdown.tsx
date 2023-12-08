@@ -12,17 +12,19 @@ const Dropdown = () => {
         helper="Helper text"
         size="lg"
         multiselect
+        filter
         open-direction="auto"
+        normalizeText={true}
       >
-        <TdsDropdownOption value="option-1">Option 1</TdsDropdownOption>
-        <TdsDropdownOption disabled value="option-2">
-          Option 2
+        <TdsDropdownOption value="optión-1">Äptión 1</TdsDropdownOption>
+        <TdsDropdownOption disabled value="optîón-2">
+          Optîon 2
         </TdsDropdownOption>
-        <TdsDropdownOption value="option-3">Option 3</TdsDropdownOption>
-        <TdsDropdownOption value="option-4">Option 4</TdsDropdownOption>
-        <TdsDropdownOption value="option-5">Option 5</TdsDropdownOption>
-        <TdsDropdownOption value="option-6">Option 6</TdsDropdownOption>
-        <TdsDropdownOption value="option-7">Option 7</TdsDropdownOption>
+        <TdsDropdownOption value="optiôn-3">Öptiôn 3</TdsDropdownOption>
+        <TdsDropdownOption value="åptiõn-4">Åptiõn 4</TdsDropdownOption>
+        <TdsDropdownOption value="optiöñ-5">Optiöñ 5</TdsDropdownOption>
+        <TdsDropdownOption value="optiôñ-6">Optiôñ 6</TdsDropdownOption>
+        <TdsDropdownOption value="optiõñ-7">Optiõñ 7</TdsDropdownOption>
       </TdsDropdown>
     </>
   );
