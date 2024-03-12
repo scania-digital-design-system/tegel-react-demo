@@ -43,8 +43,10 @@ const BatchActionTable = () => {
       };
     });
     setData(updatedData);
-    setAllSelected(updatedData.every((row) => row.selected));
-    setNoneSelected(updatedData.every((row) => !row.selected));
+    const allRowsSelected = updatedData.every((row) => row.selected);
+    const noRowsSelected = updatedData.every((row) => !row.selected);
+    setAllSelected(allRowsSelected);
+    setNoneSelected(noRowsSelected);
   };
 
   const handleClick = async () => {
