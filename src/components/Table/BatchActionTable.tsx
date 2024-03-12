@@ -21,12 +21,13 @@ const BatchActionTable = () => {
   const [data, setData] = useState(exampleData);
 
   const handleSelectAll = (event: any) => {
-    setAllSelected(true);
     const updatedData = data?.map((row) => ({
       ...row,
       selected: event.detail.checked,
     }));
     setData(updatedData);
+    setAllSelected(updatedData.every((row) => row.selected));
+    setNoneSelected(updatedData.every((row) => !row.selected));
   };
 
   const handleSelect = (
