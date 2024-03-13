@@ -20,14 +20,16 @@ const BatchActionTable = () => {
   const [noneSelected, setNoneSelected] = useState(exampleData.every((row) => !row.selected));
   const [data, setData] = useState(exampleData);
 
-  const handleSelectAll = (event: any) => {
+  const handleSelectAll = (event: CustomEvent<{ checked: boolean }>) => {
     const updatedData = data?.map((row) => ({
       ...row,
       selected: event.detail.checked,
     }));
     setData(updatedData);
-    setAllSelected(updatedData.every((row) => row.selected));
-    setNoneSelected(updatedData.every((row) => !row.selected));
+    const allRowsSelected = updatedData.every((row) => row.selected);
+    const noRowsSelected = updatedData.every((row) => !row.selected);
+    setAllSelected(!noRowsSelected && allRowsSelected);
+    setNoneSelected(noRowsSelected);
   };
 
   const handleSelect = (
@@ -45,7 +47,7 @@ const BatchActionTable = () => {
     setData(updatedData);
     const allRowsSelected = updatedData.every((row) => row.selected);
     const noRowsSelected = updatedData.every((row) => !row.selected);
-    setAllSelected(allRowsSelected);
+    setAllSelected(!noRowsSelected && allRowsSelected);
     setNoneSelected(noRowsSelected);
   };
 
@@ -93,7 +95,7 @@ const BatchActionTable = () => {
         </TdsTableToolbar>
         <TdsTableHeader
           onTdsSelectAll={handleSelectAll}
-          selected={allSelected}
+          selected={allSelected && !noneSelected}
           indeterminate={!allSelected && !noneSelected}
         >
           <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
