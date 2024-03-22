@@ -67,7 +67,7 @@ const SortableTable = () => {
             <TdsBodyCell cellKey="truck">{row.truck}</TdsBodyCell>
             <TdsBodyCell cellKey="driver">{row.driver}</TdsBodyCell>
             <TdsBodyCell cellKey="country">{row.country}</TdsBodyCell>
-            <TdsBodyCell cellKey="milage" style={{ textAlign: 'right' }}>
+            <TdsBodyCell cellKey="milage" textAlign="center">
               {row.mileage}
             </TdsBodyCell>
           </TdsTableBodyRow>
