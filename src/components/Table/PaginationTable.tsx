@@ -29,7 +29,7 @@ const PaginationTable = () => {
         <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
         <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
         <TdsHeaderCell cellKey="country" cellValue="Country"></TdsHeaderCell>
-        <TdsHeaderCell cellKey="mileage" cellValue="Mileage" text-align="right"></TdsHeaderCell>
+        <TdsHeaderCell cellKey="mileage" cellValue="Mileage" text-align="center"></TdsHeaderCell>
       </TdsTableHeader>
       <TdsTableBody>
         {data.map((row, index) => (
@@ -37,7 +37,7 @@ const PaginationTable = () => {
             <TdsBodyCell cellKey="truck">{row.truck}</TdsBodyCell>
             <TdsBodyCell cellKey="driver">{row.driver}</TdsBodyCell>
             <TdsBodyCell cellKey="country">{row.country}</TdsBodyCell>
-            <TdsBodyCell cellKey="milage" style={{ textAlign: 'right' }}>
+            <TdsBodyCell cellKey="milage" textAlign="right">
               {row.mileage}
             </TdsBodyCell>
           </TdsTableBodyRow>

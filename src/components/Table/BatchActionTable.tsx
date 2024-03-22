@@ -101,7 +101,7 @@ const BatchActionTable = () => {
           <TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
           <TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
           <TdsHeaderCell cellKey="country" cellValue="Country"></TdsHeaderCell>
-          <TdsHeaderCell cellKey="mileage" cellValue="Mileage" textAlign="right"></TdsHeaderCell>
+          <TdsHeaderCell cellKey="mileage" cellValue="Mileage" textAlign="left"></TdsHeaderCell>
         </TdsTableHeader>
         <TdsTableBody>
           {data.map((object) => (
@@ -115,7 +115,7 @@ const BatchActionTable = () => {
               <TdsBodyCell cellKey={`truck`}>{object.truck}</TdsBodyCell>
               <TdsBodyCell cellKey={`driver`}>{object.driver}</TdsBodyCell>
               <TdsBodyCell cellKey={`country`}>{object.country}</TdsBodyCell>
-              <TdsBodyCell style={{ textAlign: 'right' }} cellKey={`mileage`}>
+              <TdsBodyCell textAlign="right" cellKey={`mileage`}>
                 {object.mileage}
               </TdsBodyCell>
             </TdsTableBodyRow>
