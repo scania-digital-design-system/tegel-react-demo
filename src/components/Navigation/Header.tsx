@@ -22,7 +22,7 @@ interface HeaderProps {
   toggleMobileNav: Function;
 }
 
-const Header = ({ className, toggleMobileNav }: HeaderProps) => {
+const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
   const userContext = useContext(UserContext);
   return (
     <div className={className}>
@@ -37,6 +37,18 @@ const Header = ({ className, toggleMobileNav }: HeaderProps) => {
         ></TdsHeaderHamburger>
 
         <TdsHeaderTitle>React Demo</TdsHeaderTitle>
+
+        <TdsHeaderDropdown>
+          <span slot="label">Wheel types</span>
+          <TdsHeaderDropdownList>
+            <TdsHeaderDropdownListItem selected={pathname === '/about'}>
+              <Link to="about">About</Link>
+            </TdsHeaderDropdownListItem>
+            <TdsHeaderDropdownListItem selected={pathname === '/table'}>
+              <Link to="table">Table</Link>
+            </TdsHeaderDropdownListItem>
+          </TdsHeaderDropdownList>
+        </TdsHeaderDropdown>
 
         <TdsHeaderDropdown onClick={() => {}} slot="end" no-dropdown-icon>
           <div slot="icon">
