@@ -44,6 +44,7 @@ const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
             <TdsHeaderDropdownListItem selected={pathname === '/about'}>
               <Link to="about">About</Link>
             </TdsHeaderDropdownListItem>
+            <TdsHeaderDropdownListItem>Just a title</TdsHeaderDropdownListItem>
             <TdsHeaderDropdownListItem selected={pathname === '/table'}>
               <Link to="table">Table</Link>
             </TdsHeaderDropdownListItem>
