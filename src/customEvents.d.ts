@@ -96,3 +96,13 @@ interface HTMLElementEventMap {
   tdsFocus: TdsFocusEvent;
   tdsChange: TdsChangeEvent;
 }
+
+declare module 'demoData' {
+  export function makeData(size: number): any[];
+  export interface Person {
+    firstName: string;
+    lastName: string;
+    age: number;
+    // add other properties as needed
+  }
+}
