@@ -18,6 +18,7 @@ import StepperPage from './pages/StepperPage';
 import NotificationPage from './pages/NotificationPage';
 import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
+import Tanstack from './pages/Tanstack';
 import { defineCustomElements } from '@scania/tegel-react';
 
 export const mainRoutes: RouteObject[] = [
@@ -78,6 +79,10 @@ export const mainRoutes: RouteObject[] = [
       {
         path: 'text',
         element: <TextPage />,
+      },
+      {
+        path: 'tanstack',
+        element: <Tanstack />,
       },
       {
         path: 'text/subpage-with-a-very-long-title',

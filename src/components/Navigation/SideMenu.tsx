@@ -84,6 +84,12 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
             Text
           </Link>
         </TdsSideMenuItem>
+        <TdsSideMenuItem selected={pathname === '/tanstack'}>
+          <Link to={'/tanstack'} onClick={() => toggleMobileNav()}>
+            <TdsIcon name="warning" size="24"></TdsIcon>
+            Tanstack POC
+          </Link>
+        </TdsSideMenuItem>
         <div slot="end">
           <TdsSideMenuDropdown selected={pathname.includes('settings')}>
             <TdsSideMenuUser
