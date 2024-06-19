@@ -20,6 +20,7 @@ import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
 import { defineCustomElements } from '@scania/tegel-react';
 import TanstackColumnFilter from './pages/TanstackPage/column-search/TanstackColumnFilter';
+import TanstackPage from './pages/TanstackPage/TanstackPage';
 
 export const mainRoutes: RouteObject[] = [
   {
@@ -41,6 +42,10 @@ export const mainRoutes: RouteObject[] = [
       {
         path: 'tanstack-filter',
         element: <TanstackColumnFilter />,
+      },
+      {
+        path: 'tanstack',
+        element: <TanstackPage />,
       },
       {
         path: 'form',
