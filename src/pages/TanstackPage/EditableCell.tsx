@@ -56,19 +56,21 @@ const EditableCell = ({
   return !isFocused ? (
     <div style={{ display: 'table-cell' }} key={id} tabIndex={index}>
       <input
+        readOnly
         style={{
           paddingLeft: '16px',
           height: '49px',
           border: 'none',
           backgroundColor: 'transparent',
         }}
-        defaultValue={value as string}
+        value={value as string}
         onFocus={() => setIsFocused(true)}
       />
     </div>
   ) : (
     <TdsTextField
       style={{ display: 'table-cell' }}
+      onTdsChange={(e: any) => _setValue(e.target.value)}
       size="md"
       ref={inputRef}
       noMinWidth
