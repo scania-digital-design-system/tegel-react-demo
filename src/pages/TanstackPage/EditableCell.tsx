@@ -46,23 +46,29 @@ const EditableCell = ({
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [inputRef]);
 
   return !isFocused ? (
-    <TdsBodyCell cellKey={id}>
+    <div style={{ display: 'table-cell' }} key={id} tabIndex={index}>
       <input
-        style={{ border: 'none', backgroundColor: 'transparent' }}
+        style={{
+          paddingLeft: '16px',
+          height: '49px',
+          border: 'none',
+          backgroundColor: 'transparent',
+        }}
         defaultValue={value as string}
         onFocus={() => setIsFocused(true)}
       />
-    </TdsBodyCell>
+    </div>
   ) : (
     <TdsTextField
+      style={{ display: 'table-cell' }}
       size="md"
       ref={inputRef}
       noMinWidth
