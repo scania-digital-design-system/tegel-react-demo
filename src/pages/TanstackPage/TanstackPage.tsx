@@ -5,6 +5,7 @@ import {
   TdsTableBody,
   TdsHeaderCell,
   TdsTableBodyRow,
+  TdsBodyCell,
 } from '@scania/tegel-react';
 import { Vehicle, createData } from './makeData';
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
@@ -62,12 +63,18 @@ const TableEditPage = () => {
 
   return (
     <div>
+      <div className="tds-headline-01 tds-u-pb3">Tegel & Tanstack</div>
+      <div className="tds-headline-03">Cell edit Table</div>
+      <p className="tds-u-pb3">
+        Example of Tegel table component with Tanstack cell editing functionality. Click on a cell
+        to edit it.
+      </p>
       <TdsTable>
         {table.getHeaderGroups().map((headerGroup) => (
           <TdsTableHeader key={headerGroup.id}>
             {headerGroup.headers.map((header) => {
               return (
-                <TdsHeaderCell key={header.id}>
+                <TdsHeaderCell key={header.id} cellKey={header.id}>
                   {header.isPlaceholder ? null : (
                     <div>{flexRender(header.column.columnDef.header, header.getContext())}</div>
                   )}
@@ -80,9 +87,11 @@ const TableEditPage = () => {
           {table.getRowModel().rows.map((row) => {
             return (
               <TdsTableBodyRow key={row.id}>
-                {row
-                  .getVisibleCells()
-                  .map((cell) => flexRender(cell.column.columnDef.cell, cell.getContext()))}
+                {row.getVisibleCells().map((cell) => (
+                  <TdsBodyCell cellKey={cell.column.id} key={cell.id} disablePadding>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TdsBodyCell>
+                ))}
               </TdsTableBodyRow>
             );
           })}
