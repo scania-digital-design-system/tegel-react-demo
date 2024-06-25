@@ -46,8 +46,8 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
           </Link>
         </TdsSideMenuItem>
         <TdsSideMenuDropdown
-          default-open={pathname.includes('/tabs')}
-          selected={pathname.includes('/tabs')}
+          default-open={pathname.includes('/tanstack') || pathname.includes('/table')}
+          selected={pathname.includes('/tanstack') || pathname.includes('/table')}
         >
           <TdsIcon slot="icon" name="document_tool" size="24"></TdsIcon>
           <span slot="label">Table</span>
