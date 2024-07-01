@@ -59,7 +59,7 @@ const EditableCell = ({
         readOnly
         style={{
           paddingLeft: '16px',
-          height: '49px',
+          height: '48px',
           border: 'none',
           backgroundColor: 'transparent',
         }}
