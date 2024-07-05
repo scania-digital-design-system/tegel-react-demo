@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Vehicle } from './makeData';
 import { CellContext, RowData } from '@tanstack/react-table';
-import { TdsBodyCell, TdsTextField } from '@scania/tegel-react';
+import './EditableCell.scss';
 
 declare module '@tanstack/react-table' {
   interface TableMeta<TData extends RowData> {
@@ -16,32 +16,20 @@ const EditableCell = ({
   table,
 }: CellContext<Vehicle, unknown>) => {
   const initialValue = getValue<string>();
-  const inputRef = useRef<HTMLTdsTextFieldElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // We need to keep and update the state of the cell normally
   const [value, setValue] = useState(initialValue);
-  const [isFocused, setIsFocused] = useState<boolean>(false);
-
-  const _setValue = (newValue: string = value) => {
-    setValue(newValue);
-    table.options.meta?.updateData(index, id, value);
-    setIsFocused(false);
-  };
-
-  // When the input is blurred, we'll set internal state value and call our table meta's updateData function
-  const onBlur = (e: any) => {
-    _setValue(e.target.value);
-  };
 
   // If the initialValue is changed external, sync it up with our state
   useEffect(() => {
     setValue(initialValue);
   }, [initialValue]);
 
-  // If we click outside we
+  // If we click outside we blur the input
   const handleClickOutside = (event: any) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
-      _setValue();
+      inputRef.current.blur();
     }
   };
 
@@ -53,36 +41,25 @@ const EditableCell = ({
     };
   }, [inputRef]);
 
-  return !isFocused ? (
+  return (
     <div style={{ display: 'table-cell' }} key={id} tabIndex={index}>
       <input
-        readOnly
-        style={{
-          paddingLeft: '16px',
-          height: '48px',
-          border: 'none',
-          backgroundColor: 'transparent',
+        ref={inputRef}
+        style={{}}
+        value={value}
+        onChange={(e: any) => setValue(e.target.value)}
+        onBlur={(e: any) => {
+          table.options.meta?.updateData(index, id, e.target.value);
         }}
-        value={value as string}
-        onFocus={() => setIsFocused(true)}
+        onKeyDown={(e: any) => {
+          if (e.keyCode === 27 && inputRef.current) {
+            setValue(initialValue);
+            inputRef.current.value = initialValue;
+            inputRef.current.blur();
+          }
+        }}
       />
     </div>
-  ) : (
-    <TdsTextField
-      style={{ display: 'table-cell' }}
-      onTdsChange={(e: any) => _setValue(e.target.value)}
-      size="md"
-      ref={inputRef}
-      noMinWidth
-      autofocus
-      onBlur={onBlur}
-      value={value}
-      modeVariant="secondary"
-      name="text-field"
-      label="Full name"
-      labelPosition="no-label"
-      placeholder="John Doe"
-    />
   );
 };
 
