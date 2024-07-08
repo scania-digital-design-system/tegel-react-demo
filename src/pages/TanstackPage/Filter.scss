@@ -1,0 +1,25 @@
+.filter-wrapper {
+  background-color: 'white';
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding-left: var(--tds-spacing-element-8);
+}
+
+input {
+  font: var(--tds-body-02);
+  padding-left: var(--tds-spacing-element-8);
+  height: 38px;
+  border-radius: none;
+  border: none;
+  background-color: transparent;
+}
+
+.filter-wrapper:focus-within {
+  background-color: white;
+  border-bottom: 2px solid var(--tds-text-field-bar);
+}
+
+input:focus {
+  outline: none;
+  background-color: white;
+}
