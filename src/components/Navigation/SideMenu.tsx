@@ -45,12 +45,21 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
             Stepper
           </Link>
         </TdsSideMenuItem>
-        <TdsSideMenuItem selected={pathname === '/table'}>
-          <Link to={'/table'} onClick={() => toggleMobileNav()}>
-            <TdsIcon name="document_tool" size="24"></TdsIcon>
-            Table
-          </Link>
-        </TdsSideMenuItem>
+        <TdsSideMenuDropdown
+          default-open={pathname.includes('/table')}
+          selected={pathname.includes('/table')}
+        >
+          <TdsIcon slot="icon" name="document_tool" size="24"></TdsIcon>
+          <span slot="label">Table</span>
+          <TdsSideMenuDropdownList>
+            <TdsSideMenuDropdownListItem selected={pathname.includes('/table')}>
+              <Link to="/table">Tegel Table</Link>
+            </TdsSideMenuDropdownListItem>
+            <TdsSideMenuDropdownListItem selected={pathname.includes('ag-grid')}>
+              <Link to="/ag-grid">Tegel + AG-Grid</Link>
+            </TdsSideMenuDropdownListItem>
+          </TdsSideMenuDropdownList>
+        </TdsSideMenuDropdown>
         <TdsSideMenuItem selected={pathname === '/web-components'}>
           <Link to={'/web-components'} onClick={() => toggleMobileNav()}>
             <TdsIcon name="tool" size="24"></TdsIcon>

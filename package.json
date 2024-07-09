@@ -7,6 +7,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^32.0.0",
+    "@ag-grid-community/react": "^32.0.0",
     "@scania/tegel-react": "1.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -14,6 +16,8 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
     "@types/react-dom": "^18.0.10",
+    "ag-grid-community": "^32.0.0",
+    "ag-grid-react": "^32.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
