@@ -46,14 +46,17 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
           </Link>
         </TdsSideMenuItem>
         <TdsSideMenuDropdown
-          default-open={pathname.includes('/tanstack') || pathname.includes('/table')}
-          selected={pathname.includes('/tanstack') || pathname.includes('/table')}
+          default-open={pathname.includes('/table')}
+          selected={pathname.includes('/table')}
         >
           <TdsIcon slot="icon" name="document_tool" size="24"></TdsIcon>
           <span slot="label">Table</span>
           <TdsSideMenuDropdownList>
             <TdsSideMenuDropdownListItem selected={pathname.includes('/table')}>
               <Link to="/table">Tegel Table</Link>
+            </TdsSideMenuDropdownListItem>
+            <TdsSideMenuDropdownListItem selected={pathname.includes('ag-grid')}>
+              <Link to="/ag-grid">Tegel + AG-Grid</Link>
             </TdsSideMenuDropdownListItem>
             <TdsSideMenuDropdownListItem selected={pathname.includes('tanstack')}>
               <Link to="/tanstack">Tegel + Tanstack</Link>
