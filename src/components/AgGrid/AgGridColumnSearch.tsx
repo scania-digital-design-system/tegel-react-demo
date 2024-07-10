@@ -6,6 +6,7 @@ import { AgGridReact } from '@ag-grid-community/react';
 import 'ag-grid-community/styles/ag-grid.css';
 // Core CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css';
+import './Override.scss';
 import React, { useCallback, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -32,13 +33,14 @@ const AgGridColumnSearch = () => {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState<ColDef<IRow>[]>([
-    { field: 'make' },
-    { field: 'model' },
-    { field: 'price' },
+    { field: 'make', filter: true },
+    { field: 'model', filter: true },
+    { field: 'price', filter: true },
   ]);
 
   const defaultColDef: ColDef = {
     flex: 1,
+    filter: true,
   };
 
   const onGridReady = useCallback((params: GridReadyEvent) => {
@@ -49,7 +51,7 @@ const AgGridColumnSearch = () => {
 
   // Container: Defines the grid's theme & dimensions.
   return (
-    <div className={'ag-theme-quartz-dark'} style={{ width: '100%', height: '100%' }}>
+    <div className={'ag-theme-quartz'} style={{ width: '100%', height: '100%' }}>
       <AgGridReact
         rowData={rowData}
         columnDefs={colDefs}
