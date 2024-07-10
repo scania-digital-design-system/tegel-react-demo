@@ -33,9 +33,9 @@ const AgGridColumnSearchFloating = () => {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState<ColDef<IRow>[]>([
-    { field: 'make', filter: true },
-    { field: 'model', filter: true },
-    { field: 'price', filter: true },
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' },
   ]);
 
   const defaultColDef: ColDef = {
