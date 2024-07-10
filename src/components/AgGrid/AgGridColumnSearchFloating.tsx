@@ -20,7 +20,7 @@ interface IRow {
 }
 
 // Create new GridExample component
-const AgGridColumnSearch = () => {
+const AgGridColumnSearchFloating = () => {
   // Row Data: The data to be displayed.
   const [rowData, setRowData] = useState<IRow[]>([
     { make: 'Tesla', model: 'Model Y', price: 64950 },
@@ -41,6 +41,7 @@ const AgGridColumnSearch = () => {
   const defaultColDef: ColDef = {
     flex: 1,
     filter: true,
+    floatingFilter: true,
   };
 
   const onGridReady = useCallback((params: GridReadyEvent) => {
@@ -52,8 +53,13 @@ const AgGridColumnSearch = () => {
   // Container: Defines the grid's theme & dimensions.
   return (
     <>
-      <div className="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
-      <p>This is an implementation of AG-Grid with column search.</p>
+      <div className="tds-headline-02 tds-u-pt3 tds-u-pb1">
+        AG-Grid Column Search Floating Filter
+      </div>
+      <p>
+        This is an implementation of AG-Grid with column search, including a floating text input for
+        filtering.
+      </p>
       <div className={'ag-theme-quartz'} style={{ width: '100%', height: '500px' }}>
         <AgGridReact
           rowData={rowData}
@@ -68,6 +74,6 @@ const AgGridColumnSearch = () => {
 
 // Render GridExample
 const root = createRoot(document.getElementById('root')!);
-root.render(<AgGridColumnSearch />);
+root.render(<AgGridColumnSearchFloating />);
 
-export default AgGridColumnSearch;
+export default AgGridColumnSearchFloating;
