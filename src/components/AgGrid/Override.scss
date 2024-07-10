@@ -7,11 +7,13 @@
   --tds-ag-grid-table-row-color: #0d0f13;
   --tds-ag-grid-table-filter-icon-invert: invert(0%);
 
+  /* Primary mode variant variables, light mode */
   .tds-mode-variant-primary {
     --tds-ag-grid-table-row-bg: #f9fafb;
     --tds-ag-grid-table-row-hover-bg-color: #e7e9ee;
   }
 
+  /* Secondary mode variant variables, light mode */
   .tds-mode-variant-secondary {
     --tds-ag-grid-table-row-bg: #fff;
     --tds-ag-grid-table-row-hover-bg-color: #edeff3;
@@ -40,11 +42,13 @@
   --tds-ag-grid-table-row-color: #f9fafb;
   --tds-ag-grid-table-filter-icon-invert: invert(100%);
 
+  /* Primary mode variant variables, dark mode */
   .tds-mode-variant-primary {
     --tds-ag-grid-table-row-bg: #242a33;
     --tds-ag-grid-table-row-hover-bg-color: #2b323d;
   }
 
+  /* Secondary mode variant variables, dark mode */
   .tds-mode-variant-secondary {
     --tds-ag-grid-table-row-bg: #1d2229;
     --tds-ag-grid-table-row-hover-bg-color: #2b323d;
