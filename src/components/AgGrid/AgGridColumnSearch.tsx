@@ -52,16 +52,12 @@ const AgGridColumnSearch = () => {
   // Container: Defines the grid's theme & dimensions.
   return (
     <>
-      <div className="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
-      <p>This is an implementation of AG-Grid with column search.</p>
-      <div className={'ag-theme-quartz'} style={{ width: '100%', height: '500px' }}>
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={colDefs}
-          defaultColDef={defaultColDef}
-          onGridReady={onGridReady}
-        />
-      </div>
+      <AgGridReact
+        rowData={rowData}
+        columnDefs={colDefs}
+        defaultColDef={defaultColDef}
+        onGridReady={onGridReady}
+      />
     </>
   );
 };
