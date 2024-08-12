@@ -228,6 +228,13 @@ const FormPage = () => {
                   </TdsDropdownOption>
                 ))}
               </TdsDropdown>
+              <button
+                onClick={() => {
+                  swedenDropdownTown.current?.setValue('stockholm');
+                }}
+              >
+                Set value to Stockholm
+              </button>
             </section>
 
             <section>
