@@ -19,7 +19,7 @@ import NotificationPage from './pages/NotificationPage';
 import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
 import { defineCustomElements } from '@scania/tegel-react';
-import TanstackPage from './pages/TanstackPage/TanstackPage';
+import TanstackColumnFilter from './pages/TanstackPage/column-search/TanstackColumnFilter';
 
 export const mainRoutes: RouteObject[] = [
   {
@@ -39,8 +39,8 @@ export const mainRoutes: RouteObject[] = [
         element: <TablePage />,
       },
       {
-        path: 'tanstack',
-        element: <TanstackPage />,
+        path: 'tanstack-filter',
+        element: <TanstackColumnFilter />,
       },
       {
         path: 'form',

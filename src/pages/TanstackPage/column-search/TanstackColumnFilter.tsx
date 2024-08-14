@@ -19,7 +19,7 @@ import {
 } from '@tanstack/react-table';
 import Filter from './Filter';
 
-const TanstackPage = () => {
+const TanstackColumnFilter = () => {
   const [globalFilter, setGlobalFilter] = useState('');
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
@@ -124,4 +124,4 @@ const TanstackPage = () => {
   );
 };
 
-export default TanstackPage;
+export default TanstackColumnFilter;
