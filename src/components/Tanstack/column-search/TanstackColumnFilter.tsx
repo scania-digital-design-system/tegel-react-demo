@@ -64,13 +64,6 @@ const TanstackColumnFilter = () => {
 
   return (
     <div>
-      <div className="tds-headline-01 tds-u-pb3">Tegel & Tanstack</div>
-      <div className="tds-headline-03">Searchable table</div>
-      <p className="tds-u-pb3">
-        Example of Tegel table component using Tanstack to add search functionality. Click on the
-        search icon to start.
-      </p>
-
       <TdsTable>
         <TdsTableToolbar table-title="Table example" />
         {table.getHeaderGroups().map((headerGroup, index) => (

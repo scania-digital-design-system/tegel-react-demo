@@ -20,10 +20,8 @@ import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
 import AgGridPage from './pages/AgGridPage';
 import { defineCustomElements } from '@scania/tegel-react';
-import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
-import TanstackColumnFilter from './pages/TanstackPage/column-search/TanstackColumnFilter';
 import TanstackPage from './pages/TanstackPage/TanstackPage';
 
 export const mainRoutes: RouteObject[] = [
@@ -42,10 +40,6 @@ export const mainRoutes: RouteObject[] = [
       {
         path: 'table',
         element: <TablePage />,
-      },
-      {
-        path: 'tanstack-filter',
-        element: <TanstackColumnFilter />,
       },
       {
         path: 'tanstack',
