@@ -1,14 +1,13 @@
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
-// Theme
 import { ColDef, ModuleRegistry, GridReadyEvent } from '@ag-grid-community/core';
 import { AgGridReact } from '@ag-grid-community/react';
+import React, { useCallback, useState } from 'react';
+import { createRoot } from 'react-dom/client';
 // React Grid Logic
 import 'ag-grid-community/styles/ag-grid.css';
 // Core CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css';
-import './Override.scss';
-import React, { useCallback, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import '@scania/tegel-styles/dist/ag-grid/ag-grid-styles.css';
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
