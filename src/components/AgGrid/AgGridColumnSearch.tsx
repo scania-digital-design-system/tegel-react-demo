@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client';
 import 'ag-grid-community/styles/ag-grid.css';
 // Core CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css';
-import '@scania/tegel-styles/dist/ag-grid/ag-grid-styles.css';
+import '@scania/tegel-styles/dist/customization/ag-grid/quartz-theme-override.css';
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
