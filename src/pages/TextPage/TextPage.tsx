@@ -1,15 +1,24 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TextPage.scss';
 import { TdsDivider, TdsLink } from '@scania/tegel-react';
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default function TextPage() {
   const tegelStorybook: string =
     'https://tegel-storybook.netlify.app/?path=/story/intro-tegel-design-system--tegel-design-system&globals=backgrounds.value:!hex(F9FAFB)';
 
+  // Allow startDate to be either Date or null
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+
   return (
     <div className="text-page-container">
       <TdsDivider orientation="vertical"></TdsDivider>
       <section>
+        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+
         <h2 className="tds-headline-02">Test page for text, dividers and links</h2>
         <h5 className="tds-headline-05">
           To help you find Tegel link component, look for word "Tegel" in text below. Dividers can
