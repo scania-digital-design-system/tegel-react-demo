@@ -10,7 +10,10 @@ const TanstackPage = () => {
         Example of Tegel table component with Tanstack column filtering functionality. Click on a
         column header to filter the table.
       </p>
+      <br />
       <TanstackColumnFilter />
+      <br />
+      <br />
       <div className="tds-headline-03">Editable Cells</div>
       <p className="tds-u-pb3">
         Example of Tegel table component with Tanstack cell editing functionality. Click on a cell

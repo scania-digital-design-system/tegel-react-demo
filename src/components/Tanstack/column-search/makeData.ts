@@ -2,17 +2,17 @@ import { faker } from '@faker-js/faker';
 
 export type Person = {
   name: string;
-  gender: string;
-  jobTitle: string;
-  zodiacSign: string;
+  truckModel: string;
+  state: string;
+  mileage: number;
 };
 
 const newPerson = (): Person => {
   return {
     name: faker.person.fullName(),
-    gender: faker.person.gender(),
-    jobTitle: faker.person.jobTitle(),
-    zodiacSign: faker.person.zodiacSign(),
+    truckModel: faker.vehicle.model(),
+    state: faker.address.state(),
+    mileage: faker.number.int({ min: 0, max: 200000 }),
   };
 };
 

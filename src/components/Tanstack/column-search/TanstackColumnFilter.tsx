@@ -32,16 +32,16 @@ const TanstackColumnFilter = () => {
         accessorKey: 'name',
       },
       {
-        header: 'Gender',
-        accessorKey: 'gender',
+        header: 'Vehicle',
+        accessorKey: 'truckModel',
       },
       {
-        header: 'Job title',
-        accessorKey: 'jobTitle',
+        header: 'State',
+        accessorKey: 'state',
       },
       {
-        header: 'Zodiac sign',
-        accessorKey: 'zodiacSign',
+        header: 'Mileage',
+        accessorKey: 'mileage',
       },
     ],
     [],
@@ -83,7 +83,11 @@ const TanstackColumnFilter = () => {
           <TdsTableHeader key={`${index}-input`}>
             {headerGroup.headers.map((header, index) => {
               return (
-                <TdsHeaderCell key={`${header.id}-${index}-input`} cellKey={header.id}>
+                <TdsHeaderCell
+                  disablePadding
+                  key={`${header.id}-${index}-input`}
+                  cellKey={header.id}
+                >
                   {header.column.getCanFilter() && <Filter column={header.column} />}
                 </TdsHeaderCell>
               );
@@ -104,15 +108,6 @@ const TanstackColumnFilter = () => {
           })}
         </TdsTableBody>
       </TdsTable>
-      <pre>
-        {JSON.stringify(
-          {
-            columnFilters: table.getState().columnFilters,
-          },
-          null,
-          2,
-        )}
-      </pre>
     </div>
   );
 };
