@@ -1,10 +1,5 @@
 /* Layout */
 
-.mode-wrapper,
-.mode-variant-wrapper {
-  height: 100%;
-}
-
 .mode-variant-wrapper {
   min-height: 100%;
   display: flex;
@@ -44,7 +39,6 @@ main {
 
 @media (min-width: 992px) {
   .app-side-menu {
-    height: 100%;
     position: sticky;
   }
 }
