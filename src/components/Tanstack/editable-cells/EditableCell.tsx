@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Vehicle } from './makeData';
 import { CellContext, RowData } from '@tanstack/react-table';
-import './EditableCell.scss';
+import { TdsTableBodyInputWrapper } from '@scania/tegel-react';
 
 declare module '@tanstack/react-table' {
   interface TableMeta<TData extends RowData> {
@@ -42,7 +42,7 @@ const EditableCell = ({
   }, [inputRef]);
 
   return (
-    <div style={{ display: 'table-cell' }} key={id} tabIndex={index}>
+    <TdsTableBodyInputWrapper>
       <input
         ref={inputRef}
         style={{}}
@@ -59,7 +59,7 @@ const EditableCell = ({
           }
         }}
       />
-    </div>
+    </TdsTableBodyInputWrapper>
   );
 };
 
