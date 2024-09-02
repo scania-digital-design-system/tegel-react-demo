@@ -52,7 +52,7 @@ const EditableCell = ({
           table.options.meta?.updateData(index, id, e.target.value);
         }}
         onKeyDown={(e: any) => {
-          if (e.keyCode === 27 && inputRef.current) {
+          if ((e.key === 'Escape' || e.key === 'Enter') && inputRef.current) {
             setValue(initialValue);
             inputRef.current.value = initialValue;
             inputRef.current.blur();

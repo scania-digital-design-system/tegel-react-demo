@@ -8,7 +8,7 @@ import {
   TdsBodyCell,
   TdsTableToolbar,
 } from '@scania/tegel-react';
-import { Person, createData } from './makeData';
+import { Vehicle, createData } from './makeData';
 import {
   ColumnDef,
   flexRender,
@@ -25,7 +25,7 @@ const TanstackColumnFilter = () => {
 
   const [data, setData] = useState(() => createData(10));
 
-  const columns = useMemo<ColumnDef<Person>[]>(
+  const columns = useMemo<ColumnDef<Vehicle>[]>(
     () => [
       {
         header: 'Name',
