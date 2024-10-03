@@ -4,7 +4,7 @@ import ExpandTable from '../components/Table/ExpandTable';
 import PaginationTable from '../components/Table/PaginationTable';
 import SortableTable from '../components/Table/SortableTable';
 import FilterTable from '../components/Table/FilterTable';
-
+import ZebraTable from '../components/Table/ZebraTable';
 const TablePage = () => {
   return (
     <div>
@@ -29,6 +29,9 @@ const TablePage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination</div>
       <p>This Table uses pagination.</p>
       <PaginationTable />
+      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">Zebra Table</div>
+
+      <ZebraTable />
     </div>
   );
 };
