@@ -10,7 +10,7 @@ const About = () => {
 
       <hr></hr>
 
-      <TdsBlock mode-variant="secondary">
+      <TdsBlock>
         <div className="tds-headline-02">Block</div>
         <p className="tds-body-01">Test</p>
 
