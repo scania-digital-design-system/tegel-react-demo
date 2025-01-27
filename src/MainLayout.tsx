@@ -41,7 +41,10 @@ const MainLayout = ({
   const headerAndBannerRef = useRef<HTMLDivElement>(null);
   const [isBannerOpen, setIsBannerOpen] = useState(true);
   const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
+
   const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
+  // const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('off');
+
   const headerAndBannerHeight = HEADER_HEIGHT + (isBannerOpen ? BANNER_HEIGHT : 0);
 
   return (
