@@ -23,12 +23,40 @@ const About = () => {
         multiselect
         open-direction="auto"
         normalizeText={true}
-        onTdsChange={(event) => console.log('Selected values:', event.detail.value)}
+        onTdsChange={(event) => console.log('tdsChange:', event.detail.value)}
       >
-        <TdsDropdownOption value="1">Option 1 (string)</TdsDropdownOption>
-        <TdsDropdownOption value={2}>Option 2 (number)</TdsDropdownOption>
-        <TdsDropdownOption value="3">Option 3 (string)</TdsDropdownOption>
-        <TdsDropdownOption value={4}>Option 4 (number)</TdsDropdownOption>
+        <TdsDropdownOption
+          value="1"
+          onTdsSelect={(event) =>
+            console.log('tdsSelect:', event.detail.value, typeof event.detail.value)
+          }
+        >
+          Option 1 (string)
+        </TdsDropdownOption>
+        <TdsDropdownOption
+          value={2}
+          onTdsSelect={(event) =>
+            console.log('tdsSelect:', event.detail.value, typeof event.detail.value)
+          }
+        >
+          Option 2 (number)
+        </TdsDropdownOption>
+        <TdsDropdownOption
+          value="3"
+          onTdsSelect={(event) =>
+            console.log('tdsSelect:', event.detail.value, typeof event.detail.value)
+          }
+        >
+          Option 3 (string)
+        </TdsDropdownOption>
+        <TdsDropdownOption
+          value={4}
+          onTdsSelect={(event) =>
+            console.log('tdsSelect:', event.detail.value, typeof event.detail.value)
+          }
+        >
+          Option 4 (number)
+        </TdsDropdownOption>
       </TdsDropdown>
     </article>
   );
