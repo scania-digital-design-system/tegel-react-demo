@@ -47,7 +47,7 @@ main {
 
 .switcher-container {
   padding-top: 24px;
-  position: absolute;
+  position: fixed;
   right: 32px;
   z-index: 1;
   display: flex;
