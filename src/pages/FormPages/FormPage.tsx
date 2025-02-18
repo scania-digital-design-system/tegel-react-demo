@@ -351,7 +351,7 @@ const FormPage = () => {
             </section>
           </TdsBlock>
           <section>
-            <TdsTooltip placement="right" selector="#anonymously" mouse-over-tooltip="true" show>
+            <TdsTooltip placement="top" selector="#anonymously" mouse-over-tooltip="true" show>
               <p className="tds-detail-05 tds-u-m0 tooltip-paragraph">
                 This option is required in order to submit the form.
               </p>
