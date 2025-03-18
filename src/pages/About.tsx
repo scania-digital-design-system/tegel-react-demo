@@ -1,3 +1,5 @@
+import { TdsChip, TdsDivider } from '@scania/tegel-react';
+
 const About = () => {
   return (
     <article>
@@ -5,6 +7,12 @@ const About = () => {
       <p>
         This page is a testing ground and demo for using @scania/tegel-react in a React application.
       </p>
+
+      <TdsDivider />
+
+      <TdsChip>
+        <span slot="label">Checkbox label</span>
+      </TdsChip>
     </article>
   );
 };
