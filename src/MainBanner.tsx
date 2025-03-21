@@ -19,14 +19,14 @@ const MainBanner: React.FC<MainBannerProps> = ({ style, className, onClose }) =>
             </a>
           </TdsLink>
           <br />
-          You can find the source code at our github repository here:{' '}
+          You can find the source code in this{' '}
           <TdsLink style={{ display: 'inline-block' }}>
             <a
               href="https://github.com/scania-digital-design-system/tegel-react-demo"
               target="_blank"
               rel="noopener noreferrer"
             >
-              react-demo-repository
+              Github repository
             </a>
           </TdsLink>
         </div>
