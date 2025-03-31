@@ -1,10 +1,28 @@
+import { TdsDropdown, TdsDropdownOption } from '@scania/tegel-react';
+import { useState } from 'react';
+
 const About = () => {
+  const [selected, setSelected] = useState('1');
+
+  const handleChange = (e: any) => {
+    console.log('onChange was called');
+    const newValue = e.detail.value;
+    setSelected(newValue);
+  };
   return (
     <article>
-      <h3>About this page</h3>
-      <p>
-        This page is a testing ground and demo for using @scania/tegel-react in a React application.
-      </p>
+      <TdsDropdown
+        name="dropdown"
+        label="Label"
+        labelPosition="outside"
+        placeholder="Placeholder"
+        openDirection="auto"
+        value={selected}
+        onTdsChange={handleChange}
+      >
+        <TdsDropdownOption value="1">Option 1</TdsDropdownOption>
+        <TdsDropdownOption value="1">Option 2</TdsDropdownOption>
+      </TdsDropdown>
     </article>
   );
 };
