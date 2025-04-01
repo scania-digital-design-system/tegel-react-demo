@@ -21,7 +21,7 @@ const About = () => {
         onTdsChange={handleChange}
       >
         <TdsDropdownOption value="1">Option 1</TdsDropdownOption>
-        <TdsDropdownOption value="1">Option 2</TdsDropdownOption>
+        <TdsDropdownOption value="2">Option 2</TdsDropdownOption>
       </TdsDropdown>
     </article>
   );
