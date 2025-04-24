@@ -271,7 +271,18 @@ const FormPage = () => {
                 labelPosition="outside"
                 state={occupationEssayState}
                 helper={helperTextOccupationEssayState}
-                disabled={textareaDisabled}
+              ></TdsTextarea>
+            </section>
+
+            <section className="tds-u-mt3">
+              <h5>Textarea 2</h5>
+              <TdsTextarea
+                modeVariant="secondary"
+                name="occupationalEssay"
+                label="What do you do at Scania? (Minimum 50 chars)"
+                labelPosition="outside"
+                state={occupationEssayState}
+                helper={helperTextOccupationEssayState}
               ></TdsTextarea>
             </section>
 
