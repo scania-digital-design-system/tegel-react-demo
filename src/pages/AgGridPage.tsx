@@ -22,7 +22,7 @@ const AgGridPage = () => {
       <div className="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
       <p>This is an implementation of AG-Grid with column search.</p>
       <div
-        // className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
         style={{ width: '100%', height: '500px' }}
       >
         <AgGridColumnSearch />
