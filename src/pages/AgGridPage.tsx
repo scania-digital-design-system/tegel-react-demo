@@ -22,7 +22,9 @@ const AgGridPage = () => {
       <div className="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
       <p>This is an implementation of AG-Grid with column search.</p>
       <div
-        className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        // className={`ag-theme-quartz tds-mode-variant-secondary ${classCompact ? 'compact' : ''}`}
+        // className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        className={`ag-theme-quartz tds-mode-variant-primary ${classCompact ? 'compact' : ''}`}
         style={{ width: '100%', height: '500px' }}
       >
         <AgGridColumnSearch />
@@ -30,7 +32,7 @@ const AgGridPage = () => {
       <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">AG-Grid Editable Cells</div>
       <p>This is an implementation of AG-Grid with editable cells.</p>
       <div
-        className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        className={`ag-theme-quartz tds-mode-variant-secondary ${classCompact ? 'compact' : ''}`}
         style={{ width: '100%', height: '500px' }}
       >
         <AgGridEditableCells />
