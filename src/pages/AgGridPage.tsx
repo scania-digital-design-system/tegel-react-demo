@@ -1,7 +1,7 @@
 import AgGridColumnSearch from '../components/AgGrid/AgGridColumnSearch';
 import AgGridEditableCells from '../components/AgGrid/AgGridEditableCells';
 import { useState } from 'react';
-import { TdsToggle } from '@scania/tegel-react';
+import { TdsDivider, TdsToggle } from '@scania/tegel-react';
 
 const AgGridPage = () => {
   const [classCompact, setClassCompact] = useState(false);
@@ -15,25 +15,38 @@ const AgGridPage = () => {
   return (
     <div>
       <div className="tds-u-pb3">
-        <TdsToggle onTdsToggle={toggleMode} headline="Toggle compact mode" size="sm">
+        <TdsToggle
+          onTdsToggle={toggleMode}
+          headline="Toggle compact mode (currently not working)"
+          size="sm"
+        >
           <div slot="label">{labelText}</div>
         </TdsToggle>
       </div>
-      <div className="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
-      <p>This is an implementation of AG-Grid with column search.</p>
       <div
-        className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        // className={`ag-theme-quartz tds-mode-variant-secondary ${classCompact ? 'compact' : ''}`}
+        // className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        className={`ag-theme-quartz tds-mode-variant-primary ${classCompact ? 'compact' : ''}`}
         style={{ width: '100%', height: '500px' }}
       >
+        <h4>Primary mode variant</h4>
         <AgGridColumnSearch />
       </div>
-      <div className="tds-headline-02 tds-u-pb1 tds-u-pt3">AG-Grid Editable Cells</div>
-      <p>This is an implementation of AG-Grid with editable cells.</p>
+
+      <div style={{ marginTop: '200px', marginBottom: '50px' }}>
+        <TdsDivider />
+      </div>
+
       <div
-        className={`ag-theme-quartz ${classCompact ? 'compact' : ''}`}
+        className={`ag-theme-quartz tds-mode-variant-secondary ${classCompact ? 'compact' : ''}`}
         style={{ width: '100%', height: '500px' }}
       >
+        <h4>Secondary mode variant</h4>
         <AgGridEditableCells />
+      </div>
+
+      <div style={{ marginTop: '200px' }}>
+        <TdsDivider />
       </div>
     </div>
   );
