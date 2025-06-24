@@ -18,7 +18,7 @@ const Card = () => {
             src={CardImg}
           />
           <div slot="actions">
-            <p className="tds-text-grey-958">
+            <p>
               The bottom section can have a{' '}
               <TdsLink style={{ display: 'inline-block' }}>
                 <a href="/"> link.</a>
@@ -35,9 +35,7 @@ const Card = () => {
             src={CardImg}
           />
           <div slot="actions">
-            <p className="tds-text-grey-958">
-              This is the bottom section, this Card has its image-placement above-header below.
-            </p>
+            <p>This is the bottom section, this Card has its image-placement above-header below.</p>
           </div>
         </TdsCard>
       </div>
