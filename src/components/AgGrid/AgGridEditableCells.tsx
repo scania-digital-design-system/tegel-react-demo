@@ -1,15 +1,9 @@
-import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
-import { ColDef, ModuleRegistry, GridReadyEvent } from '@ag-grid-community/core';
-import { AgGridReact } from '@ag-grid-community/react';
-import React, { useCallback, useState } from 'react';
+import { AllCommunityModule, ModuleRegistry, GridReadyEvent, ColDef } from 'ag-grid-community';
+import { AgGridReact } from 'ag-grid-react';
+import { useCallback, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-// React Grid Logic
-import 'ag-grid-community/styles/ag-grid.css';
-// Core CSS
-import 'ag-grid-community/styles/ag-theme-quartz.css';
-import '@scania/tegel-styles/dist/customization/ag-grid/quartz-theme-override-v33.css';
 
-ModuleRegistry.registerModules([ClientSideRowModelModule]);
+ModuleRegistry.registerModules([AllCommunityModule]);
 
 // Row Data Interface
 interface IRow {
