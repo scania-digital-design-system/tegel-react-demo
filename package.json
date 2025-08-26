@@ -9,7 +9,7 @@
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "@scania/tegel-react": "1.30.0",
-    "@scania/tegel-styles": "1.0.0-ag-grid-v33-beta.1",
+    "@scania/tegel-styles": "^1.0.0-ag-grid-v33-beta.2",
     "@tanstack/react-table": "^8.19.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
