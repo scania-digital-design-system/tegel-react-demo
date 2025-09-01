@@ -26,6 +26,7 @@ import TextField from '../../components/TextField';
 import Tooltip from '../../components/Tooltip';
 import StepperExample from '../../components/Stepper/StepperExample';
 import ModalExample from '../../components/Modal/ModalExample';
+import Tag from '../../components/Tag';
 
 export default function WebComponents() {
   return (
@@ -90,6 +91,9 @@ export default function WebComponents() {
       </div>
       <div>
         <Tabs />
+      </div>
+      <div>
+        <Tag />
       </div>
       <div>
         <TextField />
