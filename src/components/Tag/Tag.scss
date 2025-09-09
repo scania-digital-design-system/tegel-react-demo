@@ -1,0 +1,11 @@
+// Tag component styles
+// The actual styling is handled by the tds-tag web component
+// This file is kept for consistency with other components
+// and can be used for any custom overrides if needed
+
+.tag-demo-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}

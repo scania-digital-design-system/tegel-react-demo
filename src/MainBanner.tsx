@@ -1,5 +1,6 @@
 import React from 'react';
-import { TdsBanner, TdsLink } from '@scania/tegel-react';
+import { TdsBanner, TdsLink, TdsIcon } from '@scania/tegel-react';
+import Tag from './components/Tag/Tag';
 
 interface MainBannerProps {
   style?: React.CSSProperties;
@@ -29,6 +30,15 @@ const MainBanner: React.FC<MainBannerProps> = ({ style, className, onClose }) =>
               Github repository
             </a>
           </TdsLink>
+          <br />
+          <br />
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <Tag text="React Demo" variant="Information" />
+            <Tag text="New Feature" variant="New" />
+            <Tag text="Success" variant="Success" />
+            <Tag text="Warning" variant="Warning" />
+            <Tag text="With Icon" variant="Neutral" prefix={<TdsIcon name="info" size="16px" />} />
+          </div>
         </div>
       </TdsBanner>
     </div>
