@@ -21,6 +21,7 @@ import Dropdown from '../../components/Dropdown';
 import Link from '../../components/Link';
 import Spinner from '../../components/Spinner';
 import Tabs from '../../components/Tabs';
+import TagExample from '../../components/Tag/TagExample';
 import Textarea from '../../components/Textarea';
 import TextField from '../../components/TextField';
 import Tooltip from '../../components/Tooltip';
@@ -90,6 +91,9 @@ export default function WebComponents() {
       </div>
       <div>
         <Tabs />
+      </div>
+      <div>
+        <TagExample />
       </div>
       <div>
         <TextField />
