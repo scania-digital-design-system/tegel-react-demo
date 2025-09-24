@@ -26,7 +26,7 @@ const About = () => {
               placeholder="Enter some text here..."
               value={inputValue}
               onTdsInput={(e) => setInputValue(e.target.value)}
-            ></TdsTextField>
+            />
           </div>
           <div className="form-button-container">
             <TdsButton type="submit" variant="primary" size="md" text="Submit" fullbleed />
@@ -38,6 +38,9 @@ const About = () => {
         .about-page {
           max-width: 100%;
           width: 100%;
+          padding: 0;
+          box-sizing: border-box;
+          overflow-x: hidden;
         }
 
         .responsive-form {
@@ -45,24 +48,62 @@ const About = () => {
           flex-direction: column;
           gap: 16px;
           max-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .form-field-container {
           width: 100%;
+          box-sizing: border-box;
         }
 
         .form-button-container {
           width: 100%;
+          box-sizing: border-box;
+        }
+
+        /* Ensure all elements respect container width */
+        .form-field-container tds-text-field,
+        .form-button-container tds-button {
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box;
         }
 
         /* Mobile-first responsive design */
         @media (max-width: 767px) {
           .about-page {
-            padding: 0 16px;
+            padding: 0 12px;
+            overflow-x: hidden;
           }
 
           .responsive-form {
             gap: 12px;
+            padding: 0;
+          }
+
+          .form-field-container,
+          .form-button-container {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+          .about-page {
+            padding: 0 8px;
+          }
+
+          .responsive-form {
+            gap: 8px;
+          }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 320px) {
+          .about-page {
+            padding: 0 4px;
           }
         }
 
@@ -70,6 +111,7 @@ const About = () => {
         @media (min-width: 768px) {
           .responsive-form {
             max-width: 500px;
+            margin: 0 auto;
           }
         }
 
@@ -78,6 +120,25 @@ const About = () => {
           .responsive-form {
             max-width: 600px;
           }
+        }
+
+        /* Large desktop */
+        @media (min-width: 1200px) {
+          .responsive-form {
+            max-width: 700px;
+          }
+        }
+
+        /* Prevent horizontal overflow globally */
+        * {
+          box-sizing: border-box;
+        }
+
+        /* Ensure text doesn't cause overflow */
+        h3, h4, p {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
         }
       `}</style>
     </article>
