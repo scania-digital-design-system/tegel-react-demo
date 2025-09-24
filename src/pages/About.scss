@@ -1,0 +1,44 @@
+.about-page {
+  max-width: 100%;
+  width: 100%;
+}
+
+.responsive-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 100%;
+}
+
+.form-field-container {
+  width: 100%;
+}
+
+.form-button-container {
+  width: 100%;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 767px) {
+  .about-page {
+    padding: 0 16px;
+  }
+
+  .responsive-form {
+    gap: 12px;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .responsive-form {
+    max-width: 500px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .responsive-form {
+    max-width: 600px;
+  }
+}
