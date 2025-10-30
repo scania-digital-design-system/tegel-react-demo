@@ -10,7 +10,6 @@ const Button = () => {
       </p>
       <div className="tds-u-pb1">
         <TdsButton
-          ar
           onClick={() => {
             alert('Clicked button!');
           }}
