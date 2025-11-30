@@ -37,7 +37,7 @@ export default function WebComponents() {
       <div>
         <Badge />
       </div>
-      <div>
+      <div style={{ zIndex: 0 }}>
         <Banner />
       </div>
       <div>
