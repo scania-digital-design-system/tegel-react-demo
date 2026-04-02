@@ -5,4 +5,5 @@ updates:
     schedule:
       interval: 'weekly'
     allow:
-      - dependency-type: '@scania/tegel-react'
+      - dependency-name: '@scania/tegel-react'
+      - dependency-type: 'production'
