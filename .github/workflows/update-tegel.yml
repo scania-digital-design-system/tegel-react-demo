@@ -1,0 +1,76 @@
+name: Update Tegel Dependency
+
+on:
+  schedule:
+    - cron: '0 14 * * THU'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  update-tegel:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Get latest stable Tegel version from npm
+        id: tegel_version
+        run: |
+          LATEST=$(npm view @scania/tegel-react dist-tags.latest)
+          echo "latest=$LATEST" >> $GITHUB_OUTPUT
+
+      - name: Get current Tegel version from package.json
+        id: current_version
+        run: |
+          CURRENT=$(node -p "require('./package.json').dependencies['@scania/tegel-react']")
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+
+      - name: Compare versions
+        id: compare
+        run: |
+          LATEST="${{ steps.tegel_version.outputs.latest }}"
+          CURRENT="${{ steps.current_version.outputs.current }}"
+          if [ "$LATEST" = "$CURRENT" ]; then
+            echo "up_to_date=true" >> $GITHUB_OUTPUT
+            echo "Tegel is already up to date ($CURRENT)"
+          else
+            echo "up_to_date=false" >> $GITHUB_OUTPUT
+            echo "Update available: $CURRENT → $LATEST"
+          fi
+
+      - name: Update package.json with exact version
+        if: steps.compare.outputs.up_to_date == 'false'
+        run: |
+          sed -i 's|"@scania/tegel-react": "\^?[^"]*"|"@scania/tegel-react": "${{ steps.tegel_version.outputs.latest }}"|' package.json
+
+      - name: Install dependencies to update package-lock.json
+        if: steps.compare.outputs.up_to_date == 'false'
+        run: npm install --package-lock-only
+
+      - name: Open Pull Request
+        if: steps.compare.outputs.up_to_date == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/update-tegel-${{ steps.tegel_version.outputs.latest }}
+          commit-message: 'chore: update tegel to ${{ steps.tegel_version.outputs.latest }}'
+          title: 'chore: update @scania/tegel-react ${{ steps.current_version.outputs.current }} → ${{ steps.tegel_version.outputs.latest }}'
+          body: |
+            ## Tegel dependency update
+
+            | | Version |
+            |---|---|
+            | **Before** | `${{ steps.current_version.outputs.current }}` |
+            | **After** | `${{ steps.tegel_version.outputs.latest }}` |
+
+            This PR was opened automatically by the update-tegel workflow.
+          base: main
+          labels: dependencies
