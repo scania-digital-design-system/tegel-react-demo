@@ -1,4 +1,4 @@
-import TabsLinks from '../components/TabsLinks';
+import TabsLinks from '../../components/Tabs/TabsLinks';
 
 const TabsLinkPage = () => {
   return <TabsLinks />;

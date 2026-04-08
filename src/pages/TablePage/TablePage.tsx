@@ -1,10 +1,10 @@
-import BasicTable from '../components/Table/BasicTable';
-import BatchActionTable from '../components/Table/BatchActionTable';
-import ExpandTable from '../components/Table/ExpandTable';
-import PaginationTable from '../components/Table/PaginationTable';
-import SortableTable from '../components/Table/SortableTable';
-import FilterTable from '../components/Table/FilterTable';
-import ZebraTable from '../components/Table/ZebraTable';
+import BasicTable from '../../components/Table/BasicTable';
+import BatchActionTable from '../../components/Table/BatchActionTable';
+import ExpandTable from '../../components/Table/ExpandTable';
+import PaginationTable from '../../components/Table/PaginationTable';
+import SortableTable from '../../components/Table/SortableTable';
+import FilterTable from '../../components/Table/FilterTable';
+import ZebraTable from '../../components/Table/ZebraTable';
 const TablePage = () => {
   return (
     <div>

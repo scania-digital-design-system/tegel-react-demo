@@ -1,5 +1,5 @@
-import AgGridColumnSearch from '../components/AgGrid/AgGridColumnSearch';
-import AgGridEditableCells from '../components/AgGrid/AgGridEditableCells';
+import AgGridColumnSearch from '../../components/AgGrid/AgGridColumnSearch';
+import AgGridEditableCells from '../../components/AgGrid/AgGridEditableCells';
 import { useState } from 'react';
 import { TdsToggle } from '@scania/tegel-react';
 
