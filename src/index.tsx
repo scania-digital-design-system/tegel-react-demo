@@ -7,18 +7,18 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import WebComponents from './pages/WebComponents/WebComponents';
 import TextPage from './pages/TextPage/TextPage';
-import TablePage from './pages/TablePage';
+import TablePage from './pages/TablePage/TablePage';
 import FormPage from './pages/FormPages/FormPage';
-import TabsLinkPage from './pages/TabsLinkPage';
-import TabsButtonPage from './pages/TabsButtonPage';
-import About from './pages/About';
+import TabsLinkPage from './pages/TabsLinkPage/TabsLinkPage';
+import TabsButtonPage from './pages/TabsButtonPage/TabsButtonPage';
+import About from './pages/About/About';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
-import TextSubpage from './pages/TextSubpage';
-import StepperPage from './pages/StepperPage';
-import NotificationPage from './pages/NotificationPage';
+import TextSubpage from './pages/TextSubpage/TextSubpage';
+import StepperPage from './pages/StepperPage/StepperPage';
+import NotificationPage from './pages/NotificationPage/NotificationPage';
 import MainLayout from './MainLayout';
 import NotFound from './pages/NotFoundPage/NotFound';
-import AgGridPage from './pages/AgGridPage';
+import AgGridPage from './pages/AgGridPage/AgGridPage';
 import { defineCustomElements } from '@scania/tegel-react';
 import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid

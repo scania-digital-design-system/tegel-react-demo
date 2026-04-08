@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { TdsToggle } from '@scania/tegel-react';
-import { capitalizeFirst } from '../utility';
+import { capitalizeFirst } from '../../utility';
 
 interface ModeSwitcherProps {
   mode: 'on' | 'off';

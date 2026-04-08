@@ -1,32 +1,32 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './WebComponents.scss';
-import Banner from '../../components/Banner';
+import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
-import Button from '../../components/Button';
+import Button from '../../components/Button/Button';
 import Toast from '../../components/Toast/Toast';
 import Toggle from '../../components/Toggle/Toggle';
-import Block from '../../components/Block';
+import Block from '../../components/Block/Block';
 import RadioButton from '../../components/RadioButton/RadioButton';
-import { PopoverMenu } from '../../components/Popover';
-import PopoverCanvas from '../../components/Popover';
-import AccordionExample from '../../components/Accordion';
-import Datetime from '../../components/Datetime';
-import Message from '../../components/Message';
+import { PopoverMenu } from '../../components/Popover/Popover';
+import PopoverCanvas from '../../components/Popover/Popover';
+import AccordionExample from '../../components/Accordion/Accordion';
+import Datetime from '../../components/Datetime/Datetime';
+import Message from '../../components/Message/Message';
 import Badge from '../../components/Badge/Badge';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import Checkbox from '../../components/Checkbox';
-import Chip from '../../components/Chip';
-import Divider from '../../components/Divider';
-import Dropdown from '../../components/Dropdown';
-import Link from '../../components/Link';
-import Spinner from '../../components/Spinner';
-import Tabs from '../../components/Tabs';
-import Textarea from '../../components/Textarea';
-import TextField from '../../components/TextField';
-import Tooltip from '../../components/Tooltip';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Checkbox from '../../components/Checkbox/Checkbox';
+import Chip from '../../components/Chip/Chip';
+import Divider from '../../components/Divider/Divider';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import Link from '../../components/Link/Link';
+import Spinner from '../../components/Spinner/Spinner';
+import Tabs from '../../components/Tabs/Tabs';
+import Textarea from '../../components/Textarea/Textarea';
+import TextField from '../../components/TextField/TextField';
+import Tooltip from '../../components/Tooltip/Tooltip';
 import StepperExample from '../../components/Stepper/StepperExample';
 import ModalExample from '../../components/Modal/ModalExample';
-import Tag from '../../components/Tag';
+import Tag from '../../components/Tag/Tag';
 
 export default function WebComponents() {
   return (

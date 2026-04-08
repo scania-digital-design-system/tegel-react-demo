@@ -1,4 +1,4 @@
-import TabsButtons from '../components/TabsButtons';
+import TabsButtons from '../../components/Tabs/TabsButtons';
 
 const TabsButtonPage = () => {
   return (

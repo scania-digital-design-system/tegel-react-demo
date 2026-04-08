@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import ModeSwitcher from './components/ModeSwitcher';
-import ModeVariantSwitcher from './components/ModeVariantSwitcher';
-import Footer from './components/Footer';
+import ModeSwitcher from './components/ModeSwitcher/ModeSwitcher';
+import ModeVariantSwitcher from './components/ModeVariantSwitcher/ModeVariantSwitcher';
+import Footer from './components/Footer/Footer';
 import Header from './components/Navigation/Header';
 import SideMenu from './components/Navigation/SideMenu';
 import { createContext } from 'react';
