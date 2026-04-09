@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import ModeSwitcher from './components/ModeSwitcher';
 import ModeVariantSwitcher from './components/ModeVariantSwitcher';
+import BrandSwitcher from './components/BrandSwitcher';
 import Footer from './components/Footer';
 import Header from './components/Navigation/Header';
 import SideMenu from './components/Navigation/SideMenu';
@@ -42,10 +43,19 @@ const MainLayout = ({
   const [isBannerOpen, setIsBannerOpen] = useState(true);
   const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
   const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
+  const [bodyBrandTraton, setBodyBrandTraton] = useState(false);
+  const [wrapperBrandTraton, setWrapperBrandTraton] = useState(false);
   const headerAndBannerHeight = HEADER_HEIGHT + (isBannerOpen ? BANNER_HEIGHT : 0);
 
+  const handleBodyBrandToggle = (isTraton: boolean) => {
+    setBodyBrandTraton(isTraton);
+    document.body.classList.toggle('traton', isTraton);
+  };
+
   return (
-    <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
+    <div
+      className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}${wrapperBrandTraton ? ' traton' : ''}`}
+    >
       <div
         className={`mode-variant-wrapper tds-mode-variant-${
           primaryVariant === 'on' ? 'primary' : 'secondary'
@@ -82,6 +92,16 @@ const MainLayout = ({
                   <ModeVariantSwitcher
                     modeVariant={primaryVariant}
                     setModeVariant={setPrimaryVariant}
+                  />
+                  <BrandSwitcher
+                    headline="Brand (body)"
+                    isTraton={bodyBrandTraton}
+                    onToggle={handleBodyBrandToggle}
+                  />
+                  <BrandSwitcher
+                    headline="Brand (wrapper)"
+                    isTraton={wrapperBrandTraton}
+                    onToggle={setWrapperBrandTraton}
                   />
                 </div>
               )}
