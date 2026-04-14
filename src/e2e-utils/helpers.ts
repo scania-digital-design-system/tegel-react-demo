@@ -1,4 +1,4 @@
-import { expect, Page } from '@playwright/test';
+import { expect, type Page } from "@playwright/test";
 
 /**
  * Set a JS property on a component and verify it reflects as a DOM attribute.
@@ -8,41 +8,42 @@ import { expect, Page } from '@playwright/test';
  * createComponent), they won't appear as attributes without reflection.
  */
 export async function expectPropReflects(
-  page: Page,
-  selector: string,
-  prop: string,
-  value: unknown,
-  expectedAttribute: string,
-  expectedAttrValue?: string,
+	page: Page,
+	selector: string,
+	prop: string,
+	value: unknown,
+	expectedAttribute: string,
+	expectedAttrValue?: string,
 ) {
-  const el = page.locator(selector).first();
-  await expect(el).toBeAttached();
+	const el = page.locator(selector).first();
+	await expect(el).toBeAttached();
 
-  await el.evaluate(
-    (node: any, { prop, value }) => {
-      node[prop] = value;
-    },
-    { prop, value },
-  );
+	await el.evaluate(
+		// biome-ignore lint/suspicious/noExplicitAny: for now
+		(node: any, { prop, value }) => {
+			node[prop] = value;
+		},
+		{ prop, value },
+	);
 
-  await page.waitForTimeout(200);
+	await page.waitForTimeout(200);
 
-  const attr = await el.getAttribute(expectedAttribute);
+	const attr = await el.getAttribute(expectedAttribute);
 
-  if (typeof value === 'boolean' && value) {
-    expect(
-      attr,
-      `<${selector}> .${prop}=${value} should reflect as [${expectedAttribute}] attribute`,
-    ).not.toBeNull();
-  } else if (typeof value === 'boolean' && !value) {
-    expect(
-      attr === null || attr === 'false',
-      `<${selector}> .${prop}=false should remove [${expectedAttribute}] attribute`,
-    ).toBeTruthy();
-  } else {
-    expect(
-      attr,
-      `<${selector}> .${prop}="${value}" should reflect as [${expectedAttribute}="${expectedAttrValue ?? value}"]`,
-    ).toBe(expectedAttrValue ?? String(value));
-  }
+	if (typeof value === "boolean" && value) {
+		expect(
+			attr,
+			`<${selector}> .${prop}=${value} should reflect as [${expectedAttribute}] attribute`,
+		).not.toBeNull();
+	} else if (typeof value === "boolean" && !value) {
+		expect(
+			attr === null || attr === "false",
+			`<${selector}> .${prop}=false should remove [${expectedAttribute}] attribute`,
+		).toBeTruthy();
+	} else {
+		expect(
+			attr,
+			`<${selector}> .${prop}="${value}" should reflect as [${expectedAttribute}="${expectedAttrValue ?? value}"]`,
+		).toBe(expectedAttrValue ?? String(value));
+	}
 }
