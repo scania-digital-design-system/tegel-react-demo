@@ -1,0 +1,63 @@
+.about-beta-test {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__brand-toggle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid var(--tds-grey-300, #e4e4e4);
+    border-radius: 4px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid var(--tds-grey-300, #e4e4e4);
+    border-radius: 4px;
+  }
+
+  &__section-title {
+    margin: 0;
+  }
+
+  &__state {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__state-label {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__state-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__tooltip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    padding: 16px 0;
+  }
+
+  &__tooltip-anchor {
+    position: relative;
+  }
+}
