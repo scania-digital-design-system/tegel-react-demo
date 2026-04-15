@@ -4,7 +4,7 @@ import { createContext } from "react";
 import MainLayout from "./MainLayout"; // Import the MainLayout component
 import { Outlet, useLocation } from "react-router";
 
-      export interface User {
+export interface User {
 	userName: string;
 	placeOfWork: string;
 	notifications: Notification[];
