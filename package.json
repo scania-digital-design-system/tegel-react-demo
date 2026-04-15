@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
+    "config:hooks": "git config --local core.hooksPath git-hooks",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "biome lint --write ./src",
@@ -47,7 +48,6 @@
     "@types/react": "^18.2.8",
     "@vitejs/plugin-react": "^4.7.0",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
     "playwright": "^1.58.2",
     "sass-embedded": "^1.99.0",
     "typescript": "~5.9.3",
@@ -55,8 +55,5 @@
   },
   "overrides": {
     "vite": "^7.3.1"
-  },
-  "lint-staged": {
-    "**/*": "npm run lint"
   }
 }
