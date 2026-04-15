@@ -30,7 +30,7 @@ const About = () => {
   return (
     <article className="about-beta-test">
       <header className="about-beta-test__intro">
-        <h2 className="tds-headline-02">Variable migration test — 1.51.0-var-work-beta.1</h2>
+        <h2 className="tds-headline-02">Variable migration test — 1.51.0-var-work-beta.4</h2>
         <p className="tds-body-01">
           Testing ground for the variable migration covering{' '}
           <strong>Link, Breadcrumbs, Divider and Footer</strong>. Toggle the brand to swap the{' '}
