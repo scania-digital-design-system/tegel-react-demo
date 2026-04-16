@@ -152,30 +152,102 @@ const About = () => {
 
       {/* -------------------------------- Divider ------------------------------- */}
       <Section title="Divider">
-        <State label="Horizontal divider (default)">
-          <div style={{ width: '100%' }}>
-            <TdsDivider />
-          </div>
-        </State>
-
-        <State label="Horizontal divider between content">
+        <State label="Horizontal — subtle (default)">
           <div style={{ width: '100%' }}>
             <p className="tds-body-01" style={{ margin: 0 }}>
-              Section A content
+              Content above
             </p>
             <TdsDivider />
             <p className="tds-body-01" style={{ margin: 0 }}>
-              Section B content
+              Content below
             </p>
           </div>
         </State>
 
-        <State label="Vertical divider between items">
+        <State label="Horizontal — discrete">
+          <div style={{ width: '100%' }}>
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content above
+            </p>
+            <TdsDivider variant="discrete" />
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content below
+            </p>
+          </div>
+        </State>
+
+        <State label="Horizontal — soft">
+          <div style={{ width: '100%' }}>
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content above
+            </p>
+            <TdsDivider variant="soft" />
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content below
+            </p>
+          </div>
+        </State>
+
+        <State label="Horizontal — defined">
+          <div style={{ width: '100%' }}>
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content above
+            </p>
+            <TdsDivider variant="defined" />
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content below
+            </p>
+          </div>
+        </State>
+
+        <State label="Horizontal — dark-blue">
+          <div style={{ width: '100%' }}>
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content above
+            </p>
+            <TdsDivider variant="dark-blue" />
+            <p className="tds-body-01" style={{ margin: 0 }}>
+              Content below
+            </p>
+          </div>
+        </State>
+
+        <State label="Vertical — subtle (default)">
           <div className="about-beta-test__vertical-divider-row">
             <span className="tds-body-01">Left</span>
             <TdsDivider orientation="vertical" />
-            <span className="tds-body-01">Middle</span>
-            <TdsDivider orientation="vertical" />
+            <span className="tds-body-01">Right</span>
+          </div>
+        </State>
+
+        <State label="Vertical — discrete">
+          <div className="about-beta-test__vertical-divider-row">
+            <span className="tds-body-01">Left</span>
+            <TdsDivider orientation="vertical" variant="discrete" />
+            <span className="tds-body-01">Right</span>
+          </div>
+        </State>
+
+        <State label="Vertical — soft">
+          <div className="about-beta-test__vertical-divider-row">
+            <span className="tds-body-01">Left</span>
+            <TdsDivider orientation="vertical" variant="soft" />
+            <span className="tds-body-01">Right</span>
+          </div>
+        </State>
+
+        <State label="Vertical — defined">
+          <div className="about-beta-test__vertical-divider-row">
+            <span className="tds-body-01">Left</span>
+            <TdsDivider orientation="vertical" variant="defined" />
+            <span className="tds-body-01">Right</span>
+          </div>
+        </State>
+
+        <State label="Vertical — dark-blue">
+          <div className="about-beta-test__vertical-divider-row">
+            <span className="tds-body-01">Left</span>
+            <TdsDivider orientation="vertical" variant="dark-blue" />
             <span className="tds-body-01">Right</span>
           </div>
         </State>
