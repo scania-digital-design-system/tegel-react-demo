@@ -12,7 +12,8 @@ import {
 
 const PaginationTable = () => {
 	const [page, setPage] = useState(1);
-	const [rowsPerPage, setRowsPerPage] = useState(2);
+	const rowsPerPageOptions = [2, 4, 6];
+	const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
 	let totalPages = Math.ceil(exampleData.length / rowsPerPage);
 	const [data, setData] = useState(exampleData.slice(page, page + rowsPerPage));
 	const paginationTable = useRef<HTMLTdsTableElement>(null);
@@ -57,7 +58,8 @@ const PaginationTable = () => {
 				))}
 			</TdsTableBody>
 			<TdsTableFooter
-				rowsPerPageValues={[2, 4, 6]}
+				rowsPerPageValues={rowsPerPageOptions}
+				rowsPerPageValue={rowsPerPage}
 				onTdsPagination={handlePaginationEvent}
 				pagination
 				pages={totalPages}
