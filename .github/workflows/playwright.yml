@@ -10,11 +10,15 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+        env: 
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
+        env: 
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
-          node-version: 18
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -28,6 +32,8 @@ jobs:
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
+        env: 
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         if: ${{ !cancelled() }}
         with:
           name: playwright-report

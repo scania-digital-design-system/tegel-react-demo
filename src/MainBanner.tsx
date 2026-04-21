@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { TdsBanner, TdsLink } from '@scania/tegel-react';
 
 interface MainBannerProps {
@@ -14,7 +14,7 @@ const MainBanner: React.FC<MainBannerProps> = ({ style, className, onClose }) =>
         <div slot="subheader">
           This is a demo page in React using{' '}
           <TdsLink style={{ display: 'inline-block' }}>
-            <a href="https://www.npmjs.com/package/@scania/tegel-react" target="_blank">
+            <a href="https://www.npmjs.com/package/@scania/tegel-react" target="_blank" rel="noopener">
               @scania/tegel-react
             </a>
           </TdsLink>

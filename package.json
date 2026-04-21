@@ -1,6 +1,5 @@
 {
   "name": "@scania/tegel-react-demo",
-  "version": "0.0.1",
   "private": true,
   "main": "build/index.html",
   "publishConfig": {
@@ -29,18 +28,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "husky install",
+    "config:hooks": "git config --local core.hooksPath git-hooks",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "biome lint --write ./src",
+    "lint:check": "biome lint ./src",
+    "preview": "vite preview",
     "test:e2e": "npx playwright test"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -54,16 +48,36 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^32.1.0",
+    "@ag-grid-community/react": "^32.0.0",
+    "@scania/tegel-react": "1.52.0",
+    "@scania/tegel-styles": "1.0.0",
+    "@tanstack/react-table": "^8.19.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^20.19.0",
+    "ag-grid-react": "32.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^7.6.2"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@biomejs/biome": "^2.4.11",
+    "@faker-js/faker": "^9.9.0",
     "@playwright/test": "^1.58.2",
     "@types/react": "^18.2.8",
+    "@vitejs/plugin-react": "^4.7.0",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3",
-    "react-router-dom": "^6.8.2"
+    "playwright": "^1.58.2",
+    "sass-embedded": "^1.99.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
   },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+  "overrides": {
+    "vite": "^7.3.1"
   }
 }

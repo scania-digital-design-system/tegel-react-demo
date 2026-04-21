@@ -15,9 +15,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
           node-version: '22'
 
@@ -49,7 +53,7 @@ jobs:
       - name: Update package.json with exact version
         if: steps.compare.outputs.up_to_date == 'false'
         run: |
-          sed -i 's|"@scania/tegel-react": "\^?[^"]*"|"@scania/tegel-react": "${{ steps.tegel_version.outputs.latest }}"|' package.json
+          sed -i 's|"@scania/tegel-react": "${{ steps.current_version.outputs.current }}"|"@scania/tegel-react": "${{ steps.tegel_version.outputs.latest }}"|' package.json
 
       - name: Install dependencies to update package-lock.json
         if: steps.compare.outputs.up_to_date == 'false'
