@@ -1,6 +1,7 @@
 @import url('./reset.css');
 @import url('@scania/tegel/dist/tegel/tegel.css');
 @import url('@scania/tegel-lite/scania-variables.css');
+@import url('@scania/tegel-lite/traton-variables.css');
 @import url('@scania/tegel-lite/global.css');
 @import url('@scania/tegel-lite/tl-link.css');
 @import url('@scania/tegel-lite/tl-breadcrumbs.css');

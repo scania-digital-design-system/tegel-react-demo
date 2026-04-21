@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import BrandSwitcher from './components/BrandSwitcher/BrandSwitcher';
 import ModeSwitcher from './components/ModeSwitcher/ModeSwitcher';
 import ModeVariantSwitcher from './components/ModeVariantSwitcher/ModeVariantSwitcher';
 import Footer from './components/Footer/Footer';
@@ -42,7 +43,16 @@ const MainLayout = ({
   const [isBannerOpen, setIsBannerOpen] = useState(true);
   const [lightMode, setLightMode] = useState<'on' | 'off'>('on');
   const [primaryVariant, setPrimaryVariant] = useState<'on' | 'off'>('on');
+  const [brand, setBrand] = useState<'scania' | 'traton'>('scania');
   const headerAndBannerHeight = HEADER_HEIGHT + (isBannerOpen ? BANNER_HEIGHT : 0);
+
+  useEffect(() => {
+    document.body.classList.remove('scania', 'traton');
+    document.body.classList.add(brand);
+    return () => {
+      document.body.classList.remove('scania', 'traton');
+    };
+  }, [brand]);
 
   return (
     <div className={`App mode-wrapper tds-mode-${lightMode === 'on' ? 'light' : 'dark'}`}>
@@ -83,6 +93,7 @@ const MainLayout = ({
                     modeVariant={primaryVariant}
                     setModeVariant={setPrimaryVariant}
                   />
+                  <BrandSwitcher brand={brand} setBrand={setBrand} />
                 </div>
               )}
               {shouldRenderBreadcrumbs && <AppBreadcrumbs />}
