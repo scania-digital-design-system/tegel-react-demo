@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("tds-radio-button", () => {
 	test.beforeEach(async ({ page }) => {
-		await page.goto("/web-components");
+		await page.goto("/web-components/radio-button");
 	});
 
 	test("radio buttons render with labels", async ({ page }) => {

@@ -9,7 +9,7 @@ export const generateSegments = (pathname: string): Array<PathSegment> => {
 	const segmentObjects: Array<PathSegment> = segmentStrings.map(
 		(segmentStr, idx) => ({
 			title: unslugify(segmentStr),
-			path: "/" + segmentStrings.slice(0, idx + 1).join("/"),
+			path: `/${segmentStrings.slice(0, idx + 1).join("/")}`,
 		}),
 	);
 

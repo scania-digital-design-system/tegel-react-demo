@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-breadcrumbs', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/breadcrumbs');
   });
 
   test('breadcrumbs render', async ({ page }) => {

@@ -55,7 +55,7 @@ const Chip = () => {
 		const formEl = e.target as HTMLFormElement;
 		const elements = formEl.elements;
 
-		const checkboxNodeList = (elements as any)["topic"];
+		const checkboxNodeList = (elements as any).topic;
 		const checkedBoxes = Array.from(checkboxNodeList).filter((checkbox: any) => checkbox.checked);
 		const topics = checkedBoxes.map((checkbox: any) => checkbox.value);
 
