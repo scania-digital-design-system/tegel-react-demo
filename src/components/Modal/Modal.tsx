@@ -29,10 +29,8 @@ const Modal = ({
 			size={size}
 			actions-position="static"
 			show={show}
+			header={headline}
 		>
-			<h5 className="tds-modal-headline" slot="header">
-				{headline}
-			</h5>
 			<span slot="body">{children}</span>
 
 			{!closeButton ? (

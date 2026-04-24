@@ -66,6 +66,7 @@ const ModalExample = () => {
 						}}
 						name="truck"
 						size="24px"
+						svgTitle="Hover over this icon to open a modal"
 					></TdsIcon>
 				</div>
 				<Modal selector="hover-modal-button" headline="Modal opening on hover">
