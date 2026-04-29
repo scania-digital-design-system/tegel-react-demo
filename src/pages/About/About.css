@@ -1,0 +1,155 @@
+.about-page {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding-bottom: 48px;
+}
+
+.about-header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.brand-toggle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 8px;
+	padding: 8px 12px;
+	border: 1px solid var(--tds-grey-300, #dadee4);
+	border-radius: 4px;
+}
+
+.brand-toggle__legend {
+	padding: 0 4px;
+	opacity: 0.6;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.brand-toggle__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 14px;
+	border: 1px solid var(--tds-grey-400, #b0b7c4);
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	border-radius: 4px;
+}
+
+.brand-toggle__btn input {
+	margin: 0;
+}
+
+.brand-toggle__btn--active {
+	background: var(--tds-blue-500, #2058a8);
+	color: #fff;
+	border-color: var(--tds-blue-500, #2058a8);
+}
+
+.brand-toggle__hint {
+	margin-left: 8px;
+	opacity: 0.7;
+}
+
+.about-section {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 16px 0;
+	border-top: 1px solid var(--tds-grey-300, #dadee4);
+}
+
+.about-section__body {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.about-case {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.about-case__label {
+	opacity: 0.7;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.about-case__demo {
+	padding: 12px 0;
+}
+
+.divider-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+	max-width: 480px;
+}
+
+.divider-grid__row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.divider-grid__label {
+	opacity: 0.6;
+}
+
+.divider-vertical {
+	display: flex;
+	align-items: stretch;
+	gap: 16px;
+	height: 48px;
+}
+
+.divider-vertical__cell {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.divider-inline {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	height: 24px;
+}
+
+.button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+}
+
+.button-row--on-secondary {
+	padding: 12px;
+	background: var(--tds-grey-846, #1c2226);
+	border-radius: 4px;
+}
+
+.tooltip-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.tooltip-grid__cell {
+	display: inline-flex;
+}
+
+.tag-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
