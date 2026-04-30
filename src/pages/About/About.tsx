@@ -1,6 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TdsIcon } from "@scania/tegel-react";
 import "./About.css";
+
+type Brand = "scania" | "traton";
+
+const useBrand = (): [Brand, (next: Brand) => void] => {
+	const [brand, setBrand] = useState<Brand>(() => {
+		if (typeof document === "undefined") return "scania";
+		if (document.body.classList.contains("traton")) return "traton";
+		return "scania";
+	});
+
+	useEffect(() => {
+		const body = document.body;
+		body.classList.remove("scania", "traton");
+		body.classList.add(brand);
+		return () => {
+			body.classList.remove("scania", "traton");
+		};
+	}, [brand]);
+
+	return [brand, setBrand];
+};
 
 const ICON_NAMES = [
 	"24v_battery_inactive",
@@ -258,13 +279,7 @@ const ICON_NAMES = [
 ] as const;
 
 const About = () => {
-	useEffect(() => {
-		const body = document.body;
-		body.classList.add("scania");
-		return () => {
-			body.classList.remove("scania", "traton");
-		};
-	}, []);
+	const [brand, setBrand] = useBrand();
 
 	return (
 		<article className="about-page">
@@ -274,6 +289,36 @@ const About = () => {
 					Every icon name from <code>@scania/tegel 1.53.0-icons-beta.0</code> (
 					{ICON_NAMES.length} total).
 				</p>
+				<fieldset className="brand-toggle">
+					<legend className="brand-toggle__legend tds-detail-05">Brand</legend>
+					<label
+						className={`brand-toggle__btn${brand === "scania" ? " brand-toggle__btn--active" : ""}`}
+					>
+						<input
+							type="radio"
+							name="brand"
+							value="scania"
+							checked={brand === "scania"}
+							onChange={() => setBrand("scania")}
+						/>
+						Scania
+					</label>
+					<label
+						className={`brand-toggle__btn${brand === "traton" ? " brand-toggle__btn--active" : ""}`}
+					>
+						<input
+							type="radio"
+							name="brand"
+							value="traton"
+							checked={brand === "traton"}
+							onChange={() => setBrand("traton")}
+						/>
+						Traton
+					</label>
+					<span className="brand-toggle__hint tds-detail-06">
+						body classname: <code>.{brand}</code>
+					</span>
+				</fieldset>
 			</header>
 
 			<div className="icon-grid">
