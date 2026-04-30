@@ -3,7 +3,7 @@ import { expectPropReflects } from '../../e2e-utils/helpers';
 
 test.describe('tds-checkbox', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/checkbox');
   });
 
   test('checkboxes render with correct labels', async ({ page }) => {
@@ -15,13 +15,13 @@ test.describe('tds-checkbox', () => {
   test('enabled checkbox can be toggled', async ({ page }) => {
     const checkbox = page.locator('tds-checkbox').first();
     await checkbox.click();
-    const isChecked = await checkbox.evaluate((el: any) => el.checked);
+    const isChecked = await checkbox.evaluate((el: HTMLTdsCheckboxElement) => el.checked);
     expect(isChecked).toBe(true);
   });
 
   test('disabled checkbox is not interactive', async ({ page }) => {
     const disabledCheckbox = page.locator('tds-checkbox').nth(1);
-    const isDisabled = await disabledCheckbox.evaluate((el: any) => el.disabled);
+    const isDisabled = await disabledCheckbox.evaluate((el: HTMLTdsCheckboxElement) => el.disabled);
     expect(isDisabled).toBe(true);
   });
 

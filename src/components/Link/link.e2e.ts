@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-link', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/link');
   });
 
   test('link is visible with correct text', async ({ page }) => {

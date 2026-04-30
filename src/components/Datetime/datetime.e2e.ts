@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-datetime', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/datetime');
   });
 
   test('datetime inputs render', async ({ page }) => {

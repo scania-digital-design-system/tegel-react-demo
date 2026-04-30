@@ -3,7 +3,7 @@ import { expectPropReflects } from '../../e2e-utils/helpers';
 
 test.describe('tds-chip', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/chip');
   });
 
   test('button chips are visible', async ({ page }) => {

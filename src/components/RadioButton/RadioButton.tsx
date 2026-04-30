@@ -78,9 +78,9 @@ const RadioButton = () => {
 		const elements = formEl.elements;
 
 		setSubmittedData([
-			(elements as any)["starters"].value,
-			(elements as any)["mains"].value,
-			(elements as any)["desserts"].value,
+			(elements as any).starters.value,
+			(elements as any).mains.value,
+			(elements as any).desserts.value,
 		]);
 	};
 

@@ -3,7 +3,7 @@ import { expectPropReflects } from '../../e2e-utils/helpers';
 
 test.describe('tds-text-field', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/text-field');
   });
 
   test('text field renders and is interactive', async ({ page }) => {

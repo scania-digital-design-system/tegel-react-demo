@@ -10,7 +10,7 @@ export interface User {
 	notifications: Notification[];
 }
 
-interface UserContextValue {
+export interface UserContextValue {
 	user: User;
 	updateUser: (newUser: User) => void;
 }

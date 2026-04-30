@@ -3,7 +3,7 @@ import { expectPropReflects } from '../../e2e-utils/helpers';
 
 test.describe('tds-spinner', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/spinner');
   });
 
   test('standard and inverted spinners are visible', async ({ page }) => {

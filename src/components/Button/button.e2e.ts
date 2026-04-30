@@ -3,7 +3,7 @@ import { expectPropReflects } from '../../e2e-utils/helpers';
 
 test.describe('tds-button', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/button');
   });
 
   test('buttons are visible with expected labels', async ({ page }) => {
