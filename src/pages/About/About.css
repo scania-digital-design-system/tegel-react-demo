@@ -153,3 +153,28 @@
 	gap: 8px;
 	align-items: center;
 }
+
+.icon-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	gap: 8px;
+	width: 100%;
+}
+
+.icon-grid__cell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 6px;
+	padding: 8px 4px;
+	border: 1px solid var(--tds-grey-300, #dadee4);
+	border-radius: 4px;
+	text-align: center;
+	min-height: 64px;
+}
+
+.icon-grid__label {
+	opacity: 0.7;
+	word-break: break-word;
+}
