@@ -4,7 +4,7 @@ import { expectPropReflects } from "../../e2e-utils/helpers";
 
 test.describe("tds-toggle", () => {
 	test.beforeEach(async ({ page }) => {
-		await page.goto("/web-components");
+		await page.goto("/web-components/toggle");
 	});
 
 	test("toggles render with labels", async ({ page }) => {

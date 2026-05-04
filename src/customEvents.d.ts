@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: Ignoring it for now */
 interface TdsCloseEvent extends Event {
   detail: {
     bannerId: string;

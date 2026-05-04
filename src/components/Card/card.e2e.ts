@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-card', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/card');
   });
 
   test('cards render with visible content', async ({ page }) => {
