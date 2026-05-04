@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('tds-tabs', () => {
   test.describe('on web-components page', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/web-components');
+      await page.goto('/web-components/tabs');
     });
 
     test('folder tabs render', async ({ page }) => {

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-tag', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/tag');
   });
 
   test('tags render with correct labels', async ({ page }) => {

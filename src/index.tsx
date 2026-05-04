@@ -15,31 +15,92 @@ import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import MainLayout from "./MainLayout";
 import NotFound from "./pages/NotFoundPage/NotFound";
 import AgGridPage from "./pages/AgGridPage/AgGridPage";
-import { defineCustomElements } from "@scania/tegel-react";
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import TanstackPage from "./pages/TanstackPage/TanstackPage";
 import {
 	createBrowserRouter,
+	Navigate,
 	Outlet,
 	RouterProvider,
 	type RouteObject,
 } from "react-router";
-import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
+import AccordionExample from "./components/Accordion/Accordion";
+import Badge from "./components/Badge/Badge";
+import Banner from "./components/Banner/Banner";
+import Block from "./components/Block/Block";
+import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
+import Button from "./components/Button/Button";
+import Card from "./components/Card/Card";
+import Checkbox from "./components/Checkbox/Checkbox";
+import Chip from "./components/Chip/Chip";
+import Datetime from "./components/Datetime/Datetime";
+import Divider from "./components/Divider/Divider";
+import Dropdown from "./components/Dropdown/Dropdown";
+import Link from "./components/Link/Link";
+import Message from "./components/Message/Message";
+import ModalExample from "./components/Modal/ModalExample";
+import PopoverCanvas, { PopoverMenu } from "./components/Popover/Popover";
+import RadioButton from "./components/RadioButton/RadioButton";
+import Spinner from "./components/Spinner/Spinner";
+import StepperExample from "./components/Stepper/StepperExample";
+import Tag from "./components/Tag/Tag";
+import Tabs from "./components/Tabs/Tabs";
+import TextField from "./components/TextField/TextField";
+import Textarea from "./components/Textarea/Textarea";
+import Toast from "./components/Toast/Toast";
+import Toggle from "./components/Toggle/Toggle";
+import Tooltip from "./components/Tooltip/Tooltip";
+import { defineCustomElements } from "@scania/tegel-react";
+import { createRoot } from "react-dom/client";
 
-export const mainRoutes: RouteObject[] = [
+const mainRoutes: RouteObject[] = [
 	{
 		path: "/",
 		element: <App />,
 		children: [
 			{
-				path: "",
-				element: <WebComponents />,
+				index: true,
+				element: <Navigate to="/about" />,
+			},
+			{
+				path: "about",
+				element: <About />,
 			},
 			{
 				path: "web-components",
 				element: <WebComponents />,
+				children: [
+					{ index: true, element: <Navigate to="/web-components/accordion" /> },
+					{ path: "accordion", element: <AccordionExample /> },
+					{ path: "badge", element: <Badge /> },
+					{ path: "banner", element: <Banner /> },
+					{ path: "block", element: <Block /> },
+					{ path: "breadcrumbs", element: <Breadcrumbs /> },
+					{ path: "button", element: <Button /> },
+					{ path: "card", element: <Card /> },
+					{ path: "checkbox", element: <Checkbox /> },
+					{ path: "chip", element: <Chip /> },
+					{ path: "datetime", element: <Datetime /> },
+					{ path: "divider", element: <Divider /> },
+					{ path: "dropdown", element: <Dropdown /> },
+					{ path: "link", element: <Link /> },
+					{ path: "message", element: <Message /> },
+					{ path: "modal", element: <ModalExample /> },
+					{ path: "popover-canvas", element: <PopoverCanvas /> },
+					{ path: "popover-menu", element: <PopoverMenu /> },
+					{ path: "radio-button", element: <RadioButton /> },
+					{ path: "spinner", element: <Spinner /> },
+					{ path: "stepper", element: <StepperExample /> },
+					{ path: "tag", element: <Tag /> },
+					{ path: "tabs", element: <Tabs /> },
+					{ path: "text-field", element: <TextField /> },
+					{ path: "text-area", element: <Textarea /> },
+					{ path: "toast", element: <Toast /> },
+					{ path: "toggle", element: <Toggle /> },
+					{ path: "tooltip", element: <Tooltip /> },
+				],
 			},
 			{
 				path: "table",
@@ -56,10 +117,6 @@ export const mainRoutes: RouteObject[] = [
 			{
 				path: "form",
 				element: <FormPage />,
-			},
-			{
-				path: "about",
-				element: <About />,
 			},
 			{
 				path: "stepper",
@@ -120,10 +177,7 @@ const router = createBrowserRouter([
 			{
 				path: "*",
 				element: (
-					<MainLayout
-						shouldRenderBreadcrumbs={false}
-						shouldRenderModeSwitcher={false}
-					>
+					<MainLayout shouldRenderBreadcrumbs={false} shouldRenderModeSwitcher={false}>
 						<NotFound />
 					</MainLayout>
 				),

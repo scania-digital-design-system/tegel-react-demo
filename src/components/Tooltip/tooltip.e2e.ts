@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('tds-tooltip', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/web-components');
+    await page.goto('/web-components/tooltip');
   });
 
   test('tooltip trigger button is visible', async ({ page }) => {
