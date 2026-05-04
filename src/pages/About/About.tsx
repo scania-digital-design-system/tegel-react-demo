@@ -1,5 +1,41 @@
-import { useEffect, useState } from "react";
-import { TdsIcon } from "@scania/tegel-react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/** biome-ignore-all lint/a11y/useValidAnchor: Demo links */
+import { useEffect, useRef, useState } from "react";
+import {
+	TdsAccordion,
+	TdsAccordionItem,
+	TdsBanner,
+	TdsBodyCell,
+	TdsBreadcrumb,
+	TdsBreadcrumbs,
+	TdsButton,
+	TdsChip,
+	TdsDatetime,
+	TdsDropdown,
+	TdsDropdownOption,
+	TdsFolderTab,
+	TdsFolderTabs,
+	TdsFooter,
+	TdsFooterGroup,
+	TdsFooterItem,
+	TdsHeader,
+	TdsHeaderBrandSymbol,
+	TdsHeaderHamburger,
+	TdsHeaderTitle,
+	TdsHeaderCell,
+	TdsIcon,
+	TdsLink,
+	TdsModal,
+	TdsSideMenu,
+	TdsSideMenuItem,
+	TdsTable,
+	TdsTableBody,
+	TdsTableBodyRow,
+	TdsTableHeader,
+	TdsTableToolbar,
+	TdsTextarea,
+	TdsToast,
+} from "@scania/tegel-react";
 import "./About.css";
 
 type Brand = "scania" | "traton";
@@ -278,16 +314,57 @@ const ICON_NAMES = [
 	"windscreen_heating",
 ] as const;
 
+type TableRow = {
+	id: number;
+	truck: string;
+	driver: string;
+	country: string;
+	mileage: number;
+};
+
+const TABLE_DATA: TableRow[] = [
+	{ id: 1, truck: "L-series", driver: "Sonya Bruce", country: "Brazil", mileage: 123987 },
+	{ id: 2, truck: "P-series", driver: "Guerra Bowman", country: "Sweden", mileage: 2000852 },
+	{ id: 3, truck: "G-series", driver: "Ferrell Wallace", country: "Germany", mileage: 564 },
+	{ id: 4, truck: "R-series", driver: "Cox Burris", country: "Spain", mileage: 78342 },
+];
+
 const About = () => {
 	const [brand, setBrand] = useBrand();
+	const toastRef = useRef<HTMLTdsToastElement>(null);
+	const [tableRows, setTableRows] = useState<TableRow[]>(TABLE_DATA);
+
+	const handleSort = (event: CustomEvent) => {
+		const key = event.detail.columnKey as keyof TableRow;
+		const direction = event.detail.sortingDirection;
+		const sorted = [...TABLE_DATA].sort((a, b) => {
+			let comparison = 0;
+			if (a[key] < b[key]) comparison = -1;
+			if (a[key] > b[key]) comparison = 1;
+			return direction === "desc" ? comparison * -1 : comparison;
+		});
+		setTableRows(sorted);
+	};
+
+	const showToast = async () => {
+		await toastRef.current?.showToast();
+	};
+
+	const openModal = () => {
+		const modal = document.querySelector(
+			'[selector="focus-ring-modal-trigger"]',
+		) as HTMLTdsModalElement | null;
+		modal?.showModal();
+	};
 
 	return (
 		<article className="about-page">
 			<header className="about-header">
-				<h2 className="tds-headline-02">Icons (1.53.0-icons-beta.0)</h2>
+				<h2 className="tds-headline-02">Focus rings (1.53.0-focus-ring-beta.1)</h2>
 				<p className="tds-body-01">
-					Every icon name from <code>@scania/tegel 1.53.0-icons-beta.0</code> (
-					{ICON_NAMES.length} total).
+					Tab through the components below to verify the new focus rings shipped in{" "}
+					<code>@scania/tegel-react 1.53.0-focus-ring-beta.1</code>. Each section renders the
+					component in its primary configuration.
 				</p>
 				<fieldset className="brand-toggle">
 					<legend className="brand-toggle__legend tds-detail-05">Brand</legend>
@@ -321,14 +398,338 @@ const About = () => {
 				</fieldset>
 			</header>
 
-			<div className="icon-grid">
-				{ICON_NAMES.map((name) => (
-					<div className="icon-grid__cell" key={name}>
-						<TdsIcon name={name} size="24px" />
-						<span className="tds-detail-06 icon-grid__label">{name}</span>
-					</div>
-				))}
-			</div>
+			<section className="component-section">
+				<h3 className="tds-headline-03">Accordion</h3>
+				<TdsAccordion>
+					<TdsAccordionItem header="Item 1" expand-icon-position="end">
+						Panel content for item 1.
+					</TdsAccordionItem>
+					<TdsAccordionItem header="Item 2" expand-icon-position="end">
+						Panel content for item 2.
+					</TdsAccordionItem>
+					<TdsAccordionItem header="Disabled item" expand-icon-position="end" disabled>
+						This item is disabled.
+					</TdsAccordionItem>
+				</TdsAccordion>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Banner</h3>
+				<div className="component-section__stack">
+					<TdsBanner icon="info" header="Information banner" variant="information">
+						<div slot="subheader">A banner with a link action.</div>
+						<TdsLink slot="actions">
+							<a href="#">Link example</a>
+						</TdsLink>
+					</TdsBanner>
+					<TdsBanner icon="error" header="Error banner" variant="error">
+						<div slot="subheader">Closable banner.</div>
+					</TdsBanner>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Breadcrumb</h3>
+				<TdsBreadcrumbs>
+					<TdsBreadcrumb>
+						<a href="#">Page 1</a>
+					</TdsBreadcrumb>
+					<TdsBreadcrumb>
+						<a href="#">Page 2</a>
+					</TdsBreadcrumb>
+					<TdsBreadcrumb current>
+						<a href="#">Page 3</a>
+					</TdsBreadcrumb>
+				</TdsBreadcrumbs>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Chip</h3>
+				<div className="component-section__row">
+					<TdsChip size="lg">
+						<TdsIcon slot="prefix" name="lock_inactive" size="16px"></TdsIcon>
+						<span slot="label">Lock</span>
+					</TdsChip>
+					<TdsChip size="lg" type="checkbox" name="chip-demo" value="alarm">
+						<span slot="label">Alarm</span>
+					</TdsChip>
+					<TdsChip size="lg" type="radio" name="chip-radio" value="one">
+						<span slot="label">Option one</span>
+					</TdsChip>
+					<TdsChip size="lg" type="radio" name="chip-radio" value="two">
+						<span slot="label">Option two</span>
+					</TdsChip>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Datetime</h3>
+				<div className="component-section__stack">
+					<TdsDatetime type="datetime-local"></TdsDatetime>
+					<TdsDatetime type="date"></TdsDatetime>
+					<TdsDatetime type="time"></TdsDatetime>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Dropdown</h3>
+				<TdsDropdown
+					name="dropdown-focus"
+					label="Label text"
+					label-position="outside"
+					placeholder="Placeholder"
+					helper="Helper text"
+					size="lg"
+					open-direction="auto"
+				>
+					<TdsDropdownOption value="option-1">Option 1</TdsDropdownOption>
+					<TdsDropdownOption value="option-2">Option 2</TdsDropdownOption>
+					<TdsDropdownOption value="option-3">Option 3</TdsDropdownOption>
+					<TdsDropdownOption value="option-4" disabled>
+						Option 4 (disabled)
+					</TdsDropdownOption>
+				</TdsDropdown>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Footer</h3>
+				<div className="component-section__nav-frame">
+					<TdsFooter>
+						<div slot="top">
+							<TdsFooterGroup title-text="Pages">
+								<TdsFooterItem>
+									<a href="#">Home</a>
+								</TdsFooterItem>
+								<TdsFooterItem>
+									<a href="#">Form</a>
+								</TdsFooterItem>
+							</TdsFooterGroup>
+							<TdsFooterGroup title-text="Legals">
+								<TdsFooterItem>
+									<a href="#">Terms</a>
+								</TdsFooterItem>
+								<TdsFooterItem>
+									<a href="#">Privacy</a>
+								</TdsFooterItem>
+							</TdsFooterGroup>
+						</div>
+						<div slot="start">
+							<TdsFooterGroup>
+								<TdsFooterItem>
+									<a href="#">Link 1</a>
+								</TdsFooterItem>
+								<TdsFooterItem>
+									<a href="#">Link 2</a>
+								</TdsFooterItem>
+							</TdsFooterGroup>
+						</div>
+						<div slot="end">
+							<TdsFooterGroup>
+								<TdsFooterItem>
+									<a href="#">
+										<TdsIcon name="truck"></TdsIcon>
+									</a>
+								</TdsFooterItem>
+							</TdsFooterGroup>
+						</div>
+					</TdsFooter>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Header</h3>
+				<div className="component-section__nav-frame">
+					<TdsHeader>
+						<TdsHeaderHamburger aria-label="Open menu"></TdsHeaderHamburger>
+						<TdsHeaderTitle>Focus ring demo</TdsHeaderTitle>
+						<TdsHeaderBrandSymbol slot="end">
+							{/** biome-ignore lint/a11y/useAnchorContent: brand symbol */}
+							<a aria-label="Brand" href="#"></a>
+						</TdsHeaderBrandSymbol>
+					</TdsHeader>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Modal</h3>
+				<TdsButton
+					id="focus-ring-modal-trigger"
+					size="md"
+					text="Open modal"
+					onClick={openModal}
+				></TdsButton>
+				<TdsModal
+					selector="focus-ring-modal-trigger"
+					id="focus-ring-modal"
+					size="md"
+					actions-position="static"
+				>
+					<h5 className="tds-modal-headline" slot="header">
+						Modal header
+					</h5>
+					<span slot="body">Tab to confirm focus rings render on the buttons below.</span>
+					<TdsButton slot="actions" data-dismiss-modal size="md" text="Close"></TdsButton>
+				</TdsModal>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Side menu</h3>
+				<div className="component-section__nav-frame component-section__nav-frame--side">
+					<TdsSideMenu persistent open aria-label="Side menu sample">
+						<TdsSideMenuItem>
+							<a href="#">
+								<TdsIcon name="info" size="24"></TdsIcon>
+								About
+							</a>
+						</TdsSideMenuItem>
+						<TdsSideMenuItem selected>
+							<a href="#">
+								<TdsIcon name="home" size="24"></TdsIcon>
+								Home
+							</a>
+						</TdsSideMenuItem>
+						<TdsSideMenuItem>
+							<a href="#">
+								<TdsIcon name="settings" size="24"></TdsIcon>
+								Settings
+							</a>
+						</TdsSideMenuItem>
+					</TdsSideMenu>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Table</h3>
+				<TdsTable tableId="focus-ring-table" noMinWidth responsive>
+					<TdsTableToolbar tableTitle="Sortable table"></TdsTableToolbar>
+					<TdsTableHeader>
+						<TdsHeaderCell
+							onTdsSort={handleSort}
+							cellKey="truck"
+							cellValue="Truck type"
+							sortable
+						></TdsHeaderCell>
+						<TdsHeaderCell
+							onTdsSort={handleSort}
+							cellKey="driver"
+							cellValue="Driver"
+							sortable
+						></TdsHeaderCell>
+						<TdsHeaderCell
+							onTdsSort={handleSort}
+							cellKey="country"
+							cellValue="Country"
+							sortable
+						></TdsHeaderCell>
+						<TdsHeaderCell
+							onTdsSort={handleSort}
+							cellKey="mileage"
+							cellValue="Mileage"
+							sortable
+							textAlign="right"
+						></TdsHeaderCell>
+					</TdsTableHeader>
+					<TdsTableBody>
+						{tableRows.map((row) => (
+							<TdsTableBodyRow key={row.id}>
+								<TdsBodyCell cellKey="truck">{row.truck}</TdsBodyCell>
+								<TdsBodyCell cellKey="driver">{row.driver}</TdsBodyCell>
+								<TdsBodyCell cellKey="country">{row.country}</TdsBodyCell>
+								<TdsBodyCell cellKey="mileage" textAlign="right">
+									{row.mileage}
+								</TdsBodyCell>
+							</TdsTableBodyRow>
+						))}
+					</TdsTableBody>
+				</TdsTable>
+				<p className="tds-detail-06 component-section__hint">
+					Below is a row with a focusable link to verify focus inside cells.
+				</p>
+				<TdsTable tableId="focus-ring-table-link" noMinWidth responsive>
+					<TdsTableHeader>
+						<TdsHeaderCell cellKey="label" cellValue="Label"></TdsHeaderCell>
+						<TdsHeaderCell cellKey="action" cellValue="Action"></TdsHeaderCell>
+					</TdsTableHeader>
+					<TdsTableBody>
+						<TdsTableBodyRow>
+							<TdsBodyCell cellKey="label">Row with link</TdsBodyCell>
+							<TdsBodyCell cellKey="action">
+								<a href="#">Tab to me</a>
+							</TdsBodyCell>
+						</TdsTableBodyRow>
+					</TdsTableBody>
+				</TdsTable>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Folder tabs</h3>
+				<TdsFolderTabs>
+					<TdsFolderTab>
+						<button type="button">First tab</button>
+					</TdsFolderTab>
+					<TdsFolderTab>
+						<button type="button">Second tab is much longer</button>
+					</TdsFolderTab>
+					<TdsFolderTab>
+						<button type="button">Third tab</button>
+					</TdsFolderTab>
+					<TdsFolderTab disabled>
+						<button type="button">Fourth tab</button>
+					</TdsFolderTab>
+				</TdsFolderTabs>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Textarea</h3>
+				<div className="component-section__stack">
+					<TdsTextarea
+						rows={3}
+						label="Default textarea"
+						labelPosition="outside"
+						placeholder="Type something"
+						helper="Helper text"
+					></TdsTextarea>
+					<TdsTextarea
+						rows={3}
+						state="error"
+						label="Error textarea"
+						labelPosition="outside"
+						placeholder="Type something"
+						helper="Something went wrong"
+					></TdsTextarea>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Toast</h3>
+				<TdsButton size="md" text="Show toast" onClick={showToast}></TdsButton>
+				<div className="component-section__toast">
+					<TdsToast
+						ref={toastRef}
+						variant="information"
+						header="Information toast"
+						subheader="Tab to focus the close button."
+					>
+						<div slot="subheader">Tab to focus the close button.</div>
+					</TdsToast>
+				</div>
+			</section>
+
+			<section className="component-section">
+				<h3 className="tds-headline-03">Icons (1.53.0-icons-beta.0)</h3>
+				<p className="tds-body-01">
+					Every icon name from <code>@scania/tegel 1.53.0-icons-beta.0</code> (
+					{ICON_NAMES.length} total).
+				</p>
+				<div className="icon-grid">
+					{ICON_NAMES.map((name) => (
+						<div className="icon-grid__cell" key={name}>
+							<TdsIcon name={name} size="24px" />
+							<span className="tds-detail-06 icon-grid__label">{name}</span>
+						</div>
+					))}
+				</div>
+			</section>
 		</article>
 	);
 };
