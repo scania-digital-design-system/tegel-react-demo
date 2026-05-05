@@ -14,6 +14,17 @@ printf "\e[0m"
 
 npm run lint || FAILED=1
 
+
+printf "\e[36m"
+echo
+echo "╔════════════════╗"
+echo "║ 🏗️ BUILDING 🏗️ ║"
+echo "╚════════════════╝"
+echo
+printf "\e[0m"
+
+npm run build || FAILED=1
+
 git update-index --again
 
 if test $FAILED -ne 0; then
