@@ -1,11 +1,34 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { Outlet } from "react-router";
-import "./WebComponents.scss";
+import { useState } from 'react';
+import { TdsToggle } from '@scania/tegel-react';
+import Card from '../../components/Card/Card';
+import ModalExample from '../../components/Modal/ModalExample';
 
 export default function WebComponents() {
-	return (
-		<section className="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
-			<Outlet />
-		</section>
-	);
+  const [isTraton, setIsTraton] = useState(false);
+
+  const toggleBrand = () => {
+    const next = !isTraton;
+    setIsTraton(next);
+    if (next) {
+      document.documentElement.classList.add('traton');
+    } else {
+      document.documentElement.classList.remove('traton');
+    }
+  };
+
+  return (
+    <section className="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
+      <div>
+        <TdsToggle size="sm" headline="Traton brand" checked={isTraton} onTdsToggle={toggleBrand}>
+          <div slot="label">{isTraton ? 'On' : 'Off'}</div>
+        </TdsToggle>
+      </div>
+      <div>
+        <Card />
+      </div>
+      <div>
+        <ModalExample />
+      </div>
+    </section>
+  );
 }

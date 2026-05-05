@@ -2,8 +2,44 @@ import { TdsButton, TdsIcon } from "@scania/tegel-react";
 import Modal from "./Modal";
 
 const ModalExample = () => {
-	const genericText: string =
-		"The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “I there never anything else?” he asked.";
+	const genericText = (
+		<>
+			<p>
+				The steps fell lightly and oddly, with a certain swing, for all they went so slowly; it was
+				different indeed from the heavy creaking tread of Henry Jekyll. Utterson sighed. “Is there
+				never anything else?” he asked.
+			</p>
+			<p>
+				Poole swung the candle as he spoke, and the light fell obliquely on the bed. The bed had
+				been slept in, the sheets and pillows bore the impress of a body; but the body was not
+				there. Across the floor there were scattered a number of papers, and near the fireplace a
+				candle had burnt out, leaving a little pool of wax on the mantelpiece.
+			</p>
+			<p>
+				Mr. Hyde had only been met twice; once when he had dined at the doctor's and once when the
+				two men had crossed paths in the street. On both occasions, something about his manner had
+				struck the lawyer as decidedly wrong — not wrong in any legal sense, but wrong in the way
+				of a bad dream, a dream from which one could not wake up.
+			</p>
+			<p>
+				Utterson had long since learned that it was of no use to question Dr. Jekyll directly. The
+				doctor had a way of evading every inquiry with the same calm, practised air of composure
+				that had served him so well through a long and distinguished career.
+			</p>
+			<p>
+				It was on the moral side, and in his own person, that Jekyll had learned to recognise the
+				thorough and primitive duality of man; he had learned that, of the two natures that
+				contended in the field of his consciousness, even if he could rightly be said to be either,
+				it was only because he was radically both.
+			</p>
+			<p>
+				Late one accursed night, he had compounded the elements, watched them boil and smoke
+				together in the glass, and when the ebullition had subsided, with a strong glow of courage,
+				drank off the potion. The most racking pangs succeeded: a grinding in the bones, deadly
+				nausea, and a horror of the spirit that cannot be exceeded at the hour of birth or death.
+			</p>
+		</>
+	);
 
 	return (
 		<section className="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
