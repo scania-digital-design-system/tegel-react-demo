@@ -19,4 +19,29 @@
   column-gap: 16px;
   overflow: auto;
   padding: 16px 1px;
+
+  &::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--tds-scrollbar-track-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 40px;
+    background: var(--tds-scrollbar-thumb-color);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: var(--tds-scrollbar-thumb-color) var(--tds-scrollbar-track-color);
+    scrollbar-width: thin;
+  }
 }
