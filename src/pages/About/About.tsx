@@ -1,5 +1,13 @@
-import { useEffect, useState } from "react";
-import { TdsIcon, TdsTextField, TdsTextarea } from "@scania/tegel-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  TdsBanner,
+  TdsButton,
+  TdsCard,
+  TdsIcon,
+  TdsMessage,
+  TdsModal,
+  TdsToast,
+} from "@scania/tegel-react";
 import "./About.css";
 
 type Brand = "scania" | "traton";
@@ -23,22 +31,45 @@ const useBrand = (): [Brand, (next: Brand) => void] => {
   return [brand, setBrand];
 };
 
-const SIZES = ["sm", "md", "lg"] as const;
-const LABEL_POSITIONS = ["no-label", "inside", "outside"] as const;
-const STATES = ["default", "success", "error"] as const;
-const MODE_VARIANTS = [null, "primary", "secondary"] as const;
+const ICONS = [
+  "truck",
+  "bus",
+  "engine",
+  "fuel",
+  "settings",
+  "info",
+  "warning",
+  "tick",
+  "cross",
+  "search",
+  "filters",
+  "calendar",
+  "clock",
+  "email",
+  "phone",
+  "profile",
+  "notification",
+  "download",
+  "upload",
+  "save",
+] as const;
 
 const About = () => {
   const [brand, setBrand] = useBrand();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
+  const modalTriggerRef = useRef<HTMLTdsButtonElement | null>(null);
+  const overlayTriggerRef = useRef<HTMLTdsButtonElement | null>(null);
 
   return (
     <article className="about-page">
       <header className="about-header">
-        <h2 className="tds-headline-02">Text field variants (1.53.0-field-var.0)</h2>
+        <h2 className="tds-headline-02">Component test ground (1.53.0-var-pre-beta.0)</h2>
         <p className="tds-body-01">
-          Test ground for <code>tds-text-field</code> and <code>tds-textarea</code> variants in{" "}
-          <code>@scania/tegel 1.53.0-field-var.0</code>. Every section below isolates one prop axis
-          so you can visually verify each combination.
+          Visual test ground for component behavior in{" "}
+          <code>@scania/tegel 1.53.0-var-pre-beta.0</code>. Each section below isolates one
+          component so you can verify rendering, interaction, and the brand-aware tokens.
         </p>
         <fieldset className="brand-toggle">
           <legend className="brand-toggle__legend tds-detail-05">Brand</legend>
@@ -72,462 +103,252 @@ const About = () => {
         </fieldset>
       </header>
 
-      <h2 className="tds-headline-03 section-divider">tds-text-field</h2>
+      <h2 className="tds-headline-03 section-divider">tds-card</h2>
 
       <section className="component-section">
-        <h3 className="tds-headline-04">Label positions</h3>
+        <h3 className="tds-headline-04">Variants</h3>
         <p className="component-section__hint tds-detail-06">
-          <code>labelPosition</code>: no-label (default), inside, outside.
-        </p>
-        <div className="variant-grid">
-          {LABEL_POSITIONS.map((pos) => (
-            <div className="variant-grid__cell" key={`tf-label-${pos}`}>
-              <span className="variant-grid__caption tds-detail-06">{pos}</span>
-              <TdsTextField
-                labelPosition={pos}
-                label="Label text"
-                placeholder="Placeholder"
-                helper="Helper text"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Sizes</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>size</code>: sm, md, lg (default).
-        </p>
-        <div className="variant-grid">
-          {SIZES.map((size) => (
-            <div className="variant-grid__cell" key={`tf-size-${size}`}>
-              <span className="variant-grid__caption tds-detail-06">{size}</span>
-              <TdsTextField
-                size={size}
-                labelPosition="outside"
-                label={`Size ${size}`}
-                placeholder="Placeholder"
-                helper="Helper text"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">States</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>state</code>: default, success, error.
-        </p>
-        <div className="variant-grid">
-          {STATES.map((state) => (
-            <div className="variant-grid__cell" key={`tf-state-${state}`}>
-              <span className="variant-grid__caption tds-detail-06">{state}</span>
-              <TdsTextField
-                state={state}
-                labelPosition="outside"
-                label={`State: ${state}`}
-                placeholder="Placeholder"
-                helper={
-                  state === "error"
-                    ? "Something is wrong"
-                    : state === "success"
-                      ? "Looks good!"
-                      : "Helper text"
-                }
-                value={state === "default" ? "" : "Some value"}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Disabled and read-only</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>disabled</code>, <code>readOnly</code>, <code>readOnly + hideReadOnlyIcon</code>.
+          Default, clickable, with image, and expandable.
         </p>
         <div className="variant-grid">
           <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">disabled</span>
-            <TdsTextField
-              disabled
-              labelPosition="outside"
-              label="Disabled"
-              placeholder="Placeholder"
-              value="Disabled value"
-              helper="Helper text"
-            />
+            <span className="variant-grid__caption tds-detail-06">default</span>
+            <TdsCard header="Default card" subheader="A standard card">
+              <p slot="body" className="tds-body-02">
+                Cards group related content. Set the header and subheader, and put body content in
+                the default slot.
+              </p>
+            </TdsCard>
           </div>
           <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">readOnly</span>
-            <TdsTextField
-              readOnly
-              labelPosition="outside"
-              label="Read only"
-              value="Read-only value"
-              helper="Helper text"
-            />
+            <span className="variant-grid__caption tds-detail-06">clickable</span>
+            <TdsCard clickable header="Clickable card" subheader="Hover and click me">
+              <p slot="body" className="tds-body-02">
+                <code>clickable</code> turns the entire card surface into an interactive target.
+              </p>
+            </TdsCard>
           </div>
           <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">readOnly + hideReadOnlyIcon</span>
-            <TdsTextField
-              readOnly
-              hideReadOnlyIcon
-              labelPosition="outside"
-              label="Read only (no icon)"
-              value="Read-only value"
-              helper="Helper text"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Mode variants</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>modeVariant</code>: null (default), primary, secondary. Rendered on alternating
-          backgrounds.
-        </p>
-        <div className="variant-grid">
-          {MODE_VARIANTS.map((mv, i) => (
-            <div
-              className={`variant-grid__cell variant-grid__cell--${i % 2 === 0 ? "light" : "dark"}`}
-              key={`tf-mode-${mv ?? "null"}`}
+            <span className="variant-grid__caption tds-detail-06">image (above header)</span>
+            <TdsCard
+              header="Card with image"
+              subheader="Image above header"
+              imagePlacement="above-header"
+              bodyImg="https://images.unsplash.com/photo-1493238792000-8113da705763?w=480&q=60"
+              bodyImgAlt="Truck on a mountain road"
             >
-              <span className="variant-grid__caption tds-detail-06">{mv ?? "null"}</span>
-              <TdsTextField
-                modeVariant={mv}
-                labelPosition="outside"
-                label={`Mode ${mv ?? "null"}`}
-                placeholder="Placeholder"
-                helper="Helper text"
-              />
-            </div>
-          ))}
+              <p slot="body" className="tds-body-02">Body content sits below the image.</p>
+            </TdsCard>
+          </div>
         </div>
       </section>
 
+      <h2 className="tds-headline-03 section-divider">tds-modal</h2>
+
       <section className="component-section">
-        <h3 className="tds-headline-04">Prefix and suffix slots</h3>
+        <h3 className="tds-headline-04">Trigger</h3>
         <p className="component-section__hint tds-detail-06">
-          Icons in <code>slot="prefix"</code> and <code>slot="suffix"</code>.
+          Click the button to open. The modal includes its own backdrop overlay.
         </p>
         <div className="variant-grid">
           <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">prefix only</span>
-            <TdsTextField labelPosition="outside" label="Prefix" placeholder="Search">
-              <TdsIcon slot="prefix" name="search" size="20px" />
-            </TdsTextField>
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">suffix only</span>
-            <TdsTextField
-              labelPosition="outside"
-              label="Suffix"
-              placeholder="Amount"
-              helper="With suffix icon"
+            <TdsButton
+              ref={modalTriggerRef}
+              text="Open modal"
+              size="md"
+              onClick={() => setModalOpen(true)}
+            />
+            <TdsModal
+              header="Example modal"
+              size="md"
+              show={modalOpen}
+              referenceEl={modalTriggerRef.current}
+              onTdsClose={() => setModalOpen(false)}
             >
-              <TdsIcon slot="suffix" name="info" size="20px" />
-            </TdsTextField>
+              <p slot="body" className="tds-body-02">
+                Modal body content. Modals render on top of an overlay that dims the page behind
+                them.
+              </p>
+              <div slot="actions">
+                <TdsButton
+                  size="md"
+                  text="Close"
+                  modeVariant="secondary"
+                  onClick={() => setModalOpen(false)}
+                />
+              </div>
+            </TdsModal>
           </div>
+        </div>
+      </section>
+
+      <h2 className="tds-headline-03 section-divider">overlay</h2>
+
+      <section className="component-section">
+        <h3 className="tds-headline-04">Modal-as-overlay</h3>
+        <p className="component-section__hint tds-detail-06">
+          Tegel does not ship a standalone <code>tds-overlay</code>; the overlay/backdrop is a
+          built-in part of <code>tds-modal</code>. The button below opens a minimal, header-less
+          modal so the overlay treatment is easy to inspect.
+        </p>
+        <div className="variant-grid">
           <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">prefix + suffix</span>
-            <TdsTextField
-              labelPosition="outside"
-              label="Both"
-              placeholder="Placeholder"
-              helper="Both slots filled"
+            <TdsButton
+              ref={overlayTriggerRef}
+              text="Show overlay"
+              size="md"
+              modeVariant="secondary"
+              onClick={() => setOverlayOpen(true)}
+            />
+            <TdsModal
+              size="sm"
+              closable
+              show={overlayOpen}
+              referenceEl={overlayTriggerRef.current}
+              onTdsClose={() => setOverlayOpen(false)}
             >
-              <TdsIcon slot="prefix" name="search" size="20px" />
-              <TdsIcon slot="suffix" name="cross" size="20px" />
-            </TdsTextField>
+              <p slot="body" className="tds-body-02">
+                Click outside this surface to dismiss — that&apos;s the overlay catching the click.
+              </p>
+            </TdsModal>
           </div>
         </div>
       </section>
 
+      <h2 className="tds-headline-03 section-divider">scrollbar</h2>
+
       <section className="component-section">
-        <h3 className="tds-headline-04">Input types</h3>
+        <h3 className="tds-headline-04">Scrollable container</h3>
         <p className="component-section__hint tds-detail-06">
-          <code>type</code>: text (default), password, number, email, tel.
+          Tegel does not ship a standalone <code>tds-scrollbar</code>; native browser scrollbars
+          appear on any container with overflow. The box below has fixed height + long content so
+          the scrollbar appears.
         </p>
         <div className="variant-grid">
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">text</span>
-            <TdsTextField
-              type="text"
-              labelPosition="outside"
-              label="Text"
-              placeholder="Free text"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">password</span>
-            <TdsTextField
-              type="password"
-              labelPosition="outside"
-              label="Password"
-              placeholder="••••••••"
-              value="secretvalue"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">number</span>
-            <TdsTextField
-              type="number"
-              labelPosition="outside"
-              label="Number"
-              placeholder="0"
-              min={0}
-              max={100}
-              step={1}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">number (hideNumberArrows)</span>
-            <TdsTextField
-              type="number"
-              hideNumberArrows
-              labelPosition="outside"
-              label="Number, no arrows"
-              placeholder="0"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">email</span>
-            <TdsTextField
-              type="email"
-              labelPosition="outside"
-              label="Email"
-              placeholder="user@example.com"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">tel</span>
-            <TdsTextField
-              type="tel"
-              labelPosition="outside"
-              label="Phone"
-              placeholder="+46 70 000 00 00"
-            />
+          <div className="variant-grid__cell scrollable-box">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <p key={`scroll-row-${i}`} className="tds-body-02 scrollable-box__row">
+                Row {i + 1}: lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="component-section">
-        <h3 className="tds-headline-04">Required, maxLength, noMinWidth</h3>
-        <p className="component-section__hint tds-detail-06">Misc prop axes.</p>
-        <div className="variant-grid">
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">required</span>
-            <TdsTextField
-              required
-              labelPosition="outside"
-              label="Required"
-              placeholder="Required input"
-              helper="Field is required"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">maxLength=20</span>
-            <TdsTextField
-              labelPosition="outside"
-              label="Max length"
-              placeholder="Up to 20 chars"
-              maxLength={20}
-              value="Twelve chars"
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">noMinWidth</span>
-            <TdsTextField
-              noMinWidth
-              labelPosition="outside"
-              label="No min width"
-              placeholder="Narrow"
-            />
-          </div>
-        </div>
-      </section>
-
-      <h2 className="tds-headline-03 section-divider">tds-textarea</h2>
+      <h2 className="tds-headline-03 section-divider">tds-banner</h2>
 
       <section className="component-section">
-        <h3 className="tds-headline-04">Label positions</h3>
+        <h3 className="tds-headline-04">Variants</h3>
         <p className="component-section__hint tds-detail-06">
-          <code>labelPosition</code>: no-label (default), inside, outside.
+          <code>variant</code>: default, information, error.
         </p>
-        <div className="variant-grid">
-          {LABEL_POSITIONS.map((pos) => (
-            <div className="variant-grid__cell" key={`ta-label-${pos}`}>
-              <span className="variant-grid__caption tds-detail-06">{pos}</span>
-              <TdsTextarea
-                labelPosition={pos}
-                label="Label text"
-                placeholder="Type something"
-                helper="Helper text"
-                rows={3}
-              />
+        <div className="variant-stack">
+          <TdsBanner
+            variant="default"
+            header="Default banner"
+            subheader="Use for neutral page-level messaging."
+          />
+          <TdsBanner
+            variant="information"
+            header="Information banner"
+            subheader="Use for context the user should know about."
+          />
+          <TdsBanner
+            variant="error"
+            header="Error banner"
+            subheader="Use for blocking problems."
+          />
+        </div>
+      </section>
+
+      <h2 className="tds-headline-03 section-divider">tds-message</h2>
+
+      <section className="component-section">
+        <h3 className="tds-headline-04">Variants</h3>
+        <p className="component-section__hint tds-detail-06">
+          <code>variant</code>: information, success, warning, error.
+        </p>
+        <div className="variant-stack">
+          <TdsMessage variant="information" header="Information message">
+            Inline message variant — information.
+          </TdsMessage>
+          <TdsMessage variant="success" header="Success message">
+            Inline message variant — success.
+          </TdsMessage>
+          <TdsMessage variant="warning" header="Warning message">
+            Inline message variant — warning.
+          </TdsMessage>
+          <TdsMessage variant="error" header="Error message">
+            Inline message variant — error.
+          </TdsMessage>
+        </div>
+      </section>
+
+      <h2 className="tds-headline-03 section-divider">tds-toast</h2>
+
+      <section className="component-section">
+        <h3 className="tds-headline-04">Variants</h3>
+        <p className="component-section__hint tds-detail-06">
+          Toasts render in a fixed corner. Click to spawn a fresh one; it appears in the top-right
+          of the page.
+        </p>
+        <div className="variant-stack">
+          <TdsToast
+            variant="information"
+            header="Information toast"
+            subheader="Use for general notifications."
+          />
+          <TdsToast
+            variant="success"
+            header="Success toast"
+            subheader="Use to confirm completed actions."
+          />
+          <TdsToast
+            variant="warning"
+            header="Warning toast"
+            subheader="Use for non-blocking warnings."
+          />
+          <TdsToast
+            variant="error"
+            header="Error toast"
+            subheader="Use for failures that need attention."
+          />
+        </div>
+        <div className="variant-grid" style={{ marginTop: "var(--tds-spacing-element-16)" }}>
+          <div className="variant-grid__cell">
+            <span className="variant-grid__caption tds-detail-06">spawn dynamic toast</span>
+            <TdsButton
+              text={toastVisible ? "Hide toast" : "Show toast"}
+              size="md"
+              onClick={() => setToastVisible((v) => !v)}
+            />
+            {toastVisible && (
+              <div className="toast-floater">
+                <TdsToast
+                  variant="success"
+                  header="Toast spawned"
+                  subheader="Triggered from a button click."
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <h2 className="tds-headline-03 section-divider">tds-icon</h2>
+
+      <section className="component-section">
+        <h3 className="tds-headline-04">Icon grid</h3>
+        <p className="component-section__hint tds-detail-06">
+          Common icon names rendered at 24px.
+        </p>
+        <div className="icon-grid">
+          {ICONS.map((name) => (
+            <div className="icon-grid__cell" key={`icon-${name}`}>
+              <TdsIcon name={name} size="24px" />
+              <span className="tds-detail-06">{name}</span>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">States</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>state</code>: default, success, error.
-        </p>
-        <div className="variant-grid">
-          {STATES.map((state) => (
-            <div className="variant-grid__cell" key={`ta-state-${state}`}>
-              <span className="variant-grid__caption tds-detail-06">{state}</span>
-              <TdsTextarea
-                state={state}
-                labelPosition="outside"
-                label={`State: ${state}`}
-                placeholder="Type something"
-                helper={
-                  state === "error"
-                    ? "Something is wrong"
-                    : state === "success"
-                      ? "Looks good!"
-                      : "Helper text"
-                }
-                value={state === "default" ? "" : "Some text in the textarea"}
-                rows={3}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Disabled and read-only</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>disabled</code>, <code>readOnly</code>, <code>readOnly + hideReadOnlyIcon</code>.
-        </p>
-        <div className="variant-grid">
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">disabled</span>
-            <TdsTextarea
-              disabled
-              labelPosition="outside"
-              label="Disabled"
-              value="Disabled value"
-              helper="Helper text"
-              rows={3}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">readOnly</span>
-            <TdsTextarea
-              readOnly
-              labelPosition="outside"
-              label="Read only"
-              value="Read-only value"
-              helper="Helper text"
-              rows={3}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">readOnly + hideReadOnlyIcon</span>
-            <TdsTextarea
-              readOnly
-              hideReadOnlyIcon
-              labelPosition="outside"
-              label="Read only (no icon)"
-              value="Read-only value"
-              helper="Helper text"
-              rows={3}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Mode variants</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>modeVariant</code>: null (default), primary, secondary. Rendered on alternating
-          backgrounds.
-        </p>
-        <div className="variant-grid">
-          {MODE_VARIANTS.map((mv, i) => (
-            <div
-              className={`variant-grid__cell variant-grid__cell--${i % 2 === 0 ? "light" : "dark"}`}
-              key={`ta-mode-${mv ?? "null"}`}
-            >
-              <span className="variant-grid__caption tds-detail-06">{mv ?? "null"}</span>
-              <TdsTextarea
-                modeVariant={mv}
-                labelPosition="outside"
-                label={`Mode ${mv ?? "null"}`}
-                placeholder="Type something"
-                helper="Helper text"
-                rows={3}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="component-section">
-        <h3 className="tds-headline-04">Rows, cols and maxLength</h3>
-        <p className="component-section__hint tds-detail-06">
-          <code>rows</code>, <code>cols</code>, <code>maxLength</code>.
-        </p>
-        <div className="variant-grid">
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">rows=2</span>
-            <TdsTextarea
-              labelPosition="outside"
-              label="Short"
-              placeholder="2 rows"
-              rows={2}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">rows=6</span>
-            <TdsTextarea
-              labelPosition="outside"
-              label="Tall"
-              placeholder="6 rows"
-              rows={6}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">cols=20</span>
-            <TdsTextarea
-              labelPosition="outside"
-              label="Narrow cols"
-              placeholder="20 cols"
-              cols={20}
-              rows={3}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">maxLength=50</span>
-            <TdsTextarea
-              labelPosition="outside"
-              label="Max length"
-              placeholder="Up to 50 chars"
-              maxLength={50}
-              value="A textarea with a maximum length set."
-              helper="Counter shown when maxLength is set"
-              rows={3}
-            />
-          </div>
-          <div className="variant-grid__cell">
-            <span className="variant-grid__caption tds-detail-06">noMinWidth</span>
-            <TdsTextarea
-              noMinWidth
-              labelPosition="outside"
-              label="No min width"
-              placeholder="Narrow"
-              rows={3}
-            />
-          </div>
         </div>
       </section>
     </article>
