@@ -34,10 +34,10 @@ const About = () => {
   return (
     <article className="about-page">
       <header className="about-header">
-        <h2 className="tds-headline-02">Text field variants (1.53.0-field-var.1)</h2>
+        <h2 className="tds-headline-02">Text field variants (1.53.0-field-var.2)</h2>
         <p className="tds-body-01">
           Test ground for <code>tds-text-field</code> and <code>tds-textarea</code> variants in{" "}
-          <code>@scania/tegel 1.53.0-field-var.1</code>. Every section below isolates one prop axis
+          <code>@scania/tegel 1.53.0-field-var.2</code>. Every section below isolates one prop axis
           so you can visually verify each combination.
         </p>
         <fieldset className="brand-toggle">
