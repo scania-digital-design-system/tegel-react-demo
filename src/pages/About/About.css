@@ -1,0 +1,61 @@
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	max-width: 720px;
+	padding: 16px 0;
+}
+
+.about__header {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.about__header p {
+	margin: 0;
+	max-width: 60ch;
+}
+
+.component-section {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 20px;
+	border: 1px solid var(--tds-grey-300, #dadee4);
+	border-radius: 4px;
+	background: var(--tds-grey-50, #fafafa);
+}
+
+.component-section h4 {
+	margin: 0;
+}
+
+.about__note {
+	margin: 0;
+	color: var(--tds-grey-600, #6b7280);
+}
+
+.about__brand {
+	background: var(--tds-blue-50, #f0f3fb);
+}
+
+.demo-column {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.about__fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.about__fieldset legend {
+	padding: 0 0 8px;
+}
+
+.about code {
+	font-family: monospace;
+}
