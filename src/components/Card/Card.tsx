@@ -21,7 +21,7 @@ const Card = () => {
 						<p className="tds-text-grey-958">
 							The bottom section can have a{" "}
 							<TdsLink style={{ display: "inline-block" }}>
-								<a href="/"> link.</a>
+								<a href="/">nice link.</a>
 							</TdsLink>{" "}
 							This Card has its image-placement below-header.
 						</p>

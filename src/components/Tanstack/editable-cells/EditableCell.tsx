@@ -35,7 +35,6 @@ const EditableCell = ({
 		}
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: we need it like this
 	useEffect(() => {
 		document.addEventListener("mousedown", handleClickOutside);
 

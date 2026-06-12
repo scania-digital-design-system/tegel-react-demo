@@ -18,7 +18,6 @@ const PaginationTable = () => {
 	const [data, setData] = useState(exampleData.slice(page, page + rowsPerPage));
 	const paginationTable = useRef<HTMLTdsTableElement>(null);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: needs to update depending on these state variables
 	useEffect(() => {
 		updateData();
 	}, [page, rowsPerPage]);

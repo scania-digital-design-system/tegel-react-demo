@@ -20,8 +20,8 @@ const TabsLinks = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
 	useEffect(() => {
-		const index = ["first-tab", "second-tab", "third-tab"].findIndex(
-			(pathSegment) => pathname.includes(pathSegment),
+		const index = ["first-tab", "second-tab", "third-tab"].findIndex((pathSegment) =>
+			pathname.includes(pathSegment),
 		);
 
 		const selectedIndex = index !== -1 ? index : 0;
@@ -36,20 +36,15 @@ const TabsLinks = () => {
 		<div>
 			<h3>Tabs with links.</h3>
 			<p>
-				These tabs are linking to different pages (with different URLs), and
-				this means that you can link to an individual tab via a URL. Try
-				clicking this{" "}
+				These tabs are linking to different pages (with different URLs), and this means that you can
+				link to an individual tab via a URL. Try clicking this{" "}
 				<TdsLink style={{ display: "inline-block" }}>
-					<a href="/tabs-links/second-tab">link</a>
+					<a href="/tabs-links/second-tab">tab link</a>
 				</TdsLink>{" "}
 				and you'll land on a page for the second tab.
 			</p>
 			<div className="tds-u-pb3 tabs">
-				<TdsFolderTabs
-					ref={folderTabsRef}
-					modeVariant="secondary"
-					defaultSelectedIndex={0}
-				>
+				<TdsFolderTabs ref={folderTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsFolderTab>
 						<Link to={"first-tab"}>First tab</Link>
 					</TdsFolderTab>
@@ -63,11 +58,7 @@ const TabsLinks = () => {
 				<TabsPanels selectedTabIndex={selectedIndex} />
 			</div>
 			<div className="tds-u-pb3 tabs">
-				<TdsInlineTabs
-					ref={inlineTabsRef}
-					modeVariant="secondary"
-					defaultSelectedIndex={0}
-				>
+				<TdsInlineTabs ref={inlineTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsInlineTab>
 						<Link to={"first-tab"}>First tab</Link>
 					</TdsInlineTab>
@@ -81,11 +72,7 @@ const TabsLinks = () => {
 				<TabsPanels selectedTabIndex={selectedIndex} />
 			</div>
 			<div className="tds-u-pb3 tabs">
-				<TdsNavigationTabs
-					ref={navigationTabsRef}
-					modeVariant="secondary"
-					defaultSelectedIndex={0}
-				>
+				<TdsNavigationTabs ref={navigationTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsNavigationTab>
 						<Link to={"first-tab"}>First tab</Link>
 					</TdsNavigationTab>
