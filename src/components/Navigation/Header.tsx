@@ -12,6 +12,10 @@ import {
 	TdsHeaderDropdownListUser,
 	TdsHeaderBrandSymbol,
 	TdsIcon,
+	TdsHeaderLauncher,
+	TdsHeaderLauncherGrid,
+	TdsHeaderLauncherGridItem,
+	TdsHeaderLauncherGridTitle,
 } from "@scania/tegel-react";
 import { UserContext } from "../../App";
 import "./Header.scss";
@@ -50,6 +54,30 @@ const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
 					</TdsHeaderDropdownList>
 				</TdsHeaderDropdown>
 
+				<TdsHeaderLauncher slot="end">
+					<TdsHeaderLauncherGridTitle>Operations</TdsHeaderLauncherGridTitle>
+					<TdsHeaderLauncherGrid>
+						<TdsHeaderLauncherGridItem>
+							<a href="https://tegel.scania.com">
+								<TdsIcon name="star" size="32"/>
+								ScaniaCare
+          					</a>
+						</TdsHeaderLauncherGridItem>
+						<TdsHeaderLauncherGridItem>
+							<a href="https://tegel.scania.com">
+								<TdsIcon name="truck" size="32"/>
+								Logistics
+          					</a>
+						</TdsHeaderLauncherGridItem>
+						<TdsHeaderLauncherGridItem>
+							<a href="https://tegel.scania.com">
+								<TdsIcon name="clock" size="32"/>
+								Schedule
+          					</a>
+						</TdsHeaderLauncherGridItem>
+					</TdsHeaderLauncherGrid>
+				</TdsHeaderLauncher>
+				
 				<TdsHeaderDropdown onClick={() => {}} slot="end" no-dropdown-icon>
 					<div slot="icon">
 						<img
@@ -68,7 +96,7 @@ const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
 						<TdsHeaderDropdownListItem>
 							<Link to="settings">
 								<TdsIcon name="settings"></TdsIcon>
-								<div className="tds-u-pl1">Settings</div>
+								<div className="tds-u-pl1">Profile</div>
 							</Link>
 						</TdsHeaderDropdownListItem>
 						<TdsHeaderDropdownListItem>
@@ -82,7 +110,7 @@ const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
 
 				<TdsHeaderBrandSymbol slot="end">
 					{/** biome-ignore lint/a11y/useAnchorContent: We don't know yet */}
-					<a aria-label="Scania - red gryphon on blue shield" href="/"></a>
+					<a href="https://scania.com" aria-label="Scania website"></a>
 				</TdsHeaderBrandSymbol>
 			</TdsHeader>
 		</div>
