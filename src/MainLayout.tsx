@@ -9,6 +9,7 @@ import AppBreadcrumbs from "./components/Navigation/AppBreadcrumbs/AppBreadcrumb
 import "./MainLayout.css";
 import MainBanner from "./MainBanner";
 import type { UserContextValue } from "./App";
+import BrandSwitcher from "./components/BrandSwitcher/BrandSwitcher";
 
 interface MainLayoutProps {
 	children?: React.ReactNode;
@@ -43,12 +44,13 @@ const MainLayout = ({
 	const [isBannerOpen, setIsBannerOpen] = useState(true);
 	const [lightMode, setLightMode] = useState<"on" | "off">("on");
 	const [primaryVariant, setPrimaryVariant] = useState<"on" | "off">("on");
+	const [brand, setBrand] = useState<"scania" | "traton">("scania");
 	const headerAndBannerHeight = HEADER_HEIGHT + (isBannerOpen ? BANNER_HEIGHT : 0);
 
 	return (
-		<div className={`App mode-wrapper tds-mode-${lightMode === "on" ? "light" : "dark"}`}>
+		<div className={`App mode-wrapper ${brand} `}>
 			<div
-				className={`mode-variant-wrapper tds-mode-variant-${
+				className={`tds-mode-${lightMode === "on" ? "light" : "dark"} mode-variant-wrapper tds-mode-variant-${
 					primaryVariant === "on" ? "primary" : "secondary"
 				}`}
 			>
@@ -84,6 +86,7 @@ const MainLayout = ({
 										modeVariant={primaryVariant}
 										setModeVariant={setPrimaryVariant}
 									/>
+									<BrandSwitcher brand={brand} setBrand={setBrand}/>
 								</div>
 							)}
 							{shouldRenderBreadcrumbs && <AppBreadcrumbs />}
