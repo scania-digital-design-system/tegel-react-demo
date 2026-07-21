@@ -1,27 +1,38 @@
 import type { Dispatch, SetStateAction } from "react";
-import { capitalizeFirst } from "../../utility";
-import { TdsToggle } from "@scania/tegel-react";
+import { TdsRadioButton } from "@scania/tegel-react";
+
+type Brand = "scania" | "traton";
 
 interface BrandSwitcherProps {
-	brand: "scania" | "traton";
-	setBrand: Dispatch<SetStateAction<"scania" | "traton">>;
+	brand: Brand;
+	setBrand: Dispatch<SetStateAction<Brand>>;
 }
 const BrandSwitcher = ({ brand, setBrand }: BrandSwitcherProps) => {
-	const toggleBrand = () => {
-		setBrand(brand === "scania" ? "traton" : "scania");
-	};
-
 	return (
 		<div className="mode-switcher">
-			<TdsToggle
-				size="sm"
-				headline="Scania theme"
+
+		<fieldset>
+			<legend style={{marginBottom:  `calc(var(--dimension-space-small)/2 * 1px)`}}>Brand</legend>
+			<TdsRadioButton
+				id="rb-1"
+				name="brand"
+				value="scania"
 				checked={brand === "scania"}
-				onTdsToggle={toggleBrand}
-			>
-				<div slot="label">{capitalizeFirst(brand)}</div>
-			</TdsToggle>
-		</div>
+				onTdsChange={(e) => setBrand(e.target.value as Brand)}
+				>
+				<span slot="label">Scania</span>
+			</TdsRadioButton>
+			<TdsRadioButton
+				id="rb-2"
+				name="brand"
+				value="traton"
+				checked={brand === "traton"}
+				onTdsChange={(e) => setBrand(e.target.value as Brand)}
+				>
+				<span slot="label">Traton</span>
+			</TdsRadioButton>
+		</fieldset>
+				</div>
 	);
 };
 
