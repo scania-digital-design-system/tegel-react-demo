@@ -81,6 +81,7 @@ const MainLayout = ({
 						>
 							{shouldRenderModeSwitcher && (
 								<div className="switcher-container">
+									<h4>Theme Controls</h4>
 									<ModeSwitcher mode={lightMode} setMode={setLightMode} />
 									<ModeVariantSwitcher
 										modeVariant={primaryVariant}
