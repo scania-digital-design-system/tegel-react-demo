@@ -65,7 +65,7 @@ const TanstackColumnFilter = () => {
 	return (
 		<div>
 			<TdsTable>
-				<TdsTableToolbar table-title="Table example" />
+				<TdsTableToolbar table-title="Table example" tdsSearchAriaLabel="example" />
 				{table.getHeaderGroups().map((headerGroup, _index) => (
 					<TdsTableHeader key={headerGroup.id}>
 						{headerGroup.headers.map((header) => {
