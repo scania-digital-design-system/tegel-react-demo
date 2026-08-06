@@ -28,7 +28,12 @@ const FilterTable = () => {
 	return (
 		<>
 			<TdsTable tableId="filter-table" noMinWidth responsive ref={filterTable}>
-				<TdsTableToolbar onTdsFilter={handleFilter} tableTitle="Filter" filter></TdsTableToolbar>
+				<TdsTableToolbar
+					onTdsFilter={handleFilter}
+					tableTitle="Filter"
+					filter
+					tdsSearchAriaLabel="filter"
+				></TdsTableToolbar>
 				<TdsTableHeader>
 					<TdsHeaderCell cellKey="truck" cellValue="Truck type"></TdsHeaderCell>
 					<TdsHeaderCell cellKey="driver" cellValue="Driver name"></TdsHeaderCell>
