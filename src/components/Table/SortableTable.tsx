@@ -33,7 +33,7 @@ const SortableTable = () => {
 
 	return (
 		<TdsTable tableId="sortable-table" ref={sortableTable} noMinWidth responsive>
-			<TdsTableToolbar tableTitle="Sorting"></TdsTableToolbar>
+			<TdsTableToolbar tableTitle="Sorting" tdsSearchAriaLabel="sorting"></TdsTableToolbar>
 			<TdsTableHeader>
 				<TdsHeaderCell
 					onTdsSort={handleSortEvent}
