@@ -61,7 +61,13 @@ const BatchActionTable = () => {
 
 	return (
 		<>
-			<TdsModal ref={modal} id="my-modal" size="lg" actionsPosition="static">
+			<TdsModal
+				ref={modal}
+				id="my-modal"
+				size="lg"
+				actionsPosition="static"
+				selector="#download-batch"
+			>
 				<h5 className="tds-modal-headline" slot="header">
 					Batch Actions example
 				</h5>
@@ -69,9 +75,11 @@ const BatchActionTable = () => {
 					{selectedData?.length ? (
 						<>
 							<p>Downloaded data:</p>
-							{selectedData.map((row, index) => (
-								<pre key={row[index].cellKey}>{JSON.stringify(row, null, 2)}</pre>
-							))}
+							{selectedData
+								.filter((row, index) => row[index] !== undefined)
+								.map((row, index) => (
+									<pre key={row[index].cellKey}>{JSON.stringify(row, null, 2)}</pre>
+								))}
 						</>
 					) : (
 						<p>No data selected.</p>
@@ -85,13 +93,14 @@ const BatchActionTable = () => {
 				multiselect
 				ref={batchActionTable}
 			>
-				<TdsTableToolbar tableTitle="Batch action">
+				<TdsTableToolbar tableTitle="Batch action" tdsSearchAriaLabel="batch-action">
 					<TdsButton
 						onClick={handleClick}
 						slot="end"
 						variant="primary"
 						size="sm"
 						text="Download"
+						id="download-batch"
 					></TdsButton>
 				</TdsTableToolbar>
 				<TdsTableHeader
