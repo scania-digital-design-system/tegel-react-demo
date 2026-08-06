@@ -9,8 +9,9 @@ import {
 	TdsSideMenuItem,
 	TdsSideMenuOverlay,
 	TdsSideMenuCollapseButton,
-	TdsSideMenuUser,
 	TdsIcon,
+	TdsSideMenuUserImage,
+	TdsSideMenuUserLabel,
 } from "@scania/tegel-react";
 import { UserContext } from "../../App";
 import "./SideMenu.scss";
@@ -182,15 +183,14 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
 						Text
 					</Link>
 				</TdsSideMenuItem>
-				<div slot="end">
-					<TdsSideMenuDropdown selected={pathname.includes("settings")}>
-						<TdsSideMenuUser
+					<TdsSideMenuDropdown slot="end" selected={pathname.includes("settings")}>
+						<TdsSideMenuUserImage slot='icon' src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+							alt="person" ></TdsSideMenuUserImage>
+						<TdsSideMenuUserLabel
 							slot="label"
 							heading={userContext?.user.userName || "Name Namesson"}
 							subheading={userContext?.user.placeOfWork}
-							img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-							img-alt=""
-						></TdsSideMenuUser>
+						></TdsSideMenuUserLabel>
 						<TdsSideMenuDropdownList>
 							<TdsSideMenuDropdownListItem selected={pathname.includes("settings")}>
 								<Link to="settings">
@@ -200,7 +200,6 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
 							</TdsSideMenuDropdownListItem>
 						</TdsSideMenuDropdownList>
 					</TdsSideMenuDropdown>
-				</div>
 				<TdsSideMenuCollapseButton slot="sticky-end"></TdsSideMenuCollapseButton>
 			</TdsSideMenu>
 		</div>

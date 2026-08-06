@@ -2,14 +2,11 @@ import type React from 'react';
 import { TdsBanner, TdsLink } from '@scania/tegel-react';
 
 interface MainBannerProps {
-  style?: React.CSSProperties;
-  className?: string;
   onClose?: () => void;
 }
 
-const MainBanner: React.FC<MainBannerProps> = ({ style, className, onClose }) => {
+const MainBanner: React.FC<MainBannerProps> = ({ onClose }) => {
   return (
-    <div style={style} className={className}>
       <TdsBanner variant="information" icon="info" header="React demo" onTdsClose={onClose}>
         <div slot="subheader">
           This is a demo page in React using{' '}
@@ -31,7 +28,6 @@ const MainBanner: React.FC<MainBannerProps> = ({ style, className, onClose }) =>
           </TdsLink>
         </div>
       </TdsBanner>
-    </div>
   );
 };
 

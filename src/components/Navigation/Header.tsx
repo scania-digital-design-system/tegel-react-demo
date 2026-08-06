@@ -21,15 +21,14 @@ import { UserContext } from "../../App";
 import "./Header.scss";
 
 interface HeaderProps {
-	className?: string;
 	pathname: string;
 	toggleMobileNav: () => void;
 }
 
-const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
+const Header = ({ toggleMobileNav, pathname }: HeaderProps) => {
 	const userContext = useContext(UserContext);
 	return (
-		<div className={className}>
+		
 			<TdsHeader>
 				<TdsHeaderHamburger
 					onClick={() => {
@@ -113,7 +112,6 @@ const Header = ({ className, toggleMobileNav, pathname }: HeaderProps) => {
 					<a href="https://scania.com" aria-label="Scania website"></a>
 				</TdsHeaderBrandSymbol>
 			</TdsHeader>
-		</div>
 	);
 };
 

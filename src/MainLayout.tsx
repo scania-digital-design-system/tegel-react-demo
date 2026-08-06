@@ -26,7 +26,7 @@ interface MainLayoutProps {
 export const UserContext = createContext<UserContextValue | null>(null);
 
 const HEADER_HEIGHT = 64;
-const BANNER_HEIGHT = 68;
+const BANNER_HEIGHT = 84;
 
 const MainLayout = ({
 	children,
@@ -61,7 +61,7 @@ const MainLayout = ({
 								setIsBannerOpen(false);
 							}}
 						/>
-						<Header className="app-header" pathname={pathname} toggleMobileNav={toggleMobileNav} />
+						<Header pathname={pathname} toggleMobileNav={toggleMobileNav} />
 					</div>
 					<div className="side-menu-and-main">
 						<SideMenu
@@ -81,6 +81,7 @@ const MainLayout = ({
 						>
 							{shouldRenderModeSwitcher && (
 								<div className="switcher-container">
+									<h4>Theme Controls</h4>
 									<ModeSwitcher mode={lightMode} setMode={setLightMode} />
 									<ModeVariantSwitcher
 										modeVariant={primaryVariant}

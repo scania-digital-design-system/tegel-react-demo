@@ -53,4 +53,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  h4 {
+    margin: 0;
+  }
 }

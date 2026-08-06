@@ -18,7 +18,7 @@ npm run lint || FAILED=1
 printf "\e[36m"
 echo
 echo "╔════════════════╗"
-echo "║ 🏗️ BUILDING 🏗️ ║"
+echo "║ 🏗️ BUILDING 🏗️   ║"
 echo "╚════════════════╝"
 echo
 printf "\e[0m"
