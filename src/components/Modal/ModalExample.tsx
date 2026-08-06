@@ -10,7 +10,7 @@ const ModalExample = () => {
 			<h2 className="tds-headline-02">Modal</h2>
 
 			<div className="tds-u-flex tds-u-gap1">
-				<Modal show headline="Modal opening at start">
+				<Modal show headline="Modal opening at start" selector="nothing">
 					<span slot="body">
 						<p>This modal was opened when you open or refreshed the page.</p>
 						<p>Once you close it, it will be gone. Forever!</p>
