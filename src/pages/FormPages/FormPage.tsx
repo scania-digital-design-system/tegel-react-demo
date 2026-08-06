@@ -315,6 +315,7 @@ const FormPage = () => {
 								ticks="9"
 								snap
 								readOnly={workLifeSliderDisabled}
+								tdsReadOnlyAriaLabel="read-only"
 							></TdsSlider>
 						</section>
 						<section>
