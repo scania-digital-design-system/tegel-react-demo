@@ -15,16 +15,16 @@ const Tabs = () => {
 
 			<TdsFolderTabs>
 				<TdsFolderTab>
-					<button type="button">First tab</button>
+					<button type="button" role="tab" aria-controls="first-folder-tab">First tab</button>
 				</TdsFolderTab>
 				<TdsFolderTab>
-					<button type="button">Second tab is much longer</button>
+					<button type="button" role="tab" aria-controls="second-folder-tab">Second tab is much longer</button>
 				</TdsFolderTab>
 				<TdsFolderTab>
-					<button type="button">Third tab</button>
+					<button type="button" role="tab" aria-controls="third-folder-tab">Third tab</button>
 				</TdsFolderTab>
 				<TdsFolderTab disabled>
-					<button type="button">Fourth tab</button>
+					<button type="button" role="tab" aria-controls="fourth-folder-tab" disabled>Fourth tab</button>
 				</TdsFolderTab>
 			</TdsFolderTabs>
 
@@ -32,32 +32,32 @@ const Tabs = () => {
 
 			<TdsInlineTabs>
 				<TdsInlineTab>
-					<button type="button">First tab</button>
+					<button type="button" role="tab" aria-controls="first-inline-tab">First tab</button>
 				</TdsInlineTab>
 				<TdsInlineTab>
-					<button type="button">Second tab is much longer</button>
+					<button type="button" role="tab" aria-controls="second-inline-tab">Second tab is much longer</button>
 				</TdsInlineTab>
 				<TdsInlineTab>
-					<button type="button">Third tab</button>
+					<button type="button" role="tab" aria-controls="third-inline-tab">Third tab</button>
 				</TdsInlineTab>
 				<TdsInlineTab disabled>
-					<button type="button">Fourth tab</button>
+					<button type="button" role="tab" aria-controls="fourth-inline-tab" disabled>Fourth tab</button>
 				</TdsInlineTab>
 			</TdsInlineTabs>
 			<div className="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
 
 			<TdsNavigationTabs>
 				<TdsNavigationTab>
-					<a href="/">First tab</a>
+					<a href="/" role="tab" aria-controls="first-navigation-tab">First tab</a>
 				</TdsNavigationTab>
 				<TdsNavigationTab>
-					<a href="/">Second tab is much longer</a>
+					<a href="/" role="tab" aria-controls="second-navigation-tab">Second tab is much longer</a>
 				</TdsNavigationTab>
 				<TdsNavigationTab>
-					<a href="/">Third tab</a>
+					<a href="/" role="tab" aria-controls="third-navigation-tab">Third tab</a>
 				</TdsNavigationTab>
 				<TdsNavigationTab disabled>
-					<a href="/">Fourth tab</a>
+					<a href="/" role="tab" aria-controls="fourth-navigation-tab">Fourth tab</a>
 				</TdsNavigationTab>
 			</TdsNavigationTabs>
 		</>
