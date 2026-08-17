@@ -57,7 +57,8 @@ const Tabs = () => {
 					<a href="/" role="tab" aria-controls="third-navigation-tab">Third tab</a>
 				</TdsNavigationTab>
 				<TdsNavigationTab disabled>
-					<a href="/" role="tab" aria-controls="fourth-navigation-tab">Fourth tab</a>
+					{/* "Disabled links" should not be links, so we put a span instead */}
+					<span aria-controls="fourth-navigation-tab">Fourth tab</span>
 				</TdsNavigationTab>
 			</TdsNavigationTabs>
 		</>
