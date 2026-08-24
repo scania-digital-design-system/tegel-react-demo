@@ -46,13 +46,13 @@ const TabsLinks = () => {
 			<div className="tds-u-pb3 tabs">
 				<TdsFolderTabs ref={folderTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsFolderTab>
-						<Link to={"first-tab"}>First tab</Link>
+						<Link to={"first-tab"} role="tab" aria-controls="first-folder-tab">First tab</Link>
 					</TdsFolderTab>
 					<TdsFolderTab>
-						<Link to={"second-tab"}>Second tab</Link>
+						<Link to={"second-tab"} role="tab" aria-controls="second-folder-tab">Second tab</Link>
 					</TdsFolderTab>
 					<TdsFolderTab>
-						<Link to={"third-tab"}>Third tab</Link>
+						<Link to={"third-tab"} role="tab" aria-controls="third-folder-tab">Third tab</Link>
 					</TdsFolderTab>
 				</TdsFolderTabs>
 				<TabsPanels selectedTabIndex={selectedIndex} />
@@ -60,13 +60,13 @@ const TabsLinks = () => {
 			<div className="tds-u-pb3 tabs">
 				<TdsInlineTabs ref={inlineTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsInlineTab>
-						<Link to={"first-tab"}>First tab</Link>
+						<Link to={"first-tab"} role="tab" aria-controls="first-inline-tab">First tab</Link>
 					</TdsInlineTab>
 					<TdsInlineTab>
-						<Link to={"second-tab"}>Second tab</Link>
+						<Link to={"second-tab"} role="tab" aria-controls="second-inline-tab">Second tab</Link>
 					</TdsInlineTab>
 					<TdsInlineTab>
-						<Link to={"third-tab"}>Third tab</Link>
+						<Link to={"third-tab"} role="tab" aria-controls="third-inline-tab">Third tab</Link>
 					</TdsInlineTab>
 				</TdsInlineTabs>
 				<TabsPanels selectedTabIndex={selectedIndex} />
@@ -74,13 +74,13 @@ const TabsLinks = () => {
 			<div className="tds-u-pb3 tabs">
 				<TdsNavigationTabs ref={navigationTabsRef} modeVariant="secondary" defaultSelectedIndex={0}>
 					<TdsNavigationTab>
-						<Link to={"first-tab"}>First tab</Link>
+						<Link to={"first-tab"} role="tab" aria-controls="first-navigation-tab">First tab</Link>
 					</TdsNavigationTab>
 					<TdsNavigationTab>
-						<Link to={"second-tab"}>Second tab</Link>
+						<Link to={"second-tab"} role="tab" aria-controls="second-navigation-tab">Second tab</Link>
 					</TdsNavigationTab>
 					<TdsNavigationTab>
-						<Link to={"third-tab"}>Third tab</Link>
+						<Link to={"third-tab"} role="tab" aria-controls="third-navigation-tab">Third tab</Link>
 					</TdsNavigationTab>
 				</TdsNavigationTabs>
 				<TabsPanels selectedTabIndex={selectedIndex} />

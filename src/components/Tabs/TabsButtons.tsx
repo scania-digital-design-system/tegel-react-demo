@@ -3,6 +3,8 @@ import TabsPanels from "./TabsPanels";
 import {
 	TdsFolderTab,
 	TdsFolderTabs,
+	TdsInlineTab,
+	TdsInlineTabs,
 	TdsNavigationTab,
 	TdsNavigationTabs,
 } from "@scania/tegel-react";
@@ -28,41 +30,41 @@ const TabsButtons = () => {
 					ref={folderTabsRef}
 				>
 					<TdsFolderTab>
-						<button type="button">First tab</button>
+						<button type="button" role="tab" aria-controls="first-folder-tab">First tab</button>
 					</TdsFolderTab>
 					<TdsFolderTab>
-						<button type="button">Second tab is much longer</button>
+						<button type="button" role="tab" aria-controls="second-folder-tab">Second tab is much longer</button>
 					</TdsFolderTab>
 					<TdsFolderTab>
-						<button type="button">Third tab</button>
+						<button type="button" role="tab" aria-controls="third-folder-tab" >Third tab</button>
 					</TdsFolderTab>
 					<TdsFolderTab disabled>
-						<button type="button">Fourth tab</button>
+						<button type="button" role="tab" aria-controls="fourth-folder-tab" disabled>Fourth tab</button>
 					</TdsFolderTab>
 				</TdsFolderTabs>
 				<TabsPanels selectedTabIndex={folderTabIndex} />
 			</div>
 			<div className="tds-u-mb3 tabs">
-				<TdsNavigationTabs
+				<TdsInlineTabs
 					onTdsChange={(event) => {
 						setInlineTabIndex(event.detail.selectedTabIndex);
 					}}
 					modeVariant="secondary"
 					ref={inlineTabsRef}
 				>
-					<TdsNavigationTab>
-						<button type="button">First tab</button>
-					</TdsNavigationTab>
-					<TdsNavigationTab>
-						<button type="button">Second tab is much longer</button>
-					</TdsNavigationTab>
-					<TdsNavigationTab>
-						<button type="button">Third tab</button>
-					</TdsNavigationTab>
-					<TdsNavigationTab disabled>
-						<button type="button">Fourth tab</button>
-					</TdsNavigationTab>
-				</TdsNavigationTabs>
+					<TdsInlineTab>
+						<button type="button" role="tab" aria-controls="first-inline-tab">First tab</button>
+					</TdsInlineTab>
+					<TdsInlineTab>
+						<button type="button" role="tab" aria-controls="second-inline-tab">Second tab is much longer</button>
+					</TdsInlineTab>
+					<TdsInlineTab>
+						<button type="button" role="tab" aria-controls="third-inline-tab">Third tab</button>
+					</TdsInlineTab>
+					<TdsInlineTab disabled>
+						<button type="button" role="tab" aria-controls="fourth-inline-tab" disabled>Fourth tab</button>
+					</TdsInlineTab>
+				</TdsInlineTabs>
 				<TabsPanels selectedTabIndex={inlineTabIndex} />
 			</div>
 			<div className="tds-u-mb3 tabs">
@@ -74,16 +76,16 @@ const TabsButtons = () => {
 					ref={navigationTabsRef}
 				>
 					<TdsNavigationTab>
-						<button type="button">First tab</button>
+						<button type="button" role="tab" aria-controls="first-navigation-tab">First tab</button>
 					</TdsNavigationTab>
 					<TdsNavigationTab>
-						<button type="button">Second tab is much longer</button>
+						<button type="button" role="tab" aria-controls="second-navigation-tab">Second tab is much longer</button>
 					</TdsNavigationTab>
 					<TdsNavigationTab>
-						<button type="button">Third tab</button>
+						<button type="button" role="tab" aria-controls="third-navigation-tab">Third tab</button>
 					</TdsNavigationTab>
 					<TdsNavigationTab disabled>
-						<button type="button">Fourth tab</button>
+						<button type="button" role="tab" aria-controls="fourth-navigation-tab" disabled>Fourth tab</button>
 					</TdsNavigationTab>
 				</TdsNavigationTabs>
 				<TabsPanels selectedTabIndex={navigationTabIndex} />

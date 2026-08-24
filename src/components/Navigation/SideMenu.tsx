@@ -135,7 +135,7 @@ const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: 
 						<TdsSideMenuDropdownListItem selected={pathname.includes("/tag")}>
 							<Link to="/web-components/tag">Tag</Link>
 						</TdsSideMenuDropdownListItem>
-						<TdsSideMenuDropdownListItem selected={pathname.includes("/tabs")}>
+						<TdsSideMenuDropdownListItem selected={pathname.includes("/web-components/tabs")}>
 							<Link to="/web-components/tabs">Tabs</Link>
 						</TdsSideMenuDropdownListItem>
 						<TdsSideMenuDropdownListItem selected={pathname.includes("/text-field")}>
