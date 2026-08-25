@@ -79,7 +79,7 @@ const Dropdown = () => {
 			<div className="tds-headline-03 tds-u-pb1">Disabled Dropdown (Medium)</div>
 
 			<TdsDropdown
-				name="error-dropdown"
+				name="disabled-dropdown"
 				label="Label text"
 				label-position="outside"
 				placeholder="Placeholder"
