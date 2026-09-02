@@ -7,16 +7,16 @@ test.describe("on table page", () => {
 
 	test("navigation on pagination table footer", async ({ page }) => {
 		const section = page.getByLabel("pagination");
-		expect(section).toBeVisible();
+		await expect(section).toBeVisible();
 
-		expect(section.getByText("of 4 pages")).toBeVisible();
+		await expect(section.getByText("of 4 pages")).toBeVisible();
 
 		const chevronLastPage = section.getByRole("button").nth(3); // flakyyyyy
 		// navigate to last page
 		await chevronLastPage.click();
 
 		// expect number of pages to stay the same -- CDEP-1737
-		expect(section.getByText("of 4 pages")).toBeVisible();
+		await expect(section.getByText("of 4 pages")).toBeVisible();
 
 		// verify that the chevron button is now disabled
 		await expect(chevronLastPage).toBeDisabled();
@@ -29,9 +29,9 @@ test.describe("on table page", () => {
 		await section.getByRole("option", { name: "4" }).click();
 
 		// expect total number of pages to change to 2
-		expect(section.getByText("of 2 pages")).toBeVisible();
+		await expect(section.getByText("of 2 pages")).toBeVisible();
 
 		// expect input of page number to be 2 (last page)
-		expect(section.getByRole("spinbutton")).toHaveValue("2");
+		await expect(section.getByRole("spinbutton")).toHaveValue("2");
 	});
 });
