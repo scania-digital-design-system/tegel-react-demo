@@ -42,7 +42,7 @@ const Stepper = ({ orientation, labelPosition }: StepperProps) => {
 
 	return (
 		<div>
-			<h4>{orientation.charAt(0).toUpperCase() + orientation.slice(1)} Stepper Hej</h4>
+			<h4>{orientation.charAt(0).toUpperCase() + orientation.slice(1)} Stepper</h4>
 			<section className={`${orientation}-stepper`}>
 				<TdsStepper
 					label-position={labelPosition}
