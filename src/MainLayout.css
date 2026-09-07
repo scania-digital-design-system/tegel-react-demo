@@ -10,14 +10,16 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .side-menu-and-main {
   flex: 1;
   display: flex;
-  position: relative; /* This is needed for the fixed positioning of side-menu */
-  overflow: visible; /* Add this line */
+  position: relative;
+  /* This is needed for the fixed positioning of side-menu */
+  overflow: visible;
+  /* Add this line */
 }
 
 main {
@@ -25,6 +27,7 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
+  z-index: 1;
 }
 
 .content-container {
@@ -40,6 +43,7 @@ main {
 @media (min-width: 992px) {
   .app-side-menu {
     position: sticky;
+    z-index: 2;
   }
 }
 
