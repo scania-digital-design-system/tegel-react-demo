@@ -25,6 +25,7 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
+  z-index: 1;
 }
 
 .content-container {
@@ -40,6 +41,7 @@ main {
 @media (min-width: 992px) {
   .app-side-menu {
     position: sticky;
+    z-index: 2;
   }
 }
 
