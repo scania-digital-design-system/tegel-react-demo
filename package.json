@@ -2,6 +2,7 @@
   "name": "@scania/tegel-react-demo",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "config:hooks": "git config --local core.hooksPath git-hooks",
     "dev": "vite",
