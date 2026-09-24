@@ -9,7 +9,7 @@
     "lint": "biome lint --write ./src",
     "lint:check": "biome lint ./src",
     "preview": "vite preview",
-    "test:e2e": "npx playwright test"
+    "test:e2e": "playwright test"
   },
   "browserslist": {
     "production": [
@@ -25,7 +25,10 @@
   },
   "dependencies": {
     "@ag-grid-community/client-side-row-model": "^32.1.0",
+    "@ag-grid-community/core": "^32.3.9",
     "@ag-grid-community/react": "^32.0.0",
+    "@ag-grid-community/styles": "^32.3.9",
+    "@scania/tegel": "1.64.0",
     "@scania/tegel-react": "1.64.0",
     "@scania/tegel-styles": "1.0.0",
     "@tanstack/react-table": "^8.19.2",
@@ -50,5 +53,6 @@
   },
   "overrides": {
     "vite": "^8.1.5"
-  }
+  },
+  "packageManager": "pnpm@10.34.5"
 }

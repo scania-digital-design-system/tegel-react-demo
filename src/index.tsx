@@ -15,8 +15,8 @@ import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import MainLayout from "./MainLayout";
 import NotFound from "./pages/NotFoundPage/NotFound";
 import AgGridPage from "./pages/AgGridPage/AgGridPage";
-import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
-import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
+import "@ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
+import "@ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import TanstackPage from "./pages/TanstackPage/TanstackPage";
 import {
 	createBrowserRouter,
