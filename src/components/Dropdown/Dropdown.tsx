@@ -13,7 +13,7 @@ const Dropdown = () => {
 				placeholder="Placeholder"
 				helper="Helper text"
 				size="lg"
-				open-direction="down"
+				open-direction="up"
 				normalizeText={true}
 			>
 				<TdsDropdownOption value="option-1">Option 1</TdsDropdownOption>
