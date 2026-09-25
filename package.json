@@ -2,6 +2,7 @@
   "name": "@scania/tegel-react-demo",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "config:hooks": "git config --local core.hooksPath git-hooks",
     "dev": "vite",
@@ -9,7 +10,7 @@
     "lint": "biome lint --write ./src",
     "lint:check": "biome lint ./src",
     "preview": "vite preview",
-    "test:e2e": "npx playwright test"
+    "test:e2e": "playwright test"
   },
   "browserslist": {
     "production": [
@@ -24,31 +25,35 @@
     ]
   },
   "dependencies": {
-    "@ag-grid-community/client-side-row-model": "^32.1.0",
-    "@ag-grid-community/react": "^32.0.0",
-    "@scania/tegel-react": "^1.63.0-dropdown-list-beta.0",
+    "@ag-grid-community/client-side-row-model": "^32.3.9",
+    "@ag-grid-community/core": "^32.3.9",
+    "@ag-grid-community/react": "^32.3.9",
+    "@ag-grid-community/styles": "^32.3.9",
+    "@scania/tegel": "1.64.0",
+    "@scania/tegel-react": "1.64.0",
     "@scania/tegel-styles": "1.0.0",
-    "@tanstack/react-table": "^8.19.2",
+    "@tanstack/react-table": "^8.21.3",
     "ag-grid-react": "^32.3.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "^7.18.1"
+    "react-router": "^7.18.4"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@biomejs/biome": "^2.5.5",
-    "@faker-js/faker": "^10.5.0",
-    "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.1",
+    "@biomejs/biome": "^2.5.14",
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^26.6.2",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^6.0.3",
-    "playwright": "^1.61.1",
-    "sass-embedded": "^1.100.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "playwright": "1.63.0",
+    "sass-embedded": "^1.105.0",
     "typescript": "~7.0.2",
-    "vite": "^8.1.5"
+    "vite": "^8.3.1"
   },
   "overrides": {
     "vite": "^8.1.5"
-  }
+  },
+  "packageManager": "pnpm@10.34.5"
 }
