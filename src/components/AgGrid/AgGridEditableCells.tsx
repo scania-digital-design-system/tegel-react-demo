@@ -7,9 +7,9 @@ import {
 import { AgGridReact } from "@ag-grid-community/react";
 import { useCallback, useState } from "react";
 // React Grid Logic
-import "ag-grid-community/styles/ag-grid.css";
+import "@ag-grid-community/styles/ag-grid.css";
 // Core CSS
-import "ag-grid-community/styles/ag-theme-quartz.css";
+import "@ag-grid-community/styles/ag-theme-quartz.css";
 import "@scania/tegel-styles/dist/customization/ag-grid/quartz-theme-override.css";
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
