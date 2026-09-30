@@ -27,8 +27,8 @@ importers:
         specifier: 1.64.0
         version: 1.64.0(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@scania/tegel-styles':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.0.1
+        version: 1.0.1
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -58,8 +58,8 @@ importers:
         specifier: 1.63.0
         version: 1.63.0
       '@types/node':
-        specifier: ^26.6.2
-        version: 26.6.2
+        specifier: ^26.6.3
+        version: 26.6.3
       '@types/react':
         specifier: ^19.3.0
         version: 19.3.0
@@ -68,7 +68,7 @@ importers:
         version: 18.3.7(@types/react@19.3.0)
       '@vitejs/plugin-react':
         specifier: ^6.1.1
-        version: 6.1.1(vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0))
+        version: 6.1.1(vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0))
       playwright:
         specifier: 1.63.0
         version: 1.63.0
@@ -80,7 +80,7 @@ importers:
         version: 7.0.2
       vite:
         specifier: ^8.3.1
-        version: 8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0)
+        version: 8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0)
 
 packages:
 
@@ -539,8 +539,8 @@ packages:
   '@scania/tegel-react@1.64.0':
     resolution: {integrity: sha512-akrV1pRPi5tqS9l/h6adv3INoAcVs8GqSVORsu8i4kh2wt4Yh+agpHDvDUGjDKp76n/TJ/jfipvmPNC+AxqeFQ==}
 
-  '@scania/tegel-styles@1.0.0':
-    resolution: {integrity: sha512-RXj0/LZ2UVn17pYleynS6IabQoGNKM17VOXP18Zk0NvhNeQy/fjYYUUixlEKRHdwS1b9YyDVCkC1zphFTlQe7A==}
+  '@scania/tegel-styles@1.0.1':
+    resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
   '@scania/tegel@1.64.0':
     resolution: {integrity: sha512-8sbbKMeJ6O5s5C9H0YHg1vJ+m1AGCfDRsHhx+JgagJkKvjNqhbJF7a/eJ8oB2z7kTsSxMM9PVMCHcq/jBA1kbw==}
@@ -572,8 +572,8 @@ packages:
   '@ts-morph/common@0.29.0':
     resolution: {integrity: sha512-35oUmphHbJvQ/+UTwFNme/t2p3FoKiGJ5auTjjpNTop2dyREspirjMy82PLSC1pnDJ8ah1GU98hwpVt64YXQsg==}
 
-  '@types/node@26.6.2':
-    resolution: {integrity: sha512-X1P21scMv4zGKLYqjdGjaKa7COa0RKVYYZZN/NfvLQ1JegxFhdhpZG/Lyn8AXx6CDUavKAd11v6BvfpkDByK8g==}
+  '@types/node@26.6.3':
+    resolution: {integrity: sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==}
 
   '@types/react-dom@18.3.7':
     resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
@@ -1700,7 +1700,7 @@ snapshots:
       - react
       - react-dom
 
-  '@scania/tegel-styles@1.0.0':
+  '@scania/tegel-styles@1.0.1':
     dependencies:
       glob: 8.1.0
       postcss: 8.5.28
@@ -1747,7 +1747,7 @@ snapshots:
       path-browserify: 1.0.1
       tinyglobby: 0.2.17
 
-  '@types/node@26.6.2':
+  '@types/node@26.6.3':
     dependencies:
       undici-types: 8.9.0
 
@@ -1819,10 +1819,10 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vitejs/plugin-react@6.1.1(vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0))':
+  '@vitejs/plugin-react@6.1.1(vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0)
+      vite: 8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0)
 
   ag-charts-types@10.3.9: {}
 
@@ -2298,7 +2298,7 @@ snapshots:
 
   varint@6.0.0: {}
 
-  vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0):
+  vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -2306,7 +2306,7 @@ snapshots:
       rolldown: 1.2.10
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 26.6.2
+      '@types/node': 26.6.3
       fsevents: 2.3.3
       sass: 1.105.0
       sass-embedded: 1.105.0
