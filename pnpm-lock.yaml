@@ -27,8 +27,8 @@ importers:
         specifier: 1.64.0-datetime-vars-beta.0
         version: 1.64.0-datetime-vars-beta.0(@stencil/core@4.45.1)(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@scania/tegel-styles':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.0.1
+        version: 1.0.1
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -539,8 +539,8 @@ packages:
   '@scania/tegel-react@1.64.0-datetime-vars-beta.0':
     resolution: {integrity: sha512-VyoEiN50nYxM2g7SzZ+wcXnGQxEtnxJuUE1bjg8ZTxh94EJG5wGAb6SbLZLPP7+JX56caV674/n447WPSRMa8Q==}
 
-  '@scania/tegel-styles@1.0.0':
-    resolution: {integrity: sha512-RXj0/LZ2UVn17pYleynS6IabQoGNKM17VOXP18Zk0NvhNeQy/fjYYUUixlEKRHdwS1b9YyDVCkC1zphFTlQe7A==}
+  '@scania/tegel-styles@1.0.1':
+    resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
   '@scania/tegel@1.64.0-datetime-vars-beta.0':
     resolution: {integrity: sha512-Kdxwn4uxOFIgW25lws9Dqcs9UlYE34Vi1xoZkSeq/Gbqu6JQ5RCYeDJeZlZ/LIQkL2cAD4Ljv7B+8lhU4qL+UQ==}
@@ -1703,7 +1703,7 @@ snapshots:
       - react
       - react-dom
 
-  '@scania/tegel-styles@1.0.0':
+  '@scania/tegel-styles@1.0.1':
     dependencies:
       glob: 8.1.0
       postcss: 8.5.28
