@@ -18,7 +18,7 @@ interface MainLayoutProps {
 	userContextValue?: UserContextValue; // Define the type for userContextValue
 	mode?: string;
 	modeVariant?: string; // Define the type for modeVariant
-	sideMenuRef?: React.RefObject<HTMLTdsSideMenuElement>; // Define the type for sideMenuRef
+	sideMenuRef?: React.RefObject<HTMLTdsSideMenuElement | null>; // Define the type for sideMenuRef
 	shouldRenderBreadcrumbs?: boolean; // Define the type for shouldRenderBreadcrumbs
 	shouldRenderModeSwitcher?: boolean; // Define the type for shouldRenderBreadcrumbs
 }

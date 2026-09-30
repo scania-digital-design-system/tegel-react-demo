@@ -21,7 +21,7 @@ interface SideMenuProps {
 	style?: React.CSSProperties;
 	pathname: string;
 	toggleMobileNav: () => void;
-	sideMenuRef: React.RefObject<HTMLTdsSideMenuElement>;
+	sideMenuRef: React.RefObject<HTMLTdsSideMenuElement | null>;
 }
 
 const SideMenu = ({ style, className, pathname, toggleMobileNav, sideMenuRef }: SideMenuProps) => {
