@@ -27,8 +27,8 @@ importers:
         specifier: 1.64.0
         version: 1.64.0(@stencil/core@4.45.1)(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@scania/tegel-styles':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.0.1
+        version: 1.0.1
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -58,8 +58,8 @@ importers:
         specifier: 1.63.0
         version: 1.63.0
       '@types/node':
-        specifier: ^26.6.2
-        version: 26.6.2
+        specifier: ^26.6.3
+        version: 26.6.3
       '@types/react':
         specifier: ^18.3.31
         version: 18.3.31
@@ -68,7 +68,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@vitejs/plugin-react':
         specifier: ^6.1.1
-        version: 6.1.1(vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0))
+        version: 6.1.1(vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0))
       playwright:
         specifier: 1.63.0
         version: 1.63.0
@@ -80,7 +80,7 @@ importers:
         version: 7.0.2
       vite:
         specifier: ^8.3.1
-        version: 8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0)
+        version: 8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0)
 
 packages:
 
@@ -539,8 +539,8 @@ packages:
   '@scania/tegel-react@1.64.0':
     resolution: {integrity: sha512-akrV1pRPi5tqS9l/h6adv3INoAcVs8GqSVORsu8i4kh2wt4Yh+agpHDvDUGjDKp76n/TJ/jfipvmPNC+AxqeFQ==}
 
-  '@scania/tegel-styles@1.0.0':
-    resolution: {integrity: sha512-RXj0/LZ2UVn17pYleynS6IabQoGNKM17VOXP18Zk0NvhNeQy/fjYYUUixlEKRHdwS1b9YyDVCkC1zphFTlQe7A==}
+  '@scania/tegel-styles@1.0.1':
+    resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
   '@scania/tegel@1.64.0':
     resolution: {integrity: sha512-8sbbKMeJ6O5s5C9H0YHg1vJ+m1AGCfDRsHhx+JgagJkKvjNqhbJF7a/eJ8oB2z7kTsSxMM9PVMCHcq/jBA1kbw==}
@@ -572,8 +572,8 @@ packages:
   '@ts-morph/common@0.29.0':
     resolution: {integrity: sha512-35oUmphHbJvQ/+UTwFNme/t2p3FoKiGJ5auTjjpNTop2dyREspirjMy82PLSC1pnDJ8ah1GU98hwpVt64YXQsg==}
 
-  '@types/node@26.6.2':
-    resolution: {integrity: sha512-X1P21scMv4zGKLYqjdGjaKa7COa0RKVYYZZN/NfvLQ1JegxFhdhpZG/Lyn8AXx6CDUavKAd11v6BvfpkDByK8g==}
+  '@types/node@26.6.3':
+    resolution: {integrity: sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==}
 
   '@types/prop-types@15.7.15':
     resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
@@ -741,8 +741,8 @@ packages:
     resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
     engines: {node: 18 || 20 || >=22}
 
-  baseline-browser-mapping@2.11.25:
-    resolution: {integrity: sha512-gMmEShwwq7FJqMwvfRwvCl00v4kN+KOfJqXn+f4nrufak5gNHJOksd/60Dvjuz7sI8Y5WiSFBa8FEYr+zoyqCw==}
+  baseline-browser-mapping@2.11.26:
+    resolution: {integrity: sha512-GLQdD3y6UF8iVuMJl5fHgE4jdn/ua7n+toKfLgNlg3BqQtOZjpy68T8Tup8/wGWZCDlm7KMg7tPb4MPn7oN0TQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -753,8 +753,8 @@ packages:
     resolution: {integrity: sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==}
     engines: {node: 20 || >=22}
 
-  browserslist@4.29.0:
-    resolution: {integrity: sha512-3GSvyjvDI4Dur1Meg2BekJquu5uF+9R9a1+5M1Mde192eZoXbeXjzgOsgqPS2V8D5wrrip0gR5Hf/GhWQ9ZzaA==}
+  browserslist@4.29.1:
+    resolution: {integrity: sha512-AUdjuRyCNGUYtqpqfTmWyM4fXay8yIQhmLnvYe/THMGfT9B/34X7xQd3ifKxwyNPPpowVBjLb+64BN9Rn1mizw==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
@@ -807,8 +807,8 @@ packages:
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
 
-  electron-to-chromium@1.5.438:
-    resolution: {integrity: sha512-AN9xMU1hJiT65LkCUPL1DZm5TCbOPb2Qsm5pYwFLEXp6/qj9SdT4yMiqs7Qqstwvkn1zF7l36SRGt+s6XcJ0FA==}
+  electron-to-chromium@1.5.439:
+    resolution: {integrity: sha512-qu6QIPXhsb+CRcAiTMNjR4A1y/7tCYKkKjr5CZXRVih6qkDf79peZ2BpEU3qoDBNCRrcy3Mra3X9nG5oruuA7Q==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -1375,7 +1375,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.29.7
       '@babel/helper-validator-option': 7.29.7
-      browserslist: 4.29.0
+      browserslist: 4.29.1
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -1703,7 +1703,7 @@ snapshots:
       - react
       - react-dom
 
-  '@scania/tegel-styles@1.0.0':
+  '@scania/tegel-styles@1.0.1':
     dependencies:
       glob: 8.1.0
       postcss: 8.5.28
@@ -1750,7 +1750,7 @@ snapshots:
       path-browserify: 1.0.1
       tinyglobby: 0.2.17
 
-  '@types/node@26.6.2':
+  '@types/node@26.6.3':
     dependencies:
       undici-types: 8.9.0
 
@@ -1825,10 +1825,10 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vitejs/plugin-react@6.1.1(vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0))':
+  '@vitejs/plugin-react@6.1.1(vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0)
+      vite: 8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0)
 
   ag-charts-types@10.3.9: {}
 
@@ -1847,7 +1847,7 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  baseline-browser-mapping@2.11.25: {}
+  baseline-browser-mapping@2.11.26: {}
 
   brace-expansion@2.1.7:
     dependencies:
@@ -1857,13 +1857,13 @@ snapshots:
     dependencies:
       balanced-match: 4.0.4
 
-  browserslist@4.29.0:
+  browserslist@4.29.1:
     dependencies:
-      baseline-browser-mapping: 2.11.25
+      baseline-browser-mapping: 2.11.26
       caniuse-lite: 1.0.30001812
-      electron-to-chromium: 1.5.438
+      electron-to-chromium: 1.5.439
       node-releases: 2.0.57
-      update-browserslist-db: 1.3.3(browserslist@4.29.0)
+      update-browserslist-db: 1.3.3(browserslist@4.29.1)
 
   caniuse-lite@1.0.30001812: {}
 
@@ -1906,7 +1906,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
 
-  electron-to-chromium@1.5.438: {}
+  electron-to-chromium@1.5.439: {}
 
   entities@4.5.0: {}
 
@@ -2301,15 +2301,15 @@ snapshots:
 
   undici-types@8.9.0: {}
 
-  update-browserslist-db@1.3.3(browserslist@4.29.0):
+  update-browserslist-db@1.3.3(browserslist@4.29.1):
     dependencies:
-      browserslist: 4.29.0
+      browserslist: 4.29.1
       escalade: 3.2.0
       picocolors: 1.1.1
 
   varint@6.0.0: {}
 
-  vite@8.3.1(@types/node@26.6.2)(sass-embedded@1.105.0)(sass@1.105.0):
+  vite@8.3.1(@types/node@26.6.3)(sass-embedded@1.105.0)(sass@1.105.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -2317,7 +2317,7 @@ snapshots:
       rolldown: 1.2.10
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 26.6.2
+      '@types/node': 26.6.3
       fsevents: 2.3.3
       sass: 1.105.0
       sass-embedded: 1.105.0
