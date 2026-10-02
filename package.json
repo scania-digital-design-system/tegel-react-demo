@@ -32,7 +32,7 @@
     "@scania/tegel": "1.65.0",
     "@scania/tegel-react": "1.65.0",
     "@scania/tegel-styles": "1.0.1",
-    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-table": "^9.2.4",
     "ag-grid-react": "^32.3.9",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
