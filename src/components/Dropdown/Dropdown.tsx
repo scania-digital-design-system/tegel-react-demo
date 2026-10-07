@@ -39,6 +39,7 @@ const Dropdown = () => {
 				multiselect
 				filter
 				open-direction="auto"
+				show-selection-actions
 				normalizeText={true}
 			>
 				<TdsDropdownOption value="option-1">Option 1</TdsDropdownOption>
