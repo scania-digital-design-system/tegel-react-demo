@@ -21,11 +21,11 @@ importers:
         specifier: ^32.3.9
         version: 32.3.9
       '@scania/tegel':
-        specifier: 1.65.0-dd-select-all-beta.0
-        version: 1.65.0-dd-select-all-beta.0
+        specifier: 1.65.0-dd-select-all-beta.1
+        version: 1.65.0-dd-select-all-beta.1
       '@scania/tegel-react':
-        specifier: 1.65.0-dd-select-all-beta.0
-        version: 1.65.0-dd-select-all-beta.0(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        specifier: 1.65.0-dd-select-all-beta.1
+        version: 1.65.0-dd-select-all-beta.1(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@scania/tegel-styles':
         specifier: 1.0.1
         version: 1.0.1
@@ -536,14 +536,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@scania/tegel-react@1.65.0-dd-select-all-beta.0':
-    resolution: {integrity: sha512-parjgpKSruv1kKePqyx/H51mXFC0BODDXtwpndL3OThPPUsKWqGzXei7AcDyh8lP2QQAOpcMBojvkhDd16s+Kg==}
+  '@scania/tegel-react@1.65.0-dd-select-all-beta.1':
+    resolution: {integrity: sha512-yiBF+b8eQdYlt9UCxpNMufP9te/srmhq88aTsVnVaO3sW3yKNZGvdvayWs5pfh97X9RXFiCa9n9izfXuvEPhrA==}
 
   '@scania/tegel-styles@1.0.1':
     resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
-  '@scania/tegel@1.65.0-dd-select-all-beta.0':
-    resolution: {integrity: sha512-CWZIwkV8cUeQDMg4eba5Q66ISIvncgodk6U8ZNqkDUFvKiJv5IUqC3e78+irSN1tkKnyEu6460HKvutWzW8q1w==}
+  '@scania/tegel@1.65.0-dd-select-all-beta.1':
+    resolution: {integrity: sha512-GUWsEGSMx22DcujzlwCCsUrErkzGrUC9YPd81fzPDB7279rplPrkpRRfOAkB5IEisTY7acV8IMILh3EY4Uj2VA==}
     hasBin: true
 
   '@stencil/core@4.45.1':
@@ -1689,10 +1689,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.0':
     optional: true
 
-  '@scania/tegel-react@1.65.0-dd-select-all-beta.0(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
+  '@scania/tegel-react@1.65.0-dd-select-all-beta.1(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@lit/react': 1.0.8(@types/react@19.3.0)
-      '@scania/tegel': 1.65.0-dd-select-all-beta.0
+      '@scania/tegel': 1.65.0-dd-select-all-beta.1
       '@stencil/react-output-target': 1.6.2(@stencil/core@4.45.1)(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     transitivePeerDependencies:
       - '@stencil/core'
@@ -1705,7 +1705,7 @@ snapshots:
       glob: 8.1.0
       postcss: 8.5.28
 
-  '@scania/tegel@1.65.0-dd-select-all-beta.0':
+  '@scania/tegel@1.65.0-dd-select-all-beta.1':
     dependencies:
       '@popperjs/core': 2.11.8
       '@stencil/core': 4.45.1
