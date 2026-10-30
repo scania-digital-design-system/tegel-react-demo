@@ -61,15 +61,7 @@ const Slider = () => {
 
       <div id="input-slider-read-only">
         <h3>Slider with Input field, Read Only</h3>
-        <TdsSlider
-          min="0"
-          max="100"
-          value="37"
-          showTickNumbers
-          ticks="4"
-          input
-          readOnly
-        ></TdsSlider>
+        <TdsSlider min="0" max="100" value="37" ticks="4" input readOnly></TdsSlider>
       </div>
 
       <div id="input-slider-disabled">
