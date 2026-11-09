@@ -7,7 +7,7 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.63.0-jammy
+      image: mcr.microsoft.com/playwright:v1.64.1-jammy
     timeout-minutes: 15
     steps:
       - name: Check out code
