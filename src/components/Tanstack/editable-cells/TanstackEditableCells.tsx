@@ -8,18 +8,14 @@ import {
 	TdsBodyCell,
 } from "@scania/tegel-react";
 import { type Vehicle, createData } from "./makeData";
-import {
-	type ColumnDef,
-	flexRender,
-	getCoreRowModel,
-	useReactTable,
-} from "@tanstack/react-table";
+import { type ColumnDef, useTable } from "@tanstack/react-table";
 import EditableCell from "./EditableCell";
+import { type Features, features } from "./features";
 
 const TanstackEditableCells = () => {
 	const [data, setData] = useState(() => createData(10));
 
-	const columns = useMemo<ColumnDef<Vehicle>[]>(
+	const columns = useMemo<ColumnDef<Features, Vehicle>[]>(
 		() => [
 			{
 				header: "Model",
@@ -41,13 +37,13 @@ const TanstackEditableCells = () => {
 		[],
 	);
 
-	const table = useReactTable({
+	const table = useTable({
+		features,
 		data,
 		columns,
 		defaultColumn: {
 			cell: EditableCell,
 		},
-		getCoreRowModel: getCoreRowModel(),
 		debugTable: true,
 		meta: {
 			updateData: (rowIndex, columnId, value) => {
@@ -76,10 +72,7 @@ const TanstackEditableCells = () => {
 								<TdsHeaderCell key={header.id} cellKey={header.id}>
 									{header.isPlaceholder ? null : (
 										<div>
-											{flexRender(
-												header.column.columnDef.header,
-												header.getContext(),
-											)}
+											<table.FlexRender header={header} />
 										</div>
 									)}
 								</TdsHeaderCell>
@@ -91,13 +84,9 @@ const TanstackEditableCells = () => {
 					{table.getRowModel().rows.map((row) => {
 						return (
 							<TdsTableBodyRow key={row.id}>
-								{row.getVisibleCells().map((cell) => (
-									<TdsBodyCell
-										cellKey={cell.column.id}
-										key={cell.id}
-										disablePadding
-									>
-										{flexRender(cell.column.columnDef.cell, cell.getContext())}
+								{row.getAllCells().map((cell) => (
+									<TdsBodyCell cellKey={cell.column.id} key={cell.id} disablePadding>
+										<table.FlexRender cell={cell} />
 									</TdsBodyCell>
 								))}
 							</TdsTableBodyRow>

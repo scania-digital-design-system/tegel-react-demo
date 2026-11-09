@@ -9,15 +9,9 @@ import {
 	TdsTableToolbar,
 } from "@scania/tegel-react";
 import { type Vehicle, createData } from "./makeData";
-import {
-	type ColumnDef,
-	flexRender,
-	getCoreRowModel,
-	getFilteredRowModel,
-	useReactTable,
-	type ColumnFiltersState,
-} from "@tanstack/react-table";
+import { type ColumnDef, type ColumnFiltersState, useTable } from "@tanstack/react-table";
 import Filter from "./Filter";
+import { type Features, features } from "./features";
 
 const TanstackColumnFilter = () => {
 	const [globalFilter, setGlobalFilter] = useState("");
@@ -25,7 +19,7 @@ const TanstackColumnFilter = () => {
 
 	const [data, _setData] = useState(() => createData(10));
 
-	const columns = useMemo<ColumnDef<Vehicle>[]>(
+	const columns = useMemo<ColumnDef<Features, Vehicle>[]>(
 		() => [
 			{
 				header: "Name",
@@ -47,7 +41,8 @@ const TanstackColumnFilter = () => {
 		[],
 	);
 
-	const table = useReactTable({
+	const table = useTable({
+		features,
 		data,
 		columns,
 		state: {
@@ -57,8 +52,6 @@ const TanstackColumnFilter = () => {
 		onGlobalFilterChange: setGlobalFilter,
 		onColumnFiltersChange: setColumnFilters,
 		globalFilterFn: "includesString",
-		getCoreRowModel: getCoreRowModel(),
-		getFilteredRowModel: getFilteredRowModel(), //client side filtering
 		debugTable: true,
 	});
 
@@ -71,9 +64,7 @@ const TanstackColumnFilter = () => {
 						{headerGroup.headers.map((header) => {
 							return (
 								<TdsHeaderCell key={header.id} cellKey={header.id}>
-									{header.isPlaceholder
-										? null
-										: flexRender(header.column.columnDef.header, header.getContext())}
+									{header.isPlaceholder ? null : <table.FlexRender header={header} />}
 								</TdsHeaderCell>
 							);
 						})}
@@ -94,9 +85,9 @@ const TanstackColumnFilter = () => {
 					{table.getRowModel().rows.map((row) => {
 						return (
 							<TdsTableBodyRow key={row.id}>
-								{row.getVisibleCells().map((cell) => (
+								{row.getAllCells().map((cell) => (
 									<TdsBodyCell cellKey={cell.column.id} key={cell.id}>
-										{flexRender(cell.column.columnDef.cell, cell.getContext())}
+										<table.FlexRender cell={cell} />
 									</TdsBodyCell>
 								))}
 							</TdsTableBodyRow>
