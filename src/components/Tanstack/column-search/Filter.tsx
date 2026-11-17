@@ -1,8 +1,9 @@
 import type { Column } from "@tanstack/react-table";
 import { TdsTableHeaderInputWrapper } from "@scania/tegel-react";
 import type { Vehicle } from "./makeData";
+import type { Features } from "./features";
 
-export default function Filter({ column }: { column: Column<Vehicle, unknown> }) {
+export default function Filter({ column }: { column: Column<Features, Vehicle, unknown> }) {
 	const columnFilterValue = column.getFilterValue();
 
 	return (

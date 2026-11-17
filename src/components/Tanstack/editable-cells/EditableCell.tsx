@@ -2,21 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Vehicle } from "./makeData";
-import type { CellContext, RowData } from "@tanstack/react-table";
+import type { CellContext } from "@tanstack/react-table";
 import { TdsTableBodyInputWrapper } from "@scania/tegel-react";
-
-declare module "@tanstack/react-table" {
-	interface TableMeta<TData extends RowData> {
-		updateData: (rowIndex: number, columnId: string, value: unknown) => void;
-	}
-}
+import type { Features } from "./features";
 
 const EditableCell = ({
 	getValue,
 	row: { index },
 	column: { id },
 	table,
-}: CellContext<Vehicle, unknown>) => {
+}: CellContext<Features, Vehicle, unknown>) => {
 	const initialValue = getValue<string>();
 	const inputRef = useRef<HTMLInputElement>(null);
 
