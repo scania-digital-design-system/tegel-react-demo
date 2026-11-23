@@ -1,2 +1,6 @@
 allowBuilds:
   '@parcel/watcher': true
+
+overrides:
+  '@scania/tegel': '1.68.0-empty-state-beta.1'
+  '@scania/tegel-react': '1.68.0-empty-state-beta.1'
