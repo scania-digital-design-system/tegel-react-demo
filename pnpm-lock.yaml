@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@scania/tegel': 1.68.0-empty-state-beta.1
+  '@scania/tegel-react': 1.68.0-empty-state-beta.1
+
 importers:
 
   .:
@@ -21,11 +25,11 @@ importers:
         specifier: ^32.3.9
         version: 32.3.9
       '@scania/tegel':
-        specifier: 1.68.0
-        version: 1.68.0
+        specifier: 1.68.0-empty-state-beta.1
+        version: 1.68.0-empty-state-beta.1
       '@scania/tegel-react':
-        specifier: 1.68.0
-        version: 1.68.0(@stencil/core@4.45.2)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: 1.68.0-empty-state-beta.1
+        version: 1.68.0-empty-state-beta.1(@stencil/core@4.45.5)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@scania/tegel-styles':
         specifier: 1.0.1
         version: 1.0.1
@@ -560,23 +564,23 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@scania/tegel-react@1.68.0':
-    resolution: {integrity: sha512-rXibNHdFOWDM7VEAfLIohXtT9+MtmpipqWcgr3q+IDSUfPCWJ37tiCTks8Zk0sOW8AISeqwB6amgOMpGzWdW7g==}
+  '@scania/tegel-react@1.68.0-empty-state-beta.1':
+    resolution: {integrity: sha512-97245MlLR3XvHBtY+9WvNfP2/70aWgtUyq8ags2HKGC1KxNDWp7pYncHXhxbXCBwoXii3i2K1800B0RFDYe99g==}
 
   '@scania/tegel-styles@1.0.1':
     resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
-  '@scania/tegel@1.68.0':
-    resolution: {integrity: sha512-nbr3OVAcYgWAaORKkPIDGXvtyjT/9DgH0dXPQMiiYOzRNee6zcOH4gk1ZiInfuny99kTYm/L8RBmFbkap7u1Iw==}
+  '@scania/tegel@1.68.0-empty-state-beta.1':
+    resolution: {integrity: sha512-ky/vp4oO1HTpFTzvoU2g7plO+aSba9GM6exkFPXSIeRz9S276JlZOiYABVuZuOCpe5m/9nlwaMW1yORbqmo++Q==}
     hasBin: true
 
-  '@stencil/core@4.45.2':
-    resolution: {integrity: sha512-CNkPVZsqyNMjFMX9bEkMJsvBbQxjLw480OaoamoqiLPdQCFjJQReeOjnWX1A5ivSn3UYEIJ6MoN5VXDkaHGt8Q==}
+  '@stencil/core@4.45.5':
+    resolution: {integrity: sha512-tz6h9MI/s0WwNsfGbSguo9+xnerWam8NI8/U3VUS9MNMviTYyg3Ymz5XniSM9PGFnbd2xhhmyJhHHaFmy9mYog==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
-  '@stencil/react-output-target@1.6.5':
-    resolution: {integrity: sha512-S7ldaSwjjysJIo3E/ksxApHzRxEncT191wb5bovDZx5da+5B33k2cyiz4lOZ0zk2I5GRWniDsHIJJs94vKU6rQ==}
+  '@stencil/react-output-target@1.8.0':
+    resolution: {integrity: sha512-+IYjjE7TJxEWnJtScDWsgdgsBY/jbo/6K/CLu6keKX2einJCwvdBwk5CLfbSZBHE/21V8l3qUqBU3Iq8wARLDA==}
     peerDependencies:
       '@stencil/core': '>=3 || >=4.0.0 || ^5.0.0 || >=5.0.0-beta.18'
       react: ^18 || ^19
@@ -1780,11 +1784,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.0':
     optional: true
 
-  '@scania/tegel-react@1.68.0(@stencil/core@4.45.2)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@scania/tegel-react@1.68.0-empty-state-beta.1(@stencil/core@4.45.5)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@lit/react': 1.0.8(@types/react@19.3.0)
-      '@scania/tegel': 1.68.0
-      '@stencil/react-output-target': 1.6.5(@stencil/core@4.45.2)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@scania/tegel': 1.68.0-empty-state-beta.1
+      '@stencil/react-output-target': 1.8.0(@stencil/core@4.45.5)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     transitivePeerDependencies:
       - '@stencil/core'
       - '@types/react'
@@ -1796,12 +1800,12 @@ snapshots:
       glob: 8.1.0
       postcss: 8.5.28
 
-  '@scania/tegel@1.68.0':
+  '@scania/tegel@1.68.0-empty-state-beta.1':
     dependencies:
       '@popperjs/core': 2.11.8
-      '@stencil/core': 4.45.2
+      '@stencil/core': 4.45.5
 
-  '@stencil/core@4.45.2':
+  '@stencil/core@4.45.5':
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.44.0
       '@rollup/rollup-darwin-x64': 4.44.0
@@ -1812,10 +1816,10 @@ snapshots:
       '@rollup/rollup-win32-arm64-msvc': 4.44.0
       '@rollup/rollup-win32-x64-msvc': 4.44.0
 
-  '@stencil/react-output-target@1.6.5(@stencil/core@4.45.2)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@stencil/react-output-target@1.8.0(@stencil/core@4.45.5)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@lit/react': 1.0.8(@types/react@19.3.0)
-      '@stencil/core': 4.45.2
+      '@stencil/core': 4.45.5
       html-react-parser: 5.2.17(@types/react@19.3.0)(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
